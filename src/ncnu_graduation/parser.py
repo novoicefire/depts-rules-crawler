@@ -106,10 +106,8 @@ def infer_required_credits(group: dict) -> int | float | None:
             credits.append(c)
 
     if credits:
-        total = sum(credits)
-        if isinstance(total, float) and total.is_integer():
-            return int(total)
-        return total
+        total = float(sum(credits))
+        return int(total) if total.is_integer() else total
 
     return None
 
