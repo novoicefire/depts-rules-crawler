@@ -107,7 +107,9 @@ def infer_required_credits(group: dict) -> int | float | None:
 
     if credits:
         total = sum(credits)
-        return int(total) if float(total).is_integer() else total
+        if isinstance(total, float) and total.is_integer():
+            return int(total)
+        return total
 
     return None
 
