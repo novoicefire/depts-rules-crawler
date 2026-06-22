@@ -1,11 +1,11 @@
 {
   "index_exists": true,
   "index_readable": true,
-  "total_items": 1,
+  "total_items": 75,
   "duplicate_ids": [],
   "missing_files": [],
   "invalid_schema": [],
   "specific_check_112_12_B": "Passed",
   "passed": true,
-  "generatedAt": "2026-06-22T16:01:48.738335"
+  "generatedAt": "2026-06-22T16:17:21.706295"
 }
