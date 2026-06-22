@@ -1,0 +1,16 @@
+{
+  "index_exists": true,
+  "index_readable": true,
+  "total_items": 304,
+  "duplicate_ids": [],
+  "missing_files": [],
+  "invalid_schema": [
+    {
+      "id": "114-65-G",
+      "error": "no group name contains 清單 or 一覽表"
+    }
+  ],
+  "specific_check_112_12_B": "Passed",
+  "passed": false,
+  "generatedAt": "2026-06-22T16:36:36.226529"
+}
