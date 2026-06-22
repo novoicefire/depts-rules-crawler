@@ -118,7 +118,7 @@ def validate_all(probe: bool = False, strict: bool = False) -> Dict[str, Any]:
 
                 for idx, g in enumerate(groups):
                     missing = []
-                    for k in ["groupId", "name", "type", "courses", "originalRows"]:
+                    for k in ["groupId", "name", "type", "courses", "rules", "originalRows"]:
                         if k not in g:
                             missing.append(k)
                             
@@ -133,6 +133,12 @@ def validate_all(probe: bool = False, strict: bool = False) -> Dict[str, Any]:
                         report["invalid_schema"].append({
                             "id": req_id,
                             "error": f"group {idx} courses must be a list"
+                        })
+
+                    if not isinstance(g.get("rules"), list):
+                        report["invalid_schema"].append({
+                            "id": req_id,
+                            "error": f"group {idx} rules must be a list"
                         })
                         
                     if not isinstance(g.get("originalRows"), list):

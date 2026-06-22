@@ -17,15 +17,7 @@ def is_requirement_table(table) -> bool:
     positive_keywords = ["課號", "課名", "科目", "課程", "學分", "必修", "選修", "輔系", "雙主修", "通識", "先修", "擋修"]
     return any(keyword in text for keyword in positive_keywords)
 
-def is_reasonable_title(text: str) -> bool:
-    if not text:
-        return False
-    if len(text) < 2 or len(text) > 80:
-        return False
-    noise = ["登入", "查詢", "搜尋", "返回", "上一頁", "下一頁"]
-    if any(n in text for n in noise):
-        return False
-    return True
+
 
 def normalize_text(text: str) -> str:
     return re.sub(r"\s+", " ", text).strip()

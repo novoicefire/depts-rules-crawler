@@ -35,7 +35,8 @@ def main():
         sys.executable,
         str(base_dir / "cli.py"),
         "validate",
-        "--probe"
+        "--probe",
+        "--strict"
     ]
     
     print("開始執行一鍵測試樣本 (112 入學年度 / 12 國企系 / B 學士班)...")
