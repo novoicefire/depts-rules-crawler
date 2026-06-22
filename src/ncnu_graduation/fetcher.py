@@ -9,25 +9,28 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-SESSION = requests.Session()
-SESSION.headers.update(HEADERS)
+def create_session() -> requests.Session:
+    session = requests.Session()
+    session.headers.update(HEADERS)
+    return session
 
-def is_valid_html(html: str, entry_year: str, deptid: str, class_code: str = "") -> bool:
+def is_valid_html(html: str, entry_year: str, deptid: str, class_code: str = "") -> Tuple[bool, str]:
     """判斷抓回來的 HTML 是否有效"""
     if not html:
-        return False
+        return False, "missing_html"
 
     text = BeautifulSoup(html, "html.parser").get_text(" ", strip=True)
 
     if len(text) < 200:
-        return False
+        return False, "too_short"
 
     blocked_keywords = ["請先登入", "查無資料", "發生錯誤", "錯誤", "Error", "404", "500 Internal Server Error"]
-    if any(keyword in text for keyword in blocked_keywords):
-        return False
+    for keyword in blocked_keywords:
+        if keyword in text:
+            return False, f"blocked_keyword_{keyword}"
 
     if str(entry_year) not in text:
-        return False
+        return False, "missing_entry_year"
 
     class_name_map = {
         "B": "學士班",
@@ -38,20 +41,23 @@ def is_valid_html(html: str, entry_year: str, deptid: str, class_code: str = "")
     if class_code:
         class_name = class_name_map.get(class_code)
         if class_name and class_name not in text:
-            return False
+            return False, "missing_class_name"
 
     soup = BeautifulSoup(html, "html.parser")
     tables = soup.find_all("table")
     if not tables:
-        return False
+        return False, "no_table"
 
     positive_keywords = ["查詢修業規則", "必修課程", "學分", "課號", "課名", "輔系", "雙主修", "通識", "先修", "擋修"]
-    return any(keyword in text for keyword in positive_keywords)
+    if any(keyword in text for keyword in positive_keywords):
+        return True, "ok"
+    
+    return False, "no_positive_keyword"
 
-def fetch_requirements_html(entry_year: str, deptid: str, class_code: str, timeout: int = 20) -> Tuple[int, Optional[str]]:
+def fetch_requirements_html(entry_year: str, deptid: str, class_code: str, timeout: int = 20, session: Optional[requests.Session] = None) -> Tuple[int, Optional[str], bool, str]:
     """
     抓取單筆修業規則 HTML
-    回傳 (HTTP 狀態碼, HTML 內容或 None)
+    回傳 (HTTP 狀態碼, HTML 內容或 None, is_valid, reason)
     """
     url = DETAIL_URL_TEMPLATE.format(
         entry_year=entry_year,
@@ -59,20 +65,19 @@ def fetch_requirements_html(entry_year: str, deptid: str, class_code: str, timeo
         class_code=class_code
     )
     
+    session = session or create_session()
     try:
-        response = SESSION.get(url, timeout=timeout)
+        response = session.get(url, timeout=timeout)
         status_code = response.status_code
         response.raise_for_status()
         
         html = response.text
-        if is_valid_html(html, entry_year, deptid, class_code):
-            return status_code, html
-        else:
-            return status_code, ""
+        is_valid, reason = is_valid_html(html, entry_year, deptid, class_code)
+        return status_code, html, is_valid, reason
             
     except requests.RequestException as e:
         status_code = getattr(e.response, "status_code", 500) if hasattr(e, "response") else 500
-        return status_code, None
+        return status_code, None, False, "request_exception"
 
 def get_detail_url(entry_year: str, deptid: str, class_code: str) -> str:
     """產生 detail 頁面 URL"""
@@ -82,15 +87,16 @@ def get_detail_url(entry_year: str, deptid: str, class_code: str) -> str:
         class_code=class_code
     )
 
-def fetch_available_combinations(entry_year: str) -> List[Tuple[str, str]]:
+def fetch_available_combinations(entry_year: str, session: Optional[requests.Session] = None) -> List[Tuple[str, str]]:
     """
     從列表頁面抓取該年度所有有效的 (deptid, class_code) 組合，
     取代窮舉法，大幅減少無效的網路請求。
     """
     url = LIST_URL_TEMPLATE.format(entry_year=entry_year)
+    session = session or create_session()
     for attempt in range(20):
         try:
-            response = SESSION.get(url, timeout=20)
+            response = session.get(url, timeout=20)
             response.raise_for_status()
             soup = BeautifulSoup(response.text, 'html.parser')
             

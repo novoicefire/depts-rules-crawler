@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>校務系統學生及訪客專用簡易版</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" type="text/css" href="adminlte3/css/adminlte.css">
+<link rel="stylesheet" type="text/css" href="plugins/fontawesome-free/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="plugins/fontawesome-free/css/v4-shims.css">
+<link rel="stylesheet" type="text/css" href="css/OverlayScrollbars.min.css">
+<link rel="stylesheet" type="text/css" href="css/student2.css">
+<script src="js/ewpolyfill.min.js"></script>
+<script src="js/loadjs.min.js"></script>
+<script src="js/ewcfg.js"></script>
+<script>
+Object.assign(ew, {
+	LANGUAGE_ID: "zh-tw",
+	DATE_SEPARATOR: "/", // Date separator
+	TIME_SEPARATOR: ":", // Time separator
+	DATE_FORMAT: "yyyy/mm/dd", // Default date format
+	DATE_FORMAT_ID: 5, // Default date format ID
+	DATETIME_WITHOUT_SECONDS: false, // Date/Time without seconds
+	DECIMAL_POINT: ".",
+	THOUSANDS_SEP: ",",
+	SESSION_TIMEOUT: 1170, // Session timeout time (seconds)
+	SESSION_TIMEOUT_COUNTDOWN: 60, // Count down time to session timeout (seconds)
+	SESSION_KEEP_ALIVE_INTERVAL: 0, // Keep alive interval (seconds)
+	RELATIVE_PATH: "", // Relative path
+	IS_LOGGEDIN: false, // Is logged in
+	IS_SYS_ADMIN: false, // Is sys admin
+	CURRENT_USER_NAME: "", // Current user name
+	IS_AUTOLOGIN: false, // Is logged in with option "Auto login until I logout explicitly"
+	TIMEOUT_URL: "logout.php", // Timeout URL // PHP
+	TOKEN_NAME: "token", // Token name
+	API_FILE_TOKEN_NAME: "filetoken", // API file token name
+	API_URL: "api/index.php", // API file name // PHP
+	API_ACTION_NAME: "action", // API action name
+	API_OBJECT_NAME: "object", // API object name
+	API_FIELD_NAME: "field", // API field name
+	API_KEY_NAME: "key", // API key name
+	API_LIST_ACTION: "list", // API list action
+	API_VIEW_ACTION: "view", // API view action
+	API_ADD_ACTION: "add", // API add action
+	API_EDIT_ACTION: "edit", // API edit action
+	API_DELETE_ACTION: "delete", // API delete action
+	API_LOGIN_ACTION: "login", // API login action
+	API_FILE_ACTION: "file", // API file action
+	API_UPLOAD_ACTION: "upload", // API upload action
+	API_JQUERY_UPLOAD_ACTION: "jupload", // API jQuery upload action
+	API_SESSION_ACTION: "session", // API get session action
+	API_LOOKUP_ACTION: "lookup", // API lookup action
+	API_LOOKUP_PAGE: "page", // API lookup page name
+	API_PROGRESS_ACTION: "progress", // API progress action
+	API_EXPORT_CHART_ACTION: "chart", // API export chart action
+	API_JWT_AUTHORIZATION_HEADER: "X-Authorization", // API JWT authorization header
+	API_JWT_TOKEN: "", // API JWT token
+	USE_URL_REWRITE: false, // URL rewrite
+	MULTIPLE_OPTION_SEPARATOR: ",", // Multiple option separator
+	AUTO_SUGGEST_MAX_ENTRIES: 10, // Auto-Suggest max entries
+	IMAGE_FOLDER: "images/", // Image folder
+	SESSION_ID: "J31Bfw0mDph2Ew8EU_Fqr9EE-oZ2TsnYkIRufsFY99w.", // Session ID
+	UPLOAD_THUMBNAIL_WIDTH: 200, // Upload thumbnail width
+	UPLOAD_THUMBNAIL_HEIGHT: 0, // Upload thumbnail height
+	MULTIPLE_UPLOAD_SEPARATOR: ",", // Upload multiple separator
+	IMPORT_FILE_ALLOWED_EXT: "csv,xls,xlsx", // Import file allowed extensions
+	USE_COLORBOX: true,
+	USE_JAVASCRIPT_MESSAGE: false,
+	PROJECT_STYLESHEET_FILENAME: "css/student2.css", // Project style sheet
+	PDF_STYLESHEET_FILENAME: "", // PDF style sheet // PHP
+	EMBED_PDF: false,
+	ANTIFORGERY_TOKEN: "fhqZc4SPZDgZ92V8TKk0dg..", // PHP
+	CSS_FLIP: false,
+	LAZY_LOAD: true,
+	USE_RESPONSIVE_TABLE: true,
+	RESPONSIVE_TABLE_CLASS: "table-responsive",
+	DEBUG: false,
+	SEARCH_FILTER_OPTION: "Client",
+	OPTION_HTML_TEMPLATE: "<span class=\"ew-option\">{value}</span>"});
+loadjs("jquery/jquery.min.js", "jquery");
+loadjs([
+	"js/mobile-detect.min.js",
+	"js/purify.min.js",
+	"jquery/load-image.all.min.js"
+], "others");
+ew.language = new ew.Language({"addbtn":"新增","cancelbtn":"取消","changepwd":"變更密碼","clickrecaptcha":"請點擊 reCAPTCHA","closebtn":"關閉","confirmbtn":"確認","confirmcancel":"請問您要取消嗎 ?","countselected":"%s 被選取","currentpassword":"目前密碼: ","danger":"Error","deleteconfirmmsg":"您確認要刪除此筆資料嗎?","deletefilterconfirm":"刪除的篩選條件是[ %s ] ?","editbtn":"編修","enterfiltername":"請輸入篩選條件的名稱","enternewpassword":"請輸入新密碼","enteroldpassword":"請輸入舊密碼","enterpassword":"請輸入密碼","enterpwd":"請輸入密碼","enterusername":"請輸入使用者帳號","entervalidatecode":"請輸入驗證碼","entersenderemail":"請輸入寄件者 email","enterpropersenderemail":"寄件者 email 數量超過限制或 email 地址錯誤","enterrecipientemail":"請輸入收件者 email 地址","enterproperrecipientemail":"收件者 email 數量超過限制或 email 地址錯誤","enterproperccemail":"副本收件者 email 數量超過限制或 email 地址錯誤","enterproperbccemail":"密件副本收件者 email 數量超過限制或 email 地址錯誤","entersubject":"請輸入主旨","enteruid":"請輸入使用者帳號","entervalidemail":"請輸入有效的 Email 地址!","exportchart":"Exporting chart: ","exportchartdata":"Exporting chart data","exportcharterror":"Failed to export chart: ","exporting":"正在匯出中, 請稍侯...","exportingchart":"Exporting chart (%c of %t), please wait...","exporttoemailtext":"Email","failedtoexport":"匯出失敗","filtername":"篩選條件名稱","importmessageerror1":"Imported %c of %t records from %f (success: %s, failure: %e)","importmessageerror2":", error: %e","importmessageerror3":"row %i: %d","importmessageerror4":"log file: %l","importmessagemore":"(%s more)","importmessageprogress":"Importing %c of %t records from %f...","importmessageservererror":"Server error %s: %t","importmessagesuccess":"Imported %c of %t records from %f successfully","importmessageuploaderror":"Failed to upload %f: %s","importmessageuploadcomplete":"Upload completed","importmessageuploadprogress":"Uploading...(p%)","importmessagepleaseselect":"Please select file","importmessageincorrectfiletype":"Incorrect file type","importtext":"Import","incorrectemail":"email 格式錯誤","incorrectfield":"欄位不正確","incorrectfloat":"浮點數值格式錯誤","incorrectguid":"不正確的 GUID","incorrectinteger":"整數格式錯誤","incorrectphone":"電話號碼錯誤","incorrectrange":"數值必須介於 %1 與 %2 之間","incorrectregexp":"Regular expression not matched","incorrectssn":"Incorrect social security number","incorrectzip":"Incorrect ZIP code","info":"Information","insertfailed":"新增失敗","invalidrecord":"資料錯誤! 鍵值是空的!","lightboxtitle":" ","lightboxcurrent":"影像 {current} ／ {total}","lightboxprevious":"前一頁","lightboxnext":"下一頁","lightboxclose":"關閉","lightboxxhrerror":"內容載入失敗.","lightboximgerror":"影像載入失敗.","loading":"載入中 ...","login":"登入","maxfilesize":"超過檔案大小限制 (%s bytes).","messageok":"OK","mismatchpassword":"密碼不正確","missingpdfobject":"Missing PDFObject","more":"更多","next":"下一個","noaddrecord":"沒有任何資料被新增","nofieldselected":"沒有任何欄位被選取更新","nochartdata":"No data to display","norecord":"找不到相符資料","norecordselected":"沒有資料被選取","of":"／","overwritebtn":"覆寫","page":"頁次:","passwordstrength":"密碼強度: %p","passwordtoosimple":"您的密碼太簡單了 !","permissionadd":"Add/Copy","permissionadmin":"Admin","permissiondelete":"Delete","permissionedit":"Edit","permissionimport":"Import","permissionlistsearchview":"List/Search/View","permissionlist":"List","permissionlookup":"Lookup","permissionsearch":"Search","permissionview":"View","pleaseselect":"請選取","pleasewait":"請稍待 ...","prev":"前","quicksearchauto":"自動","quicksearchautoshort":"","quicksearchall":"所有的關鍵字","quicksearchallshort":"全部","quicksearchany":"任何關鍵字","quicksearchanyshort":"任何","quicksearchexact":"完全符合","quicksearchexactshort":"符合","record":"資料項次:","recordsperpage":"每頁資料筆數:","reloadbtn":"重新載入","savebtn":"儲存","search":"搜尋","searchbtn":"搜尋","selectbtn":"選取","sendemailsuccess":"Email 寄送成功","sessionwillexpire":"您的 session 將在 %s 秒逾期. 請按 OK 延續您的 session.","sessionexpired":"您的 session 已逾期.","success":"Success","tableorview":"資料表","updatebtn":"更新","uploading":"上傳中...","uploadstart":"開始上傳","uploadcancel":"取消上傳","uploaddelete":"刪除上傳","uploadoverwrite":"是否覆蓋舊檔案?","uploaderrmsgmaxfilesize":"上傳的檔案太大 !","uploaderrmsgminfilesize":"上傳的檔案太小 !","uploaderrmsgacceptfiletypes":"上傳的檔案類型不符合規定 !","uploaderrmsgmaxnumberoffiles":"超過上傳檔案數目上限 !","uploaderrmsgmaxfilelength":"上傳檔名字數超過限制","useradministrator":"管理者","useranonymous":"匿名訪客","userdefault":"預設","userleveladministratorname":"User level name for user level -1 must be 'Administrator'","userlevelanonymousname":"User level name for user level -2 must be 'Anonymous'","userlevelidinteger":"User Level ID must be integer","userleveldefaultname":"User level name for user level 0 must be 'Default'","userlevelidincorrect":"User defined User Level ID must be larger than 0","userlevelnameincorrect":"User defined User Level name cannot be 'Administrator' or 'Default'","valuenotexist":"值不存在錯誤 !","warning":"Warning","wrongfiletype":"檔案格式不支援"});ew.vars = {"login":{"isLoggedIn":false,"currentUserName":null,"logoutUrl":"window.location='logout.php';return false;","logoutText":"登出","canLogout":false,"loginUrl":"window.location='login.php';return false;","loginText":"登入","canLogin":true},"languages":{"languages":[{"id":"icon","desc":"icon","selected":false},{"id":"zh-tw","desc":"zh-tw","selected":true}]}};
+ew.ready("jquery", "jquery/jsrender.min.js", "jsrender", ew.renderJsTemplates);
+ew.ready("jsrender", "jquery/jquery.overlayScrollbars.min.js", "scrollbars", ew.initSidebarScrollbars); // Init sidebar scrollbars after rendering menu
+ew.ready("jquery", "jquery/jquery.ui.widget.min.js", "widget");
+ew.loadjs(["moment/moment.min.js", "js/Chart.min.js"], "moment");
+</script>
+<script>
+ew.vars.navbar = {"items":null,"accordion":false};
+</script><script>
+ew.vars.menu = {"items":[{"id":518,"name":"mi_News","text":"系統公告","parentId":-1,"level":0,"href":"News.php","attrs":"","target":"","isHeader":false,"active":false,"icon":"","label":"","isNavbarItem":false,"items":null,"open":false},{"id":106,"name":"mci_其他系統或服務(SSO)","text":"其他系統或服務(SSO)","parentId":-1,"level":0,"href":"#","attrs":" onclick=\"return false;\"","target":"","isHeader":false,"active":false,"icon":"","label":"","isNavbarItem":false,"items":[{"id":288,"name":"mci_　全校授權軟體下載系統","text":"　全校授權軟體下載系統","parentId":106,"level":1,"href":"https://ccweb.ncnu.edu.tw/softlib","attrs":"","target":"","isHeader":false,"active":false,"icon":"","label":"","isNavbarItem":false,"items":null,"open":false},{"id":895,"name":"mi_aspmaker_student_query_current_semester_literacylecture_view","text":"　本學期的通識講座明細","parentId":106,"level":1,"href":"aspmaker_student_query_current_semester_literacylecture_viewlist.php","attrs":"","target":"","isHeader":false,"active":false,"icon":"","label":"","isNavbarItem":false,"items":null,"open":false},{"id":109,"name":"mci_　活動報名系統","text":"　活動報名系統","parentId":106,"level":1,"href":"https://ccweb.ncnu.edu.tw/SLLL","attrs":"","target":"","isHeader":false,"active":false,"icon":"","label":"","isNavbarItem":false,"items":null,"open":false},{"id":107,"name":"mci_　實驗室安全衛生管理系統","text":"　實驗室安全衛生管理系統","parentId":106,"level":1,"href":"https://ccweb6.ncnu.edu.tw/safetylab","attrs":"","target":"","isHeader":false,"active":false,"icon":"","label":"","isNavbarItem":false,"items":null,"open":false},{"id":114,"name":"mci_　各單位法規及表單","text":"　各單位法規及表單","parentId":106,"level":1,"href":"https://ccweb6.ncnu.edu.tw/law","attrs":"","target":"","isHeader":false,"active":false,"icon":"","label":"","isNavbarItem":false,"items":null,"open":false},{"id":404,"name":"mci_　諮商輔導服務系統","text":"　諮商輔導服務系統","parentId":106,"level":1,"href":"https://ccweb.ncnu.edu.tw/coun","attrs":"","target":"","isHeader":false,"active":false,"icon":"","label":"","isNavbarItem":false,"items":null,"open":false},{"id":110,"name":"mci_　學生宿舍包裹掛號待領","text":"　學生宿舍包裹掛號待領","parentId":106,"level":1,"href":"https://ccweb.ncnu.edu.tw/dormMail","attrs":"","target":"","isHeader":false,"active":false,"icon":"","label":"","isNavbarItem":false,"items":null,"open":false},{"id":115,"name":"mci_　文書組包裹掛號待領","text":"　文書組包裹掛號待領","parentId":106,"level":1,"href":"https://ccweb.ncnu.edu.tw/registered_letter","attrs":"","target":"","isHeader":false,"active":false,"icon":"","label":"","isNavbarItem":false,"items":null,"open":false},{"id":763,"name":"mci_　畢業生離校系統","text":"　畢業生離校系統","parentId":106,"level":1,"href":"https://ccweb6.ncnu.edu.tw/graduate_leave_exam","attrs":"","target":"","isHeader":false,"active":false,"icon":"","label":"","isNavbarItem":false,"items":null,"open":false}],"open":false},{"id":890,"name":"mci_學生人數各項統計","text":"學生人數各項統計","parentId":-1,"level":0,"href":"#","attrs":" onclick=\"return false;\"","target":"","isHeader":false,"active":false,"icon":"","label":"","isNavbarItem":false,"items":[{"id":768,"name":"mi_ncnu_detpt_student_stat_view","text":"各系所學生人數統計","parentId":890,"level":1,"href":"ncnu_detpt_student_stat_viewlist.php","attrs":"","target":"","isHeader":false,"active":false,"icon":"","label":"","isNavbarItem":false,"items":null,"open":false},{"id":769,"name":"mi_ncnu_detpt_class_student_stat_view","text":"各系所部別學生人數統計","parentId":890,"level":1,"href":"ncnu_detpt_class_student_stat_viewlist.php","attrs":"","target":"","isHeader":false,"active":false,"icon":"","label":"","isNavbarItem":false,"items":null,"open":false},{"id":52,"name":"mi_ncnu_detpt_class_entry_student_stat_view","text":"各系所入學年度學生人數","parentId":890,"level":1,"href":"ncnu_detpt_class_entry_student_stat_viewlist.php","attrs":"","target":"","isHeader":false,"active":false,"icon":"","label":"","isNavbarItem":false,"items":null,"open":false}],"open":false},{"id":117,"name":"mi_DeptQuery","text":"系所學程資訊查詢","parentId":-1,"level":0,"href":"DeptQuerylist.php","attrs":"","target":"","isHeader":false,"active":false,"icon":"","label":"","isNavbarItem":false,"items":null,"open":false},{"id":1,"name":"mi_aspmaker_course_opened_semester_stat_view","text":"各系所歷年開課統計","parentId":-1,"level":0,"href":"aspmaker_course_opened_semester_stat_viewlist.php","attrs":"","target":"","isHeader":false,"active":false,"icon":"","label":"","isNavbarItem":false,"items":null,"open":false},{"id":767,"name":"mi_current_semester_opened_list","text":"本學期開設課程","parentId":-1,"level":0,"href":"current_semester_opened_listlist.php?cmd=resetall","attrs":"","target":"","isHeader":false,"active":false,"icon":"","label":"","isNavbarItem":false,"items":null,"open":false},{"id":40,"name":"mi_aspmaker_course_opened_detail_view","text":"歷年開設課程明細","parentId":-1,"level":0,"href":"aspmaker_course_opened_detail_viewlist.php?cmd=resetall","attrs":"","target":"","isHeader":false,"active":false,"icon":"","label":"","isNavbarItem":false,"items":null,"open":false},{"id":51,"name":"mi_aspmaker_dept_student_graduation_requirements_M_view","text":"查詢修業規則","parentId":-1,"level":0,"href":"aspmaker_dept_student_graduation_requirements_M_viewlist.php","attrs":"","target":"","isHeader":false,"active":false,"icon":"","label":"","isNavbarItem":false,"items":null,"open":false},{"id":303,"name":"mi_ncnu_coremin_schoolrequire_detail_view","text":"查詢學士班核心課程","parentId":-1,"level":0,"href":"ncnu_coremin_schoolrequire_detail_viewlist.php","attrs":"","target":"","isHeader":false,"active":false,"icon":"","label":"","isNavbarItem":false,"items":null,"open":false},{"id":304,"name":"mi_ncnu_coremin_schoolrequire_opened_detail_view","text":"學士班核心課程開課明細","parentId":-1,"level":0,"href":"ncnu_coremin_schoolrequire_opened_detail_viewlist.php?cmd=resetall","attrs":"","target":"","isHeader":false,"active":false,"icon":"","label":"","isNavbarItem":false,"items":null,"open":false}],"accordion":true};
+</script><script>
+var cssfiles = [
+	"css/Chart.min.css",
+	"css/jquery.fileupload.css",
+	"css/jquery.fileupload-ui.css"
+];
+cssfiles.push("colorbox/colorbox.css");
+loadjs(cssfiles, "css");
+var cssjs = [];
+var jqueryjs = [
+	"adminlte3/js/adminlte.js",
+	"bootstrap4/js/bootstrap.bundle.min.js",
+	"jquery/jquery.fileDownload.min.js",
+	"jquery/jqueryfileupload.min.js",
+	"jquery/typeahead.jquery.min.js"
+];
+jqueryjs.push("colorbox/jquery.colorbox-min.js");
+ew.ready(["jquery", "widget", "scrollbars", "moment", "others"], [jqueryjs, "js/ew.js"], "makerjs");
+ew.ready("makerjs", [cssjs, "js/userfn.js"], "head");
+</script>
+<script>
+loadjs("css/tempusdominus-bootstrap-4.css");
+ew.ready("head", ["js/tempusdominus-bootstrap-4.js", "js/ewdatetimepicker.js"], "datetimepicker");
+loadjs.ready("datetimepicker", function() {
+	var $= jQuery;
+	$.fn.datetimepicker.Constructor.Default = $.extend({}, $.fn.datetimepicker.Constructor.Default, {
+		icons: {
+			time: 'far fa-clock',
+			date: 'far fa-calendar-alt',
+			up: 'fas fa-arrow-up',
+			down: 'fas fa-arrow-down',
+			previous: 'fas fa-chevron-left',
+			next: 'fas fa-chevron-right',
+			today: 'far fa-calendar-check',
+			clear: 'fas fa-trash',
+			close: 'fas fa-times'
+		}
+	});
+});
+</script>
+<script>
+loadjs.ready("head", function() {
+
+	// Global client script
+	// Write your client script here, no need to add script tags.
+
+});
+</script>
+<!-- Navbar -->
+<script type="text/html" id="navbar-menu-items" class="ew-js-template" data-name="navbar" data-seq="10" data-data="navbar" data-method="appendTo" data-target="#ew-navbar">
+{{if items}}
+	{{for items}}
+		<li id="{{:id}}" name="{{:name}}" class="{{if parentId == -1}}nav-item ew-navbar-item{{/if}}{{if isHeader && parentId > -1}}dropdown-header{{/if}}{{if items}} dropdown{{/if}}{{if items && parentId != -1}} dropdown-submenu{{/if}}{{if items && level == 1}} dropdown-hover{{/if}} d-none d-md-block">
+			{{if isHeader && parentId > -1}}
+				{{if icon}}<i class="{{:icon}}"></i>{{/if}}
+				<span>{{:text}}</span>
+			{{else}}
+			<a href="{{:href}}"{{if target}} target="{{:target}}"{{/if}}{{if attrs}}{{:attrs}}{{/if}} class="{{if parentId == -1}}nav-link{{else}}dropdown-item{{/if}}{{if active}} active{{/if}}{{if items}} dropdown-toggle ew-dropdown{{/if}}"{{if items}} role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"{{/if}}>
+				{{if icon}}<i class="{{:icon}}"></i>{{/if}}
+				<span>{{:text}}</span>
+			</a>
+			{{/if}}
+			{{if items}}
+			<ul class="dropdown-menu">
+				{{include tmpl="#navbar-menu-items"/}}
+			</ul>
+			{{/if}}
+		</li>
+	{{/for}}
+{{/if}}
+</script>
+<!-- Sidebar -->
+<script type="text/html" class="ew-js-template" data-name="menu" data-seq="10" data-data="menu" data-target="#ew-menu">
+{{if items}}
+	<ul class="nav nav-pills nav-sidebar nav-child-indent flex-column" data-widget="treeview" role="menu" data-accordion="{{:accordion}}">
+	{{include tmpl="#menu-items"/}}
+	</ul>
+{{/if}}
+</script>
+<script type="text/html" id="menu-items">
+{{if items}}
+	{{for items}}
+		<li id="{{:id}}" name="{{:name}}" class="{{if isHeader}}nav-header{{else}}nav-item{{if items}} has-treeview{{/if}}{{if active}} active current{{/if}}{{if open}} menu-open{{/if}}{{/if}}{{if isNavbarItem}} d-block d-md-none{{/if}}">
+			{{if isHeader}}
+				{{if icon}}<i class="{{:icon}}"></i>{{/if}}
+				<span>{{:text}}</span>
+				{{if label}}
+				<span class="right">
+					{{:label}}
+				</span>
+				{{/if}}
+			{{else}}
+			<a href="{{:href}}" class="nav-link{{if active}} active{{/if}}"{{if target}} target="{{:target}}"{{/if}}{{if attrs}}{{:attrs}}{{/if}}>
+				{{if icon}}<i class="nav-icon {{:icon}}"></i>{{/if}}
+				<p><span class="menu-item-text">{{:text}}</span>
+					{{if items}}
+						<i class="right fas fa-angle-left"></i>
+						{{if label}}
+							<span class="right">
+								{{:label}}
+							</span>
+						{{/if}}
+					{{else}}
+						{{if label}}
+							<span class="right">
+								{{:label}}
+							</span>
+						{{/if}}
+					{{/if}}
+				</p>
+			</a>
+			{{/if}}
+			{{if items}}
+			<ul class="nav nav-treeview"{{if open}} style="display: block;"{{/if}}>
+				{{include tmpl="#menu-items"/}}
+			</ul>
+			{{/if}}
+		</li>
+	{{/for}}
+{{/if}}
+</script>
+<script type="text/html" class="ew-js-template" data-name="languages" data-seq="10" data-data="languages" data-method="prependTo" data-target=".navbar-nav.ml-auto">
+{{for languages}}<li class="nav-item"><a href="#" class="nav-link{{if selected}} active{{/if}} ew-tooltip" title="{{>desc}}" onclick="ew.setLanguage(this);" data-language="{{:id}}">{{:id}}</a></li>{{/for}}</script>
+<script type="text/html" class="ew-js-template" data-name="login" data-seq="10" data-data="login" data-method="appendTo" data-target=".navbar-nav.ml-auto">
+{{if isLoggedIn}}
+<li class="nav-item dropdown text-body">
+	<a class="nav-link" data-toggle="dropdown" href="#">
+		<i class="fas fa-user"></i>
+	</a>
+	<div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+		<div class="dropdown-item p-3"><i class="fas fa-user mr-2"></i>{{:currentUserName}}</div>
+		{{if (hasPersonalData || canChangePassword)}}
+		<div class="dropdown-divider"></div>
+		<div class="text-nowrap p-3">
+			{{if hasPersonalData}}
+			<a class="btn btn-default" href="#" onclick="{{:personalDataUrl}}">{{:personalDataText}}</a>
+			{{/if}}
+			{{if canChangePassword}}
+			<a class="btn btn-default" href="#" onclick="{{:changePasswordUrl}}">{{:changePasswordText}}</a>
+			{{/if}}
+		</div>
+		{{/if}}
+		{{if canLogout}}
+		<div class="dropdown-divider"></div>
+		<div class="dropdown-footer p-2 text-right">
+			<a class="btn btn-default" href="#" onclick="{{:logoutUrl}}">{{:logoutText}}</a>
+		</div>
+		{{/if}}
+	</div>
+<li>
+{{else}}
+	{{if canLogin}}
+<li class="nav-item"><a class="nav-link" href="#" onclick="{{:loginUrl}}">{{:loginText}}</a></li>
+	{{/if}}
+{{/if}}
+</script>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<meta name="generator" content="PHPMaker 2020">
+</head>
+<body class="hold-transition layout-fixed" dir="ltr">
+<div class="wrapper ew-layout">
+	<!-- Main Header -->
+	<!-- Navbar -->
+	<nav class="main-header navbar navbar-expand navbar-primary navbar-dark">
+		<!-- Left navbar links -->
+		<ul id="ew-navbar" class="navbar-nav">
+			<li class="nav-item d-block">
+				<a class="nav-link" data-widget="pushmenu" href="#" onclick="return false;"><i class="fas fa-bars"></i></a>
+			</li>
+			<a class="navbar-brand d-none" href="#"  onclick="return false;">
+				<span class="brand-text">學生及訪客專用簡易版</span>
+			</a>
+		</ul>
+		<!-- Right navbar links -->
+		<ul id="ew-navbar-right" class="navbar-nav ml-auto"></ul>
+	</nav>
+	<!-- /.navbar -->
+	<!-- Main Sidebar Container -->
+	<aside class="main-sidebar sidebar-dark-primary">
+		<!-- Brand Logo //** Note: Only licensed users are allowed to change the logo ** -->
+<!-- ============================================================= 
+
+// modified by wcchien@ncnu.edu.tw 2020/2/1
+//		<a href="#" class="brand-link">
+//					
+
+<span class="brand-text">學生及訪客專用簡易版</span>
+
+// ============================================================= -->
+		<a href="#" class="brand-link" data-widget="pushmenu" onclick="return false;" >
+			<i class="fas fa-bars"></i> 
+<span class="brand-text">學生及訪客專用簡易版</span>
+		</a>
+		<!-- Sidebar -->
+		<div class="sidebar">
+			<!-- Sidebar Menu -->
+			<nav id="ew-menu" class="mt-2"></nav>
+			<!-- /.sidebar-menu -->
+		</div>
+		<!-- /.sidebar -->
+	</aside>
+	<!-- Content Wrapper. Contains page content -->
+	<div class="content-wrapper">
+		<!-- Content Header (Page header) -->
+		<div class="content-header">
+				<div class="container-fluid">
+				<div class="row mb-2">
+				<div class="col-sm-6">
+					<h1 class="m-0 text-dark">查詢修業規則 <small class="text-muted">檢視</small></h1>
+				</div><!-- /.col -->
+<!-- ============================================================= 			
+
+//
+// modified by wcchien@ncnu.edu.tw 2019/12/18
+//				<div class="col-sm-6">
+// ============================================================= -->
+
+				<div>
+					<ol class="breadcrumb float-sm-right ew-breadcrumbs"><li class="breadcrumb-item" id="ew-breadcrumb1"><a href="News.php" class="ew-home">主畫面</a></li><li class="breadcrumb-item" id="ew-breadcrumb2"><a href="aspmaker_dept_student_graduation_requirements_M_viewlist.php"><span id="ew-page-caption">查詢修業規則</span></a></li><li class="breadcrumb-item active" id="ew-breadcrumb3">檢視</li></ol>				</div><!-- /.col -->
+				</div><!-- /.row -->
+			</div><!-- /.container-fluid -->
+			</div>
+		<!-- /.content-header -->
+		<!-- Main content -->
+		<section class="content">
+		<div class="container-fluid">
+<script>
+var faspmaker_dept_student_graduation_requirements_M_viewview, currentPageID;
+loadjs.ready("head", function() {
+
+	// Form object
+	currentPageID = ew.PAGE_ID = "view";
+	faspmaker_dept_student_graduation_requirements_M_viewview = currentForm = new ew.Form("faspmaker_dept_student_graduation_requirements_M_viewview", "view");
+	loadjs.done("faspmaker_dept_student_graduation_requirements_M_viewview");
+});
+</script>
+<script>
+loadjs.ready("head", function() {
+
+	// Client script
+	// Write your client script here, no need to add script tags.
+
+});
+</script>
+<div class="btn-toolbar ew-toolbar">
+<span class="ew-export-option ew-list-option-separator text-nowrap" data-name="button"><div class="btn-group btn-group-sm ew-btn-group"><a class="btn btn-default ew-export-link ew-print"  href="aspmaker_dept_student_graduation_requirements_M_viewview.php?export=print&amp;deptid=12&amp;class_code=B&amp;entry_year=112" title="友善列印" data-caption="友善列印">友善列印</a><a class="btn btn-default ew-export-link ew-word"  href="aspmaker_dept_student_graduation_requirements_M_viewview.php?export=word&amp;deptid=12&amp;class_code=B&amp;entry_year=112" title="匯出 Word" data-caption="匯出 Word">Word</a><a class="btn btn-default ew-export-link ew-html"  href="aspmaker_dept_student_graduation_requirements_M_viewview.php?export=html&amp;deptid=12&amp;class_code=B&amp;entry_year=112" title="匯出 HTML" data-caption="匯出 HTML">HTML</a></div></span><div class="clearfix"></div>
+</div>
+<div class="ew-message-dialog"></div><form name="ew-pager-form" class="form-inline ew-form ew-pager-form" action="aspmaker_dept_student_graduation_requirements_M_viewview.php">
+<div class="ew-pager">
+	<span>頁次:&nbsp;</span>
+	<div class="ew-prev-next">
+		<div class="input-group input-group-sm">
+			<div class="input-group-prepend">
+				<!-- first page button -->
+				<a class="btn btn-default" title="第一頁" href="aspmaker_dept_student_graduation_requirements_M_viewview.php?start=1"><i class="icon-first ew-icon"></i></a>
+				<!-- previous page button -->
+				<a class="btn btn-default" title="前一頁" href="aspmaker_dept_student_graduation_requirements_M_viewview.php?start=30"><i class="icon-prev ew-icon"></i></a>
+			</div>
+			<!-- current page number --><input class="form-control" type="text" data-pagesize="1" data-pagecount="75" name="pageno" value="31">
+			<div class="input-group-append">
+				<!-- next page button -->
+				<a class="btn btn-default" title="下一頁" href="aspmaker_dept_student_graduation_requirements_M_viewview.php?start=32"><i class="icon-next ew-icon"></i></a>
+				<!-- last page button -->
+				<a class="btn btn-default" title="最後頁" href="aspmaker_dept_student_graduation_requirements_M_viewview.php?start=75"><i class="icon-last ew-icon"></i></a>
+			</div>
+		</div>
+	</div>
+	<span>&nbsp;／&nbsp;75</span>
+	<div class="clearfix"></div>
+</div><div class="ew-pager ew-rec">
+	<span>資料項次: 31 ～ 31 ／ 75</span>
+</div><div class="clearfix"></div>
+</form>
+<form name="faspmaker_dept_student_graduation_requirements_M_viewview" id="faspmaker_dept_student_graduation_requirements_M_viewview" class="form-inline ew-form ew-view-form" action="aspmaker_dept_student_graduation_requirements_M_viewview.php" method="post">
+<input type="hidden" name="token" value="fhqZc4SPZDgZ92V8TKk0dg..">
+<input type="hidden" name="t" value="aspmaker_dept_student_graduation_requirements_M_view">
+<input type="hidden" name="modal" value="0">
+<table class="table table-striped table-sm ew-view-table">
+	<tr id="r_deptid">
+		<td class="w-col-2"><span id="elh_aspmaker_dept_student_graduation_requirements_M_view_deptid">系所</span></td>
+		<td data-name="deptid" >
+<span id="el_aspmaker_dept_student_graduation_requirements_M_view_deptid">
+<span>12, 國際企業學系</span>
+</span>
+</td>
+	</tr>
+	<tr id="r_class_desc">
+		<td class="w-col-2"><span id="elh_aspmaker_dept_student_graduation_requirements_M_view_class_desc">部別</span></td>
+		<td data-name="class_desc" >
+<span id="el_aspmaker_dept_student_graduation_requirements_M_view_class_desc">
+<span>學士班</span>
+</span>
+</td>
+	</tr>
+	<tr id="r_entry_year">
+		<td class="w-col-2"><span id="elh_aspmaker_dept_student_graduation_requirements_M_view_entry_year">入學年度</span></td>
+		<td data-name="entry_year" >
+<span id="el_aspmaker_dept_student_graduation_requirements_M_view_entry_year">
+<span>112</span>
+</span>
+</td>
+	</tr>
+</table>
+</form>
+112 學年度入學國際企業學系學士班必修課程清單<table class='ncnu_table1'  style=' font-size:10pt'>
+<tr class='Corner'><th>課號</th><th>課名</th><th>學分</th></tr>
+<tr><td>120001</td><td>經濟學及實習(上)	Economics & Practice (1)</td><td align='right'>3</td></tr>
+<tr><td>120013</td><td>微積分及實習(上)	Calculus & Practice (1)</td><td align='right'>3</td></tr>
+<tr><td>120014</td><td>經濟學及實習(下)	Economics & Practice (2)</td><td align='right'>3</td></tr>
+<tr><td>120019</td><td>微積分及實習(下)	Calculus & Practice (2)</td><td align='right'>3</td></tr>
+<tr><td>120024</td><td>統計學及實習(上)	Statistics and Practice (1)</td><td align='right'>3</td></tr>
+<tr><td>120045</td><td>統計學及實習(下)	Statistics and Practice (2)</td><td align='right'>3</td></tr>
+<tr><td>120110</td><td>組織行為	Organization Behavior</td><td align='right'>3</td></tr>
+<tr><td>120132</td><td>國際財務管理	International Financial Management</td><td align='right'>3</td></tr>
+<tr><td>120134</td><td>企業管理專題(一)	Seminars on Business Management (I)</td><td align='right'>1</td></tr>
+<tr><td>120144</td><td>企業管理專題（二）	Seminars on Business Management(Ⅱ)</td><td align='right'>1</td></tr>
+<tr><td>120154</td><td>國際禮儀與商務溝通技巧	Etiquette and Communication in International Business</td><td align='right'>2</td></tr>
+<tr><td>120155</td><td>財務管理	Financial Management</td><td align='right'>3</td></tr>
+<tr><td>120156</td><td>行銷管理	Marketing Management</td><td align='right'>3</td></tr>
+<tr><td>120159</td><td>國際企業管理	International Business Management</td><td align='right'>3</td></tr>
+<tr><td>120167</td><td>國際策略管理	Strategic Management of Multinational Corporations</td><td align='right'>3</td></tr>
+<tr><td>120202</td><td>會計學及實習(二)	Accounting and Practice(2)</td><td align='right'>3</td></tr>
+<tr><td>120219</td><td>程式設計(上)	Programming (1)</td><td align='right'>3</td></tr>
+<tr><td>120221</td><td>高爾夫球	Golf</td><td align='right'>1</td></tr>
+<tr><td>C20005</td><td>會計學及實習(一)	Financial Accounting(1)</td><td align='right'>3</td></tr>
+<tr><td>C20006</td><td>管理學	Management</td><td align='right'>3</td></tr>
+<tr style='font-weight:bold'><td>合計</td><td>共　20　門課程　53　學分</td><td></td></tr>
+</table><br>112 學年度入學國際企業學系課程先修(擋修)清單<table class='ncnu_table1'  style=' font-size:10pt'>
+<tr class='Corner'><th>課號</th><th>課名</th><th>先修課號</th><th>先修課名</th></tr>
+<tr><td>120026</td><td>國際企業管理	International Business Management</td><td>120002</td><td>管理學	Management</td></tr>
+<tr><td>120027</td><td>成本會計學及實習(上)	Cost Accounting & Practice (1)</td><td>120003</td><td>會計學及實習(上)	Accounting & Practice (1)</td></tr>
+<tr><td>120032</td><td>國貿理論與政策(上)	International Trade Theory and policy (1)</td><td>120001</td><td>經濟學及實習(上)	Economics & Practice (1)</td></tr>
+<tr><td>120040</td><td>投資學	Investment</td><td>120155</td><td>財務管理	Financial Management</td></tr>
+<tr><td>120041</td><td>國貿理論與政策(下)	International Trade Theory and Policy (2)</td><td>120014</td><td>經濟學及實習(下)	Economics & Practice (2)</td></tr>
+<tr><td>120042</td><td>成本會計學及實習(下)	Cost Accounting and Practice (2)</td><td>120015</td><td>會計學及實習(下)	Accounting & Practice (2)</td></tr>
+<tr><td>120044</td><td>國際行銷管理	International Marketing Management</td><td>120033</td><td>行銷學	Marketing</td></tr>
+<tr><td>120056</td><td>金融市場	Financial Market</td><td>120028</td><td>財務管理	Financial Management</td></tr>
+<tr><td>120065</td><td>第二外國語:法文二(上)	French Ⅱ(1)</td><td>120029</td><td>第二外國語:法文一(上)	French I(1)</td></tr>
+<tr><td>120065</td><td>第二外國語:法文二(上)	French Ⅱ(1)</td><td>120049</td><td>第二外國語:法文一(下)	French Ⅰ(2)</td></tr>
+<tr><td>120066</td><td>第二外國語:日文二(上)	Japanese Ⅱ(1)</td><td>120031</td><td>第二外國語:日文一(上)	Japanese Ⅰ(1)</td></tr>
+<tr><td>120066</td><td>第二外國語:日文二(上)	Japanese Ⅱ(1)</td><td>120050</td><td>第二外國語:日文一(下)	Japanese Ⅰ(2)</td></tr>
+<tr><td>120067</td><td>第二外國語:德文二(上)	German Ⅱ(1)</td><td>120036</td><td>第二外國語:德文一(上)	German I(1)</td></tr>
+<tr><td>120067</td><td>第二外國語:德文二(上)	German Ⅱ(1)</td><td>120051</td><td>第二外國語:德文一(下)	German Ⅰ(2)</td></tr>
+<tr><td>120086</td><td>國際企業經營決策	International Business Strategy</td><td>120026</td><td>國際企業管理	International Business Management</td></tr>
+<tr><td>120093</td><td>中級會計學(上)	Intermediate Accounting (1)</td><td>120003</td><td>會計學及實習(上)	Accounting & Practice (1)</td></tr>
+<tr><td>120100</td><td>迴歸分析及實習	Regression  Analysis and Practice</td><td>120024</td><td>統計學及實習(上)	Statistics and Practice (1)</td></tr>
+<tr><td>120100</td><td>迴歸分析及實習	Regression  Analysis and Practice</td><td>120045</td><td>統計學及實習(下)	Statistics and Practice (2)</td></tr>
+<tr><td>120104</td><td>中級會計學(下)	Intermediate Accounting (2)</td><td>120015</td><td>會計學及實習(下)	Accounting & Practice (2)</td></tr>
+<tr><td>120159</td><td>國際企業管理	International Business Management</td><td>C20006</td><td>管理學	Management</td></tr>
+<tr><td>120229</td><td>財務報表分析	Financial Statements Analysis</td><td>120202</td><td>會計學及實習(二)	Accounting and Practice(2)</td></tr>
+<tr><td>120229</td><td>財務報表分析	Financial Statements Analysis</td><td>C20005</td><td>會計學及實習(一)	Financial Accounting(1)</td></tr>
+<tr><td>129096</td><td>計量經濟(三)	</td><td>129094</td><td>計量經濟(一)	Econometrics I</td></tr>
+</table><br><br>112 學年度入學國際企業學系學士班查無系必修(選)課程資料(請與該系所確認)<br><br>112 學年度入學學士班校核心(共同及通識教育)課程最低學分數一覽表<table class='ncnu_table1'  style=' font-size:10pt'>
+<tr class='Corner'><th>通識主領域類別</th><th>通識次領域類別</th><th>最少選修次領域數</th><th>最少選修學分數</th><th>畢業條件</th></tr>
+<tr><td>人文(105始)</td><td>G 人文-文學與藝術(105始)<br>H 人文-歷史哲學與文化(105始)</td><td align='right'>2</td><td align='right'>4</td><td>最少選修 2 種次領域課程<br>最少選修合計 4 學分</td></tr>
+<tr><td>共同必修(99始)</td><td>A 共同必修(99始)</td><td align='right'>0</td><td align='right'>15</td><td><br>最少選修合計 15 學分</td></tr>
+<tr><td>自然(105始)</td><td>K 自然-工程與科技(105始)<br>L 自然-生命與科學(105始)</td><td align='right'>2</td><td align='right'>4</td><td>最少選修 2 種次領域課程<br>最少選修合計 4 學分</td></tr>
+<tr><td>社會(105始)</td><td>I 社會-法政與教育(105始)<br>J 社會-社經與管理(105始)</td><td align='right'>2</td><td align='right'>4</td><td>最少選修 2 種次領域課程<br>最少選修合計 4 學分</td></tr>
+<tr><td>特色通識(105始)</td><td>M 特色通識-國際連結(東南亞)105始<br>N 特色通識-淨零永續(綠概念)105始<br>O 特色通識-社會創新(在地實踐)105始</td><td align='right'>2</td><td align='right'>4</td><td>最少選修 2 種次領域課程<br>最少選修合計 4 學分</td></tr>
+<tr style='font-weight:bold'><td>合計</td><td>共　5　 類課程　31　學分</td><td></td><td></td><td></td></tr>
+</table><br>112 學年度入學國際企業學系學士班校核心必修(選)課程清單<table class='ncnu_table1'  style=' font-size:10pt'>
+<tr class='Corner'><th>課程名稱</th><th>畢業條件</th></tr>
+<tr><td>902055 體育:運動舞蹈(1.0學分)<br>902056 體育:高爾夫球(1.0學分)<br>902057 體育:射箭(1.0學分)<br>902058 體育:游泳(1.0學分)<br>902059 體育:網球(1.0學分)<br>902060 體育:船艇(1.0學分)<br>902069 體育:戶外探索教育(1.0學分)</td><td>至少選修 2 門課程至少選修合計2 學分</td></tr>
+</table><br>112 學年度入學國際企業學系學士班輔系必修課目清單<table class='ncnu_table1'  style=' font-size:10pt'>
+<tr class='Corner'><th>課號</th><th>課名</th><th>學分</th></tr>
+<tr><td>120001</td><td>經濟學及實習(上)	Economics & Practice (1)</td><td align='right'>3</td></tr>
+<tr><td>120024</td><td>統計學及實習(上)	Statistics and Practice (1)</td><td align='right'>3</td></tr>
+<tr><td>120155</td><td>財務管理	Financial Management</td><td align='right'>3</td></tr>
+<tr><td>120156</td><td>行銷管理	Marketing Management</td><td align='right'>3</td></tr>
+<tr><td>C20005</td><td>會計學及實習(一)	Financial Accounting(1)</td><td align='right'>3</td></tr>
+<tr><td>C20006</td><td>管理學	Management</td><td align='right'>3</td></tr>
+<tr style='font-weight:bold'><td>合計</td><td>共　6　 門課程　18　學分</td><td></td></tr>
+</table><br>112 學年度入學國際企業學系學士班雙主修必修課目清單<table class='ncnu_table1'  style=' font-size:10pt'>
+<tr class='Corner'><th>課號</th><th>課名</th><th>學分</th></tr>
+<tr><td>120001</td><td>經濟學及實習(上)	Economics & Practice (1)</td><td align='right'>3</td></tr>
+<tr><td>120013</td><td>微積分及實習(上)	Calculus & Practice (1)</td><td align='right'>3</td></tr>
+<tr><td>120014</td><td>經濟學及實習(下)	Economics & Practice (2)</td><td align='right'>3</td></tr>
+<tr><td>120024</td><td>統計學及實習(上)	Statistics and Practice (1)</td><td align='right'>3</td></tr>
+<tr><td>120045</td><td>統計學及實習(下)	Statistics and Practice (2)</td><td align='right'>3</td></tr>
+<tr><td>120110</td><td>組織行為	Organization Behavior</td><td align='right'>3</td></tr>
+<tr><td>120132</td><td>國際財務管理	International Financial Management</td><td align='right'>3</td></tr>
+<tr><td>120154</td><td>國際禮儀與商務溝通技巧	Etiquette and Communication in International Business</td><td align='right'>2</td></tr>
+<tr><td>120155</td><td>財務管理	Financial Management</td><td align='right'>3</td></tr>
+<tr><td>120156</td><td>行銷管理	Marketing Management</td><td align='right'>3</td></tr>
+<tr><td>120159</td><td>國際企業管理	International Business Management</td><td align='right'>3</td></tr>
+<tr><td>120167</td><td>國際策略管理	Strategic Management of Multinational Corporations</td><td align='right'>3</td></tr>
+<tr><td>C20005</td><td>會計學及實習(一)	Financial Accounting(1)</td><td align='right'>3</td></tr>
+<tr><td>C20006</td><td>管理學	Management</td><td align='right'>3</td></tr>
+<tr style='font-weight:bold'><td>合計</td><td>共　14　 門課程　41　學分</td><td></td></tr>
+</table><br><script>
+loadjs.ready("load", function() {
+
+	// Startup script
+	// Write your table-specific startup script here
+	// console.log("page loaded");
+
+});
+</script>
+				</div><!-- /.container-fluid -->
+		</section>
+		<!-- /.content -->
+	</div>
+	<!-- /.content-wrapper -->
+	<!-- Main Footer -->
+	<footer class="main-footer">
+		<!-- ** Note: Only licensed users are allowed to change the copyright statement. ** -->
+		<div class="ew-footer-text">系統開發：計網中心系統組 wcchien@ncnu.edu.tw</div>
+		<div class="float-right d-none d-sm-inline-block"></div>
+	</footer>
+</div>
+<!-- ./wrapper -->
+<!-- template upload (for file upload) -->
+<script id="template-upload" type="text/html">
+{{for files}}
+	<tr class="template-upload">
+		<td>
+			<span class="preview"></span>
+		</td>
+		<td>
+			<p class="name">{{:name}}</p>
+			<p class="error text-danger"></p>
+		</td>
+		<td>
+			<div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-bar bg-success" style="width: 0%;"></div></div>
+		</td>
+		<td>
+			{{if !#index && !~root.options.autoUpload}}
+			<button class="btn btn-default btn-sm start" disabled>開始上傳</button>
+			{{/if}}
+			{{if !#index}}
+			<button class="btn btn-default btn-sm cancel">取消上傳</button>
+			{{/if}}
+		</td>
+	</tr>
+{{/for}}
+</script>
+<!-- template download (for file upload) -->
+<script id="template-download" type="text/html">
+{{for files}}
+	<tr class="template-download">
+		<td>
+			<span class="preview">
+				{{if !exists}}
+				<span class="text-danger">找不到檔案 !</span>
+				{{else url && extension == "pdf"}}
+				<div class="ew-pdfobject" data-url="{{>url}}" style="width: 200px;"></div>
+				{{else url && extension == "mp3"}}
+				<audio controls><source type="audio/mpeg" src="{{>url}}"></audio>
+				{{else url && extension == "mp4"}}
+				<video controls><source type="video/mp4" src="{{>url}}"></video>
+				{{else thumbnailUrl}}
+				<a href="{{>url}}" title="{{>name}}" download="{{>name}}" class="ew-lightbox"><img src="{{>thumbnailUrl}}"></a>
+				{{/if}}
+			</span>
+		</td>
+		<td>
+			<p class="name">
+				{{if !exists}}
+				<span class="text-muted">{{:name}}</span>
+				{{else url && thumbnailUrl && extension != "pdf" && extension != "mp3" && extension != "mp4"}}
+				<a href="{{>url}}" title="{{>name}}" download="{{>name}}" class="ew-lightbox">{{:name}}</a>
+				{{else url}}
+				<a href="{{>url}}" title="{{>name}}" download="{{>name}}">{{:name}}</a>
+				{{else}}
+				<span>{{:name}}</span>
+				{{/if}}
+			</p>
+			{{if error}}
+			<div><span class="error text-danger">{{:error}}</span></div>
+			{{/if}}
+		</td>
+		<td>
+			<span class="size">{{:~root.formatFileSize(size)}}</span>
+		</td>
+		<td>
+			{{if !~root.options.readOnly && deleteUrl}}
+			<button class="btn btn-default btn-sm delete" data-type="{{>deleteType}}" data-url="{{>deleteUrl}}">刪除上傳</button>
+			{{else !~root.options.readOnly}}
+			<button class="btn btn-default btn-sm cancel">取消上傳</button>
+			{{/if}}
+		</td>
+	</tr>
+{{/for}}
+</script>
+<!-- modal dialog -->
+<div id="ew-modal-dialog" class="modal" role="dialog" aria-hidden="true"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h4 class="modal-title"></h4></div><div class="modal-body"></div><div class="modal-footer"></div></div></div></div>
+<!-- import dialog -->
+<div id="ew-import-dialog" class="modal" role="dialog" aria-hidden="true"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h4 class="modal-title"></h4></div>
+<div class="modal-body">
+<div class="custom-file">
+	<input type="file" class="custom-file-input" id="importfiles" title=" " name="importfiles[]" multiple lang="zh-tw">
+	<label class="custom-file-label ew-file-label" for="importfiles">選取檔案</label>
+</div>
+<div class="message d-none mt-3"></div>
+<div class="progress d-none mt-3"><div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">0%</div></div>
+</div>
+<div class="modal-footer"><button type="button" class="btn btn-default ew-close-btn" data-dismiss="modal">關閉</button></div></div></div></div>
+<!-- message box -->
+<div id="ew-message-box" class="modal" role="dialog" aria-hidden="true"><div class="modal-dialog"><div class="modal-content"><div class="modal-body"></div><div class="modal-footer"><button type="button" class="btn btn-primary ew-btn" data-dismiss="modal">OK</button></div></div></div></div>
+<!-- prompt -->
+<div id="ew-prompt" class="modal" role="dialog" aria-hidden="true"><div class="modal-dialog"><div class="modal-content"><div class="modal-body"></div><div class="modal-footer"><button type="button" class="btn btn-primary ew-btn">OK</button><button type="button" class="btn btn-default ew-btn" data-dismiss="modal">取消</button></div></div></div></div>
+<!-- session timer -->
+<div id="ew-timer" class="modal" role="dialog" aria-hidden="true"><div class="modal-dialog"><div class="modal-content"><div class="modal-body"></div><div class="modal-footer"><button type="button" class="btn btn-primary ew-btn" data-dismiss="modal">OK</button></div></div></div></div>
+<!-- tooltip -->
+<div id="ew-tooltip"></div>
+<!-- drill down -->
+<div id="ew-drilldown-panel"></div>
+<script>
+
+// User event handlers
+ew.ready(ew.bundleIds, "js/userevt.js", "load", function() {
+
+	// Global startup script
+	$("body").data("lte.layout",{}),$("body, .wrapper").css("overflow-x","auto");
+});
+</script>
+</body>
+</html>

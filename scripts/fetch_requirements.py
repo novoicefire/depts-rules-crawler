@@ -10,7 +10,7 @@ from typing import Dict, Any
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
 
 from ncnu_graduation.dept_api import fetch_all_departments
-from ncnu_graduation.fetcher import fetch_requirements_html, get_detail_url, fetch_available_combinations
+from ncnu_graduation.fetcher import fetch_requirements_html, get_detail_url, fetch_available_combinations, create_session
 from ncnu_graduation.storage import save_raw_html, save_report
 from ncnu_graduation.config import CLASS_CODES, RAW_DIR
 from rich.progress import Progress, SpinnerColumn, TextColumn, BarColumn, TaskProgressColumn, TimeRemainingColumn
@@ -19,10 +19,10 @@ from rich import print as rprint
 
 console = Console()
 
-def fetch_with_delay(year, deptid, class_code, timeout, delay):
+def fetch_with_delay(year, deptid, class_code, timeout, delay, session):
     if delay and delay > 0:
         time.sleep(delay)
-    return fetch_requirements_html(year, deptid, class_code, timeout)
+    return fetch_requirements_html(year, deptid, class_code, timeout, session)
 
 def run_fetch(args):
     if not args.deptids and not args.all_depts:
@@ -55,53 +55,82 @@ def run_fetch(args):
         "failed": 0,
         "skipped": 0,
         "successRate": 0,
-        "rounds": []
+        "rounds": [],
+        "byYear": {}
     }
     
     errors = []
     
-    tasks = []
     for year in args.years:
-        if args.all_depts:
-            with console.status(f"[bold cyan]正在取得 {year} 年度的實際有效系所與部別清單...[/bold cyan]"):
-                valid_combinations = fetch_available_combinations(year)
-                
-            if not valid_combinations:
-                errors.append({
-                    "entryYear": year,
-                    "reason": "No available combinations found from list page"
-                })
-                summary["finishedAt"] = datetime.now().isoformat()
-                save_report("fetch_errors", errors)
-                save_report("fetch_summary", summary)
-                console.print("[bold red]錯誤：all-depts 模式下沒有解析到任何有效組合。[/bold red]")
-                sys.exit(1)
-                
-            for deptid, class_code in valid_combinations:
-                if class_code in args.class_codes and class_code in CLASS_CODES:
-                    tasks.append((year, deptid, class_code))
-        else:
-            for deptid in target_deptids:
-                for class_code in args.class_codes:
-                    if class_code in CLASS_CODES:
-                        tasks.append((year, deptid, class_code))
-                    
-    summary["total"] = len(tasks)
-    
-    if summary["total"] == 0:
-        summary["failed"] = 0
-        summary["finishedAt"] = datetime.now().isoformat()
-        save_report("fetch_summary", summary)
-        console.print("[bold red]錯誤：沒有任何抓取任務。請檢查 years、deptids、class-codes。[/bold red]")
-        sys.exit(1)
+        run_fetch_for_year(year, args, target_deptids, summary, errors)
         
-    console.print(f"[bold green]預計執行 {summary['total']} 筆抓取任務...[/bold green]")
+    summary["finishedAt"] = datetime.now().isoformat()
+    started_at_dt = datetime.fromisoformat(summary["startedAt"])
+    finished_at_dt = datetime.fromisoformat(summary["finishedAt"])
+    summary["durationSeconds"] = (finished_at_dt - started_at_dt).total_seconds()
+    summary["successRate"] = summary["success"] / summary["total"] if summary["total"] else 0
+            
+    save_report("fetch_summary", summary)
+    save_report("fetch_errors", errors)
+    console.print("[bold green]抓取任務完成！報告已儲存於 data/reports。[/bold green]")
+    
+    if summary["failed"] > 0:
+        sys.exit(1)
+
+def run_fetch_for_year(year: str, args, target_deptids, summary: dict, errors: list):
+    console.print(f"\n[bold blue]=== 開始處理 {year} 年度 ===[/bold blue]")
+    year_session = create_session()
+    
+    tasks = []
+    if args.all_depts:
+        with console.status(f"[bold cyan]正在取得 {year} 年度的實際有效系所與部別清單...[/bold cyan]"):
+            valid_combinations = fetch_available_combinations(year, session=year_session)
+            
+        if not valid_combinations:
+            errors.append({
+                "entryYear": year,
+                "reason": "No available combinations found from list page"
+            })
+            console.print(f"[bold red]錯誤：all-depts 模式下沒有解析到 {year} 年度的任何有效組合。[/bold red]")
+            summary["byYear"][year] = {"total": 0, "success": 0, "failed": 0, "skipped": 0, "rounds": []}
+            summary["failed"] += 1
+            return
+            
+        for deptid, class_code in valid_combinations:
+            if class_code in args.class_codes and class_code in CLASS_CODES:
+                tasks.append((year, deptid, class_code))
+    else:
+        for deptid in target_deptids:
+            for class_code in args.class_codes:
+                if class_code in CLASS_CODES:
+                    tasks.append((year, deptid, class_code))
+                    
+    year_summary = {
+        "total": len(tasks),
+        "success": 0,
+        "failed": 0,
+        "skipped": 0,
+        "rounds": [],
+        "invalidHtml": 0,
+        "requestErrors": 0
+    }
+    summary["byYear"][year] = year_summary
+    summary["total"] += len(tasks)
+    
+    if year_summary["total"] == 0:
+        console.print(f"[bold yellow]警告：{year} 年度沒有任何抓取任務。[/bold yellow]")
+        return
+        
+    console.print(f"[bold green]{year} 年度預計執行 {year_summary['total']} 筆抓取任務...[/bold green]")
     
     pending_tasks = tasks.copy()
     round_num = 1
     
+    invalid_samples_dir = Path("data/reports/invalid_samples")
+    invalid_samples_dir.mkdir(parents=True, exist_ok=True)
+    
     while pending_tasks and round_num <= args.max_rounds:
-        console.print(f"\n[bold magenta]--- 第 {round_num} 回合開始 ---[/bold magenta]")
+        console.print(f"\n[bold magenta]--- {year} 年度 第 {round_num} 回合開始 ---[/bold magenta]")
         console.print(f"本回合預計處理 [bold yellow]{len(pending_tasks)}[/bold yellow] 筆任務...")
         
         current_round_tasks = pending_tasks.copy()
@@ -127,59 +156,87 @@ def run_fetch(args):
             
             with concurrent.futures.ThreadPoolExecutor(max_workers=args.workers) as executor:
                 future_to_task = {}
-                for year, deptid, class_code in current_round_tasks:
+                for _, deptid, class_code in current_round_tasks:
                     target_path = RAW_DIR / str(year) / str(deptid) / f"{class_code}.html"
                     if target_path.exists() and not args.force:
                         progress.console.print(f"[dim][SKIP] 檔案已存在: {target_path}[/dim]")
                         summary["skipped"] += 1
+                        year_summary["skipped"] += 1
                         round_summary["skipped"] += 1
                         progress.update(task_id, advance=1)
                         continue
                         
                     url = get_detail_url(year, deptid, class_code)
-                    future = executor.submit(fetch_with_delay, year, deptid, class_code, args.timeout, getattr(args, "delay", 0.5))
+                    future = executor.submit(fetch_with_delay, year, deptid, class_code, args.timeout, getattr(args, "delay", 0.5), year_session)
                     future_to_task[future] = (year, deptid, class_code, url)
                     
                 for future in concurrent.futures.as_completed(future_to_task):
-                    year, deptid, class_code, url = future_to_task[future]
+                    _, deptid, class_code, url = future_to_task[future]
                     prefix = f"[FETCH] {year}-{deptid}-{class_code}"
                     
                     try:
-                        status_code, html = future.result()
-                        if html:
+                        status_code, html, is_valid, reason = future.result()
+                        if is_valid:
                             save_raw_html(year, deptid, class_code, html)
                             summary["success"] += 1
+                            year_summary["success"] += 1
                             round_summary["success"] += 1
                             progress.console.print(f"{prefix} -> [bold green]成功[/bold green]")
-                        elif html == "":
-                            summary["skipped"] += 1
-                            round_summary["skipped"] += 1
-                            progress.console.print(f"{prefix} -> [yellow]無效頁面或查無資料 (跳過)[/yellow]")
                         else:
-                            progress.console.print(f"{prefix} -> [bold red]失敗 (Status: {status_code})[/bold red]")
-                            round_summary["failed"] += 1
-                            pending_tasks.append((year, deptid, class_code))
+                            if status_code == 200 and html:
+                                # HTML fetched but invalid
+                                year_summary["invalidHtml"] += 1
+                                sample_path = invalid_samples_dir / f"{year}-{deptid}-{class_code}.html"
+                                with open(sample_path, "w", encoding="utf-8") as f:
+                                    f.write(html)
+                                errors.append({
+                                    "entryYear": year,
+                                    "departmentId": deptid,
+                                    "classCode": class_code,
+                                    "reason": reason,
+                                    "samplePath": str(sample_path)
+                                })
+                                progress.console.print(f"{prefix} -> [yellow]無效頁面: {reason}[/yellow]")
+                            else:
+                                year_summary["requestErrors"] += 1
+                                progress.console.print(f"{prefix} -> [bold red]請求失敗 (Status: {status_code}, Reason: {reason})[/bold red]")
+                            
+                            if getattr(args, "all_depts", False):
+                                # all-depts 模式下 invalid 也必須 retry
+                                round_summary["failed"] += 1
+                                pending_tasks.append((year, deptid, class_code))
+                            else:
+                                # 單指定系所時容許跳過
+                                summary["skipped"] += 1
+                                year_summary["skipped"] += 1
+                                round_summary["skipped"] += 1
+                                progress.console.print(f"  └─ [dim]已略過此組合[/dim]")
                     except Exception as exc:
                         progress.console.print(f"{prefix} -> [bold red]執行例外: {exc}[/bold red]")
+                        year_summary["requestErrors"] += 1
                         round_summary["failed"] += 1
                         pending_tasks.append((year, deptid, class_code))
                     
                     progress.update(task_id, advance=1)
                     
-        summary["rounds"].append(round_summary)
+        year_summary["rounds"].append(round_summary)
+        summary["rounds"].append({**round_summary, "year": year})
         
         if pending_tasks:
             wait_seconds = min(2 * round_num, 30)
             console.print(f"[yellow]第 {round_num} 回合結束，還有 {len(pending_tasks)} 筆任務失敗，準備進入下一回合，等待 {wait_seconds} 秒...[/yellow]")
             time.sleep(wait_seconds)
+            # 下一回合更換新 Session
+            year_session = create_session()
             
         round_num += 1
         
     if pending_tasks:
-        console.print(f"\n[bold red]警告: 已達到最大重試次數 ({args.max_rounds})，但仍有 {len(pending_tasks)} 筆失敗。[/bold red]")
-        for year, deptid, class_code in pending_tasks:
+        console.print(f"\n[bold red]警告: {year} 年度已達到最大重試次數 ({args.max_rounds})，仍有 {len(pending_tasks)} 筆失敗。[/bold red]")
+        for _, deptid, class_code in pending_tasks:
             url = get_detail_url(year, deptid, class_code)
             summary["failed"] += 1
+            year_summary["failed"] += 1
             errors.append({
                 "entryYear": year,
                 "departmentId": deptid,
@@ -188,19 +245,10 @@ def run_fetch(args):
                 "statusCode": 500,
                 "reason": "Max retries reached"
             })
-            
-    summary["finishedAt"] = datetime.now().isoformat()
-    started_at_dt = datetime.fromisoformat(summary["startedAt"])
-    finished_at_dt = datetime.fromisoformat(summary["finishedAt"])
-    summary["durationSeconds"] = (finished_at_dt - started_at_dt).total_seconds()
-    summary["successRate"] = summary["success"] / summary["total"] if summary["total"] else 0
-            
-    save_report("fetch_summary", summary)
-    save_report("fetch_errors", errors)
-    console.print("[bold green]抓取任務完成！報告已儲存於 data/reports。[/bold green]")
-    
-    if summary["failed"] > 0:
-        sys.exit(1)
+
+    # 年度失敗條件：只要有 task 且成功數為 0，或是還有 pending_tasks 沒處理完
+    if (year_summary["total"] > 0 and year_summary["success"] == 0) or pending_tasks:
+        console.print(f"[bold red]{year} 年度抓取判定為失敗。[/bold red]")
 
 if __name__ == "__main__":
     import argparse
