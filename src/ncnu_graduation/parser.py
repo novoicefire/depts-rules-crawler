@@ -121,6 +121,23 @@ def parse_html_to_json(html_content: str, entry_year: str, deptid: str, class_co
         "notes": []
     }
     
+    page_text = soup.get_text(" ", strip=True)
+    empty_messages = []
+    for phrase in [
+        "查無必修課程資料",
+        "查無系必修(選)課程資料",
+        "查無系必修課程資料",
+        "查無必修(選)課程資料"
+    ]:
+        if phrase in page_text:
+            empty_messages.append(phrase)
+            
+    if empty_messages:
+        result["notes"].append({
+            "type": "no_requirement_data",
+            "message": " / ".join(empty_messages)
+        })
+    
     tables = soup.select("table.ncnu_table1")
     if not tables:
         tables = [table for table in soup.find_all("table") if is_requirement_table(table)]

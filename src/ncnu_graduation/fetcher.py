@@ -24,7 +24,13 @@ def is_valid_html(html: str, entry_year: str, deptid: str, class_code: str = "")
     if len(text) < 200:
         return False, "too_short"
 
-    blocked_keywords = ["請先登入", "查無資料", "發生錯誤", "錯誤", "Error", "404", "500 Internal Server Error"]
+    blocked_keywords = [
+        "請先登入",
+        "500 Internal Server Error",
+        "404 Not Found",
+        "Fatal error",
+        "Warning:"
+    ]
     for keyword in blocked_keywords:
         if keyword in text:
             return False, f"blocked_keyword_{keyword}"
@@ -38,10 +44,22 @@ def is_valid_html(html: str, entry_year: str, deptid: str, class_code: str = "")
         "P": "博士班"
     }
 
+    class_name = ""
     if class_code:
-        class_name = class_name_map.get(class_code)
+        class_name = class_name_map.get(class_code, "")
         if class_name and class_name not in text:
             return False, "missing_class_name"
+
+    # 檢查是否為合法的空規則頁面 (Empty Requirement Set)
+    empty_phrases = [
+        "查無必修課程資料",
+        "查無系必修(選)課程資料",
+        "查無系必修課程資料",
+        "查無必修(選)課程資料"
+    ]
+    if str(entry_year) in text and (not class_name or class_name in text):
+        if any(phrase in text for phrase in empty_phrases):
+            return True, "valid_empty_requirements"
 
     soup = BeautifulSoup(html, "html.parser")
     tables = soup.find_all("table")

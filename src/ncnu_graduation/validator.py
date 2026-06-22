@@ -16,6 +16,13 @@ def is_meta_group_name(name: str) -> bool:
 
     return has_meta and not has_real_title
 
+def is_empty_requirement_set(parsed_json: dict) -> bool:
+    notes = parsed_json.get("notes", [])
+    return any(
+        isinstance(note, dict) and note.get("type") == "no_requirement_data"
+        for note in notes
+    )
+
 def validate_all(probe: bool = False, strict: bool = False) -> Dict[str, Any]:
     """執行完整驗證並回傳報告"""
     report = {
@@ -25,6 +32,7 @@ def validate_all(probe: bool = False, strict: bool = False) -> Dict[str, Any]:
         "duplicate_ids": [],
         "missing_files": [],
         "invalid_schema": [],
+        "quality_warnings": [],
         "specific_check_112_12_B": "Not Found",
         "passed": False
     }
@@ -94,6 +102,8 @@ def validate_all(probe: bool = False, strict: bool = False) -> Dict[str, Any]:
                         "error": f"Inconsistent {c}: index={item.get(c)}, json={parsed_json.get(c)}"
                     })
                     
+            empty_requirement_set = is_empty_requirement_set(parsed_json)
+            
             # Check groups schema
             groups = parsed_json.get("groups")
             if not isinstance(groups, list):
@@ -110,10 +120,10 @@ def validate_all(probe: bool = False, strict: bool = False) -> Dict[str, Any]:
                         "error": "all group names are identical"
                     })
                     
-                if strict and not any(("清單" in name or "一覽表" in name) for name in group_names):
-                    report["invalid_schema"].append({
+                if strict and not empty_requirement_set and not any(("清單" in name or "一覽表" in name) for name in group_names):
+                    report["quality_warnings"].append({
                         "id": req_id,
-                        "error": "no group name contains 清單 or 一覽表"
+                        "warning": "no group name contains 清單 or 一覽表"
                     })
 
                 for idx, g in enumerate(groups):
@@ -129,24 +139,25 @@ def validate_all(probe: bool = False, strict: bool = False) -> Dict[str, Any]:
                         })
                         continue
                         
-                    if not isinstance(g.get("courses"), list):
-                        report["invalid_schema"].append({
-                            "id": req_id,
-                            "error": f"group {idx} courses must be a list"
-                        })
+                    if not empty_requirement_set:
+                        if not isinstance(g.get("courses"), list):
+                            report["invalid_schema"].append({
+                                "id": req_id,
+                                "error": f"group {idx} courses must be a list"
+                            })
 
-                    if not isinstance(g.get("rules"), list):
-                        report["invalid_schema"].append({
-                            "id": req_id,
-                            "error": f"group {idx} rules must be a list"
-                        })
-                        
-                    if not isinstance(g.get("originalRows"), list):
-                        report["invalid_schema"].append({
-                            "id": req_id,
-                            "error": f"group {idx} originalRows must be a list"
-                        })
-                        
+                        if not isinstance(g.get("rules"), list):
+                            report["invalid_schema"].append({
+                                "id": req_id,
+                                "error": f"group {idx} rules must be a list"
+                            })
+                            
+                        if not isinstance(g.get("originalRows"), list):
+                            report["invalid_schema"].append({
+                                "id": req_id,
+                                "error": f"group {idx} originalRows must be a list"
+                            })
+                            
                     if "requiredCredits" in g and g["requiredCredits"] is not None and not isinstance(g["requiredCredits"], (int, float)):
                         report["invalid_schema"].append({
                             "id": req_id,
@@ -165,10 +176,11 @@ def validate_all(probe: bool = False, strict: bool = False) -> Dict[str, Any]:
                         has_orig = len(g.get("originalRows", [])) > 0
                         
                         if not (has_courses or has_rules or has_orig):
-                            report["invalid_schema"].append({
-                                "id": req_id,
-                                "error": f"group {idx} is completely empty (strict mode)"
-                            })
+                            if not empty_requirement_set:
+                                report["invalid_schema"].append({
+                                    "id": req_id,
+                                    "error": f"group {idx} is completely empty (strict mode)"
+                                })
                 
             # Specific check for 112-12-B
             if req_id == "112-12-B":

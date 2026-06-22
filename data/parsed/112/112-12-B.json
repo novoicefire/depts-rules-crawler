@@ -508,5 +508,10 @@
       ]
     }
   ],
-  "notes": []
+  "notes": [
+    {
+      "type": "no_requirement_data",
+      "message": "查無系必修(選)課程資料"
+    }
+  ]
 }

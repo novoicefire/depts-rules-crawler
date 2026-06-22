@@ -1,6 +1,7 @@
 import argparse
 import sys
 import time
+import threading
 from pathlib import Path
 from datetime import datetime
 import concurrent.futures
@@ -19,9 +20,24 @@ from rich import print as rprint
 
 console = Console()
 
-def fetch_with_delay(year, deptid, class_code, timeout, delay, session):
+class SessionPool:
+    """
+    requests.Session is not thread-safe.
+    Use one session per worker thread to reuse connections without sharing mutable session state across threads.
+    A new SessionPool should be created for each retry round.
+    """
+    def __init__(self):
+        self.local = threading.local()
+        
+    def get_session(self):
+        if not hasattr(self.local, "session"):
+            self.local.session = create_session()
+        return self.local.session
+
+def fetch_with_delay(year, deptid, class_code, timeout, delay, session_pool):
     if delay and delay > 0:
         time.sleep(delay)
+    session = session_pool.get_session()
     return fetch_requirements_html(year, deptid, class_code, timeout, session)
 
 def run_fetch(args):
@@ -54,15 +70,18 @@ def run_fetch(args):
         "success": 0,
         "failed": 0,
         "skipped": 0,
+        "emptyRequirements": 0,
+        "attemptWarnings": 0,
         "successRate": 0,
         "rounds": [],
         "byYear": {}
     }
     
     errors = []
+    attempt_warnings = []
     
     for year in args.years:
-        run_fetch_for_year(year, args, target_deptids, summary, errors)
+        run_fetch_for_year(year, args, target_deptids, summary, errors, attempt_warnings)
         
     summary["finishedAt"] = datetime.now().isoformat()
     started_at_dt = datetime.fromisoformat(summary["startedAt"])
@@ -72,19 +91,20 @@ def run_fetch(args):
             
     save_report("fetch_summary", summary)
     save_report("fetch_errors", errors)
+    save_report("fetch_attempt_warnings", attempt_warnings)
     console.print("[bold green]抓取任務完成！報告已儲存於 data/reports。[/bold green]")
     
     if summary["failed"] > 0:
         sys.exit(1)
 
-def run_fetch_for_year(year: str, args, target_deptids, summary: dict, errors: list):
+def run_fetch_for_year(year: str, args, target_deptids, summary: dict, errors: list, attempt_warnings: list):
     console.print(f"\n[bold blue]=== 開始處理 {year} 年度 ===[/bold blue]")
-    year_session = create_session()
     
     tasks = []
     if args.all_depts:
+        list_session = create_session()
         with console.status(f"[bold cyan]正在取得 {year} 年度的實際有效系所與部別清單...[/bold cyan]"):
-            valid_combinations = fetch_available_combinations(year, session=year_session)
+            valid_combinations = fetch_available_combinations(year, session=list_session)
             
         if not valid_combinations:
             errors.append({
@@ -92,7 +112,7 @@ def run_fetch_for_year(year: str, args, target_deptids, summary: dict, errors: l
                 "reason": "No available combinations found from list page"
             })
             console.print(f"[bold red]錯誤：all-depts 模式下沒有解析到 {year} 年度的任何有效組合。[/bold red]")
-            summary["byYear"][year] = {"total": 0, "success": 0, "failed": 0, "skipped": 0, "rounds": []}
+            summary["byYear"][year] = {"total": 0, "success": 0, "failed": 0, "skipped": 0, "emptyRequirements": 0, "attemptWarnings": 0, "rounds": []}
             summary["failed"] += 1
             return
             
@@ -110,9 +130,11 @@ def run_fetch_for_year(year: str, args, target_deptids, summary: dict, errors: l
         "success": 0,
         "failed": 0,
         "skipped": 0,
-        "rounds": [],
+        "emptyRequirements": 0,
+        "attemptWarnings": 0,
         "invalidHtml": 0,
-        "requestErrors": 0
+        "requestErrors": 0,
+        "rounds": []
     }
     summary["byYear"][year] = year_summary
     summary["total"] += len(tasks)
@@ -144,6 +166,8 @@ def run_fetch_for_year(year: str, args, target_deptids, summary: dict, errors: l
             "skipped": 0
         }
         
+        session_pool = SessionPool()
+        
         with Progress(
             SpinnerColumn(),
             TextColumn("[progress.description]{task.description}"),
@@ -167,7 +191,7 @@ def run_fetch_for_year(year: str, args, target_deptids, summary: dict, errors: l
                         continue
                         
                     url = get_detail_url(year, deptid, class_code)
-                    future = executor.submit(fetch_with_delay, year, deptid, class_code, args.timeout, getattr(args, "delay", 0.5), year_session)
+                    future = executor.submit(fetch_with_delay, year, deptid, class_code, args.timeout, getattr(args, "delay", 0.5), session_pool)
                     future_to_task[future] = (year, deptid, class_code, url)
                     
                 for future in concurrent.futures.as_completed(future_to_task):
@@ -181,24 +205,43 @@ def run_fetch_for_year(year: str, args, target_deptids, summary: dict, errors: l
                             summary["success"] += 1
                             year_summary["success"] += 1
                             round_summary["success"] += 1
-                            progress.console.print(f"{prefix} -> [bold green]成功[/bold green]")
+                            
+                            if reason == "valid_empty_requirements":
+                                summary["emptyRequirements"] += 1
+                                year_summary["emptyRequirements"] += 1
+                                progress.console.print(f"{prefix} -> [bold blue]成功 (空規則頁面)[/bold blue]")
+                            else:
+                                progress.console.print(f"{prefix} -> [bold green]成功[/bold green]")
                         else:
+                            summary["attemptWarnings"] += 1
+                            year_summary["attemptWarnings"] += 1
+                            
                             if status_code == 200 and html:
                                 # HTML fetched but invalid
                                 year_summary["invalidHtml"] += 1
                                 sample_path = invalid_samples_dir / f"{year}-{deptid}-{class_code}.html"
                                 with open(sample_path, "w", encoding="utf-8") as f:
                                     f.write(html)
-                                errors.append({
+                                attempt_warnings.append({
                                     "entryYear": year,
                                     "departmentId": deptid,
                                     "classCode": class_code,
                                     "reason": reason,
-                                    "samplePath": str(sample_path)
+                                    "statusCode": status_code,
+                                    "samplePath": str(sample_path),
+                                    "round": round_num
                                 })
                                 progress.console.print(f"{prefix} -> [yellow]無效頁面: {reason}[/yellow]")
                             else:
                                 year_summary["requestErrors"] += 1
+                                attempt_warnings.append({
+                                    "entryYear": year,
+                                    "departmentId": deptid,
+                                    "classCode": class_code,
+                                    "reason": reason,
+                                    "statusCode": status_code,
+                                    "round": round_num
+                                })
                                 progress.console.print(f"{prefix} -> [bold red]請求失敗 (Status: {status_code}, Reason: {reason})[/bold red]")
                             
                             if getattr(args, "all_depts", False):
@@ -212,8 +255,18 @@ def run_fetch_for_year(year: str, args, target_deptids, summary: dict, errors: l
                                 round_summary["skipped"] += 1
                                 progress.console.print(f"  └─ [dim]已略過此組合[/dim]")
                     except Exception as exc:
-                        progress.console.print(f"{prefix} -> [bold red]執行例外: {exc}[/bold red]")
+                        summary["attemptWarnings"] += 1
+                        year_summary["attemptWarnings"] += 1
                         year_summary["requestErrors"] += 1
+                        attempt_warnings.append({
+                            "entryYear": year,
+                            "departmentId": deptid,
+                            "classCode": class_code,
+                            "reason": f"exception: {exc}",
+                            "statusCode": 500,
+                            "round": round_num
+                        })
+                        progress.console.print(f"{prefix} -> [bold red]執行例外: {exc}[/bold red]")
                         round_summary["failed"] += 1
                         pending_tasks.append((year, deptid, class_code))
                     
@@ -226,8 +279,6 @@ def run_fetch_for_year(year: str, args, target_deptids, summary: dict, errors: l
             wait_seconds = min(2 * round_num, 30)
             console.print(f"[yellow]第 {round_num} 回合結束，還有 {len(pending_tasks)} 筆任務失敗，準備進入下一回合，等待 {wait_seconds} 秒...[/yellow]")
             time.sleep(wait_seconds)
-            # 下一回合更換新 Session
-            year_session = create_session()
             
         round_num += 1
         
@@ -246,9 +297,16 @@ def run_fetch_for_year(year: str, args, target_deptids, summary: dict, errors: l
                 "reason": "Max retries reached"
             })
 
-    # 年度失敗條件：只要有 task 且成功數為 0，或是還有 pending_tasks 沒處理完
-    if (year_summary["total"] > 0 and year_summary["success"] == 0) or pending_tasks:
-        console.print(f"[bold red]{year} 年度抓取判定為失敗。[/bold red]")
+    # 年度失敗條件：在 all-depts 模式下，只要有 task 且成功數為 0
+    if getattr(args, "all_depts", False):
+        if year_summary["total"] > 0 and year_summary["success"] == 0:
+            console.print(f"[bold red]{year} 年度抓取判定為失敗 (成功數為 0)。[/bold red]")
+            summary["failed"] += 1
+            errors.append({
+                "entryYear": year,
+                "reason": "year_success_zero",
+                "total": year_summary["total"]
+            })
 
 if __name__ == "__main__":
     import argparse
