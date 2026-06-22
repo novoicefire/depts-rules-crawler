@@ -1,0 +1,77 @@
+{
+  "requirementSetId": "112-54-G",
+  "source": "ccweb6_graduation_requirements",
+  "entryYear": "112",
+  "departmentId": "54",
+  "departmentName": "文化創意與社會行銷碩士學位學程",
+  "departmentShortName": "文創學程",
+  "classCode": "G",
+  "className": "碩士班",
+  "rawHtmlPath": "data/raw/112/54/G.html",
+  "groups": [
+    {
+      "groupId": "group_001",
+      "name": "資料項次: 1670 ～ 1670 ／ 1706",
+      "type": "course_list",
+      "requiredCredits": null,
+      "courses": [],
+      "description": "",
+      "originalRows": [
+        [
+          "部別",
+          "碩士班"
+        ],
+        [
+          "入學年度",
+          "112"
+        ]
+      ]
+    },
+    {
+      "groupId": "group_002",
+      "name": "112 學年度入學文化創意與社會行銷碩士學位學程碩士班必修課程清單",
+      "type": "required_courses",
+      "requiredCredits": null,
+      "courses": [
+        {
+          "courseId": "545005",
+          "courseName": "文化研究導論\tIntroduction to Cultural Studies",
+          "credits": 3
+        },
+        {
+          "courseId": "545019",
+          "courseName": "社會科學方法論\tMethodology in Social Sciences",
+          "credits": 3
+        },
+        {
+          "courseId": "545029",
+          "courseName": "創意產業專題\tSeminar on Creative Industries",
+          "credits": 3
+        }
+      ],
+      "description": "",
+      "originalRows": [
+        [
+          "合計",
+          "共　3　門課程　9　學分",
+          ""
+        ]
+      ]
+    },
+    {
+      "groupId": "group_003",
+      "name": "112 學年度入學文化創意與社會行銷碩士學位學程碩士班系必修(選)課程清單",
+      "type": "required_courses",
+      "requiredCredits": null,
+      "courses": [],
+      "description": "",
+      "originalRows": [
+        [
+          "540003 社會科學方法論及研究方法專題(3.0學分)540017 研究方法(3.0學分)",
+          "二選一次領域至少選修 1 門課程"
+        ]
+      ]
+    }
+  ],
+  "notes": []
+}

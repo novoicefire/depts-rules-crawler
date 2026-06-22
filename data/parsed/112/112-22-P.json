@@ -1,0 +1,220 @@
+{
+  "requirementSetId": "112-22-P",
+  "source": "ccweb6_graduation_requirements",
+  "entryYear": "112",
+  "departmentId": "22",
+  "departmentName": "土木工程學系",
+  "departmentShortName": "土木系",
+  "classCode": "P",
+  "className": "博士班",
+  "rawHtmlPath": "data/raw/112/22/P.html",
+  "groups": [
+    {
+      "groupId": "group_001",
+      "name": "資料項次: 1110 ～ 1110 ／ 1706",
+      "type": "course_list",
+      "requiredCredits": null,
+      "courses": [],
+      "description": "",
+      "originalRows": [
+        [
+          "部別",
+          "博士班"
+        ],
+        [
+          "入學年度",
+          "112"
+        ]
+      ]
+    },
+    {
+      "groupId": "group_002",
+      "name": "112 學年度入學土木工程學系博士班必修課程清單",
+      "type": "required_courses",
+      "requiredCredits": null,
+      "courses": [
+        {
+          "courseId": "229001",
+          "courseName": "專題研究(一)\tIndependent Study (Ⅰ)",
+          "credits": 1
+        },
+        {
+          "courseId": "229002",
+          "courseName": "專題討論(一)\tSeminar (Ⅰ)",
+          "credits": 1
+        },
+        {
+          "courseId": "229011",
+          "courseName": "專題研究(二)\tIndependent Study (Ⅱ)",
+          "credits": 1
+        },
+        {
+          "courseId": "229012",
+          "courseName": "專題討論(二)\tSeminar (Ⅱ)",
+          "credits": 1
+        },
+        {
+          "courseId": "229015",
+          "courseName": "專題討論(三)\tSeminar (Ⅲ)",
+          "credits": 1
+        },
+        {
+          "courseId": "229016",
+          "courseName": "專題研究(三)\tIndependent Study (Ⅲ)",
+          "credits": 1
+        },
+        {
+          "courseId": "229019",
+          "courseName": "專題研究(四)\tIndependent Study (Ⅳ)",
+          "credits": 1
+        },
+        {
+          "courseId": "229020",
+          "courseName": "專題討論(四)\tSeminar (Ⅳ)",
+          "credits": 1
+        },
+        {
+          "courseId": "229021",
+          "courseName": "專題研究(五)\tSpecial Topics Research",
+          "credits": 1
+        },
+        {
+          "courseId": "229022",
+          "courseName": "專題討論(五)\tSeminar",
+          "credits": 1
+        },
+        {
+          "courseId": "229024",
+          "courseName": "專題討論(六)\tSeminar",
+          "credits": 1
+        },
+        {
+          "courseId": "229025",
+          "courseName": "專題研究(六)\tSpecial Topics Research",
+          "credits": 1
+        }
+      ],
+      "description": "",
+      "originalRows": [
+        [
+          "合計",
+          "共　12　門課程　12　學分",
+          ""
+        ]
+      ]
+    },
+    {
+      "groupId": "group_003",
+      "name": "112 學年度入學土木工程學系課程先修(擋修)清單",
+      "type": "prerequisite_rules",
+      "requiredCredits": null,
+      "courses": [
+        {
+          "courseId": "220019",
+          "courseName": "材料力學\tMechanics of Materials",
+          "targetCourseId": "220033",
+          "targetCourseName": "靜力學\tEngineering Mechanics : statics"
+        },
+        {
+          "courseId": "220029",
+          "courseName": "結構學\tElementary Structures",
+          "targetCourseId": "220019",
+          "targetCourseName": "材料力學\tMechanics of Materials"
+        },
+        {
+          "courseId": "220041",
+          "courseName": "土木工程實驗(一)\tCivil Engineering Laboratory Ⅰ",
+          "targetCourseId": "220019",
+          "targetCourseName": "材料力學\tMechanics of Materials"
+        },
+        {
+          "courseId": "220041",
+          "courseName": "土木工程實驗(一)\tCivil Engineering Laboratory Ⅰ",
+          "targetCourseId": "220029",
+          "targetCourseName": "結構學\tElementary Structures"
+        },
+        {
+          "courseId": "220079",
+          "courseName": "土木工程實驗(二)\tCivil Engineering Laboratory Ⅱ",
+          "targetCourseId": "220030",
+          "targetCourseName": "流體力學\tFluid Mechanics"
+        },
+        {
+          "courseId": "220079",
+          "courseName": "土木工程實驗(二)\tCivil Engineering Laboratory Ⅱ",
+          "targetCourseId": "220036",
+          "targetCourseName": "土壤力學\tSoil Mechanics"
+        },
+        {
+          "courseId": "220087",
+          "courseName": "基礎工程\tFoundation Engineering",
+          "targetCourseId": "220036",
+          "targetCourseName": "土壤力學\tSoil Mechanics"
+        },
+        {
+          "courseId": "225034",
+          "courseName": "高等材料力學\tAdvanced Mechanics of Materials",
+          "targetCourseId": "220019",
+          "targetCourseName": "材料力學\tMechanics of Materials"
+        },
+        {
+          "courseId": "225051",
+          "courseName": "高等工程數學(一)\tAdvanced Engineering Mathematics(III)",
+          "targetCourseId": "220017",
+          "targetCourseName": "工程數學(上)\tEngineering Mathematics (1)"
+        },
+        {
+          "courseId": "225051",
+          "courseName": "高等工程數學(一)\tAdvanced Engineering Mathematics(III)",
+          "targetCourseId": "220027",
+          "targetCourseName": "工程數學(下)\tEngineering Mathematics (2)"
+        },
+        {
+          "courseId": "225080",
+          "courseName": "材料機械行為\tMechanical Behavior of Materials",
+          "targetCourseId": "225034",
+          "targetCourseName": "高等材料力學\tAdvanced Mechanics of Materials"
+        },
+        {
+          "courseId": "229013",
+          "courseName": "微觀力學\tMicromechanics",
+          "targetCourseId": "225034",
+          "targetCourseName": "高等材料力學\tAdvanced Mechanics of Materials"
+        },
+        {
+          "courseId": "229014",
+          "courseName": "環境力學（二）\tMechanics of Continua for Environmental Problems (Ⅱ)",
+          "targetCourseId": "220017",
+          "targetCourseName": "工程數學(上)\tEngineering Mathematics (1)"
+        },
+        {
+          "courseId": "229014",
+          "courseName": "環境力學（二）\tMechanics of Continua for Environmental Problems (Ⅱ)",
+          "targetCourseId": "220027",
+          "targetCourseName": "工程數學(下)\tEngineering Mathematics (2)"
+        },
+        {
+          "courseId": "229014",
+          "courseName": "環境力學（二）\tMechanics of Continua for Environmental Problems (Ⅱ)",
+          "targetCourseId": "220030",
+          "targetCourseName": "流體力學\tFluid Mechanics"
+        },
+        {
+          "courseId": "229047",
+          "courseName": "應用力學特論\tSpecial Topics on Applied Mechanics",
+          "targetCourseId": "225019",
+          "targetCourseName": "彈性力學\tTheory of Elasticity"
+        },
+        {
+          "courseId": "229054",
+          "courseName": "接觸力學\tContact Mechanics",
+          "targetCourseId": "225019",
+          "targetCourseName": "彈性力學\tTheory of Elasticity"
+        }
+      ],
+      "description": "",
+      "originalRows": []
+    }
+  ],
+  "notes": []
+}

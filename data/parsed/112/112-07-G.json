@@ -1,0 +1,121 @@
+{
+  "requirementSetId": "112-07-G",
+  "source": "ccweb6_graduation_requirements",
+  "entryYear": "112",
+  "departmentId": "07",
+  "departmentName": "教育政策與行政學系",
+  "departmentShortName": "教政系",
+  "classCode": "G",
+  "className": "碩士班",
+  "rawHtmlPath": "data/raw/112/07/G.html",
+  "groups": [
+    {
+      "groupId": "group_001",
+      "name": "資料項次: 549 ～ 549 ／ 1706",
+      "type": "course_list",
+      "requiredCredits": null,
+      "courses": [],
+      "description": "",
+      "originalRows": [
+        [
+          "部別",
+          "碩士班"
+        ],
+        [
+          "入學年度",
+          "112"
+        ]
+      ]
+    },
+    {
+      "groupId": "group_002",
+      "name": "112 學年度入學教育政策與行政學系碩士班必修課程清單",
+      "type": "required_courses",
+      "requiredCredits": null,
+      "courses": [
+        {
+          "courseId": "075001",
+          "courseName": "社會及行為科學研究法\tResearch on Social and Behavior Science Methodology",
+          "credits": 2
+        },
+        {
+          "courseId": "075011",
+          "courseName": "教育政策分析\tEducational Policy Analysis",
+          "credits": 2
+        },
+        {
+          "courseId": "075017",
+          "courseName": "教育行政學研究\tStudies on Educational Administration",
+          "credits": 2
+        }
+      ],
+      "description": "",
+      "originalRows": [
+        [
+          "合計",
+          "共　3　門課程　6　學分",
+          ""
+        ]
+      ]
+    },
+    {
+      "groupId": "group_003",
+      "name": "112 學年度入學教育政策與行政學系課程先修(擋修)清單",
+      "type": "prerequisite_rules",
+      "requiredCredits": null,
+      "courses": [
+        {
+          "courseId": "070027",
+          "courseName": "教育統計軟體應用\tApplication of Educational Statistics Software",
+          "targetCourseId": "070082",
+          "targetCourseName": "教育統計\tEducational Statistics"
+        },
+        {
+          "courseId": "070057",
+          "courseName": "行政倫理\tadministrative ethics",
+          "targetCourseId": "070048",
+          "targetCourseName": "教育專業倫理\tProfessional Ethics in Education"
+        },
+        {
+          "courseId": "070087",
+          "courseName": "教育政策分析\tEducatonal Policy Analysis",
+          "targetCourseId": "070012",
+          "targetCourseName": "教育政策\tEducational Policy"
+        },
+        {
+          "courseId": "070092",
+          "courseName": "族群教育政策\tEthnic Education Policy",
+          "targetCourseId": "070043",
+          "targetCourseName": "教育人類學\tAnthropology of Education"
+        },
+        {
+          "courseId": "070100",
+          "courseName": "高等教育統計\tAdvanced Educational Statistics",
+          "targetCourseId": "070082",
+          "targetCourseName": "教育統計\tEducational Statistics"
+        },
+        {
+          "courseId": "070104",
+          "courseName": "行政法(下)\tAdministrative Law  Ⅱ",
+          "targetCourseId": "070103",
+          "targetCourseName": "行政法(上)\tAdministrative Law  Ⅰ"
+        },
+        {
+          "courseId": "070111",
+          "courseName": "團體動力學\tGroup dynamics",
+          "targetCourseId": "070001",
+          "targetCourseName": "教育行政學\tEducational Administration"
+        },
+        {
+          "courseId": "070111",
+          "courseName": "團體動力學\tGroup dynamics",
+          "targetCourseId": "070085",
+          "targetCourseName": "學校行政\tSchool Administraion"
+        }
+      ],
+      "description": "",
+      "originalRows": []
+    }
+  ],
+  "notes": []
+}

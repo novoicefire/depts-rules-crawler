@@ -1,0 +1,531 @@
+{
+  "requirementSetId": "112-03-B",
+  "source": "ccweb6_graduation_requirements",
+  "entryYear": "112",
+  "departmentId": "03",
+  "departmentName": "社會政策與社會工作學系",
+  "departmentShortName": "社工系",
+  "classCode": "B",
+  "className": "學士班",
+  "rawHtmlPath": "data/raw/112/03/B.html",
+  "groups": [
+    {
+      "groupId": "group_001",
+      "name": "資料項次: 224 ～ 224 ／ 1706",
+      "type": "course_list",
+      "requiredCredits": null,
+      "courses": [],
+      "description": "",
+      "originalRows": [
+        [
+          "部別",
+          "學士班"
+        ],
+        [
+          "入學年度",
+          "112"
+        ]
+      ]
+    },
+    {
+      "groupId": "group_002",
+      "name": "112 學年度入學社會政策與社會工作學系學士班必修課程清單",
+      "type": "required_courses",
+      "requiredCredits": null,
+      "courses": [
+        {
+          "courseId": "030002",
+          "courseName": "社會學\tSociology",
+          "credits": 3
+        },
+        {
+          "courseId": "030003",
+          "courseName": "社會工作概論\tIntroduction to Social Work",
+          "credits": 3
+        },
+        {
+          "courseId": "030007",
+          "courseName": "心理學\tPsychology",
+          "credits": 3
+        },
+        {
+          "courseId": "030013",
+          "courseName": "人類行為與社會環境\tHuman Behavior and Social Environment",
+          "credits": 3
+        },
+        {
+          "courseId": "030015",
+          "courseName": "社會個案工作\tSocial Case Work",
+          "credits": 3
+        },
+        {
+          "courseId": "030016",
+          "courseName": "社會團體工作\tSocial Group Work",
+          "credits": 3
+        },
+        {
+          "courseId": "030028",
+          "courseName": "社區工作\tCommunity Work",
+          "credits": 3
+        },
+        {
+          "courseId": "030049",
+          "courseName": "社會福利理論\tSocial Welfare Theories",
+          "credits": 3
+        },
+        {
+          "courseId": "030050",
+          "courseName": "社會工作理論\tSocial Work Theories",
+          "credits": 3
+        },
+        {
+          "courseId": "030070",
+          "courseName": "社會工作管理\tManagement for Social Work",
+          "credits": 3
+        },
+        {
+          "courseId": "030097",
+          "courseName": "社會研究法(上)\tSocial Research Methods (1)",
+          "credits": 3
+        },
+        {
+          "courseId": "030098",
+          "courseName": "社會研究法(下)\tSocial Research Methods (2)",
+          "credits": 3
+        },
+        {
+          "courseId": "030112",
+          "courseName": "會談技巧\tInterview Skill",
+          "credits": 3
+        },
+        {
+          "courseId": "030114",
+          "courseName": "社會心理學\tSocial Psychology",
+          "credits": 3
+        },
+        {
+          "courseId": "030129",
+          "courseName": "社會福利行政\tSocial Welfare Administration",
+          "credits": 3
+        },
+        {
+          "courseId": "030130",
+          "courseName": "社會工作倫理\tEthics for Social Work",
+          "credits": 3
+        },
+        {
+          "courseId": "030151",
+          "courseName": "社會工作實習(1)\tSocial Work Practice (1)",
+          "credits": 3
+        },
+        {
+          "courseId": "030160",
+          "courseName": "社會政策與社會立法\tSocial Policy & Social Legislation",
+          "credits": 3
+        },
+        {
+          "courseId": "030162",
+          "courseName": "方案設計與評估\tProgram Planning & Evaluation",
+          "credits": 3
+        },
+        {
+          "courseId": "030171",
+          "courseName": "社會工作實習(2)\tSocial Work Practice(2)",
+          "credits": 3
+        },
+        {
+          "courseId": "030172",
+          "courseName": "防身術\tSelf Defense Technigue",
+          "credits": 1
+        },
+        {
+          "courseId": "030173",
+          "courseName": "社會統計\tSocial Statistics",
+          "credits": 4
+        }
+      ],
+      "description": "",
+      "originalRows": [
+        [
+          "合計",
+          "共　22　門課程　65　學分",
+          ""
+        ]
+      ]
+    },
+    {
+      "groupId": "group_003",
+      "name": "112 學年度入學社會政策與社會工作學系課程先修(擋修)清單",
+      "type": "prerequisite_rules",
+      "requiredCredits": null,
+      "courses": [
+        {
+          "courseId": "030020",
+          "courseName": "諮商理論與技術\tTheories and Skills on Counseling",
+          "targetCourseId": "030112",
+          "targetCourseName": "會談技巧\tInterview Skill"
+        },
+        {
+          "courseId": "030049",
+          "courseName": "社會福利理論\tSocial Welfare Theories",
+          "targetCourseId": "030002",
+          "targetCourseName": "社會學\tSociology"
+        },
+        {
+          "courseId": "030050",
+          "courseName": "社會工作理論\tSocial Work Theories",
+          "targetCourseId": "030003",
+          "targetCourseName": "社會工作概論\tIntroduction to Social Work"
+        },
+        {
+          "courseId": "030098",
+          "courseName": "社會研究法(下)\tSocial Research Methods (2)",
+          "targetCourseId": "030097",
+          "targetCourseName": "社會研究法(上)\tSocial Research Methods (1)"
+        },
+        {
+          "courseId": "030112",
+          "courseName": "會談技巧\tInterview Skill",
+          "targetCourseId": "030015",
+          "targetCourseName": "社會個案工作\tSocial Case Work"
+        },
+        {
+          "courseId": "030151",
+          "courseName": "社會工作實習(1)\tSocial Work Practice (1)",
+          "targetCourseId": "030015",
+          "targetCourseName": "社會個案工作\tSocial Case Work"
+        },
+        {
+          "courseId": "030151",
+          "courseName": "社會工作實習(1)\tSocial Work Practice (1)",
+          "targetCourseId": "030016",
+          "targetCourseName": "社會團體工作\tSocial Group Work"
+        },
+        {
+          "courseId": "030151",
+          "courseName": "社會工作實習(1)\tSocial Work Practice (1)",
+          "targetCourseId": "030028",
+          "targetCourseName": "社區工作\tCommunity Work"
+        },
+        {
+          "courseId": "030154",
+          "courseName": "團體動力與實務\tGroup dynamics and practice",
+          "targetCourseId": "030016",
+          "targetCourseName": "社會團體工作\tSocial Group Work"
+        },
+        {
+          "courseId": "030167",
+          "courseName": "青少年社會工作實務\tAdolescent Social Work Practice",
+          "targetCourseId": "030003",
+          "targetCourseName": "社會工作概論\tIntroduction to Social Work"
+        },
+        {
+          "courseId": "030167",
+          "courseName": "青少年社會工作實務\tAdolescent Social Work Practice",
+          "targetCourseId": "030013",
+          "targetCourseName": "人類行為與社會環境\tHuman Behavior and Social Environment"
+        },
+        {
+          "courseId": "030167",
+          "courseName": "青少年社會工作實務\tAdolescent Social Work Practice",
+          "targetCourseId": "030015",
+          "targetCourseName": "社會個案工作\tSocial Case Work"
+        },
+        {
+          "courseId": "030167",
+          "courseName": "青少年社會工作實務\tAdolescent Social Work Practice",
+          "targetCourseId": "030016",
+          "targetCourseName": "社會團體工作\tSocial Group Work"
+        },
+        {
+          "courseId": "030170",
+          "courseName": "學校社會工作\tSchool Social Work",
+          "targetCourseId": "030003",
+          "targetCourseName": "社會工作概論\tIntroduction to Social Work"
+        },
+        {
+          "courseId": "030170",
+          "courseName": "學校社會工作\tSchool Social Work",
+          "targetCourseId": "030013",
+          "targetCourseName": "人類行為與社會環境\tHuman Behavior and Social Environment"
+        },
+        {
+          "courseId": "030170",
+          "courseName": "學校社會工作\tSchool Social Work",
+          "targetCourseId": "030015",
+          "targetCourseName": "社會個案工作\tSocial Case Work"
+        },
+        {
+          "courseId": "030171",
+          "courseName": "社會工作實習(2)\tSocial Work Practice(2)",
+          "targetCourseId": "030015",
+          "targetCourseName": "社會個案工作\tSocial Case Work"
+        },
+        {
+          "courseId": "030171",
+          "courseName": "社會工作實習(2)\tSocial Work Practice(2)",
+          "targetCourseId": "030016",
+          "targetCourseName": "社會團體工作\tSocial Group Work"
+        },
+        {
+          "courseId": "030171",
+          "courseName": "社會工作實習(2)\tSocial Work Practice(2)",
+          "targetCourseId": "030028",
+          "targetCourseName": "社區工作\tCommunity Work"
+        },
+        {
+          "courseId": "030171",
+          "courseName": "社會工作實習(2)\tSocial Work Practice(2)",
+          "targetCourseId": "030162",
+          "targetCourseName": "方案設計與評估\tProgram Planning & Evaluation"
+        }
+      ],
+      "description": "",
+      "originalRows": []
+    },
+    {
+      "groupId": "group_004",
+      "name": "112 學年度入學學士班校核心(共同及通識教育)課程最低學分數一覽表",
+      "type": "core_requirements",
+      "requiredCredits": null,
+      "courses": [],
+      "description": "",
+      "originalRows": [
+        [
+          "人文(105始)",
+          "G 人文-文學與藝術(105始)H 人文-歷史哲學與文化(105始)",
+          "2",
+          "4",
+          "最少選修 2 種次領域課程最少選修合計 4 學分"
+        ],
+        [
+          "共同必修(99始)",
+          "A 共同必修(99始)",
+          "0",
+          "15",
+          "最少選修合計 15 學分"
+        ],
+        [
+          "自然(105始)",
+          "K 自然-工程與科技(105始)L 自然-生命與科學(105始)",
+          "2",
+          "4",
+          "最少選修 2 種次領域課程最少選修合計 4 學分"
+        ],
+        [
+          "社會(105始)",
+          "I 社會-法政與教育(105始)J 社會-社經與管理(105始)",
+          "2",
+          "4",
+          "最少選修 2 種次領域課程最少選修合計 4 學分"
+        ],
+        [
+          "特色通識(105始)",
+          "M 特色通識-國際連結(東南亞)105始N 特色通識-淨零永續(綠概念)105始O 特色通識-社會創新(在地實踐)105始",
+          "2",
+          "4",
+          "最少選修 2 種次領域課程最少選修合計 4 學分"
+        ],
+        [
+          "合計",
+          "共　5　 類課程　31　學分",
+          "",
+          "",
+          ""
+        ]
+      ]
+    },
+    {
+      "groupId": "group_005",
+      "name": "112 學年度入學社會政策與社會工作學系學士班校核心必修(選)課程清單",
+      "type": "core_requirements",
+      "requiredCredits": null,
+      "courses": [],
+      "description": "",
+      "originalRows": [
+        [
+          "902055 體育:運動舞蹈(1.0學分)902056 體育:高爾夫球(1.0學分)902057 體育:射箭(1.0學分)902058 體育:游泳(1.0學分)902059 體育:網球(1.0學分)902060 體育:船艇(1.0學分)902069 體育:戶外探索教育(1.0學分)",
+          "至少選修 2 門課程至少選修合計2 學分"
+        ]
+      ]
+    },
+    {
+      "groupId": "group_006",
+      "name": "112 學年度入學社會政策與社會工作學系學士班輔系必修課目清單",
+      "type": "minor_courses",
+      "requiredCredits": null,
+      "courses": [
+        {
+          "courseId": "030003",
+          "courseName": "社會工作概論\tIntroduction to Social Work",
+          "credits": 3
+        },
+        {
+          "courseId": "030013",
+          "courseName": "人類行為與社會環境\tHuman Behavior and Social Environment",
+          "credits": 3
+        },
+        {
+          "courseId": "030015",
+          "courseName": "社會個案工作\tSocial Case Work",
+          "credits": 3
+        },
+        {
+          "courseId": "030016",
+          "courseName": "社會團體工作\tSocial Group Work",
+          "credits": 3
+        },
+        {
+          "courseId": "030028",
+          "courseName": "社區工作\tCommunity Work",
+          "credits": 3
+        },
+        {
+          "courseId": "030112",
+          "courseName": "會談技巧\tInterview Skill",
+          "credits": 3
+        },
+        {
+          "courseId": "030160",
+          "courseName": "社會政策與社會立法\tSocial Policy & Social Legislation",
+          "credits": 3
+        }
+      ],
+      "description": "",
+      "originalRows": [
+        [
+          "合計",
+          "共　7　 門課程　21　學分",
+          ""
+        ]
+      ]
+    },
+    {
+      "groupId": "group_007",
+      "name": "112 學年度入學社會政策與社會工作學系學士班雙主修必修課目清單",
+      "type": "double_major_courses",
+      "requiredCredits": null,
+      "courses": [
+        {
+          "courseId": "030002",
+          "courseName": "社會學\tSociology",
+          "credits": 3
+        },
+        {
+          "courseId": "030003",
+          "courseName": "社會工作概論\tIntroduction to Social Work",
+          "credits": 3
+        },
+        {
+          "courseId": "030007",
+          "courseName": "心理學\tPsychology",
+          "credits": 3
+        },
+        {
+          "courseId": "030013",
+          "courseName": "人類行為與社會環境\tHuman Behavior and Social Environment",
+          "credits": 3
+        },
+        {
+          "courseId": "030015",
+          "courseName": "社會個案工作\tSocial Case Work",
+          "credits": 3
+        },
+        {
+          "courseId": "030016",
+          "courseName": "社會團體工作\tSocial Group Work",
+          "credits": 3
+        },
+        {
+          "courseId": "030028",
+          "courseName": "社區工作\tCommunity Work",
+          "credits": 3
+        },
+        {
+          "courseId": "030049",
+          "courseName": "社會福利理論\tSocial Welfare Theories",
+          "credits": 3
+        },
+        {
+          "courseId": "030050",
+          "courseName": "社會工作理論\tSocial Work Theories",
+          "credits": 3
+        },
+        {
+          "courseId": "030070",
+          "courseName": "社會工作管理\tManagement for Social Work",
+          "credits": 3
+        },
+        {
+          "courseId": "030097",
+          "courseName": "社會研究法(上)\tSocial Research Methods (1)",
+          "credits": 3
+        },
+        {
+          "courseId": "030098",
+          "courseName": "社會研究法(下)\tSocial Research Methods (2)",
+          "credits": 3
+        },
+        {
+          "courseId": "030112",
+          "courseName": "會談技巧\tInterview Skill",
+          "credits": 3
+        },
+        {
+          "courseId": "030114",
+          "courseName": "社會心理學\tSocial Psychology",
+          "credits": 3
+        },
+        {
+          "courseId": "030129",
+          "courseName": "社會福利行政\tSocial Welfare Administration",
+          "credits": 3
+        },
+        {
+          "courseId": "030130",
+          "courseName": "社會工作倫理\tEthics for Social Work",
+          "credits": 3
+        },
+        {
+          "courseId": "030151",
+          "courseName": "社會工作實習(1)\tSocial Work Practice (1)",
+          "credits": 3
+        },
+        {
+          "courseId": "030160",
+          "courseName": "社會政策與社會立法\tSocial Policy & Social Legislation",
+          "credits": 3
+        },
+        {
+          "courseId": "030162",
+          "courseName": "方案設計與評估\tProgram Planning & Evaluation",
+          "credits": 3
+        },
+        {
+          "courseId": "030171",
+          "courseName": "社會工作實習(2)\tSocial Work Practice(2)",
+          "credits": 3
+        },
+        {
+          "courseId": "030172",
+          "courseName": "防身術\tSelf Defense Technigue",
+          "credits": 1
+        },
+        {
+          "courseId": "030173",
+          "courseName": "社會統計\tSocial Statistics",
+          "credits": 4
+        }
+      ],
+      "description": "",
+      "originalRows": [
+        [
+          "合計",
+          "共　22　 門課程　65　學分",
+          ""
+        ]
+      ]
+    }
+  ],
+  "notes": []
+}

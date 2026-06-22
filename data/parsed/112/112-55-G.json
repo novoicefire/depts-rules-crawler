@@ -1,0 +1,78 @@
+{
+  "requirementSetId": "112-55-G",
+  "source": "ccweb6_graduation_requirements",
+  "entryYear": "112",
+  "departmentId": "55",
+  "departmentName": "長期照顧經營管理碩士在職學位學程在職專班",
+  "departmentShortName": "長照專班",
+  "classCode": "G",
+  "className": "碩士班",
+  "rawHtmlPath": "data/raw/112/55/G.html",
+  "groups": [
+    {
+      "groupId": "group_001",
+      "name": "資料項次: 1676 ～ 1676 ／ 1706",
+      "type": "course_list",
+      "requiredCredits": null,
+      "courses": [],
+      "description": "",
+      "originalRows": [
+        [
+          "部別",
+          "碩士班"
+        ],
+        [
+          "入學年度",
+          "112"
+        ]
+      ]
+    },
+    {
+      "groupId": "group_002",
+      "name": "112 學年度入學長期照顧經營管理碩士在職學位學程在職專班碩士班必修課程清單",
+      "type": "required_courses",
+      "requiredCredits": null,
+      "courses": [
+        {
+          "courseId": "550001",
+          "courseName": "社會研究法專題\tSeminar for Social Research Methods",
+          "credits": 3
+        },
+        {
+          "courseId": "550002",
+          "courseName": "長期照顧專題\tSeminar for Long-Term Care",
+          "credits": 3
+        },
+        {
+          "courseId": "550003",
+          "courseName": "長期照顧組織與機構管理專題\tSeminar for Long-term care of organization and institutional management",
+          "credits": 3
+        },
+        {
+          "courseId": "550004",
+          "courseName": "長期照顧組織見學專題\tSeminar for Long-Term Care Management",
+          "credits": 3
+        },
+        {
+          "courseId": "550005",
+          "courseName": "論文寫作專題\tSeminar for Thesis Writing",
+          "credits": 3
+        },
+        {
+          "courseId": "555001",
+          "courseName": "社會研究法專題\tSeminar for Social Research Methods",
+          "credits": 3
+        }
+      ],
+      "description": "",
+      "originalRows": [
+        [
+          "合計",
+          "共　6　門課程　18　學分",
+          ""
+        ]
+      ]
+    }
+  ],
+  "notes": []
+}

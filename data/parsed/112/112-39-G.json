@@ -1,0 +1,73 @@
+{
+  "requirementSetId": "112-39-G",
+  "source": "ccweb6_graduation_requirements",
+  "entryYear": "112",
+  "departmentId": "39",
+  "departmentName": "非營利組織經營管理碩士學位學程在職專班",
+  "departmentShortName": "非營利組織專班",
+  "classCode": "G",
+  "className": "碩士班",
+  "rawHtmlPath": "data/raw/112/39/G.html",
+  "groups": [
+    {
+      "groupId": "group_001",
+      "name": "資料項次: 1510 ～ 1510 ／ 1706",
+      "type": "course_list",
+      "requiredCredits": null,
+      "courses": [],
+      "description": "",
+      "originalRows": [
+        [
+          "部別",
+          "碩士班"
+        ],
+        [
+          "入學年度",
+          "112"
+        ]
+      ]
+    },
+    {
+      "groupId": "group_002",
+      "name": "112 學年度入學非營利組織經營管理碩士學位學程在職專班碩士班必修課程清單",
+      "type": "required_courses",
+      "requiredCredits": null,
+      "courses": [
+        {
+          "courseId": "395001",
+          "courseName": "非營利組織專題\tSeminar for Nonprofit Organization",
+          "credits": 3
+        },
+        {
+          "courseId": "395009",
+          "courseName": "論文寫作專題\tSeminar for Thesis Writing",
+          "credits": 3
+        },
+        {
+          "courseId": "395022",
+          "courseName": "社會研究法專題\tSeminar for Social Research Methods",
+          "credits": 3
+        },
+        {
+          "courseId": "395023",
+          "courseName": "非營利組織管理專題\tSeminar for Nonprofit Organization Management",
+          "credits": 3
+        },
+        {
+          "courseId": "395024",
+          "courseName": "非營利組織見學專題\tSeminar for Nonprofit Organization Management",
+          "credits": 3
+        }
+      ],
+      "description": "",
+      "originalRows": [
+        [
+          "合計",
+          "共　5　門課程　15　學分",
+          ""
+        ]
+      ]
+    }
+  ],
+  "notes": []
+}

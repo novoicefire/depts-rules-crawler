@@ -1,0 +1,567 @@
+{
+  "requirementSetId": "112-04-G",
+  "source": "ccweb6_graduation_requirements",
+  "entryYear": "112",
+  "departmentId": "04",
+  "departmentName": "外國語文學系",
+  "departmentShortName": "外文系",
+  "classCode": "G",
+  "className": "碩士班",
+  "rawHtmlPath": "data/raw/112/04/G.html",
+  "groups": [
+    {
+      "groupId": "group_001",
+      "name": "資料項次: 341 ～ 341 ／ 1706",
+      "type": "course_list",
+      "requiredCredits": null,
+      "courses": [],
+      "description": "",
+      "originalRows": [
+        [
+          "部別",
+          "碩士班"
+        ],
+        [
+          "入學年度",
+          "112"
+        ]
+      ]
+    },
+    {
+      "groupId": "group_002",
+      "name": "112 學年度入學外國語文學系碩士班必修課程清單",
+      "type": "required_courses",
+      "requiredCredits": null,
+      "courses": [
+        {
+          "courseId": "045119",
+          "courseName": "研究方法與論文寫作\tResearch Methods and Research Paper Writing",
+          "credits": 3
+        }
+      ],
+      "description": "",
+      "originalRows": [
+        [
+          "合計",
+          "共　1　門課程　3　學分",
+          ""
+        ]
+      ]
+    },
+    {
+      "groupId": "group_003",
+      "name": "112 學年度入學外國語文學系課程先修(擋修)清單",
+      "type": "prerequisite_rules",
+      "requiredCredits": null,
+      "courses": [
+        {
+          "courseId": "040032",
+          "courseName": "日文二(上)\tJapanese Ⅱ (1)",
+          "targetCourseId": "952001",
+          "targetCourseName": "日文一(上)\tJapanese I(1)"
+        },
+        {
+          "courseId": "040032",
+          "courseName": "日文二(上)\tJapanese Ⅱ (1)",
+          "targetCourseId": "952002",
+          "targetCourseName": "日文一(下)\tJapanese I(2)"
+        },
+        {
+          "courseId": "040033",
+          "courseName": "英文寫作二(上)\tEnglish Composition Ⅱ (1)",
+          "targetCourseId": "040002",
+          "targetCourseName": "英文寫作一(上)\tEnglish Composition I(1)"
+        },
+        {
+          "courseId": "040033",
+          "courseName": "英文寫作二(上)\tEnglish Composition Ⅱ (1)",
+          "targetCourseId": "040016",
+          "targetCourseName": "英文寫作一(下)\tEnglish Composition I(2)"
+        },
+        {
+          "courseId": "040034",
+          "courseName": "會話二(上)\tEnglish Conversation Ⅱ (1)",
+          "targetCourseId": "040001",
+          "targetCourseName": "會話一(上)\tEnglish Conversation I(1)"
+        },
+        {
+          "courseId": "040034",
+          "courseName": "會話二(上)\tEnglish Conversation Ⅱ (1)",
+          "targetCourseId": "040015",
+          "targetCourseName": "會話一(下)\tEnglish Conversation Ⅰ(2)"
+        },
+        {
+          "courseId": "040035",
+          "courseName": "英語聽講二(上)\tEnglish Listening and Speaking Ⅱ (1)",
+          "targetCourseId": "040003",
+          "targetCourseName": "英語聽講一(上)\tEnglish Listening and Speaking I(1)"
+        },
+        {
+          "courseId": "040035",
+          "courseName": "英語聽講二(上)\tEnglish Listening and Speaking Ⅱ (1)",
+          "targetCourseId": "040017",
+          "targetCourseName": "英語聽講一(下)\tEnglish Listening and Speaking I(2)"
+        },
+        {
+          "courseId": "040041",
+          "courseName": "會話二(下)\tEnglish Conversation Ⅱ (2)",
+          "targetCourseId": "040001",
+          "targetCourseName": "會話一(上)\tEnglish Conversation I(1)"
+        },
+        {
+          "courseId": "040041",
+          "courseName": "會話二(下)\tEnglish Conversation Ⅱ (2)",
+          "targetCourseId": "040015",
+          "targetCourseName": "會話一(下)\tEnglish Conversation Ⅰ(2)"
+        },
+        {
+          "courseId": "040043",
+          "courseName": "英文寫作二(下)\tEnglish Composition Ⅱ (2)",
+          "targetCourseId": "040002",
+          "targetCourseName": "英文寫作一(上)\tEnglish Composition I(1)"
+        },
+        {
+          "courseId": "040043",
+          "courseName": "英文寫作二(下)\tEnglish Composition Ⅱ (2)",
+          "targetCourseId": "040016",
+          "targetCourseName": "英文寫作一(下)\tEnglish Composition I(2)"
+        },
+        {
+          "courseId": "040047",
+          "courseName": "日文二(下)\tJapanese Ⅱ (2)",
+          "targetCourseId": "952002",
+          "targetCourseName": "日文一(下)\tJapanese I(2)"
+        },
+        {
+          "courseId": "040048",
+          "courseName": "英語聽講二(下)\tEnglish Listening and Speaking Ⅱ(2)",
+          "targetCourseId": "040003",
+          "targetCourseName": "英語聽講一(上)\tEnglish Listening and Speaking I(1)"
+        },
+        {
+          "courseId": "040048",
+          "courseName": "英語聽講二(下)\tEnglish Listening and Speaking Ⅱ(2)",
+          "targetCourseId": "040017",
+          "targetCourseName": "英語聽講一(下)\tEnglish Listening and Speaking I(2)"
+        },
+        {
+          "courseId": "040052",
+          "courseName": "英文寫作三(上)\tEnglish Composition Ⅲ (1)",
+          "targetCourseId": "040033",
+          "targetCourseName": "英文寫作二(上)\tEnglish Composition Ⅱ (1)"
+        },
+        {
+          "courseId": "040052",
+          "courseName": "英文寫作三(上)\tEnglish Composition Ⅲ (1)",
+          "targetCourseId": "040043",
+          "targetCourseName": "英文寫作二(下)\tEnglish Composition Ⅱ (2)"
+        },
+        {
+          "courseId": "040057",
+          "courseName": "會話三(上)\tEnglish Conversation Ⅲ (1)",
+          "targetCourseId": "040034",
+          "targetCourseName": "會話二(上)\tEnglish Conversation Ⅱ (1)"
+        },
+        {
+          "courseId": "040057",
+          "courseName": "會話三(上)\tEnglish Conversation Ⅲ (1)",
+          "targetCourseId": "040041",
+          "targetCourseName": "會話二(下)\tEnglish Conversation Ⅱ (2)"
+        },
+        {
+          "courseId": "040060",
+          "courseName": "日文三(上)\tJapanese Ⅲ (1)",
+          "targetCourseId": "040032",
+          "targetCourseName": "日文二(上)\tJapanese Ⅱ (1)"
+        },
+        {
+          "courseId": "040060",
+          "courseName": "日文三(上)\tJapanese Ⅲ (1)",
+          "targetCourseId": "040047",
+          "targetCourseName": "日文二(下)\tJapanese Ⅱ (2)"
+        },
+        {
+          "courseId": "040074",
+          "courseName": "英文寫作三(下)\tEnglish Composition Ⅲ (2)",
+          "targetCourseId": "040033",
+          "targetCourseName": "英文寫作二(上)\tEnglish Composition Ⅱ (1)"
+        },
+        {
+          "courseId": "040074",
+          "courseName": "英文寫作三(下)\tEnglish Composition Ⅲ (2)",
+          "targetCourseId": "040043",
+          "targetCourseName": "英文寫作二(下)\tEnglish Composition Ⅱ (2)"
+        },
+        {
+          "courseId": "040075",
+          "courseName": "會話三(下)\tEnglish Conversation Ⅲ (2)",
+          "targetCourseId": "040034",
+          "targetCourseName": "會話二(上)\tEnglish Conversation Ⅱ (1)"
+        },
+        {
+          "courseId": "040075",
+          "courseName": "會話三(下)\tEnglish Conversation Ⅲ (2)",
+          "targetCourseId": "040041",
+          "targetCourseName": "會話二(下)\tEnglish Conversation Ⅱ (2)"
+        },
+        {
+          "courseId": "040077",
+          "courseName": "日文三(下)\tJapanese Ⅲ (2)",
+          "targetCourseId": "040032",
+          "targetCourseName": "日文二(上)\tJapanese Ⅱ (1)"
+        },
+        {
+          "courseId": "040077",
+          "courseName": "日文三(下)\tJapanese Ⅲ (2)",
+          "targetCourseId": "040047",
+          "targetCourseName": "日文二(下)\tJapanese Ⅱ (2)"
+        },
+        {
+          "courseId": "040102",
+          "courseName": "翻譯理論與習作二(上)\tTranslation: Theory and Practice Ⅱ (1)",
+          "targetCourseId": "040050",
+          "targetCourseName": "翻譯理論與習作一(上)\tTranslation:Theory and Practice I(1)"
+        },
+        {
+          "courseId": "040102",
+          "courseName": "翻譯理論與習作二(上)\tTranslation: Theory and Practice Ⅱ (1)",
+          "targetCourseId": "040084",
+          "targetCourseName": "翻譯理論與習作一(下)\tTranslation : Theory and Practice Ⅰ (2)"
+        },
+        {
+          "courseId": "040104",
+          "courseName": "西班牙文二(上)\tSpanish Ⅱ (1)",
+          "targetCourseId": "955001",
+          "targetCourseName": "西班牙文一(上)\tSpanish I(1)"
+        },
+        {
+          "courseId": "040104",
+          "courseName": "西班牙文二(上)\tSpanish Ⅱ (1)",
+          "targetCourseId": "955002",
+          "targetCourseName": "西班牙文一(下)\tSpanish I(2)"
+        },
+        {
+          "courseId": "040125",
+          "courseName": "構詞學\tMorphology",
+          "targetCourseId": "040028",
+          "targetCourseName": "語言學概論(上)\tIntroduction to Linguistics (1)"
+        },
+        {
+          "courseId": "040125",
+          "courseName": "構詞學\tMorphology",
+          "targetCourseId": "040042",
+          "targetCourseName": "語言學概論(下)\tIntroduction to Linguistics (2)"
+        },
+        {
+          "courseId": "040131",
+          "courseName": "翻譯理論與習作二(下)\tTranslation :Theory and Practice Ⅲ (2)",
+          "targetCourseId": "040050",
+          "targetCourseName": "翻譯理論與習作一(上)\tTranslation:Theory and Practice I(1)"
+        },
+        {
+          "courseId": "040131",
+          "courseName": "翻譯理論與習作二(下)\tTranslation :Theory and Practice Ⅲ (2)",
+          "targetCourseId": "040084",
+          "targetCourseName": "翻譯理論與習作一(下)\tTranslation : Theory and Practice Ⅰ (2)"
+        },
+        {
+          "courseId": "040138",
+          "courseName": "西班牙文二(下)\tSpanish Ⅱ (2)",
+          "targetCourseId": "955001",
+          "targetCourseName": "西班牙文一(上)\tSpanish I(1)"
+        },
+        {
+          "courseId": "040138",
+          "courseName": "西班牙文二(下)\tSpanish Ⅱ (2)",
+          "targetCourseId": "955002",
+          "targetCourseName": "西班牙文一(下)\tSpanish I(2)"
+        },
+        {
+          "courseId": "040163",
+          "courseName": "德文會話(上)\tGerman Conversation",
+          "targetCourseId": "954001",
+          "targetCourseName": "德文一(上)\tGerman Ⅰ(1)"
+        },
+        {
+          "courseId": "040163",
+          "courseName": "德文會話(上)\tGerman Conversation",
+          "targetCourseId": "954002",
+          "targetCourseName": "德文一(下)\tGerman Ⅰ(2)"
+        },
+        {
+          "courseId": "040178",
+          "courseName": "日文聽講(下)\tJapanese Listening and Speaking (2)",
+          "targetCourseId": "040167",
+          "targetCourseName": "日文一(上)\tJapanese I(1)"
+        },
+        {
+          "courseId": "040178",
+          "courseName": "日文聽講(下)\tJapanese Listening and Speaking (2)",
+          "targetCourseId": "040172",
+          "targetCourseName": "日文一(下)\tJapanese I (2)"
+        },
+        {
+          "courseId": "040186",
+          "courseName": "法文二(上)\tFrench II(1)",
+          "targetCourseId": "040168",
+          "targetCourseName": "法文一(上)\tFrench I(1)"
+        },
+        {
+          "courseId": "040186",
+          "courseName": "法文二(上)\tFrench II(1)",
+          "targetCourseId": "040174",
+          "targetCourseName": "法文一(下)\tFrench I(2)"
+        },
+        {
+          "courseId": "040187",
+          "courseName": "德文二(上)\tGerman II(1)",
+          "targetCourseId": "040170",
+          "targetCourseName": "德文一(上)\tGerman I(1)"
+        },
+        {
+          "courseId": "040189",
+          "courseName": "西班牙文二(上)\tSpanish II(1)",
+          "targetCourseId": "040169",
+          "targetCourseName": "西班牙文一(上)\tSpanish I (1)"
+        },
+        {
+          "courseId": "040189",
+          "courseName": "西班牙文二(上)\tSpanish II(1)",
+          "targetCourseId": "040171",
+          "targetCourseName": "西班牙文一(下)\tSpanish Ⅰ(2)"
+        },
+        {
+          "courseId": "040190",
+          "courseName": "西班牙文三(上)\tSpanish Ⅲ(1)",
+          "targetCourseId": "040104",
+          "targetCourseName": "西班牙文二(上)\tSpanish Ⅱ (1)"
+        },
+        {
+          "courseId": "040190",
+          "courseName": "西班牙文三(上)\tSpanish Ⅲ(1)",
+          "targetCourseId": "040138",
+          "targetCourseName": "西班牙文二(下)\tSpanish Ⅱ (2)"
+        },
+        {
+          "courseId": "040191",
+          "courseName": "日文二(上)\tJapanese II(1)",
+          "targetCourseId": "040167",
+          "targetCourseName": "日文一(上)\tJapanese I(1)"
+        },
+        {
+          "courseId": "040191",
+          "courseName": "日文二(上)\tJapanese II(1)",
+          "targetCourseId": "040172",
+          "targetCourseName": "日文一(下)\tJapanese I (2)"
+        },
+        {
+          "courseId": "040193",
+          "courseName": "日文會話(上)\tJapanese Conversation (1)",
+          "targetCourseId": "040167",
+          "targetCourseName": "日文一(上)\tJapanese I(1)"
+        },
+        {
+          "courseId": "040193",
+          "courseName": "日文會話(上)\tJapanese Conversation (1)",
+          "targetCourseId": "040172",
+          "targetCourseName": "日文一(下)\tJapanese I (2)"
+        },
+        {
+          "courseId": "040196",
+          "courseName": "法文二(下)\tFrench Ⅱ(2)",
+          "targetCourseId": "040168",
+          "targetCourseName": "法文一(上)\tFrench I(1)"
+        },
+        {
+          "courseId": "040196",
+          "courseName": "法文二(下)\tFrench Ⅱ(2)",
+          "targetCourseId": "040174",
+          "targetCourseName": "法文一(下)\tFrench I(2)"
+        },
+        {
+          "courseId": "040197",
+          "courseName": "德文二(下)\tGerman Ⅱ(2)",
+          "targetCourseId": "040170",
+          "targetCourseName": "德文一(上)\tGerman I(1)"
+        },
+        {
+          "courseId": "040197",
+          "courseName": "德文二(下)\tGerman Ⅱ(2)",
+          "targetCourseId": "040202",
+          "targetCourseName": "德文一(下)\tGerman Ⅰ(2)"
+        },
+        {
+          "courseId": "040199",
+          "courseName": "西班牙文二(下)\tSpanish II(2)",
+          "targetCourseId": "040169",
+          "targetCourseName": "西班牙文一(上)\tSpanish I (1)"
+        },
+        {
+          "courseId": "040199",
+          "courseName": "西班牙文二(下)\tSpanish II(2)",
+          "targetCourseId": "040171",
+          "targetCourseName": "西班牙文一(下)\tSpanish Ⅰ(2)"
+        },
+        {
+          "courseId": "040200",
+          "courseName": "日文二(下)\tJapanese II(2)",
+          "targetCourseId": "040167",
+          "targetCourseName": "日文一(上)\tJapanese I(1)"
+        },
+        {
+          "courseId": "040200",
+          "courseName": "日文二(下)\tJapanese II(2)",
+          "targetCourseId": "040172",
+          "targetCourseName": "日文一(下)\tJapanese I (2)"
+        },
+        {
+          "courseId": "040201",
+          "courseName": "日文會話(下)\tJapanese Conversation (2)",
+          "targetCourseId": "040167",
+          "targetCourseName": "日文一(上)\tJapanese I(1)"
+        },
+        {
+          "courseId": "040201",
+          "courseName": "日文會話(下)\tJapanese Conversation (2)",
+          "targetCourseId": "040172",
+          "targetCourseName": "日文一(下)\tJapanese I (2)"
+        },
+        {
+          "courseId": "040218",
+          "courseName": "西班牙文三(下)\tSpanish Ⅲ(2)",
+          "targetCourseId": "040104",
+          "targetCourseName": "西班牙文二(上)\tSpanish Ⅱ (1)"
+        },
+        {
+          "courseId": "040218",
+          "courseName": "西班牙文三(下)\tSpanish Ⅲ(2)",
+          "targetCourseId": "040138",
+          "targetCourseName": "西班牙文二(下)\tSpanish Ⅱ (2)"
+        },
+        {
+          "courseId": "040226",
+          "courseName": "進階翻譯理論與習作\tAdvanced Translation Theory and Practice",
+          "targetCourseId": "040050",
+          "targetCourseName": "翻譯理論與習作一(上)\tTranslation:Theory and Practice I(1)"
+        },
+        {
+          "courseId": "040226",
+          "courseName": "進階翻譯理論與習作\tAdvanced Translation Theory and Practice",
+          "targetCourseId": "040084",
+          "targetCourseName": "翻譯理論與習作一(下)\tTranslation : Theory and Practice Ⅰ (2)"
+        },
+        {
+          "courseId": "040275",
+          "courseName": "口譯技巧與實務\tInterpreting Skills and Practice",
+          "targetCourseId": "040003",
+          "targetCourseName": "英語聽講一(上)\tEnglish Listening and Speaking I(1)"
+        },
+        {
+          "courseId": "040275",
+          "courseName": "口譯技巧與實務\tInterpreting Skills and Practice",
+          "targetCourseId": "040017",
+          "targetCourseName": "英語聽講一(下)\tEnglish Listening and Speaking I(2)"
+        },
+        {
+          "courseId": "040281",
+          "courseName": "韓文翻譯與口譯基礎（上）\tKorean-Chinese Translation and Interpreting (1)",
+          "targetCourseId": "952014",
+          "targetCourseName": "韓文二(上)\tKorean II (1)"
+        },
+        {
+          "courseId": "040281",
+          "courseName": "韓文翻譯與口譯基礎（上）\tKorean-Chinese Translation and Interpreting (1)",
+          "targetCourseId": "952015",
+          "targetCourseName": "韓文二(下)\tKorean II (2)"
+        },
+        {
+          "courseId": "040282",
+          "courseName": "韓文翻譯與口譯基礎（下）\tKorean-Chinese Translation and Interpreting(2)",
+          "targetCourseId": "952014",
+          "targetCourseName": "韓文二(上)\tKorean II (1)"
+        },
+        {
+          "courseId": "040282",
+          "courseName": "韓文翻譯與口譯基礎（下）\tKorean-Chinese Translation and Interpreting(2)",
+          "targetCourseId": "952015",
+          "targetCourseName": "韓文二(下)\tKorean II (2)"
+        },
+        {
+          "courseId": "040286",
+          "courseName": "英文寫作二（上）\tEnglish Composition II (1)",
+          "targetCourseId": "040284",
+          "targetCourseName": "英文寫作一（上）\tEnglish Composition I (1)"
+        },
+        {
+          "courseId": "040286",
+          "courseName": "英文寫作二（上）\tEnglish Composition II (1)",
+          "targetCourseId": "040295",
+          "targetCourseName": "英文寫作一（下）\tEnglish Composition I(2)"
+        },
+        {
+          "courseId": "040289",
+          "courseName": "韓文三（上）\tKorean III (1)",
+          "targetCourseId": "040288",
+          "targetCourseName": "韓文二（上）\tKorean II (1)"
+        },
+        {
+          "courseId": "040289",
+          "courseName": "韓文三（上）\tKorean III (1)",
+          "targetCourseId": "040300",
+          "targetCourseName": "韓文二（下）\tKorean II(2)"
+        },
+        {
+          "courseId": "040290",
+          "courseName": "日文聽講（上）\tJapanese Listening and Speaking (1)",
+          "targetCourseId": "952001",
+          "targetCourseName": "日文一(上)\tJapanese I(1)"
+        },
+        {
+          "courseId": "040290",
+          "courseName": "日文聽講（上）\tJapanese Listening and Speaking (1)",
+          "targetCourseId": "952002",
+          "targetCourseName": "日文一(下)\tJapanese I(2)"
+        },
+        {
+          "courseId": "040297",
+          "courseName": "英文寫作二（下）\tEnglish Composition II(2)",
+          "targetCourseId": "040284",
+          "targetCourseName": "英文寫作一（上）\tEnglish Composition I (1)"
+        },
+        {
+          "courseId": "040297",
+          "courseName": "英文寫作二（下）\tEnglish Composition II(2)",
+          "targetCourseId": "040295",
+          "targetCourseName": "英文寫作一（下）\tEnglish Composition I(2)"
+        },
+        {
+          "courseId": "040298",
+          "courseName": "日文聽講（下）\tJapanese Listening and Speaking(2)",
+          "targetCourseId": "952001",
+          "targetCourseName": "日文一(上)\tJapanese I(1)"
+        },
+        {
+          "courseId": "040298",
+          "courseName": "日文聽講（下）\tJapanese Listening and Speaking(2)",
+          "targetCourseId": "952002",
+          "targetCourseName": "日文一(下)\tJapanese I(2)"
+        },
+        {
+          "courseId": "040301",
+          "courseName": "韓文三（下）\tKorean III(2)",
+          "targetCourseId": "040288",
+          "targetCourseName": "韓文二（上）\tKorean II (1)"
+        },
+        {
+          "courseId": "040301",
+          "courseName": "韓文三（下）\tKorean III(2)",
+          "targetCourseId": "040300",
+          "targetCourseName": "韓文二（下）\tKorean II(2)"
+        }
+      ],
+      "description": "",
+      "originalRows": []
+    }
+  ],
+  "notes": []
+}

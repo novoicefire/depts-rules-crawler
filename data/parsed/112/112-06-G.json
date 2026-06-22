@@ -1,0 +1,63 @@
+{
+  "requirementSetId": "112-06-G",
+  "source": "ccweb6_graduation_requirements",
+  "entryYear": "112",
+  "departmentId": "06",
+  "departmentName": "公共行政與政策學系",
+  "departmentShortName": "公行系",
+  "classCode": "G",
+  "className": "碩士班",
+  "rawHtmlPath": "data/raw/112/06/G.html",
+  "groups": [
+    {
+      "groupId": "group_001",
+      "name": "資料項次: 477 ～ 477 ／ 1706",
+      "type": "course_list",
+      "requiredCredits": null,
+      "courses": [],
+      "description": "",
+      "originalRows": [
+        [
+          "部別",
+          "碩士班"
+        ],
+        [
+          "入學年度",
+          "112"
+        ]
+      ]
+    },
+    {
+      "groupId": "group_002",
+      "name": "112 學年度入學公共行政與政策學系碩士班必修課程清單",
+      "type": "required_courses",
+      "requiredCredits": null,
+      "courses": [
+        {
+          "courseId": "065109",
+          "courseName": "研究方法專題\tSeminar on Research Methods",
+          "credits": 3
+        },
+        {
+          "courseId": "065111",
+          "courseName": "公共行政與政策專題\tSeminar on Public Administration and Policy",
+          "credits": 3
+        },
+        {
+          "courseId": "065137",
+          "courseName": "論文寫作專題\tSeminar for Thesis Writing",
+          "credits": 3
+        }
+      ],
+      "description": "",
+      "originalRows": [
+        [
+          "合計",
+          "共　3　門課程　9　學分",
+          ""
+        ]
+      ]
+    }
+  ],
+  "notes": []
+}

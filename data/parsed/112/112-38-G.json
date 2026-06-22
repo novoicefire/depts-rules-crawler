@@ -1,0 +1,78 @@
+{
+  "requirementSetId": "112-38-G",
+  "source": "ccweb6_graduation_requirements",
+  "entryYear": "112",
+  "departmentId": "38",
+  "departmentName": "華語文教學碩士學位學程",
+  "departmentShortName": "華文學程",
+  "classCode": "G",
+  "className": "碩士班",
+  "rawHtmlPath": "data/raw/112/38/G.html",
+  "groups": [
+    {
+      "groupId": "group_001",
+      "name": "資料項次: 1493 ～ 1493 ／ 1706",
+      "type": "course_list",
+      "requiredCredits": null,
+      "courses": [],
+      "description": "",
+      "originalRows": [
+        [
+          "部別",
+          "碩士班"
+        ],
+        [
+          "入學年度",
+          "112"
+        ]
+      ]
+    },
+    {
+      "groupId": "group_002",
+      "name": "112 學年度入學華語文教學碩士學位學程碩士班必修課程清單",
+      "type": "required_courses",
+      "requiredCredits": null,
+      "courses": [
+        {
+          "courseId": "385001",
+          "courseName": "華語文教材教法\tMaterials and Methods for Teaching Chinese as a Second/Foreign Language",
+          "credits": 3
+        },
+        {
+          "courseId": "385003",
+          "courseName": "漢語語言學\tChinese Linguistics",
+          "credits": 3
+        },
+        {
+          "courseId": "385016",
+          "courseName": "研究方法\tResearch Methods",
+          "credits": 3
+        },
+        {
+          "courseId": "385035",
+          "courseName": "國內外教學實習\tChinese Language Teaching Practicum",
+          "credits": 1
+        },
+        {
+          "courseId": "385036",
+          "courseName": "華語文教學前沿講座（1）\tLectures on the Frontiers of Teaching Chinese as a Second/Foreign Language",
+          "credits": 1
+        },
+        {
+          "courseId": "385037",
+          "courseName": "華語文教學前沿講座（2）\tLectures on the Frontiers of Teaching Chinese as a Second Language（2）",
+          "credits": 1
+        }
+      ],
+      "description": "",
+      "originalRows": [
+        [
+          "合計",
+          "共　6　門課程　12　學分",
+          ""
+        ]
+      ]
+    }
+  ],
+  "notes": []
+}

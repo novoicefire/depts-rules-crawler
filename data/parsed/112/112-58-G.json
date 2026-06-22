@@ -1,0 +1,63 @@
+{
+  "requirementSetId": "112-58-G",
+  "source": "ccweb6_graduation_requirements",
+  "entryYear": "112",
+  "departmentId": "58",
+  "departmentName": "地方創生與跨域治理碩士學位學程",
+  "departmentShortName": "地方創生學程",
+  "classCode": "G",
+  "className": "碩士班",
+  "rawHtmlPath": "data/raw/112/58/G.html",
+  "groups": [
+    {
+      "groupId": "group_001",
+      "name": "資料項次: 1690 ～ 1690 ／ 1706",
+      "type": "course_list",
+      "requiredCredits": null,
+      "courses": [],
+      "description": "",
+      "originalRows": [
+        [
+          "部別",
+          "碩士班"
+        ],
+        [
+          "入學年度",
+          "112"
+        ]
+      ]
+    },
+    {
+      "groupId": "group_002",
+      "name": "112 學年度入學地方創生與跨域治理碩士學位學程碩士班必修課程清單",
+      "type": "required_courses",
+      "requiredCredits": null,
+      "courses": [
+        {
+          "courseId": "585000",
+          "courseName": "地方創生與跨域治理專題\tSeminar on Regional Revitalization and Cross-boundary Governance",
+          "credits": 3
+        },
+        {
+          "courseId": "585003",
+          "courseName": "社會實踐研究方法專題\tSeminar on Research Methods of Social Practices",
+          "credits": 3
+        },
+        {
+          "courseId": "585010",
+          "courseName": "論文寫作專題\tSeminar on Thesis Writing",
+          "credits": 3
+        }
+      ],
+      "description": "",
+      "originalRows": [
+        [
+          "合計",
+          "共　3　門課程　9　學分",
+          ""
+        ]
+      ]
+    }
+  ],
+  "notes": []
+}

@@ -1,0 +1,528 @@
+{
+  "requirementSetId": "112-22-B",
+  "source": "ccweb6_graduation_requirements",
+  "entryYear": "112",
+  "departmentId": "22",
+  "departmentName": "土木工程學系",
+  "departmentShortName": "土木系",
+  "classCode": "B",
+  "className": "學士班",
+  "rawHtmlPath": "data/raw/112/22/B.html",
+  "groups": [
+    {
+      "groupId": "group_001",
+      "name": "資料項次: 1055 ～ 1055 ／ 1706",
+      "type": "course_list",
+      "requiredCredits": null,
+      "courses": [],
+      "description": "",
+      "originalRows": [
+        [
+          "部別",
+          "學士班"
+        ],
+        [
+          "入學年度",
+          "112"
+        ]
+      ]
+    },
+    {
+      "groupId": "group_002",
+      "name": "112 學年度入學土木工程學系學士班必修課程清單",
+      "type": "required_courses",
+      "requiredCredits": null,
+      "courses": [
+        {
+          "courseId": "220017",
+          "courseName": "工程數學(上)\tEngineering Mathematics (1)",
+          "credits": 3
+        },
+        {
+          "courseId": "220019",
+          "courseName": "材料力學\tMechanics of Materials",
+          "credits": 3
+        },
+        {
+          "courseId": "220027",
+          "courseName": "工程數學(下)\tEngineering Mathematics (2)",
+          "credits": 3
+        },
+        {
+          "courseId": "220029",
+          "courseName": "結構學\tElementary Structures",
+          "credits": 3
+        },
+        {
+          "courseId": "220030",
+          "courseName": "流體力學\tFluid Mechanics",
+          "credits": 3
+        },
+        {
+          "courseId": "220033",
+          "courseName": "靜力學\tEngineering Mechanics : statics",
+          "credits": 3
+        },
+        {
+          "courseId": "220036",
+          "courseName": "土壤力學\tSoil Mechanics",
+          "credits": 3
+        },
+        {
+          "courseId": "220037",
+          "courseName": "水文學\tHydrology",
+          "credits": 3
+        },
+        {
+          "courseId": "220038",
+          "courseName": "鋼筋混凝土學\tReinforced Concrete",
+          "credits": 3
+        },
+        {
+          "courseId": "220041",
+          "courseName": "土木工程實驗(一)\tCivil Engineering Laboratory Ⅰ",
+          "credits": 2
+        },
+        {
+          "courseId": "220049",
+          "courseName": "計算機程式\tComputer Program",
+          "credits": 3
+        },
+        {
+          "courseId": "220053",
+          "courseName": "水利工程\tHydraulic Engineering",
+          "credits": 3
+        },
+        {
+          "courseId": "220067",
+          "courseName": "普通物理實驗\tLaboratory for General Physics",
+          "credits": 1
+        },
+        {
+          "courseId": "220078",
+          "courseName": "工程圖學\tEngineering Graphics",
+          "credits": 1
+        },
+        {
+          "courseId": "220079",
+          "courseName": "土木工程實驗(二)\tCivil Engineering Laboratory Ⅱ",
+          "credits": 2
+        },
+        {
+          "courseId": "220084",
+          "courseName": "運輸工程\tTransportation Engineering",
+          "credits": 3
+        },
+        {
+          "courseId": "220085",
+          "courseName": "工程材料\tEngineering Materials",
+          "credits": 3
+        },
+        {
+          "courseId": "220087",
+          "courseName": "基礎工程\tFoundation Engineering",
+          "credits": 3
+        },
+        {
+          "courseId": "220090",
+          "courseName": "水處理工程\tWater and Wastewater Treatment Engineering",
+          "credits": 3
+        },
+        {
+          "courseId": "220099",
+          "courseName": "環境工程\tEnvironmental Engineering",
+          "credits": 3
+        },
+        {
+          "courseId": "220108",
+          "courseName": "微積分(上)\tCalculus",
+          "credits": 3
+        },
+        {
+          "courseId": "220109",
+          "courseName": "測量學\tSurveying",
+          "credits": 2
+        },
+        {
+          "courseId": "220110",
+          "courseName": "測量實習\tSurveying",
+          "credits": 1
+        },
+        {
+          "courseId": "220112",
+          "courseName": "微積分(下)\tCalculus",
+          "credits": 3
+        },
+        {
+          "courseId": "220113",
+          "courseName": "機率與統計\tProbability and statistics",
+          "credits": 3
+        },
+        {
+          "courseId": "220141",
+          "courseName": "土木工程概論\tIntroduction to Civil Engineering",
+          "credits": 1
+        },
+        {
+          "courseId": "220142",
+          "courseName": "普通物理\tGeneral Physics",
+          "credits": 3
+        },
+        {
+          "courseId": "220145",
+          "courseName": "土木工程設計實作\tCivil Engineering Capstone Challenge",
+          "credits": 3
+        }
+      ],
+      "description": "",
+      "originalRows": [
+        [
+          "合計",
+          "共　28　門課程　73　學分",
+          ""
+        ]
+      ]
+    },
+    {
+      "groupId": "group_003",
+      "name": "112 學年度入學土木工程學系課程先修(擋修)清單",
+      "type": "prerequisite_rules",
+      "requiredCredits": null,
+      "courses": [
+        {
+          "courseId": "220019",
+          "courseName": "材料力學\tMechanics of Materials",
+          "targetCourseId": "220033",
+          "targetCourseName": "靜力學\tEngineering Mechanics : statics"
+        },
+        {
+          "courseId": "220029",
+          "courseName": "結構學\tElementary Structures",
+          "targetCourseId": "220019",
+          "targetCourseName": "材料力學\tMechanics of Materials"
+        },
+        {
+          "courseId": "220041",
+          "courseName": "土木工程實驗(一)\tCivil Engineering Laboratory Ⅰ",
+          "targetCourseId": "220019",
+          "targetCourseName": "材料力學\tMechanics of Materials"
+        },
+        {
+          "courseId": "220041",
+          "courseName": "土木工程實驗(一)\tCivil Engineering Laboratory Ⅰ",
+          "targetCourseId": "220029",
+          "targetCourseName": "結構學\tElementary Structures"
+        },
+        {
+          "courseId": "220079",
+          "courseName": "土木工程實驗(二)\tCivil Engineering Laboratory Ⅱ",
+          "targetCourseId": "220030",
+          "targetCourseName": "流體力學\tFluid Mechanics"
+        },
+        {
+          "courseId": "220079",
+          "courseName": "土木工程實驗(二)\tCivil Engineering Laboratory Ⅱ",
+          "targetCourseId": "220036",
+          "targetCourseName": "土壤力學\tSoil Mechanics"
+        },
+        {
+          "courseId": "220087",
+          "courseName": "基礎工程\tFoundation Engineering",
+          "targetCourseId": "220036",
+          "targetCourseName": "土壤力學\tSoil Mechanics"
+        },
+        {
+          "courseId": "225034",
+          "courseName": "高等材料力學\tAdvanced Mechanics of Materials",
+          "targetCourseId": "220019",
+          "targetCourseName": "材料力學\tMechanics of Materials"
+        },
+        {
+          "courseId": "225051",
+          "courseName": "高等工程數學(一)\tAdvanced Engineering Mathematics(III)",
+          "targetCourseId": "220017",
+          "targetCourseName": "工程數學(上)\tEngineering Mathematics (1)"
+        },
+        {
+          "courseId": "225051",
+          "courseName": "高等工程數學(一)\tAdvanced Engineering Mathematics(III)",
+          "targetCourseId": "220027",
+          "targetCourseName": "工程數學(下)\tEngineering Mathematics (2)"
+        },
+        {
+          "courseId": "225080",
+          "courseName": "材料機械行為\tMechanical Behavior of Materials",
+          "targetCourseId": "225034",
+          "targetCourseName": "高等材料力學\tAdvanced Mechanics of Materials"
+        },
+        {
+          "courseId": "229013",
+          "courseName": "微觀力學\tMicromechanics",
+          "targetCourseId": "225034",
+          "targetCourseName": "高等材料力學\tAdvanced Mechanics of Materials"
+        },
+        {
+          "courseId": "229014",
+          "courseName": "環境力學（二）\tMechanics of Continua for Environmental Problems (Ⅱ)",
+          "targetCourseId": "220017",
+          "targetCourseName": "工程數學(上)\tEngineering Mathematics (1)"
+        },
+        {
+          "courseId": "229014",
+          "courseName": "環境力學（二）\tMechanics of Continua for Environmental Problems (Ⅱ)",
+          "targetCourseId": "220027",
+          "targetCourseName": "工程數學(下)\tEngineering Mathematics (2)"
+        },
+        {
+          "courseId": "229014",
+          "courseName": "環境力學（二）\tMechanics of Continua for Environmental Problems (Ⅱ)",
+          "targetCourseId": "220030",
+          "targetCourseName": "流體力學\tFluid Mechanics"
+        },
+        {
+          "courseId": "229047",
+          "courseName": "應用力學特論\tSpecial Topics on Applied Mechanics",
+          "targetCourseId": "225019",
+          "targetCourseName": "彈性力學\tTheory of Elasticity"
+        },
+        {
+          "courseId": "229054",
+          "courseName": "接觸力學\tContact Mechanics",
+          "targetCourseId": "225019",
+          "targetCourseName": "彈性力學\tTheory of Elasticity"
+        }
+      ],
+      "description": "",
+      "originalRows": []
+    },
+    {
+      "groupId": "group_004",
+      "name": "112 學年度入學學士班校核心(共同及通識教育)課程最低學分數一覽表",
+      "type": "core_requirements",
+      "requiredCredits": null,
+      "courses": [],
+      "description": "",
+      "originalRows": [
+        [
+          "人文(105始)",
+          "G 人文-文學與藝術(105始)H 人文-歷史哲學與文化(105始)",
+          "2",
+          "4",
+          "最少選修 2 種次領域課程最少選修合計 4 學分"
+        ],
+        [
+          "共同必修(99始)",
+          "A 共同必修(99始)",
+          "0",
+          "15",
+          "最少選修合計 15 學分"
+        ],
+        [
+          "自然(105始)",
+          "K 自然-工程與科技(105始)L 自然-生命與科學(105始)",
+          "2",
+          "4",
+          "最少選修 2 種次領域課程最少選修合計 4 學分"
+        ],
+        [
+          "社會(105始)",
+          "I 社會-法政與教育(105始)J 社會-社經與管理(105始)",
+          "2",
+          "4",
+          "最少選修 2 種次領域課程最少選修合計 4 學分"
+        ],
+        [
+          "特色通識(105始)",
+          "M 特色通識-國際連結(東南亞)105始N 特色通識-淨零永續(綠概念)105始O 特色通識-社會創新(在地實踐)105始",
+          "2",
+          "4",
+          "最少選修 2 種次領域課程最少選修合計 4 學分"
+        ],
+        [
+          "合計",
+          "共　5　 類課程　31　學分",
+          "",
+          "",
+          ""
+        ]
+      ]
+    },
+    {
+      "groupId": "group_005",
+      "name": "112 學年度入學土木工程學系學士班校核心必修(選)課程清單",
+      "type": "core_requirements",
+      "requiredCredits": null,
+      "courses": [],
+      "description": "",
+      "originalRows": [
+        [
+          "902055 體育:運動舞蹈(1.0學分)902056 體育:高爾夫球(1.0學分)902057 體育:射箭(1.0學分)902058 體育:游泳(1.0學分)902059 體育:網球(1.0學分)902060 體育:船艇(1.0學分)902069 體育:戶外探索教育(1.0學分)",
+          "至少選修 2 門課程至少選修合計2 學分"
+        ]
+      ]
+    },
+    {
+      "groupId": "group_006",
+      "name": "112 學年度入學土木工程學系學士班輔系必修課目清單",
+      "type": "minor_courses",
+      "requiredCredits": null,
+      "courses": [
+        {
+          "courseId": "220017",
+          "courseName": "工程數學(上)\tEngineering Mathematics (1)",
+          "credits": 3
+        },
+        {
+          "courseId": "220019",
+          "courseName": "材料力學\tMechanics of Materials",
+          "credits": 3
+        },
+        {
+          "courseId": "220020",
+          "courseName": "測量學\tSurveying",
+          "credits": 3
+        },
+        {
+          "courseId": "220023",
+          "courseName": "土木工程概論(上)\tIntroduction to Civil Engineering (1)",
+          "credits": 1
+        },
+        {
+          "courseId": "220027",
+          "courseName": "工程數學(下)\tEngineering Mathematics (2)",
+          "credits": 3
+        },
+        {
+          "courseId": "220029",
+          "courseName": "結構學\tElementary Structures",
+          "credits": 3
+        },
+        {
+          "courseId": "220030",
+          "courseName": "流體力學\tFluid Mechanics",
+          "credits": 3
+        },
+        {
+          "courseId": "220033",
+          "courseName": "靜力學\tEngineering Mechanics : statics",
+          "credits": 3
+        },
+        {
+          "courseId": "220036",
+          "courseName": "土壤力學\tSoil Mechanics",
+          "credits": 3
+        },
+        {
+          "courseId": "220037",
+          "courseName": "水文學\tHydrology",
+          "credits": 3
+        },
+        {
+          "courseId": "220041",
+          "courseName": "土木工程實驗(一)\tCivil Engineering Laboratory Ⅰ",
+          "credits": 2
+        },
+        {
+          "courseId": "220049",
+          "courseName": "計算機程式\tComputer Program",
+          "credits": 3
+        },
+        {
+          "courseId": "220062",
+          "courseName": "土木工程概論(下)\tIntroduction to Civil Engineering (2)",
+          "credits": 1
+        }
+      ],
+      "description": "",
+      "originalRows": [
+        [
+          "合計",
+          "共　13　 門課程　34　學分",
+          ""
+        ]
+      ]
+    },
+    {
+      "groupId": "group_007",
+      "name": "112 學年度入學土木工程學系學士班雙主修必修課目清單",
+      "type": "double_major_courses",
+      "requiredCredits": null,
+      "courses": [
+        {
+          "courseId": "220017",
+          "courseName": "工程數學(上)\tEngineering Mathematics (1)",
+          "credits": 3
+        },
+        {
+          "courseId": "220019",
+          "courseName": "材料力學\tMechanics of Materials",
+          "credits": 3
+        },
+        {
+          "courseId": "220020",
+          "courseName": "測量學\tSurveying",
+          "credits": 3
+        },
+        {
+          "courseId": "220023",
+          "courseName": "土木工程概論(上)\tIntroduction to Civil Engineering (1)",
+          "credits": 1
+        },
+        {
+          "courseId": "220027",
+          "courseName": "工程數學(下)\tEngineering Mathematics (2)",
+          "credits": 3
+        },
+        {
+          "courseId": "220029",
+          "courseName": "結構學\tElementary Structures",
+          "credits": 3
+        },
+        {
+          "courseId": "220030",
+          "courseName": "流體力學\tFluid Mechanics",
+          "credits": 3
+        },
+        {
+          "courseId": "220033",
+          "courseName": "靜力學\tEngineering Mechanics : statics",
+          "credits": 3
+        },
+        {
+          "courseId": "220036",
+          "courseName": "土壤力學\tSoil Mechanics",
+          "credits": 3
+        },
+        {
+          "courseId": "220037",
+          "courseName": "水文學\tHydrology",
+          "credits": 3
+        },
+        {
+          "courseId": "220041",
+          "courseName": "土木工程實驗(一)\tCivil Engineering Laboratory Ⅰ",
+          "credits": 2
+        },
+        {
+          "courseId": "220049",
+          "courseName": "計算機程式\tComputer Program",
+          "credits": 3
+        },
+        {
+          "courseId": "220062",
+          "courseName": "土木工程概論(下)\tIntroduction to Civil Engineering (2)",
+          "credits": 1
+        }
+      ],
+      "description": "",
+      "originalRows": [
+        [
+          "合計",
+          "共　13　 門課程　34　學分",
+          ""
+        ]
+      ]
+    }
+  ],
+  "notes": []
+}

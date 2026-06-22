@@ -1,0 +1,77 @@
+{
+  "requirementSetId": "112-31-G",
+  "source": "ccweb6_graduation_requirements",
+  "entryYear": "112",
+  "departmentId": "31",
+  "departmentName": "公共行政與政策學系碩士在職專班",
+  "departmentShortName": "公行專班",
+  "classCode": "G",
+  "className": "碩士班",
+  "rawHtmlPath": "data/raw/112/31/G.html",
+  "groups": [
+    {
+      "groupId": "group_001",
+      "name": "資料項次: 1382 ～ 1382 ／ 1706",
+      "type": "course_list",
+      "requiredCredits": null,
+      "courses": [],
+      "description": "",
+      "originalRows": [
+        [
+          "部別",
+          "碩士班"
+        ],
+        [
+          "入學年度",
+          "112"
+        ]
+      ]
+    },
+    {
+      "groupId": "group_002",
+      "name": "112 學年度入學公共行政與政策學系碩士在職專班碩士班必修課程清單",
+      "type": "required_courses",
+      "requiredCredits": null,
+      "courses": [
+        {
+          "courseId": "315078",
+          "courseName": "研究方法專題\tSeminar on Research Methods",
+          "credits": 3
+        },
+        {
+          "courseId": "315081",
+          "courseName": "公共行政與政策專題\tSeminar on Public Administration and Policy",
+          "credits": 3
+        },
+        {
+          "courseId": "315099",
+          "courseName": "論文寫作專題\tSeminar for Thesis Writing",
+          "credits": 3
+        }
+      ],
+      "description": "",
+      "originalRows": [
+        [
+          "合計",
+          "共　3　門課程　9　學分",
+          ""
+        ]
+      ]
+    },
+    {
+      "groupId": "group_003",
+      "name": "112 學年度入學公共行政與政策學系碩士在職專班碩士班系必修(選)課程清單",
+      "type": "required_courses",
+      "requiredCredits": null,
+      "courses": [],
+      "description": "",
+      "originalRows": [
+        [
+          "315003 政治經濟學專題(3.0學分)315027 行政法專題(3.0學分)315079 國際關係專題(3.0學分)",
+          "至少選修 1 門課程"
+        ]
+      ]
+    }
+  ],
+  "notes": []
+}

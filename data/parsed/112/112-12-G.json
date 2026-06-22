@@ -1,0 +1,255 @@
+{
+  "requirementSetId": "112-12-G",
+  "source": "ccweb6_graduation_requirements",
+  "entryYear": "112",
+  "departmentId": "12",
+  "departmentName": "國際企業學系",
+  "departmentShortName": "國企系",
+  "classCode": "G",
+  "className": "碩士班",
+  "rawHtmlPath": "data/raw/112/12/G.html",
+  "groups": [
+    {
+      "groupId": "group_001",
+      "name": "資料項次: 791 ～ 791 ／ 1706",
+      "type": "course_list",
+      "requiredCredits": null,
+      "courses": [],
+      "description": "",
+      "originalRows": [
+        [
+          "部別",
+          "碩士班"
+        ],
+        [
+          "入學年度",
+          "112"
+        ]
+      ]
+    },
+    {
+      "groupId": "group_002",
+      "name": "112 學年度入學國際企業學系碩士班必修課程清單",
+      "type": "required_courses",
+      "requiredCredits": null,
+      "courses": [
+        {
+          "courseId": "125000",
+          "courseName": "國際行銷管理\tInternational Marketing Management",
+          "credits": 3
+        },
+        {
+          "courseId": "125006",
+          "courseName": "國際企業學專題研討(一)\tSeminars on International Business I",
+          "credits": 1
+        },
+        {
+          "courseId": "125017",
+          "courseName": "國際財務管理\tInternational Financial Management",
+          "credits": 3
+        },
+        {
+          "courseId": "125021",
+          "courseName": "國際企業學專題研討(二)\tSeminars on International Business Ⅱ",
+          "credits": 1
+        },
+        {
+          "courseId": "125056",
+          "courseName": "研究方法\tResearch Methodology",
+          "credits": 3
+        },
+        {
+          "courseId": "125101",
+          "courseName": "組織行為與理論\tOrganization Behavior and Theory",
+          "credits": 3
+        },
+        {
+          "courseId": "125105",
+          "courseName": "國際策略管理\tStrategic Management of Multinational Corporations",
+          "credits": 3
+        },
+        {
+          "courseId": "125107",
+          "courseName": "國際企業管理\tInternational Business Management",
+          "credits": 3
+        },
+        {
+          "courseId": "125115",
+          "courseName": "國際投資分析\tInternational Investment Analysis",
+          "credits": 3
+        }
+      ],
+      "description": "",
+      "originalRows": [
+        [
+          "合計",
+          "共　9　門課程　23　學分",
+          ""
+        ]
+      ]
+    },
+    {
+      "groupId": "group_003",
+      "name": "112 學年度入學國際企業學系課程先修(擋修)清單",
+      "type": "prerequisite_rules",
+      "requiredCredits": null,
+      "courses": [
+        {
+          "courseId": "120026",
+          "courseName": "國際企業管理\tInternational Business Management",
+          "targetCourseId": "120002",
+          "targetCourseName": "管理學\tManagement"
+        },
+        {
+          "courseId": "120027",
+          "courseName": "成本會計學及實習(上)\tCost Accounting & Practice (1)",
+          "targetCourseId": "120003",
+          "targetCourseName": "會計學及實習(上)\tAccounting & Practice (1)"
+        },
+        {
+          "courseId": "120032",
+          "courseName": "國貿理論與政策(上)\tInternational Trade Theory and policy (1)",
+          "targetCourseId": "120001",
+          "targetCourseName": "經濟學及實習(上)\tEconomics & Practice (1)"
+        },
+        {
+          "courseId": "120040",
+          "courseName": "投資學\tInvestment",
+          "targetCourseId": "120155",
+          "targetCourseName": "財務管理\tFinancial Management"
+        },
+        {
+          "courseId": "120041",
+          "courseName": "國貿理論與政策(下)\tInternational Trade Theory and Policy (2)",
+          "targetCourseId": "120014",
+          "targetCourseName": "經濟學及實習(下)\tEconomics & Practice (2)"
+        },
+        {
+          "courseId": "120042",
+          "courseName": "成本會計學及實習(下)\tCost Accounting and Practice (2)",
+          "targetCourseId": "120015",
+          "targetCourseName": "會計學及實習(下)\tAccounting & Practice (2)"
+        },
+        {
+          "courseId": "120044",
+          "courseName": "國際行銷管理\tInternational Marketing Management",
+          "targetCourseId": "120033",
+          "targetCourseName": "行銷學\tMarketing"
+        },
+        {
+          "courseId": "120056",
+          "courseName": "金融市場\tFinancial Market",
+          "targetCourseId": "120028",
+          "targetCourseName": "財務管理\tFinancial Management"
+        },
+        {
+          "courseId": "120065",
+          "courseName": "第二外國語:法文二(上)\tFrench Ⅱ(1)",
+          "targetCourseId": "120029",
+          "targetCourseName": "第二外國語:法文一(上)\tFrench I(1)"
+        },
+        {
+          "courseId": "120065",
+          "courseName": "第二外國語:法文二(上)\tFrench Ⅱ(1)",
+          "targetCourseId": "120049",
+          "targetCourseName": "第二外國語:法文一(下)\tFrench Ⅰ(2)"
+        },
+        {
+          "courseId": "120066",
+          "courseName": "第二外國語:日文二(上)\tJapanese Ⅱ(1)",
+          "targetCourseId": "120031",
+          "targetCourseName": "第二外國語:日文一(上)\tJapanese Ⅰ(1)"
+        },
+        {
+          "courseId": "120066",
+          "courseName": "第二外國語:日文二(上)\tJapanese Ⅱ(1)",
+          "targetCourseId": "120050",
+          "targetCourseName": "第二外國語:日文一(下)\tJapanese Ⅰ(2)"
+        },
+        {
+          "courseId": "120067",
+          "courseName": "第二外國語:德文二(上)\tGerman Ⅱ(1)",
+          "targetCourseId": "120036",
+          "targetCourseName": "第二外國語:德文一(上)\tGerman I(1)"
+        },
+        {
+          "courseId": "120067",
+          "courseName": "第二外國語:德文二(上)\tGerman Ⅱ(1)",
+          "targetCourseId": "120051",
+          "targetCourseName": "第二外國語:德文一(下)\tGerman Ⅰ(2)"
+        },
+        {
+          "courseId": "120086",
+          "courseName": "國際企業經營決策\tInternational Business Strategy",
+          "targetCourseId": "120026",
+          "targetCourseName": "國際企業管理\tInternational Business Management"
+        },
+        {
+          "courseId": "120093",
+          "courseName": "中級會計學(上)\tIntermediate Accounting (1)",
+          "targetCourseId": "120003",
+          "targetCourseName": "會計學及實習(上)\tAccounting & Practice (1)"
+        },
+        {
+          "courseId": "120100",
+          "courseName": "迴歸分析及實習\tRegression  Analysis and Practice",
+          "targetCourseId": "120024",
+          "targetCourseName": "統計學及實習(上)\tStatistics and Practice (1)"
+        },
+        {
+          "courseId": "120100",
+          "courseName": "迴歸分析及實習\tRegression  Analysis and Practice",
+          "targetCourseId": "120045",
+          "targetCourseName": "統計學及實習(下)\tStatistics and Practice (2)"
+        },
+        {
+          "courseId": "120104",
+          "courseName": "中級會計學(下)\tIntermediate Accounting (2)",
+          "targetCourseId": "120015",
+          "targetCourseName": "會計學及實習(下)\tAccounting & Practice (2)"
+        },
+        {
+          "courseId": "120159",
+          "courseName": "國際企業管理\tInternational Business Management",
+          "targetCourseId": "C20006",
+          "targetCourseName": "管理學\tManagement"
+        },
+        {
+          "courseId": "120229",
+          "courseName": "財務報表分析\tFinancial Statements Analysis",
+          "targetCourseId": "120202",
+          "targetCourseName": "會計學及實習(二)\tAccounting and Practice(2)"
+        },
+        {
+          "courseId": "120229",
+          "courseName": "財務報表分析\tFinancial Statements Analysis",
+          "targetCourseId": "C20005",
+          "targetCourseName": "會計學及實習(一)\tFinancial Accounting(1)"
+        },
+        {
+          "courseId": "129096",
+          "courseName": "計量經濟(三)",
+          "targetCourseId": "129094",
+          "targetCourseName": "計量經濟(一)\tEconometrics I"
+        }
+      ],
+      "description": "",
+      "originalRows": []
+    },
+    {
+      "groupId": "group_004",
+      "name": "112 學年度入學國際企業學系碩士班系必修(選)課程清單",
+      "type": "required_courses",
+      "requiredCredits": null,
+      "courses": [],
+      "description": "",
+      "originalRows": [
+        [
+          "125124 企業實習（一）(2.0學分)125125 企業實習（二）(2.0學分)125127 企業實習（三）(2.0學分)125128 企業實習（四）(2.0學分)125132 企業實習（五）(2.0學分)125133 企業實習（六）(2.0學分)125149 海外管理專題(2.0學分)125150 企業管理專題(2.0學分)",
+          "至少選修 1 門課程至少選修合計2 學分"
+        ]
+      ]
+    }
+  ],
+  "notes": []
+}

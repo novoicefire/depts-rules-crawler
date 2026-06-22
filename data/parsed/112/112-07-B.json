@@ -1,0 +1,429 @@
+{
+  "requirementSetId": "112-07-B",
+  "source": "ccweb6_graduation_requirements",
+  "entryYear": "112",
+  "departmentId": "07",
+  "departmentName": "教育政策與行政學系",
+  "departmentShortName": "教政系",
+  "classCode": "B",
+  "className": "學士班",
+  "rawHtmlPath": "data/raw/112/07/B.html",
+  "groups": [
+    {
+      "groupId": "group_001",
+      "name": "資料項次: 525 ～ 525 ／ 1706",
+      "type": "course_list",
+      "requiredCredits": null,
+      "courses": [],
+      "description": "",
+      "originalRows": [
+        [
+          "部別",
+          "學士班"
+        ],
+        [
+          "入學年度",
+          "112"
+        ]
+      ]
+    },
+    {
+      "groupId": "group_002",
+      "name": "112 學年度入學教育政策與行政學系學士班必修課程清單",
+      "type": "required_courses",
+      "requiredCredits": null,
+      "courses": [
+        {
+          "courseId": "070001",
+          "courseName": "教育行政學\tEducational Administration",
+          "credits": 3
+        },
+        {
+          "courseId": "070012",
+          "courseName": "教育政策\tEducational Policy",
+          "credits": 3
+        },
+        {
+          "courseId": "070056",
+          "courseName": "教育行政實習\tInternship in Educational Administration",
+          "credits": 2
+        },
+        {
+          "courseId": "070076",
+          "courseName": "教育概論\tAn Introduction to Education",
+          "credits": 3
+        },
+        {
+          "courseId": "070077",
+          "courseName": "公文處理與應用文\tWriting of Official Documents and Letter",
+          "credits": 2
+        },
+        {
+          "courseId": "070079",
+          "courseName": "法學緒論\tIntroduction to Legal Science",
+          "credits": 3
+        },
+        {
+          "courseId": "070080",
+          "courseName": "教育哲學\tPhilosophy of Education",
+          "credits": 3
+        },
+        {
+          "courseId": "070082",
+          "courseName": "教育統計\tEducational Statistics",
+          "credits": 3
+        },
+        {
+          "courseId": "070083",
+          "courseName": "教育研究法\tResearch Methods in Education",
+          "credits": 3
+        },
+        {
+          "courseId": "070084",
+          "courseName": "教育行政組織原理\tOrganizational Theory in Educational Administration",
+          "credits": 3
+        },
+        {
+          "courseId": "070085",
+          "courseName": "學校行政\tSchool Administraion",
+          "credits": 3
+        },
+        {
+          "courseId": "070103",
+          "courseName": "行政法(上)\tAdministrative Law  Ⅰ",
+          "credits": 3
+        },
+        {
+          "courseId": "070104",
+          "courseName": "行政法(下)\tAdministrative Law  Ⅱ",
+          "credits": 3
+        },
+        {
+          "courseId": "070114",
+          "courseName": "英語聽講（上）\tEnglish Listening and Speaking(I)",
+          "credits": 2
+        },
+        {
+          "courseId": "070115",
+          "courseName": "英語聽講（下）\tEnglish Listening and Speaking(II)",
+          "credits": 2
+        }
+      ],
+      "description": "",
+      "originalRows": [
+        [
+          "合計",
+          "共　15　門課程　41　學分",
+          ""
+        ]
+      ]
+    },
+    {
+      "groupId": "group_003",
+      "name": "112 學年度入學教育政策與行政學系課程先修(擋修)清單",
+      "type": "prerequisite_rules",
+      "requiredCredits": null,
+      "courses": [
+        {
+          "courseId": "070027",
+          "courseName": "教育統計軟體應用\tApplication of Educational Statistics Software",
+          "targetCourseId": "070082",
+          "targetCourseName": "教育統計\tEducational Statistics"
+        },
+        {
+          "courseId": "070057",
+          "courseName": "行政倫理\tadministrative ethics",
+          "targetCourseId": "070048",
+          "targetCourseName": "教育專業倫理\tProfessional Ethics in Education"
+        },
+        {
+          "courseId": "070087",
+          "courseName": "教育政策分析\tEducatonal Policy Analysis",
+          "targetCourseId": "070012",
+          "targetCourseName": "教育政策\tEducational Policy"
+        },
+        {
+          "courseId": "070092",
+          "courseName": "族群教育政策\tEthnic Education Policy",
+          "targetCourseId": "070043",
+          "targetCourseName": "教育人類學\tAnthropology of Education"
+        },
+        {
+          "courseId": "070100",
+          "courseName": "高等教育統計\tAdvanced Educational Statistics",
+          "targetCourseId": "070082",
+          "targetCourseName": "教育統計\tEducational Statistics"
+        },
+        {
+          "courseId": "070104",
+          "courseName": "行政法(下)\tAdministrative Law  Ⅱ",
+          "targetCourseId": "070103",
+          "targetCourseName": "行政法(上)\tAdministrative Law  Ⅰ"
+        },
+        {
+          "courseId": "070111",
+          "courseName": "團體動力學\tGroup dynamics",
+          "targetCourseId": "070001",
+          "targetCourseName": "教育行政學\tEducational Administration"
+        },
+        {
+          "courseId": "070111",
+          "courseName": "團體動力學\tGroup dynamics",
+          "targetCourseId": "070085",
+          "targetCourseName": "學校行政\tSchool Administraion"
+        }
+      ],
+      "description": "",
+      "originalRows": []
+    },
+    {
+      "groupId": "group_004",
+      "name": "112 學年度入學學士班校核心(共同及通識教育)課程最低學分數一覽表",
+      "type": "core_requirements",
+      "requiredCredits": null,
+      "courses": [],
+      "description": "",
+      "originalRows": [
+        [
+          "人文(105始)",
+          "G 人文-文學與藝術(105始)H 人文-歷史哲學與文化(105始)",
+          "2",
+          "4",
+          "最少選修 2 種次領域課程最少選修合計 4 學分"
+        ],
+        [
+          "共同必修(99始)",
+          "A 共同必修(99始)",
+          "0",
+          "15",
+          "最少選修合計 15 學分"
+        ],
+        [
+          "自然(105始)",
+          "K 自然-工程與科技(105始)L 自然-生命與科學(105始)",
+          "2",
+          "4",
+          "最少選修 2 種次領域課程最少選修合計 4 學分"
+        ],
+        [
+          "社會(105始)",
+          "I 社會-法政與教育(105始)J 社會-社經與管理(105始)",
+          "2",
+          "4",
+          "最少選修 2 種次領域課程最少選修合計 4 學分"
+        ],
+        [
+          "特色通識(105始)",
+          "M 特色通識-國際連結(東南亞)105始N 特色通識-淨零永續(綠概念)105始O 特色通識-社會創新(在地實踐)105始",
+          "2",
+          "4",
+          "最少選修 2 種次領域課程最少選修合計 4 學分"
+        ],
+        [
+          "合計",
+          "共　5　 類課程　31　學分",
+          "",
+          "",
+          ""
+        ]
+      ]
+    },
+    {
+      "groupId": "group_005",
+      "name": "112 學年度入學教育政策與行政學系學士班校核心必修(選)課程清單",
+      "type": "core_requirements",
+      "requiredCredits": null,
+      "courses": [],
+      "description": "",
+      "originalRows": [
+        [
+          "902055 體育:運動舞蹈(1.0學分)902056 體育:高爾夫球(1.0學分)902057 體育:射箭(1.0學分)902058 體育:游泳(1.0學分)902059 體育:網球(1.0學分)902060 體育:船艇(1.0學分)902069 體育:戶外探索教育(1.0學分)",
+          "至少選修 2 門課程至少選修合計2 學分"
+        ]
+      ]
+    },
+    {
+      "groupId": "group_006",
+      "name": "112 學年度入學教育政策與行政學系學士班輔系必修課目清單",
+      "type": "minor_courses",
+      "requiredCredits": null,
+      "courses": [
+        {
+          "courseId": "070001",
+          "courseName": "教育行政學\tEducational Administration",
+          "credits": 3
+        },
+        {
+          "courseId": "070012",
+          "courseName": "教育政策\tEducational Policy",
+          "credits": 3
+        },
+        {
+          "courseId": "070056",
+          "courseName": "教育行政實習\tInternship in Educational Administration",
+          "credits": 2
+        },
+        {
+          "courseId": "070076",
+          "courseName": "教育概論\tAn Introduction to Education",
+          "credits": 3
+        },
+        {
+          "courseId": "070077",
+          "courseName": "公文處理與應用文\tWriting of Official Documents and Letter",
+          "credits": 2
+        },
+        {
+          "courseId": "070079",
+          "courseName": "法學緒論\tIntroduction to Legal Science",
+          "credits": 3
+        },
+        {
+          "courseId": "070080",
+          "courseName": "教育哲學\tPhilosophy of Education",
+          "credits": 3
+        },
+        {
+          "courseId": "070082",
+          "courseName": "教育統計\tEducational Statistics",
+          "credits": 3
+        },
+        {
+          "courseId": "070083",
+          "courseName": "教育研究法\tResearch Methods in Education",
+          "credits": 3
+        },
+        {
+          "courseId": "070084",
+          "courseName": "教育行政組織原理\tOrganizational Theory in Educational Administration",
+          "credits": 3
+        },
+        {
+          "courseId": "070085",
+          "courseName": "學校行政\tSchool Administraion",
+          "credits": 3
+        },
+        {
+          "courseId": "070103",
+          "courseName": "行政法(上)\tAdministrative Law  Ⅰ",
+          "credits": 3
+        },
+        {
+          "courseId": "070104",
+          "courseName": "行政法(下)\tAdministrative Law  Ⅱ",
+          "credits": 3
+        },
+        {
+          "courseId": "070114",
+          "courseName": "英語聽講（上）\tEnglish Listening and Speaking(I)",
+          "credits": 2
+        },
+        {
+          "courseId": "070115",
+          "courseName": "英語聽講（下）\tEnglish Listening and Speaking(II)",
+          "credits": 2
+        }
+      ],
+      "description": "",
+      "originalRows": [
+        [
+          "合計",
+          "共　15　 門課程　41　學分",
+          ""
+        ]
+      ]
+    },
+    {
+      "groupId": "group_007",
+      "name": "112 學年度入學教育政策與行政學系學士班雙主修必修課目清單",
+      "type": "double_major_courses",
+      "requiredCredits": null,
+      "courses": [
+        {
+          "courseId": "070001",
+          "courseName": "教育行政學\tEducational Administration",
+          "credits": 3
+        },
+        {
+          "courseId": "070012",
+          "courseName": "教育政策\tEducational Policy",
+          "credits": 3
+        },
+        {
+          "courseId": "070056",
+          "courseName": "教育行政實習\tInternship in Educational Administration",
+          "credits": 2
+        },
+        {
+          "courseId": "070076",
+          "courseName": "教育概論\tAn Introduction to Education",
+          "credits": 3
+        },
+        {
+          "courseId": "070077",
+          "courseName": "公文處理與應用文\tWriting of Official Documents and Letter",
+          "credits": 2
+        },
+        {
+          "courseId": "070079",
+          "courseName": "法學緒論\tIntroduction to Legal Science",
+          "credits": 3
+        },
+        {
+          "courseId": "070080",
+          "courseName": "教育哲學\tPhilosophy of Education",
+          "credits": 3
+        },
+        {
+          "courseId": "070082",
+          "courseName": "教育統計\tEducational Statistics",
+          "credits": 3
+        },
+        {
+          "courseId": "070083",
+          "courseName": "教育研究法\tResearch Methods in Education",
+          "credits": 3
+        },
+        {
+          "courseId": "070084",
+          "courseName": "教育行政組織原理\tOrganizational Theory in Educational Administration",
+          "credits": 3
+        },
+        {
+          "courseId": "070085",
+          "courseName": "學校行政\tSchool Administraion",
+          "credits": 3
+        },
+        {
+          "courseId": "070103",
+          "courseName": "行政法(上)\tAdministrative Law  Ⅰ",
+          "credits": 3
+        },
+        {
+          "courseId": "070104",
+          "courseName": "行政法(下)\tAdministrative Law  Ⅱ",
+          "credits": 3
+        },
+        {
+          "courseId": "070114",
+          "courseName": "英語聽講（上）\tEnglish Listening and Speaking(I)",
+          "credits": 2
+        },
+        {
+          "courseId": "070115",
+          "courseName": "英語聽講（下）\tEnglish Listening and Speaking(II)",
+          "credits": 2
+        }
+      ],
+      "description": "",
+      "originalRows": [
+        [
+          "合計",
+          "共　15　 門課程　41　學分",
+          ""
+        ]
+      ]
+    }
+  ],
+  "notes": []
+}

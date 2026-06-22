@@ -1,0 +1,88 @@
+{
+  "requirementSetId": "112-43-G",
+  "source": "ccweb6_graduation_requirements",
+  "entryYear": "112",
+  "departmentId": "43",
+  "departmentName": "兩岸高階主管經營管理境外碩士在職學位學程",
+  "departmentShortName": "兩岸高階主管班",
+  "classCode": "G",
+  "className": "碩士班",
+  "rawHtmlPath": "data/raw/112/43/G.html",
+  "groups": [
+    {
+      "groupId": "group_001",
+      "name": "資料項次: 1579 ～ 1579 ／ 1706",
+      "type": "course_list",
+      "requiredCredits": null,
+      "courses": [],
+      "description": "",
+      "originalRows": [
+        [
+          "部別",
+          "碩士班"
+        ],
+        [
+          "入學年度",
+          "112"
+        ]
+      ]
+    },
+    {
+      "groupId": "group_002",
+      "name": "112 學年度入學兩岸高階主管經營管理境外碩士在職學位學程碩士班必修課程清單",
+      "type": "required_courses",
+      "requiredCredits": null,
+      "courses": [
+        {
+          "courseId": "435011",
+          "courseName": "組織行為與管理\tOrganizational Behavior and Mangement",
+          "credits": 3
+        },
+        {
+          "courseId": "435014",
+          "courseName": "企業經營講座\tForum for Corporate Management",
+          "credits": 3
+        },
+        {
+          "courseId": "435018",
+          "courseName": "財務報表分析\tFinancial Statement Analysis",
+          "credits": 1
+        },
+        {
+          "courseId": "435019",
+          "courseName": "論文寫作(一)\tThesis Writing(Ⅰ)",
+          "credits": 3
+        },
+        {
+          "courseId": "435022",
+          "courseName": "論文寫作(二)\tThesis Writing(Ⅱ)",
+          "credits": 3
+        },
+        {
+          "courseId": "435025",
+          "courseName": "企業社會責任\tCorporate Social Responsibility",
+          "credits": 1
+        },
+        {
+          "courseId": "435026",
+          "courseName": "國際金融市場分析\tInternational Finance Market Analysis",
+          "credits": 3
+        },
+        {
+          "courseId": "435027",
+          "courseName": "領導統御與團體知能\tLeadership and Group",
+          "credits": 1
+        }
+      ],
+      "description": "",
+      "originalRows": [
+        [
+          "合計",
+          "共　8　門課程　18　學分",
+          ""
+        ]
+      ]
+    }
+  ],
+  "notes": []
+}

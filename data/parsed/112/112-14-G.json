@@ -1,0 +1,100 @@
+{
+  "requirementSetId": "112-14-G",
+  "source": "ccweb6_graduation_requirements",
+  "entryYear": "112",
+  "departmentId": "14",
+  "departmentName": "財務金融學系",
+  "departmentShortName": "財金系",
+  "classCode": "G",
+  "className": "碩士班",
+  "rawHtmlPath": "data/raw/112/14/G.html",
+  "groups": [
+    {
+      "groupId": "group_001",
+      "name": "資料項次: 923 ～ 923 ／ 1706",
+      "type": "course_list",
+      "requiredCredits": null,
+      "courses": [],
+      "description": "",
+      "originalRows": [
+        [
+          "部別",
+          "碩士班"
+        ],
+        [
+          "入學年度",
+          "112"
+        ]
+      ]
+    },
+    {
+      "groupId": "group_002",
+      "name": "112 學年度入學財務金融學系碩士班必修課程清單",
+      "type": "required_courses",
+      "requiredCredits": null,
+      "courses": [
+        {
+          "courseId": "145003",
+          "courseName": "投資學\tInvestments",
+          "credits": 3
+        },
+        {
+          "courseId": "145005",
+          "courseName": "財務理論\tFinancial Theory",
+          "credits": 3
+        },
+        {
+          "courseId": "145009",
+          "courseName": "國際財務管理\tInternational Financial Management",
+          "credits": 3
+        },
+        {
+          "courseId": "145017",
+          "courseName": "金融機構管理\tFinancial Institutions Management",
+          "credits": 3
+        },
+        {
+          "courseId": "145043",
+          "courseName": "財金計量方法\tFinancial Econometrics",
+          "credits": 3
+        },
+        {
+          "courseId": "145054",
+          "courseName": "期貨與選擇權\tFutures and Options",
+          "credits": 3
+        }
+      ],
+      "description": "",
+      "originalRows": [
+        [
+          "合計",
+          "共　6　門課程　18　學分",
+          ""
+        ]
+      ]
+    },
+    {
+      "groupId": "group_003",
+      "name": "112 學年度入學財務金融學系課程先修(擋修)清單",
+      "type": "prerequisite_rules",
+      "requiredCredits": null,
+      "courses": [
+        {
+          "courseId": "140070",
+          "courseName": "財務管理(二)\tFinancial Management(Ⅱ)",
+          "targetCourseId": "140071",
+          "targetCourseName": "財務管理(一)\tFinancial Management(I)"
+        },
+        {
+          "courseId": "140129",
+          "courseName": "會計學及實習(二)\tAccounting and Practice (2)",
+          "targetCourseId": "C20005",
+          "targetCourseName": "會計學及實習(一)\tFinancial Accounting(1)"
+        }
+      ],
+      "description": "",
+      "originalRows": []
+    }
+  ],
+  "notes": []
+}

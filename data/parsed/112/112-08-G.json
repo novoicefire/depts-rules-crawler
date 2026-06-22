@@ -1,0 +1,102 @@
+{
+  "requirementSetId": "112-08-G",
+  "source": "ccweb6_graduation_requirements",
+  "entryYear": "112",
+  "departmentId": "08",
+  "departmentName": "東南亞學系",
+  "departmentShortName": "東南亞系",
+  "classCode": "G",
+  "className": "碩士班",
+  "rawHtmlPath": "data/raw/112/08/G.html",
+  "groups": [
+    {
+      "groupId": "group_001",
+      "name": "資料項次: 613 ～ 613 ／ 1706",
+      "type": "course_list",
+      "requiredCredits": null,
+      "courses": [],
+      "description": "",
+      "originalRows": [
+        [
+          "部別",
+          "碩士班"
+        ],
+        [
+          "入學年度",
+          "112"
+        ]
+      ]
+    },
+    {
+      "groupId": "group_002",
+      "name": "112 學年度入學東南亞學系碩士班必修課程清單",
+      "type": "required_courses",
+      "requiredCredits": null,
+      "courses": [
+        {
+          "courseId": "085227",
+          "courseName": "當代東南亞發展議題\tCritical Issues  in Modern Southeast Asian Development",
+          "credits": 3
+        },
+        {
+          "courseId": "085247",
+          "courseName": "社會科學研究方法\tSocial Science Methods",
+          "credits": 3
+        },
+        {
+          "courseId": "085918",
+          "courseName": "專題研討(1)\tColloquium(1)",
+          "credits": 1
+        },
+        {
+          "courseId": "085919",
+          "courseName": "專題研討(2)\tColloquium(2)",
+          "credits": 1
+        }
+      ],
+      "description": "",
+      "originalRows": [
+        [
+          "合計",
+          "共　4　門課程　8　學分",
+          ""
+        ]
+      ]
+    },
+    {
+      "groupId": "group_003",
+      "name": "112 學年度入學東南亞學系課程先修(擋修)清單",
+      "type": "prerequisite_rules",
+      "requiredCredits": null,
+      "courses": [
+        {
+          "courseId": "080040",
+          "courseName": "書報討論(三)\tcolloquium(3)",
+          "targetCourseId": "080015",
+          "targetCourseName": "書報討論(一)\tcolloquium"
+        },
+        {
+          "courseId": "080065",
+          "courseName": "書報討論(四)\tcolloquium(4)",
+          "targetCourseId": "080021",
+          "targetCourseName": "書報討論（二）\tColloquium(II)"
+        },
+        {
+          "courseId": "080100",
+          "courseName": "甘美朗(二)\tGamelan II",
+          "targetCourseId": "080075",
+          "targetCourseName": "甘美朗(一)\tGamelan I"
+        },
+        {
+          "courseId": "080185",
+          "courseName": "甘美朗進階與當代創作\tAdvanced course of Gamelan and Crossover Music Creation",
+          "targetCourseId": "080041",
+          "targetCourseName": "東南亞的音樂文化與實作：甘美朗\tSoutheast Asia Music Cultures and executing-Gamelan"
+        }
+      ],
+      "description": "",
+      "originalRows": []
+    }
+  ],
+  "notes": []
+}

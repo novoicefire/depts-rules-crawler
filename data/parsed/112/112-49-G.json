@@ -1,0 +1,58 @@
+{
+  "requirementSetId": "112-49-G",
+  "source": "ccweb6_graduation_requirements",
+  "entryYear": "112",
+  "departmentId": "49",
+  "departmentName": "區域發展重點產業碩士專班",
+  "departmentShortName": "區域產碩專班",
+  "classCode": "G",
+  "className": "碩士班",
+  "rawHtmlPath": "data/raw/112/49/G.html",
+  "groups": [
+    {
+      "groupId": "group_001",
+      "name": "資料項次: 1633 ～ 1633 ／ 1706",
+      "type": "course_list",
+      "requiredCredits": null,
+      "courses": [],
+      "description": "",
+      "originalRows": [
+        [
+          "部別",
+          "碩士班"
+        ],
+        [
+          "入學年度",
+          "112"
+        ]
+      ]
+    },
+    {
+      "groupId": "group_002",
+      "name": "112 學年度入學區域發展重點產業碩士專班碩士班必修課程清單",
+      "type": "required_courses",
+      "requiredCredits": null,
+      "courses": [
+        {
+          "courseId": "495001",
+          "courseName": "產業經濟理論與政策\tIndustrial Economics",
+          "credits": 3
+        },
+        {
+          "courseId": "495014",
+          "courseName": "新興產業趨勢與商業模式\tIndustry Trends and Business Models",
+          "credits": 3
+        }
+      ],
+      "description": "",
+      "originalRows": [
+        [
+          "合計",
+          "共　2　門課程　6　學分",
+          ""
+        ]
+      ]
+    }
+  ],
+  "notes": []
+}

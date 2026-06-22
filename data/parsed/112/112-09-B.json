@@ -1,0 +1,179 @@
+{
+  "requirementSetId": "112-09-B",
+  "source": "ccweb6_graduation_requirements",
+  "entryYear": "112",
+  "departmentId": "09",
+  "departmentName": "諮商心理與人力資源發展學系終身學習與人力資源發展",
+  "departmentShortName": "諮人系終身學習與人力資源",
+  "classCode": "B",
+  "className": "學士班",
+  "rawHtmlPath": "data/raw/112/09/B.html",
+  "groups": [
+    {
+      "groupId": "group_001",
+      "name": "資料項次: 661 ～ 661 ／ 1706",
+      "type": "course_list",
+      "requiredCredits": null,
+      "courses": [],
+      "description": "",
+      "originalRows": [
+        [
+          "部別",
+          "學士班"
+        ],
+        [
+          "入學年度",
+          "112"
+        ]
+      ]
+    },
+    {
+      "groupId": "group_002",
+      "name": "112 學年度入學諮商心理與人力資源發展學系終身學習與人力資源發展學士班必修課程清單",
+      "type": "required_courses",
+      "requiredCredits": null,
+      "courses": [
+        {
+          "courseId": "000001",
+          "courseName": "普通心理學\tGeneral Psychology",
+          "credits": 3
+        },
+        {
+          "courseId": "000004",
+          "courseName": "終身學習理論與實務\tTheories and Practice of Lifelong Learning",
+          "credits": 3
+        },
+        {
+          "courseId": "000006",
+          "courseName": "心理與教育統計\tStatistics in Psychology and Education",
+          "credits": 3
+        },
+        {
+          "courseId": "000009",
+          "courseName": "人力資源發展理論與實務\tHuman Resource Devlopment: Theory and Practice",
+          "credits": 3
+        },
+        {
+          "courseId": "000020",
+          "courseName": "人力資源管理\tHuman Resource Management",
+          "credits": 3
+        },
+        {
+          "courseId": "000026",
+          "courseName": "社會科學研究法\tSocial Sciences Research",
+          "credits": 3
+        },
+        {
+          "courseId": "000032",
+          "courseName": "組織學習\tOrganizational Learning",
+          "credits": 3
+        },
+        {
+          "courseId": "000039",
+          "courseName": "訓練發展\tTraining and Development",
+          "credits": 3
+        },
+        {
+          "courseId": "000059",
+          "courseName": "方案規劃與評鑑\tProgram Planning and Evaluation",
+          "credits": 3
+        },
+        {
+          "courseId": "000060",
+          "courseName": "終身學習與人力資源發展專題\tProjects on Lifelong Learning and Human Resource Development",
+          "credits": 3
+        },
+        {
+          "courseId": "000077",
+          "courseName": "終身學習與人力資源發展實習\tLifelong Learning and Human Resource Development Internship",
+          "credits": 3
+        },
+        {
+          "courseId": "000086",
+          "courseName": "組織理論與管理\tOrganization theory and management",
+          "credits": 3
+        },
+        {
+          "courseId": "000089",
+          "courseName": "成人與高齡學習\tAdult and Elder Learning",
+          "credits": 3
+        }
+      ],
+      "description": "",
+      "originalRows": [
+        [
+          "合計",
+          "共　13　門課程　39　學分",
+          ""
+        ]
+      ]
+    },
+    {
+      "groupId": "group_003",
+      "name": "112 學年度入學學士班校核心(共同及通識教育)課程最低學分數一覽表",
+      "type": "core_requirements",
+      "requiredCredits": null,
+      "courses": [],
+      "description": "",
+      "originalRows": [
+        [
+          "人文(105始)",
+          "G 人文-文學與藝術(105始)H 人文-歷史哲學與文化(105始)",
+          "2",
+          "4",
+          "最少選修 2 種次領域課程最少選修合計 4 學分"
+        ],
+        [
+          "共同必修(99始)",
+          "A 共同必修(99始)",
+          "0",
+          "15",
+          "最少選修合計 15 學分"
+        ],
+        [
+          "自然(105始)",
+          "K 自然-工程與科技(105始)L 自然-生命與科學(105始)",
+          "2",
+          "4",
+          "最少選修 2 種次領域課程最少選修合計 4 學分"
+        ],
+        [
+          "社會(105始)",
+          "I 社會-法政與教育(105始)J 社會-社經與管理(105始)",
+          "2",
+          "4",
+          "最少選修 2 種次領域課程最少選修合計 4 學分"
+        ],
+        [
+          "特色通識(105始)",
+          "M 特色通識-國際連結(東南亞)105始N 特色通識-淨零永續(綠概念)105始O 特色通識-社會創新(在地實踐)105始",
+          "2",
+          "4",
+          "最少選修 2 種次領域課程最少選修合計 4 學分"
+        ],
+        [
+          "合計",
+          "共　5　 類課程　31　學分",
+          "",
+          "",
+          ""
+        ]
+      ]
+    },
+    {
+      "groupId": "group_004",
+      "name": "112 學年度入學諮商心理與人力資源發展學系終身學習與人力資源發展學士班校核心必修(選)課程清單",
+      "type": "core_requirements",
+      "requiredCredits": null,
+      "courses": [],
+      "description": "",
+      "originalRows": [
+        [
+          "902055 體育:運動舞蹈(1.0學分)902056 體育:高爾夫球(1.0學分)902057 體育:射箭(1.0學分)902058 體育:游泳(1.0學分)902059 體育:網球(1.0學分)902060 體育:船艇(1.0學分)902069 體育:戶外探索教育(1.0學分)",
+          "至少選修 2 門課程至少選修合計2 學分"
+        ]
+      ]
+    }
+  ],
+  "notes": []
+}

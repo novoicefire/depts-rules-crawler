@@ -1,0 +1,410 @@
+{
+  "requirementSetId": "112-01-B",
+  "source": "ccweb6_graduation_requirements",
+  "entryYear": "112",
+  "departmentId": "01",
+  "departmentName": "中國語文學系",
+  "departmentShortName": "中文系",
+  "classCode": "B",
+  "className": "學士班",
+  "rawHtmlPath": "data/raw/112/01/B.html",
+  "groups": [
+    {
+      "groupId": "group_001",
+      "name": "資料項次: 58 ～ 58 ／ 1706",
+      "type": "course_list",
+      "requiredCredits": null,
+      "courses": [],
+      "description": "",
+      "originalRows": [
+        [
+          "部別",
+          "學士班"
+        ],
+        [
+          "入學年度",
+          "112"
+        ]
+      ]
+    },
+    {
+      "groupId": "group_002",
+      "name": "112 學年度入學中國語文學系學士班必修課程清單",
+      "type": "required_courses",
+      "requiredCredits": null,
+      "courses": [
+        {
+          "courseId": "010004",
+          "courseName": "文學概論(上)\tIntroduction to Literature (I)",
+          "credits": 2
+        },
+        {
+          "courseId": "010010",
+          "courseName": "中國語文通論(上)\tIntroduction to Chinese Language (I)",
+          "credits": 2
+        },
+        {
+          "courseId": "010016",
+          "courseName": "中國語文通論(下)\tIntroduction to Chinese Language (II)",
+          "credits": 2
+        },
+        {
+          "courseId": "010017",
+          "courseName": "文學概論(下)\tIntroduction to Literature (II)",
+          "credits": 2
+        },
+        {
+          "courseId": "010064",
+          "courseName": "中國思想史(上)\tHistory of Chinese Thoughts (1)",
+          "credits": 3
+        },
+        {
+          "courseId": "010092",
+          "courseName": "中國思想史(下)\tHistory of Chinese Thoughts (2)",
+          "credits": 3
+        },
+        {
+          "courseId": "010146",
+          "courseName": "文學理論與批評(上)\tLiterary Theories and Criticism (I)",
+          "credits": 2
+        },
+        {
+          "courseId": "010147",
+          "courseName": "中國傳統文獻概論(上)\tIntroduction to Chinese Document (II)",
+          "credits": 2
+        },
+        {
+          "courseId": "010150",
+          "courseName": "文字學(上)\tChinese Paleography(The Science of Chinese Characters) (I)",
+          "credits": 2
+        },
+        {
+          "courseId": "010156",
+          "courseName": "中國傳統文獻概論(下)\tIntroduction to Chinese Document (II)",
+          "credits": 2
+        },
+        {
+          "courseId": "010160",
+          "courseName": "文字學(下)\tChinese Paleography(The Science of Chinese Characters) (II)",
+          "credits": 2
+        },
+        {
+          "courseId": "010163",
+          "courseName": "文學理論與批評(下)\tLiterary Theories and Criticism (II)",
+          "credits": 2
+        },
+        {
+          "courseId": "010422",
+          "courseName": "訓詁學\tXungu",
+          "credits": 3
+        },
+        {
+          "courseId": "010463",
+          "courseName": "數位多媒體設計與應用\tDigital Multimedia Design and Application",
+          "credits": 3
+        },
+        {
+          "courseId": "010466",
+          "courseName": "中國文學史(上)\tHistory of Chinese Literature (Ⅰ)",
+          "credits": 3
+        },
+        {
+          "courseId": "010467",
+          "courseName": "中國文學史(下)\tHistory of Chinese Literature (Ⅱ)",
+          "credits": 3
+        },
+        {
+          "courseId": "010476",
+          "courseName": "畢業製作(上)\tPerformance Practice(Ⅰ)",
+          "credits": 2
+        },
+        {
+          "courseId": "010478",
+          "courseName": "畢業製作(下)\tPerformance Practice(II)",
+          "credits": 2
+        },
+        {
+          "courseId": "010483",
+          "courseName": "聲韻學\tChinese Phonology",
+          "credits": 3
+        }
+      ],
+      "description": "",
+      "originalRows": [
+        [
+          "合計",
+          "共　19　門課程　45　學分",
+          ""
+        ]
+      ]
+    },
+    {
+      "groupId": "group_003",
+      "name": "112 學年度入學中國語文學系課程先修(擋修)清單",
+      "type": "prerequisite_rules",
+      "requiredCredits": null,
+      "courses": [
+        {
+          "courseId": "010478",
+          "courseName": "畢業製作(下)\tPerformance Practice(II)",
+          "targetCourseId": "010476",
+          "targetCourseName": "畢業製作(上)\tPerformance Practice(Ⅰ)"
+        }
+      ],
+      "description": "",
+      "originalRows": []
+    },
+    {
+      "groupId": "group_004",
+      "name": "112 學年度入學中國語文學系學士班系必修(選)課程清單",
+      "type": "required_courses",
+      "requiredCredits": null,
+      "courses": [],
+      "description": "",
+      "originalRows": [
+        [
+          "010131 現代詩及習作(3.0學分)010180 現代散文及習作(3.0學分)010253 現代小說及習作(3.0學分)",
+          "至少選修 1 門課程"
+        ],
+        [
+          "010468 歷代文選及習作(3.0學分)010469 歷代詩選及習作(3.0學分)010470 詞曲選及習作(3.0學分)",
+          "至少選修 1 門課程"
+        ]
+      ]
+    },
+    {
+      "groupId": "group_005",
+      "name": "112 學年度入學學士班校核心(共同及通識教育)課程最低學分數一覽表",
+      "type": "core_requirements",
+      "requiredCredits": null,
+      "courses": [],
+      "description": "",
+      "originalRows": [
+        [
+          "人文(105始)",
+          "G 人文-文學與藝術(105始)H 人文-歷史哲學與文化(105始)",
+          "2",
+          "4",
+          "最少選修 2 種次領域課程最少選修合計 4 學分"
+        ],
+        [
+          "共同必修(99始)",
+          "A 共同必修(99始)",
+          "0",
+          "15",
+          "最少選修合計 15 學分"
+        ],
+        [
+          "自然(105始)",
+          "K 自然-工程與科技(105始)L 自然-生命與科學(105始)",
+          "2",
+          "4",
+          "最少選修 2 種次領域課程最少選修合計 4 學分"
+        ],
+        [
+          "社會(105始)",
+          "I 社會-法政與教育(105始)J 社會-社經與管理(105始)",
+          "2",
+          "4",
+          "最少選修 2 種次領域課程最少選修合計 4 學分"
+        ],
+        [
+          "特色通識(105始)",
+          "M 特色通識-國際連結(東南亞)105始N 特色通識-淨零永續(綠概念)105始O 特色通識-社會創新(在地實踐)105始",
+          "2",
+          "4",
+          "最少選修 2 種次領域課程最少選修合計 4 學分"
+        ],
+        [
+          "合計",
+          "共　5　 類課程　31　學分",
+          "",
+          "",
+          ""
+        ]
+      ]
+    },
+    {
+      "groupId": "group_006",
+      "name": "112 學年度入學中國語文學系學士班校核心必修(選)課程清單",
+      "type": "core_requirements",
+      "requiredCredits": null,
+      "courses": [],
+      "description": "",
+      "originalRows": [
+        [
+          "902055 體育:運動舞蹈(1.0學分)902056 體育:高爾夫球(1.0學分)902057 體育:射箭(1.0學分)902058 體育:游泳(1.0學分)902059 體育:網球(1.0學分)902060 體育:船艇(1.0學分)902069 體育:戶外探索教育(1.0學分)",
+          "至少選修 2 門課程至少選修合計2 學分"
+        ]
+      ]
+    },
+    {
+      "groupId": "group_007",
+      "name": "112 學年度入學中國語文學系學士班輔系必修課目清單",
+      "type": "minor_courses",
+      "requiredCredits": null,
+      "courses": [
+        {
+          "courseId": "010010",
+          "courseName": "中國語文通論(上)\tIntroduction to Chinese Language (I)",
+          "credits": 2
+        },
+        {
+          "courseId": "010016",
+          "courseName": "中國語文通論(下)\tIntroduction to Chinese Language (II)",
+          "credits": 2
+        },
+        {
+          "courseId": "010064",
+          "courseName": "中國思想史(上)\tHistory of Chinese Thoughts (1)",
+          "credits": 3
+        },
+        {
+          "courseId": "010092",
+          "courseName": "中國思想史(下)\tHistory of Chinese Thoughts (2)",
+          "credits": 3
+        },
+        {
+          "courseId": "010150",
+          "courseName": "文字學(上)\tChinese Paleography(The Science of Chinese Characters) (I)",
+          "credits": 2
+        },
+        {
+          "courseId": "010160",
+          "courseName": "文字學(下)\tChinese Paleography(The Science of Chinese Characters) (II)",
+          "credits": 2
+        },
+        {
+          "courseId": "010466",
+          "courseName": "中國文學史(上)\tHistory of Chinese Literature (Ⅰ)",
+          "credits": 3
+        },
+        {
+          "courseId": "010467",
+          "courseName": "中國文學史(下)\tHistory of Chinese Literature (Ⅱ)",
+          "credits": 3
+        }
+      ],
+      "description": "",
+      "originalRows": [
+        [
+          "合計",
+          "共　8　 門課程　20　學分",
+          ""
+        ]
+      ]
+    },
+    {
+      "groupId": "group_008",
+      "name": "112 學年度入學中國語文學系學士班雙主修必修課目清單",
+      "type": "double_major_courses",
+      "requiredCredits": null,
+      "courses": [
+        {
+          "courseId": "010004",
+          "courseName": "文學概論(上)\tIntroduction to Literature (I)",
+          "credits": 2
+        },
+        {
+          "courseId": "010010",
+          "courseName": "中國語文通論(上)\tIntroduction to Chinese Language (I)",
+          "credits": 2
+        },
+        {
+          "courseId": "010016",
+          "courseName": "中國語文通論(下)\tIntroduction to Chinese Language (II)",
+          "credits": 2
+        },
+        {
+          "courseId": "010017",
+          "courseName": "文學概論(下)\tIntroduction to Literature (II)",
+          "credits": 2
+        },
+        {
+          "courseId": "010064",
+          "courseName": "中國思想史(上)\tHistory of Chinese Thoughts (1)",
+          "credits": 3
+        },
+        {
+          "courseId": "010092",
+          "courseName": "中國思想史(下)\tHistory of Chinese Thoughts (2)",
+          "credits": 3
+        },
+        {
+          "courseId": "010146",
+          "courseName": "文學理論與批評(上)\tLiterary Theories and Criticism (I)",
+          "credits": 2
+        },
+        {
+          "courseId": "010147",
+          "courseName": "中國傳統文獻概論(上)\tIntroduction to Chinese Document (II)",
+          "credits": 2
+        },
+        {
+          "courseId": "010150",
+          "courseName": "文字學(上)\tChinese Paleography(The Science of Chinese Characters) (I)",
+          "credits": 2
+        },
+        {
+          "courseId": "010156",
+          "courseName": "中國傳統文獻概論(下)\tIntroduction to Chinese Document (II)",
+          "credits": 2
+        },
+        {
+          "courseId": "010160",
+          "courseName": "文字學(下)\tChinese Paleography(The Science of Chinese Characters) (II)",
+          "credits": 2
+        },
+        {
+          "courseId": "010163",
+          "courseName": "文學理論與批評(下)\tLiterary Theories and Criticism (II)",
+          "credits": 2
+        },
+        {
+          "courseId": "010422",
+          "courseName": "訓詁學\tXungu",
+          "credits": 3
+        },
+        {
+          "courseId": "010463",
+          "courseName": "數位多媒體設計與應用\tDigital Multimedia Design and Application",
+          "credits": 3
+        },
+        {
+          "courseId": "010466",
+          "courseName": "中國文學史(上)\tHistory of Chinese Literature (Ⅰ)",
+          "credits": 3
+        },
+        {
+          "courseId": "010467",
+          "courseName": "中國文學史(下)\tHistory of Chinese Literature (Ⅱ)",
+          "credits": 3
+        },
+        {
+          "courseId": "010476",
+          "courseName": "畢業製作(上)\tPerformance Practice(Ⅰ)",
+          "credits": 2
+        },
+        {
+          "courseId": "010478",
+          "courseName": "畢業製作(下)\tPerformance Practice(II)",
+          "credits": 2
+        },
+        {
+          "courseId": "010483",
+          "courseName": "聲韻學\tChinese Phonology",
+          "credits": 3
+        }
+      ],
+      "description": "",
+      "originalRows": [
+        [
+          "合計",
+          "共　19　 門課程　45　學分",
+          ""
+        ]
+      ]
+    }
+  ],
+  "notes": []
+}

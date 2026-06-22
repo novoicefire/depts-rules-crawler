@@ -1,0 +1,134 @@
+{
+  "requirementSetId": "112-07-P",
+  "source": "ccweb6_graduation_requirements",
+  "entryYear": "112",
+  "departmentId": "07",
+  "departmentName": "教育政策與行政學系",
+  "departmentShortName": "教政系",
+  "classCode": "P",
+  "className": "博士班",
+  "rawHtmlPath": "data/raw/112/07/P.html",
+  "groups": [
+    {
+      "groupId": "group_001",
+      "name": "資料項次: 579 ～ 579 ／ 1706",
+      "type": "course_list",
+      "requiredCredits": null,
+      "courses": [],
+      "description": "",
+      "originalRows": [
+        [
+          "部別",
+          "博士班"
+        ],
+        [
+          "入學年度",
+          "112"
+        ]
+      ]
+    },
+    {
+      "groupId": "group_002",
+      "name": "112 學年度入學教育政策與行政學系博士班必修課程清單",
+      "type": "required_courses",
+      "requiredCredits": null,
+      "courses": [
+        {
+          "courseId": "079002",
+          "courseName": "教育行政學專題研究\tAdvanced Seminar on Educational Administration",
+          "credits": 3
+        },
+        {
+          "courseId": "079004",
+          "courseName": "教育政策分析專題研究\tAdvanced Seminar: Education Policy Analysis",
+          "credits": 3
+        }
+      ],
+      "description": "",
+      "originalRows": [
+        [
+          "合計",
+          "共　2　門課程　6　學分",
+          ""
+        ]
+      ]
+    },
+    {
+      "groupId": "group_003",
+      "name": "112 學年度入學教育政策與行政學系課程先修(擋修)清單",
+      "type": "prerequisite_rules",
+      "requiredCredits": null,
+      "courses": [
+        {
+          "courseId": "070027",
+          "courseName": "教育統計軟體應用\tApplication of Educational Statistics Software",
+          "targetCourseId": "070082",
+          "targetCourseName": "教育統計\tEducational Statistics"
+        },
+        {
+          "courseId": "070057",
+          "courseName": "行政倫理\tadministrative ethics",
+          "targetCourseId": "070048",
+          "targetCourseName": "教育專業倫理\tProfessional Ethics in Education"
+        },
+        {
+          "courseId": "070087",
+          "courseName": "教育政策分析\tEducatonal Policy Analysis",
+          "targetCourseId": "070012",
+          "targetCourseName": "教育政策\tEducational Policy"
+        },
+        {
+          "courseId": "070092",
+          "courseName": "族群教育政策\tEthnic Education Policy",
+          "targetCourseId": "070043",
+          "targetCourseName": "教育人類學\tAnthropology of Education"
+        },
+        {
+          "courseId": "070100",
+          "courseName": "高等教育統計\tAdvanced Educational Statistics",
+          "targetCourseId": "070082",
+          "targetCourseName": "教育統計\tEducational Statistics"
+        },
+        {
+          "courseId": "070104",
+          "courseName": "行政法(下)\tAdministrative Law  Ⅱ",
+          "targetCourseId": "070103",
+          "targetCourseName": "行政法(上)\tAdministrative Law  Ⅰ"
+        },
+        {
+          "courseId": "070111",
+          "courseName": "團體動力學\tGroup dynamics",
+          "targetCourseId": "070001",
+          "targetCourseName": "教育行政學\tEducational Administration"
+        },
+        {
+          "courseId": "070111",
+          "courseName": "團體動力學\tGroup dynamics",
+          "targetCourseId": "070085",
+          "targetCourseName": "學校行政\tSchool Administraion"
+        }
+      ],
+      "description": "",
+      "originalRows": []
+    },
+    {
+      "groupId": "group_004",
+      "name": "112 學年度入學教育政策與行政學系博士班系必修(選)課程清單",
+      "type": "required_courses",
+      "requiredCredits": null,
+      "courses": [],
+      "description": "",
+      "originalRows": [
+        [
+          "079005 高等教育統計專題研究(3.0學分)079014 教育研究方法論專題研究(3.0學分)079025 質性研究方法論專題研究(3.0學分)",
+          "至少選修 1 門課程至少選修合計3 學分"
+        ],
+        [
+          "079014 教育研究方法論專題研究(3.0學分)079005 高等教育統計專題研究(3.0學分)079025 質性研究方法論專題研究(3.0學分)",
+          "必修三選一課程，98學年度入學新生適用次領域至少選修 1 門課程至少選修合計3 學分"
+        ]
+      ]
+    }
+  ],
+  "notes": []
+}

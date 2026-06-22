@@ -1,0 +1,53 @@
+{
+  "requirementSetId": "112-48-G",
+  "source": "ccweb6_graduation_requirements",
+  "entryYear": "112",
+  "departmentId": "48",
+  "departmentName": "新興產業策略與發展碩士學位學程",
+  "departmentShortName": "新興產業碩士班",
+  "classCode": "G",
+  "className": "碩士班",
+  "rawHtmlPath": "data/raw/112/48/G.html",
+  "groups": [
+    {
+      "groupId": "group_001",
+      "name": "資料項次: 1623 ～ 1623 ／ 1706",
+      "type": "course_list",
+      "requiredCredits": null,
+      "courses": [],
+      "description": "",
+      "originalRows": [
+        [
+          "部別",
+          "碩士班"
+        ],
+        [
+          "入學年度",
+          "112"
+        ]
+      ]
+    },
+    {
+      "groupId": "group_002",
+      "name": "112 學年度入學新興產業策略與發展碩士學位學程碩士班必修課程清單",
+      "type": "required_courses",
+      "requiredCredits": null,
+      "courses": [
+        {
+          "courseId": "485032",
+          "courseName": "新興產業趨勢與商業模式\tIndustry Trends and Business Models",
+          "credits": 3
+        }
+      ],
+      "description": "",
+      "originalRows": [
+        [
+          "合計",
+          "共　1　門課程　3　學分",
+          ""
+        ]
+      ]
+    }
+  ],
+  "notes": []
+}

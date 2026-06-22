@@ -1,0 +1,198 @@
+{
+  "requirementSetId": "112-28-G",
+  "source": "ccweb6_graduation_requirements",
+  "entryYear": "112",
+  "departmentId": "28",
+  "departmentName": "應用材料及光電工程學系",
+  "departmentShortName": "應光系",
+  "classCode": "G",
+  "className": "碩士班",
+  "rawHtmlPath": "data/raw/112/28/G.html",
+  "groups": [
+    {
+      "groupId": "group_001",
+      "name": "資料項次: 1355 ～ 1355 ／ 1706",
+      "type": "course_list",
+      "requiredCredits": null,
+      "courses": [],
+      "description": "",
+      "originalRows": [
+        [
+          "部別",
+          "碩士班"
+        ],
+        [
+          "入學年度",
+          "112"
+        ]
+      ]
+    },
+    {
+      "groupId": "group_002",
+      "name": "112 學年度入學應用材料及光電工程學系碩士班必修課程清單",
+      "type": "required_courses",
+      "requiredCredits": null,
+      "courses": [
+        {
+          "courseId": "285001",
+          "courseName": "專題研究(一)\tIndependent Study (I)",
+          "credits": 1
+        },
+        {
+          "courseId": "285002",
+          "courseName": "專題討論(一)\tSeminar (I)",
+          "credits": 1
+        },
+        {
+          "courseId": "285016",
+          "courseName": "專題研究(二)\tIndependent Study(II)",
+          "credits": 1
+        },
+        {
+          "courseId": "285017",
+          "courseName": "專題討論(二)\tSeminar (II)",
+          "credits": 1
+        }
+      ],
+      "description": "",
+      "originalRows": [
+        [
+          "合計",
+          "共　4　門課程　4　學分",
+          ""
+        ]
+      ]
+    },
+    {
+      "groupId": "group_003",
+      "name": "112 學年度入學應用材料及光電工程學系課程先修(擋修)清單",
+      "type": "prerequisite_rules",
+      "requiredCredits": null,
+      "courses": [
+        {
+          "courseId": "280016",
+          "courseName": "工程數學(一)\tEngineeing Mathematics(I)",
+          "targetCourseId": "280002",
+          "targetCourseName": "微積分(一)\tCalculus  ( I )"
+        },
+        {
+          "courseId": "280023",
+          "courseName": "工程數學(二)\tEngineeing Mathematics(Ⅱ)",
+          "targetCourseId": "280016",
+          "targetCourseName": "工程數學(一)\tEngineeing Mathematics(I)"
+        },
+        {
+          "courseId": "280141",
+          "courseName": "自動化光電量測\tAutomatic optoelectronic measurement",
+          "targetCourseId": "280113",
+          "targetCourseName": "基礎LabVIEW程式設計\tFundamental LabVIEW Programming Design"
+        },
+        {
+          "courseId": "280142",
+          "courseName": "固態電子學(一)\tSolid State Electronics(I)",
+          "targetCourseId": "280113",
+          "targetCourseName": "基礎LabVIEW程式設計\tFundamental LabVIEW Programming Design"
+        },
+        {
+          "courseId": "280143",
+          "courseName": "機器學習(一)\tMachine learning (Ⅰ)",
+          "targetCourseId": "280113",
+          "targetCourseName": "基礎LabVIEW程式設計\tFundamental LabVIEW Programming Design"
+        },
+        {
+          "courseId": "280144",
+          "courseName": "儀器控制\tInstrument Control",
+          "targetCourseId": "280145",
+          "targetCourseName": "虛擬儀控程式設計\tProgramming of Virtual Instruments"
+        },
+        {
+          "courseId": "280147",
+          "courseName": "資料擷取與感測電路\tData acquisition and sensing circuits",
+          "targetCourseId": "280145",
+          "targetCourseName": "虛擬儀控程式設計\tProgramming of Virtual Instruments"
+        },
+        {
+          "courseId": "280148",
+          "courseName": "進階LabVIEW程式設計\tAdvanced LabVIEW Programming Design",
+          "targetCourseId": "280145",
+          "targetCourseName": "虛擬儀控程式設計\tProgramming of Virtual Instruments"
+        },
+        {
+          "courseId": "280153",
+          "courseName": "固態電子實驗(二)\tSolid State Electronics Lab (Ⅱ)",
+          "targetCourseId": "280113",
+          "targetCourseName": "基礎LabVIEW程式設計\tFundamental LabVIEW Programming Design"
+        },
+        {
+          "courseId": "280153",
+          "courseName": "固態電子實驗(二)\tSolid State Electronics Lab (Ⅱ)",
+          "targetCourseId": "280142",
+          "targetCourseName": "固態電子學(一)\tSolid State Electronics(I)"
+        },
+        {
+          "courseId": "280154",
+          "courseName": "機器學習(二)\tMachine learning (Ⅱ)",
+          "targetCourseId": "280106",
+          "targetCourseName": "線性代數\tLinear Algebra"
+        },
+        {
+          "courseId": "280154",
+          "courseName": "機器學習(二)\tMachine learning (Ⅱ)",
+          "targetCourseId": "280113",
+          "targetCourseName": "基礎LabVIEW程式設計\tFundamental LabVIEW Programming Design"
+        },
+        {
+          "courseId": "280154",
+          "courseName": "機器學習(二)\tMachine learning (Ⅱ)",
+          "targetCourseId": "280143",
+          "targetCourseName": "機器學習(一)\tMachine learning (Ⅰ)"
+        },
+        {
+          "courseId": "285035",
+          "courseName": "資料擷取與感測電路\tData acquisition and sense circuit",
+          "targetCourseId": "285032",
+          "targetCourseName": "虛擬儀控程式設計\tProgramming of Virtual Instruments"
+        },
+        {
+          "courseId": "285036",
+          "courseName": "進階LabVIEW程式設計\tAdvanced LabVIEW Programming Design",
+          "targetCourseId": "285032",
+          "targetCourseName": "虛擬儀控程式設計\tProgramming of Virtual Instruments"
+        },
+        {
+          "courseId": "285038",
+          "courseName": "儀器控制\tInstrument Control",
+          "targetCourseId": "285032",
+          "targetCourseName": "虛擬儀控程式設計\tProgramming of Virtual Instruments"
+        },
+        {
+          "courseId": "285039",
+          "courseName": "固態電子學（二）\tSolid State Electronics Ⅱ",
+          "targetCourseId": "285040",
+          "targetCourseName": "固態電子學（一）\tSolid State Electronics （Ⅰ）"
+        },
+        {
+          "courseId": "285055",
+          "courseName": "機器學習(二)\tMachine learning (Ⅱ)",
+          "targetCourseId": "280106",
+          "targetCourseName": "線性代數\tLinear Algebra"
+        },
+        {
+          "courseId": "285055",
+          "courseName": "機器學習(二)\tMachine learning (Ⅱ)",
+          "targetCourseId": "280113",
+          "targetCourseName": "基礎LabVIEW程式設計\tFundamental LabVIEW Programming Design"
+        },
+        {
+          "courseId": "285055",
+          "courseName": "機器學習(二)\tMachine learning (Ⅱ)",
+          "targetCourseId": "280143",
+          "targetCourseName": "機器學習(一)\tMachine learning (Ⅰ)"
+        }
+      ],
+      "description": "",
+      "originalRows": []
+    }
+  ],
+  "notes": []
+}

@@ -1,0 +1,88 @@
+{
+  "requirementSetId": "112-61-P",
+  "source": "ccweb6_graduation_requirements",
+  "entryYear": "112",
+  "departmentId": "61",
+  "departmentName": "智慧精準農業產學研發博士學位學程",
+  "departmentShortName": "精準農博",
+  "classCode": "P",
+  "className": "博士班",
+  "rawHtmlPath": "data/raw/112/61/P.html",
+  "groups": [
+    {
+      "groupId": "group_001",
+      "name": "資料項次: 1700 ～ 1700 ／ 1706",
+      "type": "course_list",
+      "requiredCredits": null,
+      "courses": [],
+      "description": "",
+      "originalRows": [
+        [
+          "部別",
+          "博士班"
+        ],
+        [
+          "入學年度",
+          "112"
+        ]
+      ]
+    },
+    {
+      "groupId": "group_002",
+      "name": "112 學年度入學智慧精準農業產學研發博士學位學程博士班必修課程清單",
+      "type": "required_courses",
+      "requiredCredits": null,
+      "courses": [
+        {
+          "courseId": "619001",
+          "courseName": "專題研究（一）\tIndependent Study(Ⅰ)",
+          "credits": 1
+        },
+        {
+          "courseId": "619002",
+          "courseName": "專題研究（三）\tIndependent Study(Ⅲ)",
+          "credits": 1
+        },
+        {
+          "courseId": "619004",
+          "courseName": "專題研究(二)\tIndependent Study(Ⅱ)",
+          "credits": 1
+        },
+        {
+          "courseId": "619005",
+          "courseName": "專題研究(四)\tIndependent Study(Ⅳ)",
+          "credits": 1
+        },
+        {
+          "courseId": "619006",
+          "courseName": "專題討論(一)\tSeminar(Ⅰ)",
+          "credits": 1
+        },
+        {
+          "courseId": "619007",
+          "courseName": "專題討論（二）\tSeminar(Ⅱ)",
+          "credits": 1
+        },
+        {
+          "courseId": "619008",
+          "courseName": "專題討論（三）\tSeminar(Ⅲ)",
+          "credits": 1
+        },
+        {
+          "courseId": "619009",
+          "courseName": "專題討論（四）\tSeminar(Ⅳ)",
+          "credits": 1
+        }
+      ],
+      "description": "",
+      "originalRows": [
+        [
+          "合計",
+          "共　8　門課程　8　學分",
+          ""
+        ]
+      ]
+    }
+  ],
+  "notes": []
+}

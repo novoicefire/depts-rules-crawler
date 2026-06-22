@@ -1,0 +1,68 @@
+{
+  "requirementSetId": "112-36-G",
+  "source": "ccweb6_graduation_requirements",
+  "entryYear": "112",
+  "departmentId": "36",
+  "departmentName": "終身學習與人力資源發展碩士學位學程碩士在職專班",
+  "departmentShortName": "終身學習專班",
+  "classCode": "G",
+  "className": "碩士班",
+  "rawHtmlPath": "data/raw/112/36/G.html",
+  "groups": [
+    {
+      "groupId": "group_001",
+      "name": "資料項次: 1471 ～ 1471 ／ 1706",
+      "type": "course_list",
+      "requiredCredits": null,
+      "courses": [],
+      "description": "",
+      "originalRows": [
+        [
+          "部別",
+          "碩士班"
+        ],
+        [
+          "入學年度",
+          "112"
+        ]
+      ]
+    },
+    {
+      "groupId": "group_002",
+      "name": "112 學年度入學終身學習與人力資源發展碩士學位學程碩士在職專班碩士班必修課程清單",
+      "type": "required_courses",
+      "requiredCredits": null,
+      "courses": [
+        {
+          "courseId": "365001",
+          "courseName": "終身學習理論與實務研究\tSeminar on Lifelong Learning Theory and Practice",
+          "credits": 3
+        },
+        {
+          "courseId": "365002",
+          "courseName": "研究方法學\tResearch Methods",
+          "credits": 3
+        },
+        {
+          "courseId": "365003",
+          "courseName": "人力資源發展研究\tSeminar on Human Resource Development",
+          "credits": 3
+        },
+        {
+          "courseId": "365017",
+          "courseName": "碩士論文\tStudy on Master Thesis",
+          "credits": 4
+        }
+      ],
+      "description": "",
+      "originalRows": [
+        [
+          "合計",
+          "共　4　門課程　13　學分",
+          ""
+        ]
+      ]
+    }
+  ],
+  "notes": []
+}

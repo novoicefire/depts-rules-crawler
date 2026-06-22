@@ -1,0 +1,48 @@
+{
+  "requirementSetId": "112-01-P",
+  "source": "ccweb6_graduation_requirements",
+  "entryYear": "112",
+  "departmentId": "01",
+  "departmentName": "中國語文學系",
+  "departmentShortName": "中文系",
+  "classCode": "P",
+  "className": "博士班",
+  "rawHtmlPath": "data/raw/112/01/P.html",
+  "groups": [
+    {
+      "groupId": "group_001",
+      "name": "資料項次: 121 ～ 121 ／ 1706",
+      "type": "course_list",
+      "requiredCredits": null,
+      "courses": [],
+      "description": "",
+      "originalRows": [
+        [
+          "部別",
+          "博士班"
+        ],
+        [
+          "入學年度",
+          "112"
+        ]
+      ]
+    },
+    {
+      "groupId": "group_002",
+      "name": "112 學年度入學中國語文學系課程先修(擋修)清單",
+      "type": "prerequisite_rules",
+      "requiredCredits": null,
+      "courses": [
+        {
+          "courseId": "010478",
+          "courseName": "畢業製作(下)\tPerformance Practice(II)",
+          "targetCourseId": "010476",
+          "targetCourseName": "畢業製作(上)\tPerformance Practice(Ⅰ)"
+        }
+      ],
+      "description": "",
+      "originalRows": []
+    }
+  ],
+  "notes": []
+}

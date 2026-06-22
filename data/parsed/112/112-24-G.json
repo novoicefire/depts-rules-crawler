@@ -1,0 +1,522 @@
+{
+  "requirementSetId": "112-24-G",
+  "source": "ccweb6_graduation_requirements",
+  "entryYear": "112",
+  "departmentId": "24",
+  "departmentName": "應用化學系",
+  "departmentShortName": "應化系",
+  "classCode": "G",
+  "className": "碩士班",
+  "rawHtmlPath": "data/raw/112/24/G.html",
+  "groups": [
+    {
+      "groupId": "group_001",
+      "name": "資料項次: 1234 ～ 1234 ／ 1706",
+      "type": "course_list",
+      "requiredCredits": null,
+      "courses": [],
+      "description": "",
+      "originalRows": [
+        [
+          "部別",
+          "碩士班"
+        ],
+        [
+          "入學年度",
+          "112"
+        ]
+      ]
+    },
+    {
+      "groupId": "group_002",
+      "name": "112 學年度入學應用化學系碩士班必修課程清單",
+      "type": "required_courses",
+      "requiredCredits": null,
+      "courses": [
+        {
+          "courseId": "245011",
+          "courseName": "化學技術(上)\tChemistry Skill(1)",
+          "credits": 1
+        },
+        {
+          "courseId": "245016",
+          "courseName": "專題報告一(上)\tSeminar I(1)",
+          "credits": 1
+        },
+        {
+          "courseId": "245019",
+          "courseName": "專題報告一(下)\tSeminar I(2)",
+          "credits": 1
+        },
+        {
+          "courseId": "245020",
+          "courseName": "化學技術(下)\tChemistry Skill(2)",
+          "credits": 1
+        },
+        {
+          "courseId": "245022",
+          "courseName": "研究方法一(下)\tGraduate Research I(2)",
+          "credits": 1
+        },
+        {
+          "courseId": "245025",
+          "courseName": "專題報告二(上)\tSeminar II (1)",
+          "credits": 1
+        },
+        {
+          "courseId": "245030",
+          "courseName": "專題報告二(下)\tSeminar II (2)",
+          "credits": 1
+        },
+        {
+          "courseId": "245050",
+          "courseName": "研究方法一(上)\tGraduate Research I(1)",
+          "credits": 1
+        },
+        {
+          "courseId": "245051",
+          "courseName": "研究方法二(上)\tGraduate Research Ⅱ (1)",
+          "credits": 1
+        },
+        {
+          "courseId": "245052",
+          "courseName": "研究方法二(下)\tGraduate Research Ⅱ (2)",
+          "credits": 1
+        }
+      ],
+      "description": "",
+      "originalRows": [
+        [
+          "合計",
+          "共　10　門課程　10　學分",
+          ""
+        ]
+      ]
+    },
+    {
+      "groupId": "group_003",
+      "name": "112 學年度入學應用化學系課程先修(擋修)清單",
+      "type": "prerequisite_rules",
+      "requiredCredits": null,
+      "courses": [
+        {
+          "courseId": "240015",
+          "courseName": "專題研究一(下)\tUndergraduate Research Ⅰ(2)",
+          "targetCourseId": "240001",
+          "targetCourseName": "普通化學(上)\tGeneral Chemistry (1)"
+        },
+        {
+          "courseId": "240028",
+          "courseName": "化學數學\tChemical Mathematics",
+          "targetCourseId": "240005",
+          "targetCourseName": "微積分(上)\tCalculus (1)"
+        },
+        {
+          "courseId": "240028",
+          "courseName": "化學數學\tChemical Mathematics",
+          "targetCourseId": "240016",
+          "targetCourseName": "微積分(下)\tCalculus (2)"
+        },
+        {
+          "courseId": "240029",
+          "courseName": "專題研究二(上)\tUndergraduate Research Ⅱ(1)",
+          "targetCourseId": "240001",
+          "targetCourseName": "普通化學(上)\tGeneral Chemistry (1)"
+        },
+        {
+          "courseId": "240029",
+          "courseName": "專題研究二(上)\tUndergraduate Research Ⅱ(1)",
+          "targetCourseId": "240013",
+          "targetCourseName": "普通化學(下)\tGeneral Chemistry (2)"
+        },
+        {
+          "courseId": "240032",
+          "courseName": "專題研究二(下)\tUndergraduate Research Ⅱ(2)",
+          "targetCourseId": "240001",
+          "targetCourseName": "普通化學(上)\tGeneral Chemistry (1)"
+        },
+        {
+          "courseId": "240032",
+          "courseName": "專題研究二(下)\tUndergraduate Research Ⅱ(2)",
+          "targetCourseId": "240013",
+          "targetCourseName": "普通化學(下)\tGeneral Chemistry (2)"
+        },
+        {
+          "courseId": "240032",
+          "courseName": "專題研究二(下)\tUndergraduate Research Ⅱ(2)",
+          "targetCourseId": "240024",
+          "targetCourseName": "有機化學(上)\tOrganic Chemistry (1)"
+        },
+        {
+          "courseId": "240032",
+          "courseName": "專題研究二(下)\tUndergraduate Research Ⅱ(2)",
+          "targetCourseId": "240026",
+          "targetCourseName": "分析化學(上)\tAnalytical Chemistry (1)"
+        },
+        {
+          "courseId": "240032",
+          "courseName": "專題研究二(下)\tUndergraduate Research Ⅱ(2)",
+          "targetCourseId": "240028",
+          "targetCourseName": "化學數學\tChemical Mathematics"
+        },
+        {
+          "courseId": "240041",
+          "courseName": "儀器分析\tInstrumental Analysis",
+          "targetCourseId": "240001",
+          "targetCourseName": "普通化學(上)\tGeneral Chemistry (1)"
+        },
+        {
+          "courseId": "240041",
+          "courseName": "儀器分析\tInstrumental Analysis",
+          "targetCourseId": "240013",
+          "targetCourseName": "普通化學(下)\tGeneral Chemistry (2)"
+        },
+        {
+          "courseId": "240041",
+          "courseName": "儀器分析\tInstrumental Analysis",
+          "targetCourseId": "240026",
+          "targetCourseName": "分析化學(上)\tAnalytical Chemistry (1)"
+        },
+        {
+          "courseId": "240041",
+          "courseName": "儀器分析\tInstrumental Analysis",
+          "targetCourseId": "240033",
+          "targetCourseName": "分析化學(下)\tAnalytical Chemistry (2)"
+        },
+        {
+          "courseId": "240041",
+          "courseName": "儀器分析\tInstrumental Analysis",
+          "targetCourseId": "240082",
+          "targetCourseName": "普通化學實驗\tExperiments in General Chemistry"
+        },
+        {
+          "courseId": "240041",
+          "courseName": "儀器分析\tInstrumental Analysis",
+          "targetCourseId": "240083",
+          "targetCourseName": "分析化學實驗\tExperiments in Analytical Chemistry"
+        },
+        {
+          "courseId": "240041",
+          "courseName": "儀器分析\tInstrumental Analysis",
+          "targetCourseId": "240084",
+          "targetCourseName": "分析化學實驗暨有機化學實驗\tExperiments in Analytical and Organic Chemistry"
+        },
+        {
+          "courseId": "240041",
+          "courseName": "儀器分析\tInstrumental Analysis",
+          "targetCourseId": "240085",
+          "targetCourseName": "有機化學實驗\tExperiments in  Organic Chemistry"
+        },
+        {
+          "courseId": "240042",
+          "courseName": "儀器分析實驗\tExperiments in Instrumental Analysis",
+          "targetCourseId": "240001",
+          "targetCourseName": "普通化學(上)\tGeneral Chemistry (1)"
+        },
+        {
+          "courseId": "240042",
+          "courseName": "儀器分析實驗\tExperiments in Instrumental Analysis",
+          "targetCourseId": "240013",
+          "targetCourseName": "普通化學(下)\tGeneral Chemistry (2)"
+        },
+        {
+          "courseId": "240042",
+          "courseName": "儀器分析實驗\tExperiments in Instrumental Analysis",
+          "targetCourseId": "240026",
+          "targetCourseName": "分析化學(上)\tAnalytical Chemistry (1)"
+        },
+        {
+          "courseId": "240042",
+          "courseName": "儀器分析實驗\tExperiments in Instrumental Analysis",
+          "targetCourseId": "240033",
+          "targetCourseName": "分析化學(下)\tAnalytical Chemistry (2)"
+        },
+        {
+          "courseId": "240042",
+          "courseName": "儀器分析實驗\tExperiments in Instrumental Analysis",
+          "targetCourseId": "240082",
+          "targetCourseName": "普通化學實驗\tExperiments in General Chemistry"
+        },
+        {
+          "courseId": "240042",
+          "courseName": "儀器分析實驗\tExperiments in Instrumental Analysis",
+          "targetCourseId": "240083",
+          "targetCourseName": "分析化學實驗\tExperiments in Analytical Chemistry"
+        },
+        {
+          "courseId": "240042",
+          "courseName": "儀器分析實驗\tExperiments in Instrumental Analysis",
+          "targetCourseId": "240084",
+          "targetCourseName": "分析化學實驗暨有機化學實驗\tExperiments in Analytical and Organic Chemistry"
+        },
+        {
+          "courseId": "240042",
+          "courseName": "儀器分析實驗\tExperiments in Instrumental Analysis",
+          "targetCourseId": "240085",
+          "targetCourseName": "有機化學實驗\tExperiments in  Organic Chemistry"
+        },
+        {
+          "courseId": "240044",
+          "courseName": "專題研究三(上)\tUndergraduate Research Ⅲ(1)",
+          "targetCourseId": "240001",
+          "targetCourseName": "普通化學(上)\tGeneral Chemistry (1)"
+        },
+        {
+          "courseId": "240044",
+          "courseName": "專題研究三(上)\tUndergraduate Research Ⅲ(1)",
+          "targetCourseId": "240013",
+          "targetCourseName": "普通化學(下)\tGeneral Chemistry (2)"
+        },
+        {
+          "courseId": "240044",
+          "courseName": "專題研究三(上)\tUndergraduate Research Ⅲ(1)",
+          "targetCourseId": "240024",
+          "targetCourseName": "有機化學(上)\tOrganic Chemistry (1)"
+        },
+        {
+          "courseId": "240044",
+          "courseName": "專題研究三(上)\tUndergraduate Research Ⅲ(1)",
+          "targetCourseId": "240026",
+          "targetCourseName": "分析化學(上)\tAnalytical Chemistry (1)"
+        },
+        {
+          "courseId": "240044",
+          "courseName": "專題研究三(上)\tUndergraduate Research Ⅲ(1)",
+          "targetCourseId": "240033",
+          "targetCourseName": "分析化學(下)\tAnalytical Chemistry (2)"
+        },
+        {
+          "courseId": "240044",
+          "courseName": "專題研究三(上)\tUndergraduate Research Ⅲ(1)",
+          "targetCourseId": "240034",
+          "targetCourseName": "有機化學(下)\tOrganic Chemistry (2)"
+        },
+        {
+          "courseId": "240044",
+          "courseName": "專題研究三(上)\tUndergraduate Research Ⅲ(1)",
+          "targetCourseId": "240038",
+          "targetCourseName": "物理化學(二)\tPhysical Chemistry Ⅱ"
+        },
+        {
+          "courseId": "240047",
+          "courseName": "專題研究三(下)\tUndergraduate Research Ⅲ(2)",
+          "targetCourseId": "240001",
+          "targetCourseName": "普通化學(上)\tGeneral Chemistry (1)"
+        },
+        {
+          "courseId": "240047",
+          "courseName": "專題研究三(下)\tUndergraduate Research Ⅲ(2)",
+          "targetCourseId": "240013",
+          "targetCourseName": "普通化學(下)\tGeneral Chemistry (2)"
+        },
+        {
+          "courseId": "240047",
+          "courseName": "專題研究三(下)\tUndergraduate Research Ⅲ(2)",
+          "targetCourseId": "240024",
+          "targetCourseName": "有機化學(上)\tOrganic Chemistry (1)"
+        },
+        {
+          "courseId": "240047",
+          "courseName": "專題研究三(下)\tUndergraduate Research Ⅲ(2)",
+          "targetCourseId": "240026",
+          "targetCourseName": "分析化學(上)\tAnalytical Chemistry (1)"
+        },
+        {
+          "courseId": "240047",
+          "courseName": "專題研究三(下)\tUndergraduate Research Ⅲ(2)",
+          "targetCourseId": "240033",
+          "targetCourseName": "分析化學(下)\tAnalytical Chemistry (2)"
+        },
+        {
+          "courseId": "240047",
+          "courseName": "專題研究三(下)\tUndergraduate Research Ⅲ(2)",
+          "targetCourseId": "240034",
+          "targetCourseName": "有機化學(下)\tOrganic Chemistry (2)"
+        },
+        {
+          "courseId": "240047",
+          "courseName": "專題研究三(下)\tUndergraduate Research Ⅲ(2)",
+          "targetCourseId": "240035",
+          "targetCourseName": "物理化學(一)\tPhysical Chemistry Ⅰ"
+        },
+        {
+          "courseId": "240047",
+          "courseName": "專題研究三(下)\tUndergraduate Research Ⅲ(2)",
+          "targetCourseId": "240038",
+          "targetCourseName": "物理化學(二)\tPhysical Chemistry Ⅱ"
+        },
+        {
+          "courseId": "240047",
+          "courseName": "專題研究三(下)\tUndergraduate Research Ⅲ(2)",
+          "targetCourseId": "240040",
+          "targetCourseName": "無機化學(上)\tInorganic Chemistry (1)"
+        },
+        {
+          "courseId": "240049",
+          "courseName": "生物化學(下)\tBiochemistry(2)",
+          "targetCourseId": "240043",
+          "targetCourseName": "生物化學(上)\tBiochemistry (1)"
+        },
+        {
+          "courseId": "240052",
+          "courseName": "專題研究四(上)\tUndergraduate Research IV(1)",
+          "targetCourseId": "240001",
+          "targetCourseName": "普通化學(上)\tGeneral Chemistry (1)"
+        },
+        {
+          "courseId": "240052",
+          "courseName": "專題研究四(上)\tUndergraduate Research IV(1)",
+          "targetCourseId": "240013",
+          "targetCourseName": "普通化學(下)\tGeneral Chemistry (2)"
+        },
+        {
+          "courseId": "240052",
+          "courseName": "專題研究四(上)\tUndergraduate Research IV(1)",
+          "targetCourseId": "240024",
+          "targetCourseName": "有機化學(上)\tOrganic Chemistry (1)"
+        },
+        {
+          "courseId": "240052",
+          "courseName": "專題研究四(上)\tUndergraduate Research IV(1)",
+          "targetCourseId": "240026",
+          "targetCourseName": "分析化學(上)\tAnalytical Chemistry (1)"
+        },
+        {
+          "courseId": "240052",
+          "courseName": "專題研究四(上)\tUndergraduate Research IV(1)",
+          "targetCourseId": "240033",
+          "targetCourseName": "分析化學(下)\tAnalytical Chemistry (2)"
+        },
+        {
+          "courseId": "240052",
+          "courseName": "專題研究四(上)\tUndergraduate Research IV(1)",
+          "targetCourseId": "240034",
+          "targetCourseName": "有機化學(下)\tOrganic Chemistry (2)"
+        },
+        {
+          "courseId": "240052",
+          "courseName": "專題研究四(上)\tUndergraduate Research IV(1)",
+          "targetCourseId": "240035",
+          "targetCourseName": "物理化學(一)\tPhysical Chemistry Ⅰ"
+        },
+        {
+          "courseId": "240052",
+          "courseName": "專題研究四(上)\tUndergraduate Research IV(1)",
+          "targetCourseId": "240038",
+          "targetCourseName": "物理化學(二)\tPhysical Chemistry Ⅱ"
+        },
+        {
+          "courseId": "240052",
+          "courseName": "專題研究四(上)\tUndergraduate Research IV(1)",
+          "targetCourseId": "240040",
+          "targetCourseName": "無機化學(上)\tInorganic Chemistry (1)"
+        },
+        {
+          "courseId": "240052",
+          "courseName": "專題研究四(上)\tUndergraduate Research IV(1)",
+          "targetCourseId": "240045",
+          "targetCourseName": "無機化學(下)\tInorganic Chemistry(2)"
+        },
+        {
+          "courseId": "240058",
+          "courseName": "專題研究四(下)\tUndergraduate Research IV(2)",
+          "targetCourseId": "240001",
+          "targetCourseName": "普通化學(上)\tGeneral Chemistry (1)"
+        },
+        {
+          "courseId": "240058",
+          "courseName": "專題研究四(下)\tUndergraduate Research IV(2)",
+          "targetCourseId": "240013",
+          "targetCourseName": "普通化學(下)\tGeneral Chemistry (2)"
+        },
+        {
+          "courseId": "240058",
+          "courseName": "專題研究四(下)\tUndergraduate Research IV(2)",
+          "targetCourseId": "240024",
+          "targetCourseName": "有機化學(上)\tOrganic Chemistry (1)"
+        },
+        {
+          "courseId": "240058",
+          "courseName": "專題研究四(下)\tUndergraduate Research IV(2)",
+          "targetCourseId": "240026",
+          "targetCourseName": "分析化學(上)\tAnalytical Chemistry (1)"
+        },
+        {
+          "courseId": "240058",
+          "courseName": "專題研究四(下)\tUndergraduate Research IV(2)",
+          "targetCourseId": "240033",
+          "targetCourseName": "分析化學(下)\tAnalytical Chemistry (2)"
+        },
+        {
+          "courseId": "240058",
+          "courseName": "專題研究四(下)\tUndergraduate Research IV(2)",
+          "targetCourseId": "240034",
+          "targetCourseName": "有機化學(下)\tOrganic Chemistry (2)"
+        },
+        {
+          "courseId": "240058",
+          "courseName": "專題研究四(下)\tUndergraduate Research IV(2)",
+          "targetCourseId": "240035",
+          "targetCourseName": "物理化學(一)\tPhysical Chemistry Ⅰ"
+        },
+        {
+          "courseId": "240058",
+          "courseName": "專題研究四(下)\tUndergraduate Research IV(2)",
+          "targetCourseId": "240038",
+          "targetCourseName": "物理化學(二)\tPhysical Chemistry Ⅱ"
+        },
+        {
+          "courseId": "240058",
+          "courseName": "專題研究四(下)\tUndergraduate Research IV(2)",
+          "targetCourseId": "240040",
+          "targetCourseName": "無機化學(上)\tInorganic Chemistry (1)"
+        },
+        {
+          "courseId": "240058",
+          "courseName": "專題研究四(下)\tUndergraduate Research IV(2)",
+          "targetCourseId": "240045",
+          "targetCourseName": "無機化學(下)\tInorganic Chemistry(2)"
+        },
+        {
+          "courseId": "240071",
+          "courseName": "有機合成及反應機構(一)\tOrganic Synthesis (1)",
+          "targetCourseId": "240024",
+          "targetCourseName": "有機化學(上)\tOrganic Chemistry (1)"
+        },
+        {
+          "courseId": "240071",
+          "courseName": "有機合成及反應機構(一)\tOrganic Synthesis (1)",
+          "targetCourseId": "240034",
+          "targetCourseName": "有機化學(下)\tOrganic Chemistry (2)"
+        },
+        {
+          "courseId": "240072",
+          "courseName": "有機合成及反應機構(二)\tOrganic Synthesis (2)",
+          "targetCourseId": "240024",
+          "targetCourseName": "有機化學(上)\tOrganic Chemistry (1)"
+        },
+        {
+          "courseId": "240072",
+          "courseName": "有機合成及反應機構(二)\tOrganic Synthesis (2)",
+          "targetCourseId": "240034",
+          "targetCourseName": "有機化學(下)\tOrganic Chemistry (2)"
+        },
+        {
+          "courseId": "245044",
+          "courseName": "果蠅模式動物\tDrosophila animal model system",
+          "targetCourseId": "240043",
+          "targetCourseName": "生物化學(上)\tBiochemistry (1)"
+        },
+        {
+          "courseId": "245044",
+          "courseName": "果蠅模式動物\tDrosophila animal model system",
+          "targetCourseId": "240049",
+          "targetCourseName": "生物化學(下)\tBiochemistry(2)"
+        }
+      ],
+      "description": "",
+      "originalRows": []
+    }
+  ],
+  "notes": []
+}

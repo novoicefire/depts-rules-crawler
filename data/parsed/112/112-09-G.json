@@ -1,0 +1,73 @@
+{
+  "requirementSetId": "112-09-G",
+  "source": "ccweb6_graduation_requirements",
+  "entryYear": "112",
+  "departmentId": "09",
+  "departmentName": "諮商心理與人力資源發展學系終身學習與人力資源發展",
+  "departmentShortName": "諮人系終身學習與人力資源",
+  "classCode": "G",
+  "className": "碩士班",
+  "rawHtmlPath": "data/raw/112/09/G.html",
+  "groups": [
+    {
+      "groupId": "group_001",
+      "name": "資料項次: 673 ～ 673 ／ 1706",
+      "type": "course_list",
+      "requiredCredits": null,
+      "courses": [],
+      "description": "",
+      "originalRows": [
+        [
+          "部別",
+          "碩士班"
+        ],
+        [
+          "入學年度",
+          "112"
+        ]
+      ]
+    },
+    {
+      "groupId": "group_002",
+      "name": "112 學年度入學諮商心理與人力資源發展學系終身學習與人力資源發展碩士班必修課程清單",
+      "type": "required_courses",
+      "requiredCredits": null,
+      "courses": [
+        {
+          "courseId": "095001",
+          "courseName": "成人教育學研究\tSeminar on Theories and Practices of Adult Education",
+          "credits": 3
+        },
+        {
+          "courseId": "095072",
+          "courseName": "教育統計\tStatistics of Education",
+          "credits": 3
+        },
+        {
+          "courseId": "095112",
+          "courseName": "終身學習與人力資源創新議題研究\tSeminar on Innovative Issues of Lifelong Learning and Human Resource",
+          "credits": 1
+        },
+        {
+          "courseId": "095119",
+          "courseName": "研究方法學\tResearch Methods",
+          "credits": 3
+        },
+        {
+          "courseId": "095134",
+          "courseName": "終身學習與人力資源發展專題研究\tSeminar on Lifelong Learning and Human Resource Development",
+          "credits": 2
+        }
+      ],
+      "description": "",
+      "originalRows": [
+        [
+          "合計",
+          "共　5　門課程　12　學分",
+          ""
+        ]
+      ]
+    }
+  ],
+  "notes": []
+}

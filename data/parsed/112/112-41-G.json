@@ -1,0 +1,97 @@
+{
+  "requirementSetId": "112-41-G",
+  "source": "ccweb6_graduation_requirements",
+  "entryYear": "112",
+  "departmentId": "41",
+  "departmentName": "觀光休閒與餐旅管理學系",
+  "departmentShortName": "觀光餐旅系觀光",
+  "classCode": "G",
+  "className": "碩士班",
+  "rawHtmlPath": "data/raw/112/41/G.html",
+  "groups": [
+    {
+      "groupId": "group_001",
+      "name": "資料項次: 1545 ～ 1545 ／ 1706",
+      "type": "course_list",
+      "requiredCredits": null,
+      "courses": [],
+      "description": "",
+      "originalRows": [
+        [
+          "部別",
+          "碩士班"
+        ],
+        [
+          "入學年度",
+          "112"
+        ]
+      ]
+    },
+    {
+      "groupId": "group_002",
+      "name": "112 學年度入學觀光休閒與餐旅管理學系碩士班必修課程清單",
+      "type": "required_courses",
+      "requiredCredits": null,
+      "courses": [
+        {
+          "courseId": "415004",
+          "courseName": "多變量分析\tMultivariate Data Analysis",
+          "credits": 3
+        },
+        {
+          "courseId": "415009",
+          "courseName": "研究方法\tResearch Methods",
+          "credits": 3
+        },
+        {
+          "courseId": "415012",
+          "courseName": "專題討論(一)\tSeminar (I)",
+          "credits": 1
+        },
+        {
+          "courseId": "415016",
+          "courseName": "專題討論(二)\tSeminar (II)",
+          "credits": 1
+        },
+        {
+          "courseId": "415021",
+          "courseName": "休閒理論\tLeisure Theory",
+          "credits": 3
+        },
+        {
+          "courseId": "415024",
+          "courseName": "質性與個案研究\tQualitative Research and Case Study",
+          "credits": 3
+        },
+        {
+          "courseId": "415044",
+          "courseName": "觀光餐旅產業專論\tSpecial Topics of Tourism and Hospitality Industry Analysis",
+          "credits": 3
+        }
+      ],
+      "description": "",
+      "originalRows": [
+        [
+          "合計",
+          "共　7　門課程　17　學分",
+          ""
+        ]
+      ]
+    },
+    {
+      "groupId": "group_003",
+      "name": "112 學年度入學觀光休閒與餐旅管理學系碩士班系必修(選)課程清單",
+      "type": "required_courses",
+      "requiredCredits": null,
+      "courses": [],
+      "description": "",
+      "originalRows": [
+        [
+          "415004 多變量分析(3.0學分)415024 質性與個案研究(3.0學分)",
+          "至少選修 1 門課程至少選修合計3 學分"
+        ]
+      ]
+    }
+  ],
+  "notes": []
+}

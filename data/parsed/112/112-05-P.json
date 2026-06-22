@@ -1,0 +1,161 @@
+{
+  "requirementSetId": "112-05-P",
+  "source": "ccweb6_graduation_requirements",
+  "entryYear": "112",
+  "departmentId": "05",
+  "departmentName": "歷史學系",
+  "departmentShortName": "歷史系",
+  "classCode": "P",
+  "className": "博士班",
+  "rawHtmlPath": "data/raw/112/05/P.html",
+  "groups": [
+    {
+      "groupId": "group_001",
+      "name": "資料項次: 424 ～ 424 ／ 1706",
+      "type": "course_list",
+      "requiredCredits": null,
+      "courses": [],
+      "description": "",
+      "originalRows": [
+        [
+          "部別",
+          "博士班"
+        ],
+        [
+          "入學年度",
+          "112"
+        ]
+      ]
+    },
+    {
+      "groupId": "group_002",
+      "name": "112 學年度入學歷史學系博士班必修課程清單",
+      "type": "required_courses",
+      "requiredCredits": null,
+      "courses": [
+        {
+          "courseId": "055077",
+          "courseName": "英文史學名著選讀\tReadings in Western History Classics",
+          "credits": 3
+        },
+        {
+          "courseId": "059006",
+          "courseName": "研究與閱讀指導(上)\tSupervised Reading and Research",
+          "credits": 1
+        },
+        {
+          "courseId": "059007",
+          "courseName": "史學研究方法\tHistorical Method and Research",
+          "credits": 3
+        },
+        {
+          "courseId": "059008",
+          "courseName": "研究與閱讀指導(下)\tSupervised Reading and Research (2)",
+          "credits": 1
+        },
+        {
+          "courseId": "059122",
+          "courseName": "專業領域資料研讀(一)\tArea Studies (1)",
+          "credits": 1
+        },
+        {
+          "courseId": "059123",
+          "courseName": "專業領域資料研讀(二)\tArea Studies (2)",
+          "credits": 1
+        },
+        {
+          "courseId": "059137",
+          "courseName": "英文史學名著選讀\tSelective Readings of Classic English Writing on History",
+          "credits": 3
+        }
+      ],
+      "description": "",
+      "originalRows": [
+        [
+          "合計",
+          "共　7　門課程　13　學分",
+          ""
+        ]
+      ]
+    },
+    {
+      "groupId": "group_003",
+      "name": "112 學年度入學歷史學系課程先修(擋修)清單",
+      "type": "prerequisite_rules",
+      "requiredCredits": null,
+      "courses": [
+        {
+          "courseId": "050055",
+          "courseName": "納粹德國專題\tNazi Germany",
+          "targetCourseId": "050047",
+          "targetCourseName": "二十世紀德國史\tGerman History in 20th Century"
+        },
+        {
+          "courseId": "050093",
+          "courseName": "荷蘭東印度公司\tA History of VOC( United Netherlands Chartered East India Company)",
+          "targetCourseId": "050015",
+          "targetCourseName": "世界史(一)\tWorld History (Ⅰ)"
+        },
+        {
+          "courseId": "050093",
+          "courseName": "荷蘭東印度公司\tA History of VOC( United Netherlands Chartered East India Company)",
+          "targetCourseId": "050024",
+          "targetCourseName": "世界史(二)\tWorld History (Ⅱ)"
+        },
+        {
+          "courseId": "050098",
+          "courseName": "明代的制度與制度變遷專題(二)\tTopics in Ming Institutional History 2",
+          "targetCourseId": "050086",
+          "targetCourseName": "明代的制度與制度變遷專題\tTopics in Ming Institutional History"
+        },
+        {
+          "courseId": "050119",
+          "courseName": "中國歷史地理(二)\tChinese Historical Geography (2)",
+          "targetCourseId": "050116",
+          "targetCourseName": "中國歷史地理(一)\tChinese Historical Geography (1)"
+        },
+        {
+          "courseId": "050121",
+          "courseName": "西方近代生命科學發展史\tDevelopment of life sciences in modern Europe",
+          "targetCourseId": "050032",
+          "targetCourseName": "世界史(三)\tWorld History (Ⅲ)"
+        },
+        {
+          "courseId": "050121",
+          "courseName": "西方近代生命科學發展史\tDevelopment of life sciences in modern Europe",
+          "targetCourseId": "050043",
+          "targetCourseName": "世界史參考資料選讀(四)\tSelected Readings of World History (Ⅳ)"
+        },
+        {
+          "courseId": "050127",
+          "courseName": "西方思想傳統(二)\tWestern Intellectual Traditions （2）",
+          "targetCourseId": "050125",
+          "targetCourseName": "西方思想傳統(一)\tWestern Intellectual Traditions （1）"
+        },
+        {
+          "courseId": "050174",
+          "courseName": "愛爾蘭現代史(二)\tModern Irish History II",
+          "targetCourseId": "050173",
+          "targetCourseName": "愛爾蘭現代史(一)\tModern Irish History I"
+        }
+      ],
+      "description": "",
+      "originalRows": []
+    },
+    {
+      "groupId": "group_004",
+      "name": "112 學年度入學歷史學系博士班系必修(選)課程清單",
+      "type": "required_courses",
+      "requiredCredits": null,
+      "courses": [],
+      "description": "",
+      "originalRows": [
+        [
+          "059007 史學研究方法(3.0學分)059102 田野調查(3.0學分)059105 計量史學方法(3.0學分)",
+          "研究方法必修課程次領域至少選修合計3 學分"
+        ]
+      ]
+    }
+  ],
+  "notes": []
+}

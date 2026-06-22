@@ -1,0 +1,83 @@
+{
+  "requirementSetId": "112-50-G",
+  "source": "ccweb6_graduation_requirements",
+  "entryYear": "112",
+  "departmentId": "50",
+  "departmentName": "心理健康與諮詢碩士學位學程在職專班",
+  "departmentShortName": "心理健康與諮詢專班",
+  "classCode": "G",
+  "className": "碩士班",
+  "rawHtmlPath": "data/raw/112/50/G.html",
+  "groups": [
+    {
+      "groupId": "group_001",
+      "name": "資料項次: 1641 ～ 1641 ／ 1706",
+      "type": "course_list",
+      "requiredCredits": null,
+      "courses": [],
+      "description": "",
+      "originalRows": [
+        [
+          "部別",
+          "碩士班"
+        ],
+        [
+          "入學年度",
+          "112"
+        ]
+      ]
+    },
+    {
+      "groupId": "group_002",
+      "name": "112 學年度入學心理健康與諮詢碩士學位學程在職專班碩士班必修課程清單",
+      "type": "required_courses",
+      "requiredCredits": null,
+      "courses": [
+        {
+          "courseId": "505003",
+          "courseName": "高等統計學\tAdvanced Statistics",
+          "credits": 3
+        },
+        {
+          "courseId": "505004",
+          "courseName": "專題研究（一）\tResearch Seminar I",
+          "credits": 1
+        },
+        {
+          "courseId": "505010",
+          "courseName": "專題研究（二）\tResearch Seminar II",
+          "credits": 1
+        },
+        {
+          "courseId": "505011",
+          "courseName": "研究方法\tResearch Methods",
+          "credits": 3
+        },
+        {
+          "courseId": "505020",
+          "courseName": "助人原理與技巧\tPrinciple and Skills of Helping Others",
+          "credits": 3
+        },
+        {
+          "courseId": "505025",
+          "courseName": "論文（一）\tThesis I",
+          "credits": 3
+        },
+        {
+          "courseId": "505026",
+          "courseName": "論文（二）\tThesis II",
+          "credits": 3
+        }
+      ],
+      "description": "",
+      "originalRows": [
+        [
+          "合計",
+          "共　7　門課程　17　學分",
+          ""
+        ]
+      ]
+    }
+  ],
+  "notes": []
+}

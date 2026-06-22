@@ -1,0 +1,63 @@
+{
+  "requirementSetId": "112-34-G",
+  "source": "ccweb6_graduation_requirements",
+  "entryYear": "112",
+  "departmentId": "34",
+  "departmentName": "東南亞學系碩士在職專班",
+  "departmentShortName": "東南亞系在職專班",
+  "classCode": "G",
+  "className": "碩士班",
+  "rawHtmlPath": "data/raw/112/34/G.html",
+  "groups": [
+    {
+      "groupId": "group_001",
+      "name": "資料項次: 1431 ～ 1431 ／ 1706",
+      "type": "course_list",
+      "requiredCredits": null,
+      "courses": [],
+      "description": "",
+      "originalRows": [
+        [
+          "部別",
+          "碩士班"
+        ],
+        [
+          "入學年度",
+          "112"
+        ]
+      ]
+    },
+    {
+      "groupId": "group_002",
+      "name": "112 學年度入學東南亞學系碩士在職專班碩士班必修課程清單",
+      "type": "required_courses",
+      "requiredCredits": null,
+      "courses": [
+        {
+          "courseId": "345011",
+          "courseName": "研究方法與論文寫作\tResearch Methods",
+          "credits": 3
+        },
+        {
+          "courseId": "345015",
+          "courseName": "論文（一）\tThesisⅠ",
+          "credits": 3
+        },
+        {
+          "courseId": "345018",
+          "courseName": "論文(二)\tThesis Ⅱ",
+          "credits": 3
+        }
+      ],
+      "description": "",
+      "originalRows": [
+        [
+          "合計",
+          "共　3　門課程　9　學分",
+          ""
+        ]
+      ]
+    }
+  ],
+  "notes": []
+}

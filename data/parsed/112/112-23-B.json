@@ -1,0 +1,416 @@
+{
+  "requirementSetId": "112-23-B",
+  "source": "ccweb6_graduation_requirements",
+  "entryYear": "112",
+  "departmentId": "23",
+  "departmentName": "電機工程學系",
+  "departmentShortName": "電機系",
+  "classCode": "B",
+  "className": "學士班",
+  "rawHtmlPath": "data/raw/112/23/B.html",
+  "groups": [
+    {
+      "groupId": "group_001",
+      "name": "資料項次: 1131 ～ 1131 ／ 1706",
+      "type": "course_list",
+      "requiredCredits": null,
+      "courses": [],
+      "description": "",
+      "originalRows": [
+        [
+          "部別",
+          "學士班"
+        ],
+        [
+          "入學年度",
+          "112"
+        ]
+      ]
+    },
+    {
+      "groupId": "group_002",
+      "name": "112 學年度入學電機工程學系學士班必修課程清單",
+      "type": "required_courses",
+      "requiredCredits": null,
+      "courses": [
+        {
+          "courseId": "230001",
+          "courseName": "普通物理(上)\tPhysics (1)",
+          "credits": 3
+        },
+        {
+          "courseId": "230002",
+          "courseName": "微積分(上)\tCalculus (1)",
+          "credits": 3
+        },
+        {
+          "courseId": "230009",
+          "courseName": "微積分(下)\tCalculus (2)",
+          "credits": 3
+        },
+        {
+          "courseId": "230010",
+          "courseName": "普通物理(下)\tPhysics (2)",
+          "credits": 3
+        },
+        {
+          "courseId": "230012",
+          "courseName": "數位邏輯設計\tDigital Logic Design",
+          "credits": 3
+        },
+        {
+          "courseId": "230013",
+          "courseName": "電工實驗(一)\tElectrical Engineering Lab. Ⅰ",
+          "credits": 1
+        },
+        {
+          "courseId": "230020",
+          "courseName": "電子學(一)\tElectronics Ⅰ",
+          "credits": 3
+        },
+        {
+          "courseId": "230021",
+          "courseName": "電路學(一)\tElectric Circuits Ⅰ",
+          "credits": 3
+        },
+        {
+          "courseId": "230023",
+          "courseName": "電工實驗(二)\tElectrical Engineering Lab. Ⅱ",
+          "credits": 1
+        },
+        {
+          "courseId": "230026",
+          "courseName": "電子學(二)\tElectronics Ⅱ",
+          "credits": 3
+        },
+        {
+          "courseId": "230027",
+          "courseName": "電路學(二)\tElectric Circuits Ⅱ",
+          "credits": 3
+        },
+        {
+          "courseId": "230035",
+          "courseName": "線性代數\tLinear Algebra",
+          "credits": 3
+        },
+        {
+          "courseId": "230052",
+          "courseName": "專題(上)\tSenior Project Ⅰ",
+          "credits": 2
+        },
+        {
+          "courseId": "230053",
+          "courseName": "專題(下)\tSenior Project Ⅱ",
+          "credits": 2
+        },
+        {
+          "courseId": "230057",
+          "courseName": "工程數學(下)\tEngineering Mathmatics(2)",
+          "credits": 3
+        },
+        {
+          "courseId": "230062",
+          "courseName": "數位邏輯實驗\tDigital Logic Lab",
+          "credits": 1
+        },
+        {
+          "courseId": "230064",
+          "courseName": "電磁學(上)\tElectromagnetics (1)",
+          "credits": 3
+        },
+        {
+          "courseId": "230074",
+          "courseName": "電磁學(下)\tElectromagnetics(2)",
+          "credits": 3
+        },
+        {
+          "courseId": "230084",
+          "courseName": "工程數學(上)\tEngineering Mathematics(1)",
+          "credits": 3
+        },
+        {
+          "courseId": "230088",
+          "courseName": "計算機程式\tComputer Programing",
+          "credits": 3
+        },
+        {
+          "courseId": "230108",
+          "courseName": "訊號與系統\tSignals and Systems",
+          "credits": 3
+        },
+        {
+          "courseId": "230113",
+          "courseName": "微算機原理與實驗\tMicroprocessors Principles and Laboratory",
+          "credits": 3
+        }
+      ],
+      "description": "",
+      "originalRows": [
+        [
+          "合計",
+          "共　22　門課程　58　學分",
+          ""
+        ]
+      ]
+    },
+    {
+      "groupId": "group_003",
+      "name": "112 學年度入學學士班校核心(共同及通識教育)課程最低學分數一覽表",
+      "type": "core_requirements",
+      "requiredCredits": null,
+      "courses": [],
+      "description": "",
+      "originalRows": [
+        [
+          "人文(105始)",
+          "G 人文-文學與藝術(105始)H 人文-歷史哲學與文化(105始)",
+          "2",
+          "4",
+          "最少選修 2 種次領域課程最少選修合計 4 學分"
+        ],
+        [
+          "共同必修(99始)",
+          "A 共同必修(99始)",
+          "0",
+          "15",
+          "最少選修合計 15 學分"
+        ],
+        [
+          "自然(105始)",
+          "K 自然-工程與科技(105始)L 自然-生命與科學(105始)",
+          "2",
+          "4",
+          "最少選修 2 種次領域課程最少選修合計 4 學分"
+        ],
+        [
+          "社會(105始)",
+          "I 社會-法政與教育(105始)J 社會-社經與管理(105始)",
+          "2",
+          "4",
+          "最少選修 2 種次領域課程最少選修合計 4 學分"
+        ],
+        [
+          "特色通識(105始)",
+          "M 特色通識-國際連結(東南亞)105始N 特色通識-淨零永續(綠概念)105始O 特色通識-社會創新(在地實踐)105始",
+          "2",
+          "4",
+          "最少選修 2 種次領域課程最少選修合計 4 學分"
+        ],
+        [
+          "合計",
+          "共　5　 類課程　31　學分",
+          "",
+          "",
+          ""
+        ]
+      ]
+    },
+    {
+      "groupId": "group_004",
+      "name": "112 學年度入學電機工程學系學士班校核心必修(選)課程清單",
+      "type": "core_requirements",
+      "requiredCredits": null,
+      "courses": [],
+      "description": "",
+      "originalRows": [
+        [
+          "902055 體育:運動舞蹈(1.0學分)902056 體育:高爾夫球(1.0學分)902057 體育:射箭(1.0學分)902058 體育:游泳(1.0學分)902059 體育:網球(1.0學分)902060 體育:船艇(1.0學分)902069 體育:戶外探索教育(1.0學分)",
+          "至少選修 2 門課程至少選修合計2 學分"
+        ]
+      ]
+    },
+    {
+      "groupId": "group_005",
+      "name": "112 學年度入學電機工程學系學士班輔系必修課目清單",
+      "type": "minor_courses",
+      "requiredCredits": null,
+      "courses": [
+        {
+          "courseId": "230012",
+          "courseName": "數位邏輯設計\tDigital Logic Design",
+          "credits": 3
+        },
+        {
+          "courseId": "230020",
+          "courseName": "電子學(一)\tElectronics Ⅰ",
+          "credits": 3
+        },
+        {
+          "courseId": "230021",
+          "courseName": "電路學(一)\tElectric Circuits Ⅰ",
+          "credits": 3
+        },
+        {
+          "courseId": "230026",
+          "courseName": "電子學(二)\tElectronics Ⅱ",
+          "credits": 3
+        },
+        {
+          "courseId": "230027",
+          "courseName": "電路學(二)\tElectric Circuits Ⅱ",
+          "credits": 3
+        },
+        {
+          "courseId": "230035",
+          "courseName": "線性代數\tLinear Algebra",
+          "credits": 3
+        },
+        {
+          "courseId": "230064",
+          "courseName": "電磁學(上)\tElectromagnetics (1)",
+          "credits": 3
+        },
+        {
+          "courseId": "230084",
+          "courseName": "工程數學(上)\tEngineering Mathematics(1)",
+          "credits": 3
+        },
+        {
+          "courseId": "230108",
+          "courseName": "訊號與系統\tSignals and Systems",
+          "credits": 3
+        },
+        {
+          "courseId": "230113",
+          "courseName": "微算機原理與實驗\tMicroprocessors Principles and Laboratory",
+          "credits": 3
+        }
+      ],
+      "description": "",
+      "originalRows": [
+        [
+          "合計",
+          "共　10　 門課程　30　學分",
+          ""
+        ]
+      ]
+    },
+    {
+      "groupId": "group_006",
+      "name": "112 學年度入學電機工程學系學士班雙主修必修課目清單",
+      "type": "double_major_courses",
+      "requiredCredits": null,
+      "courses": [
+        {
+          "courseId": "230001",
+          "courseName": "普通物理(上)\tPhysics (1)",
+          "credits": 3
+        },
+        {
+          "courseId": "230002",
+          "courseName": "微積分(上)\tCalculus (1)",
+          "credits": 3
+        },
+        {
+          "courseId": "230009",
+          "courseName": "微積分(下)\tCalculus (2)",
+          "credits": 3
+        },
+        {
+          "courseId": "230010",
+          "courseName": "普通物理(下)\tPhysics (2)",
+          "credits": 3
+        },
+        {
+          "courseId": "230012",
+          "courseName": "數位邏輯設計\tDigital Logic Design",
+          "credits": 3
+        },
+        {
+          "courseId": "230013",
+          "courseName": "電工實驗(一)\tElectrical Engineering Lab. Ⅰ",
+          "credits": 1
+        },
+        {
+          "courseId": "230020",
+          "courseName": "電子學(一)\tElectronics Ⅰ",
+          "credits": 3
+        },
+        {
+          "courseId": "230021",
+          "courseName": "電路學(一)\tElectric Circuits Ⅰ",
+          "credits": 3
+        },
+        {
+          "courseId": "230023",
+          "courseName": "電工實驗(二)\tElectrical Engineering Lab. Ⅱ",
+          "credits": 1
+        },
+        {
+          "courseId": "230026",
+          "courseName": "電子學(二)\tElectronics Ⅱ",
+          "credits": 3
+        },
+        {
+          "courseId": "230027",
+          "courseName": "電路學(二)\tElectric Circuits Ⅱ",
+          "credits": 3
+        },
+        {
+          "courseId": "230035",
+          "courseName": "線性代數\tLinear Algebra",
+          "credits": 3
+        },
+        {
+          "courseId": "230052",
+          "courseName": "專題(上)\tSenior Project Ⅰ",
+          "credits": 2
+        },
+        {
+          "courseId": "230053",
+          "courseName": "專題(下)\tSenior Project Ⅱ",
+          "credits": 2
+        },
+        {
+          "courseId": "230057",
+          "courseName": "工程數學(下)\tEngineering Mathmatics(2)",
+          "credits": 3
+        },
+        {
+          "courseId": "230062",
+          "courseName": "數位邏輯實驗\tDigital Logic Lab",
+          "credits": 1
+        },
+        {
+          "courseId": "230064",
+          "courseName": "電磁學(上)\tElectromagnetics (1)",
+          "credits": 3
+        },
+        {
+          "courseId": "230074",
+          "courseName": "電磁學(下)\tElectromagnetics(2)",
+          "credits": 3
+        },
+        {
+          "courseId": "230084",
+          "courseName": "工程數學(上)\tEngineering Mathematics(1)",
+          "credits": 3
+        },
+        {
+          "courseId": "230088",
+          "courseName": "計算機程式\tComputer Programing",
+          "credits": 3
+        },
+        {
+          "courseId": "230108",
+          "courseName": "訊號與系統\tSignals and Systems",
+          "credits": 3
+        },
+        {
+          "courseId": "230113",
+          "courseName": "微算機原理與實驗\tMicroprocessors Principles and Laboratory",
+          "credits": 3
+        }
+      ],
+      "description": "",
+      "originalRows": [
+        [
+          "合計",
+          "共　22　 門課程　58　學分",
+          ""
+        ]
+      ]
+    }
+  ],
+  "notes": []
+}

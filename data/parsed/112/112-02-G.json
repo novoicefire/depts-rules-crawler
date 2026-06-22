@@ -1,0 +1,288 @@
+{
+  "requirementSetId": "112-02-G",
+  "source": "ccweb6_graduation_requirements",
+  "entryYear": "112",
+  "departmentId": "02",
+  "departmentName": "國際文教與比較教育學系",
+  "departmentShortName": "國比系",
+  "classCode": "G",
+  "className": "碩士班",
+  "rawHtmlPath": "data/raw/112/02/G.html",
+  "groups": [
+    {
+      "groupId": "group_001",
+      "name": "資料項次: 164 ～ 164 ／ 1706",
+      "type": "course_list",
+      "requiredCredits": null,
+      "courses": [],
+      "description": "",
+      "originalRows": [
+        [
+          "部別",
+          "碩士班"
+        ],
+        [
+          "入學年度",
+          "112"
+        ]
+      ]
+    },
+    {
+      "groupId": "group_002",
+      "name": "112 學年度入學國際文教與比較教育學系碩士班必修課程清單",
+      "type": "required_courses",
+      "requiredCredits": null,
+      "courses": [
+        {
+          "courseId": "025063",
+          "courseName": "比較教育理論與方法\tTheories and Methods of Comparative Education",
+          "credits": 3
+        },
+        {
+          "courseId": "025092",
+          "courseName": "社會科學教育研究法\tResearch Methods in Social Sciences",
+          "credits": 3
+        },
+        {
+          "courseId": "025109",
+          "courseName": "文教專題研討(一)\tSeminar on Cultural and Educational Research (Ⅰ)",
+          "credits": 2
+        },
+        {
+          "courseId": "025113",
+          "courseName": "文教專題研討(二)\tSeminar on Cultural and Educational Research (II)",
+          "credits": 2
+        }
+      ],
+      "description": "",
+      "originalRows": [
+        [
+          "合計",
+          "共　4　門課程　10　學分",
+          ""
+        ]
+      ]
+    },
+    {
+      "groupId": "group_003",
+      "name": "112 學年度入學國際文教與比較教育學系課程先修(擋修)清單",
+      "type": "prerequisite_rules",
+      "requiredCredits": null,
+      "courses": [
+        {
+          "courseId": "020004",
+          "courseName": "日文一(下)\tJapanese I(2)",
+          "targetCourseId": "020003",
+          "targetCourseName": "日文一(上)\tJapanese I(1)"
+        },
+        {
+          "courseId": "020017",
+          "courseName": "日文二(上)\tJapanese II(1)",
+          "targetCourseId": "020004",
+          "targetCourseName": "日文一(下)\tJapanese I(2)"
+        },
+        {
+          "courseId": "020025",
+          "courseName": "西班牙文一(下)\tSpanish I(2)",
+          "targetCourseId": "020010",
+          "targetCourseName": "西班牙文一(上)\tSpanish I(1)"
+        },
+        {
+          "courseId": "020030",
+          "courseName": "教育統計(下)\tEducational Statistics(2)",
+          "targetCourseId": "020011",
+          "targetCourseName": "教育統計(上)\tEducational Statistics(1)"
+        },
+        {
+          "courseId": "020046",
+          "courseName": "西班牙文二(上)\tSpanish II(1)",
+          "targetCourseId": "020025",
+          "targetCourseName": "西班牙文一(下)\tSpanish I(2)"
+        },
+        {
+          "courseId": "020061",
+          "courseName": "西班牙文二(下)\tSpanish II(2)",
+          "targetCourseId": "020046",
+          "targetCourseName": "西班牙文二(上)\tSpanish II(1)"
+        },
+        {
+          "courseId": "020062",
+          "courseName": "教育研究法(下)\tResearch Methods in Education(2)",
+          "targetCourseId": "020042",
+          "targetCourseName": "教育研究法(上)\tResearch Methods in Education"
+        },
+        {
+          "courseId": "020082",
+          "courseName": "教育史(下)\tHistory Education",
+          "targetCourseId": "020067",
+          "targetCourseName": "教育史(上)\tHistory Education(1)"
+        },
+        {
+          "courseId": "020083",
+          "courseName": "德文一(下)\tGermany(2)",
+          "targetCourseId": "020076",
+          "targetCourseName": "德文一(上)\tGermany(1)"
+        },
+        {
+          "courseId": "020084",
+          "courseName": "法文一(下)\tFrench(2)",
+          "targetCourseId": "020075",
+          "targetCourseName": "法文一(上)\tFrench(1)"
+        },
+        {
+          "courseId": "020093",
+          "courseName": "西班牙教育名著導讀（上）\tIntroducing Spainish Education Classics (1)",
+          "targetCourseId": "020061",
+          "targetCourseName": "西班牙文二(下)\tSpanish II(2)"
+        },
+        {
+          "courseId": "020095",
+          "courseName": "法文二(上)\tFrenchⅡ(1)",
+          "targetCourseId": "020084",
+          "targetCourseName": "法文一(下)\tFrench(2)"
+        },
+        {
+          "courseId": "020096",
+          "courseName": "德文二(上)\tGermanⅡ(1)",
+          "targetCourseId": "020083",
+          "targetCourseName": "德文一(下)\tGermany(2)"
+        },
+        {
+          "courseId": "020098",
+          "courseName": "西班牙教育名著導讀（下）\tIntroducing Spainish Education Classics (2)",
+          "targetCourseId": "020093",
+          "targetCourseName": "西班牙教育名著導讀（上）\tIntroducing Spainish Education Classics (1)"
+        },
+        {
+          "courseId": "020099",
+          "courseName": "德文二（下）\tGerman Ⅱ(2)",
+          "targetCourseId": "020096",
+          "targetCourseName": "德文二(上)\tGermanⅡ(1)"
+        },
+        {
+          "courseId": "020100",
+          "courseName": "日文二（下）\tJapanese Ⅱ(2)",
+          "targetCourseId": "020017",
+          "targetCourseName": "日文二(上)\tJapanese II(1)"
+        },
+        {
+          "courseId": "020106",
+          "courseName": "西班牙教育名著導讀進階（上）\tIntroducing Spainish Education Classics(3)",
+          "targetCourseId": "020098",
+          "targetCourseName": "西班牙教育名著導讀（下）\tIntroducing Spainish Education Classics (2)"
+        },
+        {
+          "courseId": "020109",
+          "courseName": "德國教育名著導論\tIntroducing German Education Classics (1)",
+          "targetCourseId": "020099",
+          "targetCourseName": "德文二（下）\tGerman Ⅱ(2)"
+        },
+        {
+          "courseId": "020110",
+          "courseName": "日本教育名著導讀(上)\tIntroducing Japanese Education Classics (1)",
+          "targetCourseId": "020100",
+          "targetCourseName": "日文二（下）\tJapanese Ⅱ(2)"
+        },
+        {
+          "courseId": "020122",
+          "courseName": "西班牙教育名著導讀進階(下)\tIntroducing Spainish Education Classics (4)",
+          "targetCourseId": "020106",
+          "targetCourseName": "西班牙教育名著導讀進階（上）\tIntroducing Spainish Education Classics(3)"
+        },
+        {
+          "courseId": "020139",
+          "courseName": "日語聽講一（下）\tJapanese Listening and Speaking(2)",
+          "targetCourseId": "020124",
+          "targetCourseName": "日語聽講一（上）\tJapanese Listening and Speaking(1)"
+        },
+        {
+          "courseId": "020140",
+          "courseName": "西語聽講一（下）\tSpanish Listening and Speaking(2)",
+          "targetCourseId": "020126",
+          "targetCourseName": "西語聽講一（上）\tSpanish Listening and Speaking(1)"
+        },
+        {
+          "courseId": "020141",
+          "courseName": "德語聽講一（下）\tGermany Listening and Speaking(2)",
+          "targetCourseId": "020128",
+          "targetCourseName": "德語聽講一(上)\tGermany Listening and Speaking(1)"
+        },
+        {
+          "courseId": "020142",
+          "courseName": "法語聽講一（下）\tFrench Listening and Speaking(2)",
+          "targetCourseId": "020130",
+          "targetCourseName": "法語聽講一（上）\tFrench Listening and Speaking(1)"
+        },
+        {
+          "courseId": "020145",
+          "courseName": "日語聽講二（下）\tJapanese Listening and Speaking(4)",
+          "targetCourseId": "020125",
+          "targetCourseName": "日語聽講二（上）\tJapanese Listening and Speaking(3)"
+        },
+        {
+          "courseId": "020146",
+          "courseName": "西語聽講二（下）\tSpanish Listening and Speaking(4)",
+          "targetCourseId": "020127",
+          "targetCourseName": "西語聽講二（上）\tSpanish Listening and Speaking(3)"
+        },
+        {
+          "courseId": "020147",
+          "courseName": "德語聽講二（下）\tGermany Listening and Speaking(4)",
+          "targetCourseId": "020129",
+          "targetCourseName": "德語聽講二（上）\tGermany Listening and Speaking(3)"
+        },
+        {
+          "courseId": "020148",
+          "courseName": "法語聽講二（下）\tFrench Listening and Speaking(4)",
+          "targetCourseId": "020131",
+          "targetCourseName": "法語聽講二（上）\tFrench Listening and Speaking(3)"
+        },
+        {
+          "courseId": "029029",
+          "courseName": "比較教育專題分析(三)\tAdvanced Comparative Study on Education Issues(3)",
+          "targetCourseId": "029027",
+          "targetCourseName": "比較教育專題分析(二)\tAdvanced Comparative Study on Education Issues(2)"
+        },
+        {
+          "courseId": "029031",
+          "courseName": "比較教育專題分析(四)\tAdvanced Comparative Study on Education Issues(4)",
+          "targetCourseId": "029029",
+          "targetCourseName": "比較教育專題分析(三)\tAdvanced Comparative Study on Education Issues(3)"
+        },
+        {
+          "courseId": "029035",
+          "courseName": "比較教育專題分析(六)\tAdvanced Comparative Study on Education Issues(6)",
+          "targetCourseId": "029032",
+          "targetCourseName": "比較教育專題分析(五)\tAdvanced Comparative Study of Education Issues(5)"
+        },
+        {
+          "courseId": "029048",
+          "courseName": "學校效能分析比較研究(二)\tSchool Effectiveness Analysis(2)",
+          "targetCourseId": "029028",
+          "targetCourseName": "學校效能分析比較研究(一)\tSchool Effectiveness Analysis(I)"
+        }
+      ],
+      "description": "",
+      "originalRows": []
+    },
+    {
+      "groupId": "group_004",
+      "name": "112 學年度入學國際文教與比較教育學系碩士班系必修(選)課程清單",
+      "type": "required_courses",
+      "requiredCredits": null,
+      "courses": [],
+      "description": "",
+      "originalRows": [
+        [
+          "025062 高級教育統計學(3.0學分)025091 進階質性研究(3.0學分)",
+          "兩門科目必選一門次領域至少選修 1 門課程"
+        ],
+        [
+          "025110 文教專題研討(三)(2.0學分)025114 文教專題研討(四)(2.0學分)025111 國際實習專題指導(一)(2.0學分)025112 國際實習專題指導(二)(2.0學分)",
+          "至少選修 2 門課程"
+        ]
+      ]
+    }
+  ],
+  "notes": []
+}
