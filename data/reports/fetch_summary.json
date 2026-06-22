@@ -1,55 +1,139 @@
 {
-  "generatedAt": "2026-06-22T17:20:47.115386",
-  "startedAt": "2026-06-22T17:20:47.115386",
-  "finishedAt": "2026-06-22T17:21:07.635388",
-  "durationSeconds": 20.520002,
+  "generatedAt": "2026-06-22T18:02:56.764085",
+  "startedAt": "2026-06-22T18:02:56.764085",
+  "finishedAt": "2026-06-22T18:04:14.955925",
+  "durationSeconds": 78.19184,
   "years": [
-    "112"
+    "111",
+    "112",
+    "113",
+    "114"
   ],
   "classCodes": [
-    "B"
+    "B",
+    "G",
+    "P"
   ],
-  "allDepts": false,
-  "deptids": [
-    "12"
-  ],
+  "allDepts": true,
+  "deptids": null,
   "workers": 5,
   "maxRounds": 20,
   "delay": 0.5,
-  "total": 1,
-  "success": 0,
+  "total": 304,
+  "success": 304,
   "failed": 0,
-  "skipped": 1,
-  "emptyRequirements": 0,
-  "attemptWarnings": 1,
-  "successRate": 0.0,
+  "skipped": 0,
+  "emptyRequirements": 1,
+  "attemptWarnings": 0,
+  "successRate": 1.0,
   "rounds": [
     {
       "round": 1,
-      "input": 1,
-      "success": 0,
+      "input": 76,
+      "success": 76,
       "failed": 0,
-      "skipped": 1,
+      "skipped": 0,
+      "year": "111"
+    },
+    {
+      "round": 1,
+      "input": 75,
+      "success": 75,
+      "failed": 0,
+      "skipped": 0,
       "year": "112"
+    },
+    {
+      "round": 1,
+      "input": 76,
+      "success": 76,
+      "failed": 0,
+      "skipped": 0,
+      "year": "113"
+    },
+    {
+      "round": 1,
+      "input": 77,
+      "success": 77,
+      "failed": 0,
+      "skipped": 0,
+      "year": "114"
     }
   ],
   "byYear": {
-    "112": {
-      "total": 1,
-      "success": 0,
+    "111": {
+      "total": 76,
+      "success": 76,
       "failed": 0,
-      "skipped": 1,
+      "skipped": 0,
       "emptyRequirements": 0,
-      "attemptWarnings": 1,
+      "attemptWarnings": 0,
       "invalidHtml": 0,
-      "requestErrors": 1,
+      "requestErrors": 0,
       "rounds": [
         {
           "round": 1,
-          "input": 1,
-          "success": 0,
+          "input": 76,
+          "success": 76,
           "failed": 0,
-          "skipped": 1
+          "skipped": 0
+        }
+      ]
+    },
+    "112": {
+      "total": 75,
+      "success": 75,
+      "failed": 0,
+      "skipped": 0,
+      "emptyRequirements": 0,
+      "attemptWarnings": 0,
+      "invalidHtml": 0,
+      "requestErrors": 0,
+      "rounds": [
+        {
+          "round": 1,
+          "input": 75,
+          "success": 75,
+          "failed": 0,
+          "skipped": 0
+        }
+      ]
+    },
+    "113": {
+      "total": 76,
+      "success": 76,
+      "failed": 0,
+      "skipped": 0,
+      "emptyRequirements": 0,
+      "attemptWarnings": 0,
+      "invalidHtml": 0,
+      "requestErrors": 0,
+      "rounds": [
+        {
+          "round": 1,
+          "input": 76,
+          "success": 76,
+          "failed": 0,
+          "skipped": 0
+        }
+      ]
+    },
+    "114": {
+      "total": 77,
+      "success": 77,
+      "failed": 0,
+      "skipped": 0,
+      "emptyRequirements": 1,
+      "attemptWarnings": 0,
+      "invalidHtml": 0,
+      "requestErrors": 0,
+      "rounds": [
+        {
+          "round": 1,
+          "input": 77,
+          "success": 77,
+          "failed": 0,
+          "skipped": 0
         }
       ]
     }
