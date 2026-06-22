@@ -74,6 +74,10 @@ def is_valid_html(html: str, entry_year: str, deptid: str, class_code: str = "")
     if has_empty_phrase:
         return True, "valid_empty_requirements"
 
+    tables = soup.find_all("table")
+    if not tables:
+        return False, "no_table"
+
     positive_keywords = ["課號", "課名", "科目", "課程", "學分", "必修", "選修", "輔系", "雙主修", "通識"]
     if any(keyword in text for keyword in positive_keywords):
         return True, "ok"
@@ -101,9 +105,15 @@ def fetch_requirements_html(entry_year: str, deptid: str, class_code: str, timeo
         is_valid, reason = is_valid_html(html, entry_year, deptid, class_code)
         return status_code, html, is_valid, reason
             
+    except requests.Timeout:
+        return 500, None, False, "timeout"
+    except requests.ConnectionError:
+        return 500, None, False, "connection_error"
+    except requests.HTTPError as e:
+        status_code = e.response.status_code if e.response is not None else 500
+        return status_code, None, False, f"http_error_{status_code}"
     except requests.RequestException as e:
-        status_code = getattr(e.response, "status_code", 500) if hasattr(e, "response") else 500
-        return status_code, None, False, "request_exception"
+        return 500, None, False, f"request_exception:{type(e).__name__}"
 
 def get_detail_url(entry_year: str, deptid: str, class_code: str) -> str:
     """產生 detail 頁面 URL"""

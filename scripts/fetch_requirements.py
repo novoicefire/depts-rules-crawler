@@ -20,6 +20,27 @@ from rich import print as rprint
 
 console = Console()
 
+def should_retry_fetch(args, status_code, reason, html):
+    if reason in {"timeout", "connection_error"}:
+        return True
+
+    if isinstance(reason, str) and reason.startswith("http_error_"):
+        return True
+
+    if isinstance(reason, str) and reason.startswith("request_exception"):
+        return True
+
+    if status_code is None:
+        return True
+
+    if isinstance(status_code, int) and status_code >= 500:
+        return True
+
+    if getattr(args, "all_depts", False):
+        return True
+
+    return False
+
 class SessionPool:
     """
     requests.Session is not thread-safe.
@@ -244,16 +265,14 @@ def run_fetch_for_year(year: str, args, target_deptids, summary: dict, errors: l
                                 })
                                 progress.console.print(f"{prefix} -> [bold red]請求失敗 (Status: {status_code}, Reason: {reason})[/bold red]")
                             
-                            if getattr(args, "all_depts", False):
-                                # all-depts 模式下 invalid 也必須 retry
+                            if should_retry_fetch(args, status_code, reason, html):
                                 round_summary["failed"] += 1
                                 pending_tasks.append((year, deptid, class_code))
                             else:
-                                # 單指定系所時容許跳過
                                 summary["skipped"] += 1
                                 year_summary["skipped"] += 1
                                 round_summary["skipped"] += 1
-                                progress.console.print(f"  └─ [dim]已略過此組合[/dim]")
+                                progress.console.print("  └─ [dim]已略過此組合[/dim]")
                     except Exception as exc:
                         summary["attemptWarnings"] += 1
                         year_summary["attemptWarnings"] += 1

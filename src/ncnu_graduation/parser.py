@@ -129,19 +129,16 @@ def parse_html_to_json(html_content: str, entry_year: str, deptid: str, class_co
     has_ncnu_rule_tables = len(tables) > 0
     has_title = has_rule_title(page_text)
 
-    empty_messages = []
-    for phrase in [
+    empty_phrases = [
         "查無必修課程資料",
         "查無系必修(選)課程資料",
         "查無系必修課程資料",
         "查無必修(選)課程資料"
-    ]:
-        if phrase in page_text:
-            empty_messages.append(phrase)
-            
-    has_empty_message = len(empty_messages) > 0
+    ]
 
-    if has_empty_message and not has_ncnu_rule_tables and not has_title:
+    empty_messages = [phrase for phrase in empty_phrases if phrase in page_text]
+
+    if empty_messages and not has_ncnu_rule_tables and not has_title:
         result["notes"].append({
             "type": "no_requirement_data",
             "message": " / ".join(empty_messages)

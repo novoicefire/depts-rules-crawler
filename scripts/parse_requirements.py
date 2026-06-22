@@ -26,7 +26,7 @@ def run_parse(args=None):
     raw_files = sorted(RAW_DIR.rglob("*.html"))
     if not raw_files:
         console.print("[bold yellow]找不到任何 HTML 檔案，請先執行 fetch。[/bold yellow]")
-        return
+        sys.exit(1)
         
     console.print(f"[bold green]找到 {len(raw_files)} 個 HTML 檔案待解析[/bold green]")
     
