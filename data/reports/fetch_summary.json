@@ -1,33 +1,33 @@
 {
-  "generatedAt": "2026-06-22T12:29:02.930852",
-  "startedAt": "2026-06-22T12:29:02.930852",
-  "finishedAt": "2026-06-22T12:29:04.079781",
-  "durationSeconds": 1.148929,
+  "generatedAt": "2026-06-22T16:01:46.274292",
+  "startedAt": "2026-06-22T16:01:46.274292",
+  "finishedAt": "2026-06-22T16:01:47.661732",
+  "durationSeconds": 1.38744,
   "years": [
     "112"
   ],
   "classCodes": [
-    "B",
-    "G",
-    "P"
+    "B"
   ],
-  "allDepts": true,
-  "deptids": null,
+  "allDepts": false,
+  "deptids": [
+    "12"
+  ],
   "workers": 5,
   "maxRounds": 20,
   "delay": 0.5,
-  "total": 75,
-  "success": 0,
+  "total": 1,
+  "success": 1,
   "failed": 0,
-  "skipped": 75,
-  "successRate": 0.0,
+  "skipped": 0,
+  "successRate": 1.0,
   "rounds": [
     {
       "round": 1,
-      "input": 75,
-      "success": 0,
+      "input": 1,
+      "success": 1,
       "failed": 0,
-      "skipped": 75
+      "skipped": 0
     }
   ]
 }

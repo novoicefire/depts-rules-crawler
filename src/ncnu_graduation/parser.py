@@ -27,43 +27,78 @@ def is_reasonable_title(text: str) -> bool:
         return False
     return True
 
+def normalize_text(text: str) -> str:
+    return re.sub(r"\s+", " ", text).strip()
+
+TITLE_PATTERN = re.compile(
+    r"(\d{2,3}\s*學年度入學(?:(?!\d{2,3}\s*學年度入學).){0,160}?(?:清單|一覽表))"
+)
+
+def extract_title_from_text(text: str) -> str | None:
+    text = normalize_text(text)
+    if not text:
+        return None
+
+    matches = TITLE_PATTERN.findall(text)
+    if matches:
+        # 若同一段文字包含多個標題，取最後一個離 table 最近的標題
+        return normalize_text(matches[-1])
+
+    return None
+
 def find_group_name(table, fallback: str) -> str:
-    heading_tags = ["h1", "h2", "h3", "h4", "h5", "strong", "b"]
+    chunks = []
+    cursor = table.previous_sibling
 
-    # 1. 找同層 previous siblings
-    for sibling in table.find_previous_siblings():
-        if getattr(sibling, "name", None) in heading_tags:
-            text = sibling.get_text(" ", strip=True)
-            if is_reasonable_title(text):
-                return text
+    while cursor is not None:
+        # 遇到上一張表格就停止，避免跨到上一個 group
+        if getattr(cursor, "name", None) == "table":
+            break
 
-        text = sibling.get_text(" ", strip=True) if hasattr(sibling, "get_text") else str(sibling).strip()
-        if is_reasonable_title(text):
-            return text
+        if isinstance(cursor, NavigableString):
+            chunks.append(str(cursor))
+        elif getattr(cursor, "name", None) == "br":
+            pass
+        elif hasattr(cursor, "get_text"):
+            chunks.append(cursor.get_text(" ", strip=True))
 
-    # 2. 找 parent 內最近 heading
-    parent = table.parent
-    if parent:
-        headings = parent.find_all(heading_tags)
-        if headings:
-            text = headings[-1].get_text(" ", strip=True)
-            if is_reasonable_title(text):
-                return text
+        cursor = cursor.previous_sibling
 
-    # 3. fallback
+    # previous_sibling 是由近到遠，先檢查最近文字
+    for text in chunks:
+        title = extract_title_from_text(text)
+        if title:
+            return title
+
+    # 若文字被切碎，再合併嘗試
+    combined = " ".join(reversed(chunks))
+    title = extract_title_from_text(combined)
+    if title:
+        return title
+
     return fallback
 
-def infer_required_credits(group: dict) -> int | float | None:
-    # 1. 從 originalRows 找合計
-    for row in group.get("originalRows", []):
-        row_text = " ".join(row.get("cells", row) if isinstance(row, dict) else row)
-        if "合計" in row_text or "小計" in row_text:
-            m = re.search(r"\d+(?:\.\d+)?", row_text)
-            if m:
-                value = float(m.group())
-                return int(value) if value.is_integer() else value
+def parse_credit_value_from_text(text: str) -> int | float | None:
+    text = normalize_text(text)
+    matches = re.findall(r"(\d+(?:\.\d+)?)\s*學分", text)
+    if not matches:
+        return None
 
-    # 2. 從 courses 加總
+    value = float(matches[-1])
+    return int(value) if value.is_integer() else value
+
+def infer_required_credits(group: dict) -> int | float | None:
+    for row in reversed(group.get("originalRows", [])):
+        if isinstance(row, dict):
+            row_text = row.get("rawText") or " ".join(row.get("cells", []))
+        else:
+            row_text = " ".join(row)
+
+        if "合計" in row_text or "小計" in row_text or "至少選修合計" in row_text:
+            value = parse_credit_value_from_text(row_text)
+            if value is not None:
+                return value
+
     credits = []
     for course in group.get("courses", []):
         c = course.get("credits")
@@ -72,10 +107,7 @@ def infer_required_credits(group: dict) -> int | float | None:
 
     if credits:
         total = sum(credits)
-        t_float = float(total)
-        if t_float.is_integer():
-            return int(t_float)
-        return total
+        return int(total) if float(total).is_integer() else total
 
     return None
 
@@ -97,7 +129,9 @@ def parse_html_to_json(html_content: str, entry_year: str, deptid: str, class_co
         "notes": []
     }
     
-    tables = [table for table in soup.find_all("table") if is_requirement_table(table)]
+    tables = soup.select("table.ncnu_table1")
+    if not tables:
+        tables = [table for table in soup.find_all("table") if is_requirement_table(table)]
     
     for i, table in enumerate(tables):
         group: Dict[str, Any] = {
@@ -117,12 +151,12 @@ def parse_html_to_json(html_content: str, entry_year: str, deptid: str, class_co
         group_name = group["name"]
         if "先修" in group_name or "擋修" in group_name:
             group["type"] = "prerequisite_rules"
-        elif "核心" in group_name or "通識" in group_name:
-            group["type"] = "core_requirements"
         elif "輔系" in group_name:
             group["type"] = "minor_courses"
         elif "雙主修" in group_name:
             group["type"] = "double_major_courses"
+        elif "校核心" in group_name or "通識" in group_name or "共同" in group_name:
+            group["type"] = "core_requirements"
         elif "必修" in group_name:
             group["type"] = "required_courses"
         elif "選修" in group_name:
@@ -148,9 +182,9 @@ def parse_html_to_json(html_content: str, entry_year: str, deptid: str, class_co
                 course_name_idx = idx
             elif "學分" in h:
                 credits_idx = idx
-            elif "先修課號" in h:
+            elif h in ["先修課號", "先修課程"]:
                 target_course_id_idx = idx
-            elif "先修課名" in h:
+            elif h in ["先修課名", "先修課程名稱"]:
                 target_course_name_idx = idx
                 
         # 針對先修表格的 fallback，如果 header 有 4 個 (課號, 課名, 先修課號, 先修課名)
@@ -188,7 +222,7 @@ def parse_html_to_json(html_content: str, entry_year: str, deptid: str, class_co
                         is_parsed = True
             
             # 如果是普通的課程清單
-            elif course_id_idx != -1 and course_name_idx != -1 and len(cells) > max(course_id_idx, course_name_idx):
+            elif group["type"] != "prerequisite_rules" and course_id_idx != -1 and course_name_idx != -1 and len(cells) > max(course_id_idx, course_name_idx):
                 course_id = cells[course_id_idx].text.strip()
                 course_name = cells[course_name_idx].text.strip()
                 

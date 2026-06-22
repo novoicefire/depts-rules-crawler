@@ -76,6 +76,47 @@ def main():
             groups = parsed_data.get("groups", [])
             assert len(groups) > 0, "沒有產生任何 group"
             
+            group_names = [g["name"] for g in groups]
+            assert len(set(group_names)) > 1, "所有 group name 都相同，標題解析失敗"
+            
+            assert any("必修課程清單" in name for name in group_names), "缺少必修課程清單"
+            assert any("先修" in name or "擋修" in name for name in group_names), "缺少先修/擋修清單"
+            assert any("校核心" in name or "通識" in name for name in group_names), "缺少校核心/通識 group"
+            assert any("輔系" in name for name in group_names), "缺少輔系 group"
+            assert any("雙主修" in name for name in group_names), "缺少雙主修 group"
+            
+            def find_group(groups_list, keyword):
+                for grp in groups_list:
+                    if keyword in grp.get("name", ""):
+                        return grp
+                return None
+
+            major_required = find_group(groups, "學士班必修課程清單")
+            assert major_required is not None
+            assert major_required.get("requiredCredits") == 53
+            
+            minor = find_group(groups, "輔系必修")
+            assert minor is not None
+            assert minor.get("requiredCredits") == 18
+            
+            double_major = find_group(groups, "雙主修必修")
+            assert double_major is not None
+            assert double_major.get("requiredCredits") == 41
+            
+            core_minimum = find_group(groups, "最低學分數")
+            assert core_minimum is not None
+            assert core_minimum.get("requiredCredits") == 31
+            
+            core_required = find_group(groups, "校核心必修")
+            assert core_required is not None
+            assert core_required.get("requiredCredits") == 2
+            
+            prereq = find_group(groups, "先修")
+            assert prereq is not None
+            assert prereq.get("type") == "prerequisite_rules"
+            assert len(prereq.get("rules", [])) > 0
+            assert len(prereq.get("courses", [])) == 0
+
             valid_group = False
             for g in groups:
                 if len(g.get("courses", [])) > 0 or len(g.get("rules", [])) > 0 or len(g.get("originalRows", [])) > 0:

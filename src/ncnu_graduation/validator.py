@@ -7,6 +7,15 @@ from .config import BASE_DIR, INDEXES_DIR
 
 logger = logging.getLogger(__name__)
 
+def is_meta_group_name(name: str) -> bool:
+    if not name:
+        return True
+
+    has_meta = all(k in name for k in ["系所", "部別", "入學年度"])
+    has_real_title = any(k in name for k in ["清單", "一覽表", "必修", "先修", "擋修", "輔系", "雙主修", "校核心", "通識"])
+
+    return has_meta and not has_real_title
+
 def validate_all(probe: bool = False, strict: bool = False) -> Dict[str, Any]:
     """執行完整驗證並回傳報告"""
     report = {
@@ -93,6 +102,20 @@ def validate_all(probe: bool = False, strict: bool = False) -> Dict[str, Any]:
                     "error": "groups must be a list"
                 })
             else:
+                group_names = [g.get("name", "") for g in groups]
+                
+                if strict and len(groups) > 1 and len(set(group_names)) == 1:
+                    report["invalid_schema"].append({
+                        "id": req_id,
+                        "error": "all group names are identical"
+                    })
+                    
+                if strict and not any(("清單" in name or "一覽表" in name) for name in group_names):
+                    report["invalid_schema"].append({
+                        "id": req_id,
+                        "error": "no group name contains 清單 or 一覽表"
+                    })
+
                 for idx, g in enumerate(groups):
                     missing = []
                     for k in ["groupId", "name", "type", "courses", "originalRows"]:
@@ -125,6 +148,12 @@ def validate_all(probe: bool = False, strict: bool = False) -> Dict[str, Any]:
                         })
                         
                     if strict:
+                        if is_meta_group_name(g.get("name", "")):
+                            report["invalid_schema"].append({
+                                "id": req_id,
+                                "error": f"group {idx} name looks like page metadata, not a rule title: {g.get('name', '')}"
+                            })
+
                         has_courses = len(g.get("courses", [])) > 0
                         has_rules = len(g.get("rules", [])) > 0
                         has_orig = len(g.get("originalRows", [])) > 0

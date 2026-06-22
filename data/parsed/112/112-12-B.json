@@ -11,9 +11,9 @@
   "groups": [
     {
       "groupId": "group_001",
-      "name": "系所 12, 國際企業學系 部別 學士班 入學年度 112",
-      "type": "course_list",
-      "requiredCredits": 20,
+      "name": "112 學年度入學國際企業學系學士班必修課程清單",
+      "type": "required_courses",
+      "requiredCredits": 53,
       "courses": [
         {
           "courseId": "120001",
@@ -131,135 +131,158 @@
     },
     {
       "groupId": "group_002",
-      "name": "系所 12, 國際企業學系 部別 學士班 入學年度 112",
-      "type": "course_list",
+      "name": "112 學年度入學國際企業學系課程先修(擋修)清單",
+      "type": "prerequisite_rules",
       "requiredCredits": null,
-      "courses": [
+      "courses": [],
+      "rules": [
         {
           "courseId": "120026",
           "courseName": "國際企業管理\tInternational Business Management",
-          "credits": null
+          "requiredCourseId": "120002",
+          "requiredCourseName": "管理學\tManagement"
         },
         {
           "courseId": "120027",
           "courseName": "成本會計學及實習(上)\tCost Accounting & Practice (1)",
-          "credits": null
+          "requiredCourseId": "120003",
+          "requiredCourseName": "會計學及實習(上)\tAccounting & Practice (1)"
         },
         {
           "courseId": "120032",
           "courseName": "國貿理論與政策(上)\tInternational Trade Theory and policy (1)",
-          "credits": null
+          "requiredCourseId": "120001",
+          "requiredCourseName": "經濟學及實習(上)\tEconomics & Practice (1)"
         },
         {
           "courseId": "120040",
           "courseName": "投資學\tInvestment",
-          "credits": null
+          "requiredCourseId": "120155",
+          "requiredCourseName": "財務管理\tFinancial Management"
         },
         {
           "courseId": "120041",
           "courseName": "國貿理論與政策(下)\tInternational Trade Theory and Policy (2)",
-          "credits": null
+          "requiredCourseId": "120014",
+          "requiredCourseName": "經濟學及實習(下)\tEconomics & Practice (2)"
         },
         {
           "courseId": "120042",
           "courseName": "成本會計學及實習(下)\tCost Accounting and Practice (2)",
-          "credits": null
+          "requiredCourseId": "120015",
+          "requiredCourseName": "會計學及實習(下)\tAccounting & Practice (2)"
         },
         {
           "courseId": "120044",
           "courseName": "國際行銷管理\tInternational Marketing Management",
-          "credits": null
+          "requiredCourseId": "120033",
+          "requiredCourseName": "行銷學\tMarketing"
         },
         {
           "courseId": "120056",
           "courseName": "金融市場\tFinancial Market",
-          "credits": null
+          "requiredCourseId": "120028",
+          "requiredCourseName": "財務管理\tFinancial Management"
         },
         {
           "courseId": "120065",
           "courseName": "第二外國語:法文二(上)\tFrench Ⅱ(1)",
-          "credits": null
+          "requiredCourseId": "120029",
+          "requiredCourseName": "第二外國語:法文一(上)\tFrench I(1)"
         },
         {
           "courseId": "120065",
           "courseName": "第二外國語:法文二(上)\tFrench Ⅱ(1)",
-          "credits": null
+          "requiredCourseId": "120049",
+          "requiredCourseName": "第二外國語:法文一(下)\tFrench Ⅰ(2)"
         },
         {
           "courseId": "120066",
           "courseName": "第二外國語:日文二(上)\tJapanese Ⅱ(1)",
-          "credits": null
+          "requiredCourseId": "120031",
+          "requiredCourseName": "第二外國語:日文一(上)\tJapanese Ⅰ(1)"
         },
         {
           "courseId": "120066",
           "courseName": "第二外國語:日文二(上)\tJapanese Ⅱ(1)",
-          "credits": null
+          "requiredCourseId": "120050",
+          "requiredCourseName": "第二外國語:日文一(下)\tJapanese Ⅰ(2)"
         },
         {
           "courseId": "120067",
           "courseName": "第二外國語:德文二(上)\tGerman Ⅱ(1)",
-          "credits": null
+          "requiredCourseId": "120036",
+          "requiredCourseName": "第二外國語:德文一(上)\tGerman I(1)"
         },
         {
           "courseId": "120067",
           "courseName": "第二外國語:德文二(上)\tGerman Ⅱ(1)",
-          "credits": null
+          "requiredCourseId": "120051",
+          "requiredCourseName": "第二外國語:德文一(下)\tGerman Ⅰ(2)"
         },
         {
           "courseId": "120086",
           "courseName": "國際企業經營決策\tInternational Business Strategy",
-          "credits": null
+          "requiredCourseId": "120026",
+          "requiredCourseName": "國際企業管理\tInternational Business Management"
         },
         {
           "courseId": "120093",
           "courseName": "中級會計學(上)\tIntermediate Accounting (1)",
-          "credits": null
+          "requiredCourseId": "120003",
+          "requiredCourseName": "會計學及實習(上)\tAccounting & Practice (1)"
         },
         {
           "courseId": "120100",
           "courseName": "迴歸分析及實習\tRegression  Analysis and Practice",
-          "credits": null
+          "requiredCourseId": "120024",
+          "requiredCourseName": "統計學及實習(上)\tStatistics and Practice (1)"
         },
         {
           "courseId": "120100",
           "courseName": "迴歸分析及實習\tRegression  Analysis and Practice",
-          "credits": null
+          "requiredCourseId": "120045",
+          "requiredCourseName": "統計學及實習(下)\tStatistics and Practice (2)"
         },
         {
           "courseId": "120104",
           "courseName": "中級會計學(下)\tIntermediate Accounting (2)",
-          "credits": null
+          "requiredCourseId": "120015",
+          "requiredCourseName": "會計學及實習(下)\tAccounting & Practice (2)"
         },
         {
           "courseId": "120159",
           "courseName": "國際企業管理\tInternational Business Management",
-          "credits": null
+          "requiredCourseId": "C20006",
+          "requiredCourseName": "管理學\tManagement"
         },
         {
           "courseId": "120229",
           "courseName": "財務報表分析\tFinancial Statements Analysis",
-          "credits": null
+          "requiredCourseId": "120202",
+          "requiredCourseName": "會計學及實習(二)\tAccounting and Practice(2)"
         },
         {
           "courseId": "120229",
           "courseName": "財務報表分析\tFinancial Statements Analysis",
-          "credits": null
+          "requiredCourseId": "C20005",
+          "requiredCourseName": "會計學及實習(一)\tFinancial Accounting(1)"
         },
         {
           "courseId": "129096",
           "courseName": "計量經濟(三)",
-          "credits": null
+          "requiredCourseId": "129094",
+          "requiredCourseName": "計量經濟(一)\tEconometrics I"
         }
       ],
-      "rules": [],
       "description": "",
       "originalRows": []
     },
     {
       "groupId": "group_003",
-      "name": "系所 12, 國際企業學系 部別 學士班 入學年度 112",
-      "type": "course_list",
-      "requiredCredits": 105,
+      "name": "112 學年度入學學士班校核心(共同及通識教育)課程最低學分數一覽表",
+      "type": "core_requirements",
+      "requiredCredits": 31,
       "courses": [],
       "rules": [],
       "description": "",
@@ -328,9 +351,9 @@
     },
     {
       "groupId": "group_004",
-      "name": "系所 12, 國際企業學系 部別 學士班 入學年度 112",
-      "type": "course_list",
-      "requiredCredits": 902055,
+      "name": "112 學年度入學國際企業學系學士班校核心必修(選)課程清單",
+      "type": "core_requirements",
+      "requiredCredits": 2,
       "courses": [],
       "rules": [],
       "description": "",
@@ -346,9 +369,9 @@
     },
     {
       "groupId": "group_005",
-      "name": "系所 12, 國際企業學系 部別 學士班 入學年度 112",
-      "type": "course_list",
-      "requiredCredits": 6,
+      "name": "112 學年度入學國際企業學系學士班輔系必修課目清單",
+      "type": "minor_courses",
+      "requiredCredits": 18,
       "courses": [
         {
           "courseId": "120001",
@@ -396,9 +419,9 @@
     },
     {
       "groupId": "group_006",
-      "name": "系所 12, 國際企業學系 部別 學士班 入學年度 112",
-      "type": "course_list",
-      "requiredCredits": 14,
+      "name": "112 學年度入學國際企業學系學士班雙主修必修課目清單",
+      "type": "double_major_courses",
+      "requiredCredits": 41,
       "courses": [
         {
           "courseId": "120001",
