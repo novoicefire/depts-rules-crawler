@@ -1,0 +1,15 @@
+{
+    "python.defaultInterpreterPath": "c:\\Users\\ofire\\Desktop\\depts-rules-crawler\\venv\\Scripts\\python.exe",
+    "python.terminal.activateEnvironment": true,
+    "terminal.integrated.profiles.windows": {
+        "PowerShell with venv": {
+            "source": "PowerShell",
+            "args": [
+                "-NoExit",
+                "-Command",
+                "& 'c:\\Users\\ofire\\Desktop\\depts-rules-crawler\\venv\\Scripts\\Activate.ps1'"
+            ]
+        }
+    },
+    "terminal.integrated.defaultProfile.windows": "PowerShell with venv"
+}

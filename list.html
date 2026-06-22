@@ -1,0 +1,1509 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>校務系統學生及訪客專用簡易版</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" type="text/css" href="adminlte3/css/adminlte.css">
+<link rel="stylesheet" type="text/css" href="plugins/fontawesome-free/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="plugins/fontawesome-free/css/v4-shims.css">
+<link rel="stylesheet" type="text/css" href="css/OverlayScrollbars.min.css">
+<link rel="stylesheet" type="text/css" href="css/student2.css">
+<script src="js/ewpolyfill.min.js"></script>
+<script src="js/loadjs.min.js"></script>
+<script src="js/ewcfg.js"></script>
+<script>
+Object.assign(ew, {
+	LANGUAGE_ID: "zh-tw",
+	DATE_SEPARATOR: "/", // Date separator
+	TIME_SEPARATOR: ":", // Time separator
+	DATE_FORMAT: "yyyy/mm/dd", // Default date format
+	DATE_FORMAT_ID: 5, // Default date format ID
+	DATETIME_WITHOUT_SECONDS: false, // Date/Time without seconds
+	DECIMAL_POINT: ".",
+	THOUSANDS_SEP: ",",
+	SESSION_TIMEOUT: 1170, // Session timeout time (seconds)
+	SESSION_TIMEOUT_COUNTDOWN: 60, // Count down time to session timeout (seconds)
+	SESSION_KEEP_ALIVE_INTERVAL: 0, // Keep alive interval (seconds)
+	RELATIVE_PATH: "", // Relative path
+	IS_LOGGEDIN: false, // Is logged in
+	IS_SYS_ADMIN: false, // Is sys admin
+	CURRENT_USER_NAME: "", // Current user name
+	IS_AUTOLOGIN: false, // Is logged in with option "Auto login until I logout explicitly"
+	TIMEOUT_URL: "logout.php", // Timeout URL // PHP
+	TOKEN_NAME: "token", // Token name
+	API_FILE_TOKEN_NAME: "filetoken", // API file token name
+	API_URL: "api/index.php", // API file name // PHP
+	API_ACTION_NAME: "action", // API action name
+	API_OBJECT_NAME: "object", // API object name
+	API_FIELD_NAME: "field", // API field name
+	API_KEY_NAME: "key", // API key name
+	API_LIST_ACTION: "list", // API list action
+	API_VIEW_ACTION: "view", // API view action
+	API_ADD_ACTION: "add", // API add action
+	API_EDIT_ACTION: "edit", // API edit action
+	API_DELETE_ACTION: "delete", // API delete action
+	API_LOGIN_ACTION: "login", // API login action
+	API_FILE_ACTION: "file", // API file action
+	API_UPLOAD_ACTION: "upload", // API upload action
+	API_JQUERY_UPLOAD_ACTION: "jupload", // API jQuery upload action
+	API_SESSION_ACTION: "session", // API get session action
+	API_LOOKUP_ACTION: "lookup", // API lookup action
+	API_LOOKUP_PAGE: "page", // API lookup page name
+	API_PROGRESS_ACTION: "progress", // API progress action
+	API_EXPORT_CHART_ACTION: "chart", // API export chart action
+	API_JWT_AUTHORIZATION_HEADER: "X-Authorization", // API JWT authorization header
+	API_JWT_TOKEN: "", // API JWT token
+	USE_URL_REWRITE: false, // URL rewrite
+	MULTIPLE_OPTION_SEPARATOR: ",", // Multiple option separator
+	AUTO_SUGGEST_MAX_ENTRIES: 10, // Auto-Suggest max entries
+	IMAGE_FOLDER: "images/", // Image folder
+	SESSION_ID: "8bsuODZc-qPXSoNdQq-LLokz7ZWzKyWHXbK-vWdFfEI.", // Session ID
+	UPLOAD_THUMBNAIL_WIDTH: 200, // Upload thumbnail width
+	UPLOAD_THUMBNAIL_HEIGHT: 0, // Upload thumbnail height
+	MULTIPLE_UPLOAD_SEPARATOR: ",", // Upload multiple separator
+	IMPORT_FILE_ALLOWED_EXT: "csv,xls,xlsx", // Import file allowed extensions
+	USE_COLORBOX: true,
+	USE_JAVASCRIPT_MESSAGE: false,
+	PROJECT_STYLESHEET_FILENAME: "css/student2.css", // Project style sheet
+	PDF_STYLESHEET_FILENAME: "", // PDF style sheet // PHP
+	EMBED_PDF: false,
+	ANTIFORGERY_TOKEN: "-eye1VZeqLyDOzdZm4dgxg..", // PHP
+	CSS_FLIP: false,
+	LAZY_LOAD: true,
+	USE_RESPONSIVE_TABLE: true,
+	RESPONSIVE_TABLE_CLASS: "table-responsive",
+	DEBUG: false,
+	SEARCH_FILTER_OPTION: "Client",
+	OPTION_HTML_TEMPLATE: "<span class=\"ew-option\">{value}</span>"});
+loadjs("jquery/jquery.min.js", "jquery");
+loadjs([
+	"js/mobile-detect.min.js",
+	"js/purify.min.js",
+	"jquery/load-image.all.min.js"
+], "others");
+ew.language = new ew.Language({"addbtn":"新增","cancelbtn":"取消","changepwd":"變更密碼","clickrecaptcha":"請點擊 reCAPTCHA","closebtn":"關閉","confirmbtn":"確認","confirmcancel":"請問您要取消嗎 ?","countselected":"%s 被選取","currentpassword":"目前密碼: ","danger":"Error","deleteconfirmmsg":"您確認要刪除此筆資料嗎?","deletefilterconfirm":"刪除的篩選條件是[ %s ] ?","editbtn":"編修","enterfiltername":"請輸入篩選條件的名稱","enternewpassword":"請輸入新密碼","enteroldpassword":"請輸入舊密碼","enterpassword":"請輸入密碼","enterpwd":"請輸入密碼","enterusername":"請輸入使用者帳號","entervalidatecode":"請輸入驗證碼","entersenderemail":"請輸入寄件者 email","enterpropersenderemail":"寄件者 email 數量超過限制或 email 地址錯誤","enterrecipientemail":"請輸入收件者 email 地址","enterproperrecipientemail":"收件者 email 數量超過限制或 email 地址錯誤","enterproperccemail":"副本收件者 email 數量超過限制或 email 地址錯誤","enterproperbccemail":"密件副本收件者 email 數量超過限制或 email 地址錯誤","entersubject":"請輸入主旨","enteruid":"請輸入使用者帳號","entervalidemail":"請輸入有效的 Email 地址!","exportchart":"Exporting chart: ","exportchartdata":"Exporting chart data","exportcharterror":"Failed to export chart: ","exporting":"正在匯出中, 請稍侯...","exportingchart":"Exporting chart (%c of %t), please wait...","exporttoemailtext":"Email","failedtoexport":"匯出失敗","filtername":"篩選條件名稱","importmessageerror1":"Imported %c of %t records from %f (success: %s, failure: %e)","importmessageerror2":", error: %e","importmessageerror3":"row %i: %d","importmessageerror4":"log file: %l","importmessagemore":"(%s more)","importmessageprogress":"Importing %c of %t records from %f...","importmessageservererror":"Server error %s: %t","importmessagesuccess":"Imported %c of %t records from %f successfully","importmessageuploaderror":"Failed to upload %f: %s","importmessageuploadcomplete":"Upload completed","importmessageuploadprogress":"Uploading...(p%)","importmessagepleaseselect":"Please select file","importmessageincorrectfiletype":"Incorrect file type","importtext":"Import","incorrectemail":"email 格式錯誤","incorrectfield":"欄位不正確","incorrectfloat":"浮點數值格式錯誤","incorrectguid":"不正確的 GUID","incorrectinteger":"整數格式錯誤","incorrectphone":"電話號碼錯誤","incorrectrange":"數值必須介於 %1 與 %2 之間","incorrectregexp":"Regular expression not matched","incorrectssn":"Incorrect social security number","incorrectzip":"Incorrect ZIP code","info":"Information","insertfailed":"新增失敗","invalidrecord":"資料錯誤! 鍵值是空的!","lightboxtitle":" ","lightboxcurrent":"影像 {current} ／ {total}","lightboxprevious":"前一頁","lightboxnext":"下一頁","lightboxclose":"關閉","lightboxxhrerror":"內容載入失敗.","lightboximgerror":"影像載入失敗.","loading":"載入中 ...","login":"登入","maxfilesize":"超過檔案大小限制 (%s bytes).","messageok":"OK","mismatchpassword":"密碼不正確","missingpdfobject":"Missing PDFObject","more":"更多","next":"下一個","noaddrecord":"沒有任何資料被新增","nofieldselected":"沒有任何欄位被選取更新","nochartdata":"No data to display","norecord":"找不到相符資料","norecordselected":"沒有資料被選取","of":"／","overwritebtn":"覆寫","page":"頁次:","passwordstrength":"密碼強度: %p","passwordtoosimple":"您的密碼太簡單了 !","permissionadd":"Add/Copy","permissionadmin":"Admin","permissiondelete":"Delete","permissionedit":"Edit","permissionimport":"Import","permissionlistsearchview":"List/Search/View","permissionlist":"List","permissionlookup":"Lookup","permissionsearch":"Search","permissionview":"View","pleaseselect":"請選取","pleasewait":"請稍待 ...","prev":"前","quicksearchauto":"自動","quicksearchautoshort":"","quicksearchall":"所有的關鍵字","quicksearchallshort":"全部","quicksearchany":"任何關鍵字","quicksearchanyshort":"任何","quicksearchexact":"完全符合","quicksearchexactshort":"符合","record":"資料項次:","recordsperpage":"每頁資料筆數:","reloadbtn":"重新載入","savebtn":"儲存","search":"搜尋","searchbtn":"搜尋","selectbtn":"選取","sendemailsuccess":"Email 寄送成功","sessionwillexpire":"您的 session 將在 %s 秒逾期. 請按 OK 延續您的 session.","sessionexpired":"您的 session 已逾期.","success":"Success","tableorview":"資料表","updatebtn":"更新","uploading":"上傳中...","uploadstart":"開始上傳","uploadcancel":"取消上傳","uploaddelete":"刪除上傳","uploadoverwrite":"是否覆蓋舊檔案?","uploaderrmsgmaxfilesize":"上傳的檔案太大 !","uploaderrmsgminfilesize":"上傳的檔案太小 !","uploaderrmsgacceptfiletypes":"上傳的檔案類型不符合規定 !","uploaderrmsgmaxnumberoffiles":"超過上傳檔案數目上限 !","uploaderrmsgmaxfilelength":"上傳檔名字數超過限制","useradministrator":"管理者","useranonymous":"匿名訪客","userdefault":"預設","userleveladministratorname":"User level name for user level -1 must be 'Administrator'","userlevelanonymousname":"User level name for user level -2 must be 'Anonymous'","userlevelidinteger":"User Level ID must be integer","userleveldefaultname":"User level name for user level 0 must be 'Default'","userlevelidincorrect":"User defined User Level ID must be larger than 0","userlevelnameincorrect":"User defined User Level name cannot be 'Administrator' or 'Default'","valuenotexist":"值不存在錯誤 !","warning":"Warning","wrongfiletype":"檔案格式不支援"});ew.vars = {"login":{"isLoggedIn":false,"currentUserName":null,"logoutUrl":"window.location='logout.php';return false;","logoutText":"登出","canLogout":false,"loginUrl":"window.location='login.php';return false;","loginText":"登入","canLogin":true},"languages":{"languages":[{"id":"icon","desc":"icon","selected":false},{"id":"zh-tw","desc":"zh-tw","selected":true}]}};
+ew.ready("jquery", "jquery/jsrender.min.js", "jsrender", ew.renderJsTemplates);
+ew.ready("jsrender", "jquery/jquery.overlayScrollbars.min.js", "scrollbars", ew.initSidebarScrollbars); // Init sidebar scrollbars after rendering menu
+ew.ready("jquery", "jquery/jquery.ui.widget.min.js", "widget");
+ew.loadjs(["moment/moment.min.js", "js/Chart.min.js"], "moment");
+</script>
+<script>
+ew.vars.navbar = {"items":null,"accordion":false};
+</script><script>
+ew.vars.menu = {"items":[{"id":518,"name":"mi_News","text":"系統公告","parentId":-1,"level":0,"href":"News.php","attrs":"","target":"","isHeader":false,"active":false,"icon":"","label":"","isNavbarItem":false,"items":null,"open":false},{"id":106,"name":"mci_其他系統或服務(SSO)","text":"其他系統或服務(SSO)","parentId":-1,"level":0,"href":"#","attrs":" onclick=\"return false;\"","target":"","isHeader":false,"active":false,"icon":"","label":"","isNavbarItem":false,"items":[{"id":288,"name":"mci_　全校授權軟體下載系統","text":"　全校授權軟體下載系統","parentId":106,"level":1,"href":"https://ccweb.ncnu.edu.tw/softlib","attrs":"","target":"","isHeader":false,"active":false,"icon":"","label":"","isNavbarItem":false,"items":null,"open":false},{"id":895,"name":"mi_aspmaker_student_query_current_semester_literacylecture_view","text":"　本學期的通識講座明細","parentId":106,"level":1,"href":"aspmaker_student_query_current_semester_literacylecture_viewlist.php","attrs":"","target":"","isHeader":false,"active":false,"icon":"","label":"","isNavbarItem":false,"items":null,"open":false},{"id":109,"name":"mci_　活動報名系統","text":"　活動報名系統","parentId":106,"level":1,"href":"https://ccweb.ncnu.edu.tw/SLLL","attrs":"","target":"","isHeader":false,"active":false,"icon":"","label":"","isNavbarItem":false,"items":null,"open":false},{"id":107,"name":"mci_　實驗室安全衛生管理系統","text":"　實驗室安全衛生管理系統","parentId":106,"level":1,"href":"https://ccweb6.ncnu.edu.tw/safetylab","attrs":"","target":"","isHeader":false,"active":false,"icon":"","label":"","isNavbarItem":false,"items":null,"open":false},{"id":114,"name":"mci_　各單位法規及表單","text":"　各單位法規及表單","parentId":106,"level":1,"href":"https://ccweb6.ncnu.edu.tw/law","attrs":"","target":"","isHeader":false,"active":false,"icon":"","label":"","isNavbarItem":false,"items":null,"open":false},{"id":404,"name":"mci_　諮商輔導服務系統","text":"　諮商輔導服務系統","parentId":106,"level":1,"href":"https://ccweb.ncnu.edu.tw/coun","attrs":"","target":"","isHeader":false,"active":false,"icon":"","label":"","isNavbarItem":false,"items":null,"open":false},{"id":110,"name":"mci_　學生宿舍包裹掛號待領","text":"　學生宿舍包裹掛號待領","parentId":106,"level":1,"href":"https://ccweb.ncnu.edu.tw/dormMail","attrs":"","target":"","isHeader":false,"active":false,"icon":"","label":"","isNavbarItem":false,"items":null,"open":false},{"id":115,"name":"mci_　文書組包裹掛號待領","text":"　文書組包裹掛號待領","parentId":106,"level":1,"href":"https://ccweb.ncnu.edu.tw/registered_letter","attrs":"","target":"","isHeader":false,"active":false,"icon":"","label":"","isNavbarItem":false,"items":null,"open":false},{"id":763,"name":"mci_　畢業生離校系統","text":"　畢業生離校系統","parentId":106,"level":1,"href":"https://ccweb6.ncnu.edu.tw/graduate_leave_exam","attrs":"","target":"","isHeader":false,"active":false,"icon":"","label":"","isNavbarItem":false,"items":null,"open":false}],"open":false},{"id":890,"name":"mci_學生人數各項統計","text":"學生人數各項統計","parentId":-1,"level":0,"href":"#","attrs":" onclick=\"return false;\"","target":"","isHeader":false,"active":false,"icon":"","label":"","isNavbarItem":false,"items":[{"id":768,"name":"mi_ncnu_detpt_student_stat_view","text":"各系所學生人數統計","parentId":890,"level":1,"href":"ncnu_detpt_student_stat_viewlist.php","attrs":"","target":"","isHeader":false,"active":false,"icon":"","label":"","isNavbarItem":false,"items":null,"open":false},{"id":769,"name":"mi_ncnu_detpt_class_student_stat_view","text":"各系所部別學生人數統計","parentId":890,"level":1,"href":"ncnu_detpt_class_student_stat_viewlist.php","attrs":"","target":"","isHeader":false,"active":false,"icon":"","label":"","isNavbarItem":false,"items":null,"open":false},{"id":52,"name":"mi_ncnu_detpt_class_entry_student_stat_view","text":"各系所入學年度學生人數","parentId":890,"level":1,"href":"ncnu_detpt_class_entry_student_stat_viewlist.php","attrs":"","target":"","isHeader":false,"active":false,"icon":"","label":"","isNavbarItem":false,"items":null,"open":false}],"open":false},{"id":117,"name":"mi_DeptQuery","text":"系所學程資訊查詢","parentId":-1,"level":0,"href":"DeptQuerylist.php","attrs":"","target":"","isHeader":false,"active":false,"icon":"","label":"","isNavbarItem":false,"items":null,"open":false},{"id":1,"name":"mi_aspmaker_course_opened_semester_stat_view","text":"各系所歷年開課統計","parentId":-1,"level":0,"href":"aspmaker_course_opened_semester_stat_viewlist.php","attrs":"","target":"","isHeader":false,"active":false,"icon":"","label":"","isNavbarItem":false,"items":null,"open":false},{"id":767,"name":"mi_current_semester_opened_list","text":"本學期開設課程","parentId":-1,"level":0,"href":"current_semester_opened_listlist.php?cmd=resetall","attrs":"","target":"","isHeader":false,"active":false,"icon":"","label":"","isNavbarItem":false,"items":null,"open":false},{"id":40,"name":"mi_aspmaker_course_opened_detail_view","text":"歷年開設課程明細","parentId":-1,"level":0,"href":"aspmaker_course_opened_detail_viewlist.php?cmd=resetall","attrs":"","target":"","isHeader":false,"active":false,"icon":"","label":"","isNavbarItem":false,"items":null,"open":false},{"id":51,"name":"mi_aspmaker_dept_student_graduation_requirements_M_view","text":"查詢修業規則","parentId":-1,"level":0,"href":"#","attrs":" onclick=\"return false;\"","target":"","isHeader":false,"active":true,"icon":"","label":"","isNavbarItem":false,"items":null,"open":false},{"id":303,"name":"mi_ncnu_coremin_schoolrequire_detail_view","text":"查詢學士班核心課程","parentId":-1,"level":0,"href":"ncnu_coremin_schoolrequire_detail_viewlist.php","attrs":"","target":"","isHeader":false,"active":false,"icon":"","label":"","isNavbarItem":false,"items":null,"open":false},{"id":304,"name":"mi_ncnu_coremin_schoolrequire_opened_detail_view","text":"學士班核心課程開課明細","parentId":-1,"level":0,"href":"ncnu_coremin_schoolrequire_opened_detail_viewlist.php?cmd=resetall","attrs":"","target":"","isHeader":false,"active":false,"icon":"","label":"","isNavbarItem":false,"items":null,"open":false}],"accordion":true};
+</script><script>
+var cssfiles = [
+	"css/Chart.min.css",
+	"css/jquery.fileupload.css",
+	"css/jquery.fileupload-ui.css"
+];
+cssfiles.push("colorbox/colorbox.css");
+loadjs(cssfiles, "css");
+var cssjs = [];
+var jqueryjs = [
+	"adminlte3/js/adminlte.js",
+	"bootstrap4/js/bootstrap.bundle.min.js",
+	"jquery/jquery.fileDownload.min.js",
+	"jquery/jqueryfileupload.min.js",
+	"jquery/typeahead.jquery.min.js"
+];
+jqueryjs.push("colorbox/jquery.colorbox-min.js");
+ew.ready(["jquery", "widget", "scrollbars", "moment", "others"], [jqueryjs, "js/ew.js"], "makerjs");
+ew.ready("makerjs", [cssjs, "js/userfn.js"], "head");
+</script>
+<script>
+loadjs("css/tempusdominus-bootstrap-4.css");
+ew.ready("head", ["js/tempusdominus-bootstrap-4.js", "js/ewdatetimepicker.js"], "datetimepicker");
+loadjs.ready("datetimepicker", function() {
+	var $= jQuery;
+	$.fn.datetimepicker.Constructor.Default = $.extend({}, $.fn.datetimepicker.Constructor.Default, {
+		icons: {
+			time: 'far fa-clock',
+			date: 'far fa-calendar-alt',
+			up: 'fas fa-arrow-up',
+			down: 'fas fa-arrow-down',
+			previous: 'fas fa-chevron-left',
+			next: 'fas fa-chevron-right',
+			today: 'far fa-calendar-check',
+			clear: 'fas fa-trash',
+			close: 'fas fa-times'
+		}
+	});
+});
+</script>
+<script>
+loadjs.ready("head", function() {
+
+	// Global client script
+	// Write your client script here, no need to add script tags.
+
+});
+</script>
+<!-- Navbar -->
+<script type="text/html" id="navbar-menu-items" class="ew-js-template" data-name="navbar" data-seq="10" data-data="navbar" data-method="appendTo" data-target="#ew-navbar">
+{{if items}}
+	{{for items}}
+		<li id="{{:id}}" name="{{:name}}" class="{{if parentId == -1}}nav-item ew-navbar-item{{/if}}{{if isHeader && parentId > -1}}dropdown-header{{/if}}{{if items}} dropdown{{/if}}{{if items && parentId != -1}} dropdown-submenu{{/if}}{{if items && level == 1}} dropdown-hover{{/if}} d-none d-md-block">
+			{{if isHeader && parentId > -1}}
+				{{if icon}}<i class="{{:icon}}"></i>{{/if}}
+				<span>{{:text}}</span>
+			{{else}}
+			<a href="{{:href}}"{{if target}} target="{{:target}}"{{/if}}{{if attrs}}{{:attrs}}{{/if}} class="{{if parentId == -1}}nav-link{{else}}dropdown-item{{/if}}{{if active}} active{{/if}}{{if items}} dropdown-toggle ew-dropdown{{/if}}"{{if items}} role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"{{/if}}>
+				{{if icon}}<i class="{{:icon}}"></i>{{/if}}
+				<span>{{:text}}</span>
+			</a>
+			{{/if}}
+			{{if items}}
+			<ul class="dropdown-menu">
+				{{include tmpl="#navbar-menu-items"/}}
+			</ul>
+			{{/if}}
+		</li>
+	{{/for}}
+{{/if}}
+</script>
+<!-- Sidebar -->
+<script type="text/html" class="ew-js-template" data-name="menu" data-seq="10" data-data="menu" data-target="#ew-menu">
+{{if items}}
+	<ul class="nav nav-pills nav-sidebar nav-child-indent flex-column" data-widget="treeview" role="menu" data-accordion="{{:accordion}}">
+	{{include tmpl="#menu-items"/}}
+	</ul>
+{{/if}}
+</script>
+<script type="text/html" id="menu-items">
+{{if items}}
+	{{for items}}
+		<li id="{{:id}}" name="{{:name}}" class="{{if isHeader}}nav-header{{else}}nav-item{{if items}} has-treeview{{/if}}{{if active}} active current{{/if}}{{if open}} menu-open{{/if}}{{/if}}{{if isNavbarItem}} d-block d-md-none{{/if}}">
+			{{if isHeader}}
+				{{if icon}}<i class="{{:icon}}"></i>{{/if}}
+				<span>{{:text}}</span>
+				{{if label}}
+				<span class="right">
+					{{:label}}
+				</span>
+				{{/if}}
+			{{else}}
+			<a href="{{:href}}" class="nav-link{{if active}} active{{/if}}"{{if target}} target="{{:target}}"{{/if}}{{if attrs}}{{:attrs}}{{/if}}>
+				{{if icon}}<i class="nav-icon {{:icon}}"></i>{{/if}}
+				<p><span class="menu-item-text">{{:text}}</span>
+					{{if items}}
+						<i class="right fas fa-angle-left"></i>
+						{{if label}}
+							<span class="right">
+								{{:label}}
+							</span>
+						{{/if}}
+					{{else}}
+						{{if label}}
+							<span class="right">
+								{{:label}}
+							</span>
+						{{/if}}
+					{{/if}}
+				</p>
+			</a>
+			{{/if}}
+			{{if items}}
+			<ul class="nav nav-treeview"{{if open}} style="display: block;"{{/if}}>
+				{{include tmpl="#menu-items"/}}
+			</ul>
+			{{/if}}
+		</li>
+	{{/for}}
+{{/if}}
+</script>
+<script type="text/html" class="ew-js-template" data-name="languages" data-seq="10" data-data="languages" data-method="prependTo" data-target=".navbar-nav.ml-auto">
+{{for languages}}<li class="nav-item"><a href="#" class="nav-link{{if selected}} active{{/if}} ew-tooltip" title="{{>desc}}" onclick="ew.setLanguage(this);" data-language="{{:id}}">{{:id}}</a></li>{{/for}}</script>
+<script type="text/html" class="ew-js-template" data-name="login" data-seq="10" data-data="login" data-method="appendTo" data-target=".navbar-nav.ml-auto">
+{{if isLoggedIn}}
+<li class="nav-item dropdown text-body">
+	<a class="nav-link" data-toggle="dropdown" href="#">
+		<i class="fas fa-user"></i>
+	</a>
+	<div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+		<div class="dropdown-item p-3"><i class="fas fa-user mr-2"></i>{{:currentUserName}}</div>
+		{{if (hasPersonalData || canChangePassword)}}
+		<div class="dropdown-divider"></div>
+		<div class="text-nowrap p-3">
+			{{if hasPersonalData}}
+			<a class="btn btn-default" href="#" onclick="{{:personalDataUrl}}">{{:personalDataText}}</a>
+			{{/if}}
+			{{if canChangePassword}}
+			<a class="btn btn-default" href="#" onclick="{{:changePasswordUrl}}">{{:changePasswordText}}</a>
+			{{/if}}
+		</div>
+		{{/if}}
+		{{if canLogout}}
+		<div class="dropdown-divider"></div>
+		<div class="dropdown-footer p-2 text-right">
+			<a class="btn btn-default" href="#" onclick="{{:logoutUrl}}">{{:logoutText}}</a>
+		</div>
+		{{/if}}
+	</div>
+<li>
+{{else}}
+	{{if canLogin}}
+<li class="nav-item"><a class="nav-link" href="#" onclick="{{:loginUrl}}">{{:loginText}}</a></li>
+	{{/if}}
+{{/if}}
+</script>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<meta name="generator" content="PHPMaker 2020">
+</head>
+<body class="hold-transition layout-fixed" dir="ltr">
+<div class="wrapper ew-layout">
+	<!-- Main Header -->
+	<!-- Navbar -->
+	<nav class="main-header navbar navbar-expand navbar-primary navbar-dark">
+		<!-- Left navbar links -->
+		<ul id="ew-navbar" class="navbar-nav">
+			<li class="nav-item d-block">
+				<a class="nav-link" data-widget="pushmenu" href="#" onclick="return false;"><i class="fas fa-bars"></i></a>
+			</li>
+			<a class="navbar-brand d-none" href="#"  onclick="return false;">
+				<span class="brand-text">學生及訪客專用簡易版</span>
+			</a>
+		</ul>
+		<!-- Right navbar links -->
+		<ul id="ew-navbar-right" class="navbar-nav ml-auto"></ul>
+	</nav>
+	<!-- /.navbar -->
+	<!-- Main Sidebar Container -->
+	<aside class="main-sidebar sidebar-dark-primary">
+		<!-- Brand Logo //** Note: Only licensed users are allowed to change the logo ** -->
+<!-- ============================================================= 
+
+// modified by wcchien@ncnu.edu.tw 2020/2/1
+//		<a href="#" class="brand-link">
+//					
+
+<span class="brand-text">學生及訪客專用簡易版</span>
+
+// ============================================================= -->
+		<a href="#" class="brand-link" data-widget="pushmenu" onclick="return false;" >
+			<i class="fas fa-bars"></i> 
+<span class="brand-text">學生及訪客專用簡易版</span>
+		</a>
+		<!-- Sidebar -->
+		<div class="sidebar">
+			<!-- Sidebar Menu -->
+			<nav id="ew-menu" class="mt-2"></nav>
+			<!-- /.sidebar-menu -->
+		</div>
+		<!-- /.sidebar -->
+	</aside>
+	<!-- Content Wrapper. Contains page content -->
+	<div class="content-wrapper">
+		<!-- Content Header (Page header) -->
+		<div class="content-header">
+				<div class="container-fluid">
+				<div class="row mb-2">
+				<div class="col-sm-6">
+					<h1 class="m-0 text-dark">查詢修業規則 <small class="text-muted"></small></h1>
+				</div><!-- /.col -->
+<!-- ============================================================= 			
+
+//
+// modified by wcchien@ncnu.edu.tw 2019/12/18
+//				<div class="col-sm-6">
+// ============================================================= -->
+
+				<div>
+					<ol class="breadcrumb float-sm-right ew-breadcrumbs"><li class="breadcrumb-item" id="ew-breadcrumb1"><a href="News.php" class="ew-home">主畫面</a></li><li class="breadcrumb-item active" id="ew-breadcrumb2"><span id="ew-page-caption">查詢修業規則</span></li></ol>				</div><!-- /.col -->
+				</div><!-- /.row -->
+			</div><!-- /.container-fluid -->
+			</div>
+		<!-- /.content-header -->
+		<!-- Main content -->
+		<section class="content">
+		<div class="container-fluid">
+<script>
+var faspmaker_dept_student_graduation_requirements_M_viewlist, currentPageID;
+loadjs.ready("head", function() {
+
+	// Form object
+	currentPageID = ew.PAGE_ID = "list";
+	faspmaker_dept_student_graduation_requirements_M_viewlist = currentForm = new ew.Form("faspmaker_dept_student_graduation_requirements_M_viewlist", "list");
+	faspmaker_dept_student_graduation_requirements_M_viewlist.formKeyCountName = 'key_count';
+	loadjs.done("faspmaker_dept_student_graduation_requirements_M_viewlist");
+});
+var faspmaker_dept_student_graduation_requirements_M_viewlistsrch;
+loadjs.ready("head", function() {
+
+	// Form object for search
+	faspmaker_dept_student_graduation_requirements_M_viewlistsrch = currentSearchForm = new ew.Form("faspmaker_dept_student_graduation_requirements_M_viewlistsrch");
+
+	// Validate function for search
+	faspmaker_dept_student_graduation_requirements_M_viewlistsrch.validate = function(fobj) {
+		if (!this.validateRequired)
+			return true; // Ignore validation
+		fobj = fobj || this._form;
+		var infix = "";
+		elm = this.getElements("x" + infix + "_entry_year");
+		if (elm && !ew.checkInteger(elm.value))
+			return this.onError(elm, "整數格式錯誤 - 入學年度");
+
+		// Call Form_CustomValidate event
+		if (!this.Form_CustomValidate(fobj))
+			return false;
+		return true;
+	}
+
+	// Form_CustomValidate
+	faspmaker_dept_student_graduation_requirements_M_viewlistsrch.Form_CustomValidate = function(fobj) { // DO NOT CHANGE THIS LINE!
+
+		// Your custom validation code here, return false if invalid.
+		return true;
+	}
+
+	// Use JavaScript validation or not
+	faspmaker_dept_student_graduation_requirements_M_viewlistsrch.validateRequired = true;
+
+	// Dynamic selection lists
+	faspmaker_dept_student_graduation_requirements_M_viewlistsrch.lists["x_deptid"] = {"page":"aspmaker_dept_student_graduation_requirements_M_view_list","field":"deptid","linkField":"deptid","displayFields":["deptid","cname","",""],"parentFields":[],"childFields":[],"filterFields":[],"filterFieldVars":[],"autoFillTargetFields":[],"ajax":true,"template":""};
+	faspmaker_dept_student_graduation_requirements_M_viewlistsrch.lists["x_deptid"].options = [];
+	faspmaker_dept_student_graduation_requirements_M_viewlistsrch.lists["x_class_desc"] = {"page":"aspmaker_dept_student_graduation_requirements_M_view_list","field":"class_desc","linkField":"description","displayFields":["description","","",""],"parentFields":[],"childFields":[],"filterFields":[],"filterFieldVars":[],"autoFillTargetFields":[],"ajax":true,"template":""};
+	faspmaker_dept_student_graduation_requirements_M_viewlistsrch.lists["x_class_desc"].options = [{"lf":"專修班","df":"專修班","df2":"","df3":"","df4":""},{"lf":"學士班","df":"學士班","df2":"","df3":"","df4":""},{"lf":"碩士班","df":"碩士班","df2":"","df3":"","df4":""},{"lf":"博士班","df":"博士班","df2":"","df3":"","df4":""}];
+	faspmaker_dept_student_graduation_requirements_M_viewlistsrch.lists["x_entry_year"] = {"page":"aspmaker_dept_student_graduation_requirements_M_view_list","field":"entry_year","linkField":"academic_year","displayFields":["academic_year","","",""],"parentFields":[],"childFields":[],"filterFields":[],"filterFieldVars":[],"autoFillTargetFields":[],"ajax":true,"template":""};
+	faspmaker_dept_student_graduation_requirements_M_viewlistsrch.lists["x_entry_year"].options = [{"lf":84,"df":84,"df2":"","df3":"","df4":""},{"lf":85,"df":85,"df2":"","df3":"","df4":""},{"lf":86,"df":86,"df2":"","df3":"","df4":""},{"lf":87,"df":87,"df2":"","df3":"","df4":""},{"lf":88,"df":88,"df2":"","df3":"","df4":""},{"lf":89,"df":89,"df2":"","df3":"","df4":""},{"lf":90,"df":90,"df2":"","df3":"","df4":""},{"lf":91,"df":91,"df2":"","df3":"","df4":""},{"lf":92,"df":92,"df2":"","df3":"","df4":""},{"lf":93,"df":93,"df2":"","df3":"","df4":""},{"lf":94,"df":94,"df2":"","df3":"","df4":""},{"lf":95,"df":95,"df2":"","df3":"","df4":""},{"lf":96,"df":96,"df2":"","df3":"","df4":""},{"lf":97,"df":97,"df2":"","df3":"","df4":""},{"lf":98,"df":98,"df2":"","df3":"","df4":""},{"lf":99,"df":99,"df2":"","df3":"","df4":""},{"lf":100,"df":100,"df2":"","df3":"","df4":""},{"lf":101,"df":101,"df2":"","df3":"","df4":""},{"lf":102,"df":102,"df2":"","df3":"","df4":""},{"lf":103,"df":103,"df2":"","df3":"","df4":""},{"lf":104,"df":104,"df2":"","df3":"","df4":""},{"lf":105,"df":105,"df2":"","df3":"","df4":""},{"lf":106,"df":106,"df2":"","df3":"","df4":""},{"lf":107,"df":107,"df2":"","df3":"","df4":""},{"lf":108,"df":108,"df2":"","df3":"","df4":""},{"lf":109,"df":109,"df2":"","df3":"","df4":""},{"lf":110,"df":110,"df2":"","df3":"","df4":""},{"lf":111,"df":111,"df2":"","df3":"","df4":""},{"lf":112,"df":112,"df2":"","df3":"","df4":""},{"lf":113,"df":113,"df2":"","df3":"","df4":""},{"lf":114,"df":114,"df2":"","df3":"","df4":""}];
+	faspmaker_dept_student_graduation_requirements_M_viewlistsrch.autoSuggests["x_entry_year"] = {"data":"ajax=autosuggest"};
+
+	// Filters
+	faspmaker_dept_student_graduation_requirements_M_viewlistsrch.filterList = {"data":{"x_entry_year":"112","z_entry_year":"=","v_entry_year":"","y_entry_year":"","w_entry_year":""}};
+	loadjs.done("faspmaker_dept_student_graduation_requirements_M_viewlistsrch");
+});
+</script>
+<style type="text/css">
+.ew-table-preview-row { /* main table preview row color */
+	background-color: #FFFFFF; /* preview row color */
+}
+.ew-table-preview-row .ew-grid {
+	display: table;
+}
+</style>
+<div id="ew-preview" class="d-none"><!-- preview -->
+	<div class="ew-nav-tabs"><!-- .ew-nav-tabs -->
+		<ul class="nav nav-tabs"></ul>
+		<div class="tab-content"><!-- .tab-content -->
+			<div class="tab-pane fade active show"></div>
+		</div><!-- /.tab-content -->
+	</div><!-- /.ew-nav-tabs -->
+</div><!-- /preview -->
+<script>
+loadjs.ready("head", function() {
+	ew.PREVIEW_PLACEMENT = ew.CSS_FLIP ? "left" : "right";
+	ew.PREVIEW_SINGLE_ROW = false;
+	ew.PREVIEW_OVERLAY = false;
+	loadjs("js/ewpreview.js", "preview");
+});
+</script>
+<script>
+loadjs.ready("head", function() {
+
+	// Client script
+	// Write your client script here, no need to add script tags.
+
+});
+</script>
+<div class="btn-toolbar ew-toolbar">
+<span class="ew-export-option ew-list-option-separator text-nowrap" data-name="button"><div class="btn-group btn-group-sm ew-btn-group"><a class="btn btn-default ew-export-link ew-print"  href="aspmaker_dept_student_graduation_requirements_M_viewlist.php?export=print" title="友善列印" data-caption="友善列印">友善列印</a><a class="btn btn-default ew-export-link ew-word"  href="aspmaker_dept_student_graduation_requirements_M_viewlist.php?export=word" title="匯出 Word" data-caption="匯出 Word">Word</a><a class="btn btn-default ew-export-link ew-html"  href="aspmaker_dept_student_graduation_requirements_M_viewlist.php?export=html" title="匯出 HTML" data-caption="匯出 HTML">HTML</a></div></span><span class="ew-search-option ew-list-option-separator text-nowrap" data-name="button"><div class="btn-group btn-group-sm ew-btn-group"><a class="btn btn-default ew-search-toggle active"  href="#" role="button" title="搜尋面版" data-caption="搜尋面版" data-toggle="button" data-form="faspmaker_dept_student_graduation_requirements_M_viewlistsrch" aria-pressed="true">搜尋</a><a class="btn btn-default ew-show-all"  title="重設搜尋條件" data-caption="重設搜尋條件" href="aspmaker_dept_student_graduation_requirements_M_viewlist.php?cmd=reset">重設搜尋條件</a></div></span><span class="ew-filter-option faspmaker_dept_student_graduation_requirements_M_viewlistsrch ew-list-option-separator" data-name="button"><div class="btn-group btn-group-sm ew-btn-dropdown"><button class="dropdown-toggle btn btn-default" data-toggle="dropdown">篩選條件</button><ul class="dropdown-menu ew-menu"><li><a class="ew-save-filter dropdown-item"  data-form="faspmaker_dept_student_graduation_requirements_M_viewlistsrch" href="#" onclick="return false;" href="#">儲存目前的篩選條件</a></li><li><a class="ew-delete-filter dropdown-item"  data-form="faspmaker_dept_student_graduation_requirements_M_viewlistsrch" href="#" onclick="return false;" href="#">刪除的篩選條件</a></li></ul></div></span><div class="clearfix"></div>
+</div>
+<form name="faspmaker_dept_student_graduation_requirements_M_viewlistsrch" id="faspmaker_dept_student_graduation_requirements_M_viewlistsrch" class="form-inline ew-form ew-ext-search-form" action="aspmaker_dept_student_graduation_requirements_M_viewlist.php">
+<div id="faspmaker_dept_student_graduation_requirements_M_viewlistsrch-search-panel" class="ew-search-panel collapse show">
+<input type="hidden" name="cmd" value="search">
+<input type="hidden" name="t" value="aspmaker_dept_student_graduation_requirements_M_view">
+	<div class="ew-extended-search">
+	<div id="xsr_1" class="ew-row d-sm-flex">
+		<div id="xsc_deptid" class="ew-cell form-group">
+		<label for="x_deptid" class="ew-search-caption ew-label">系所</label>
+		<span class="ew-search-operator">
+&nbsp;<input type="hidden" name="z_deptid" id="z_deptid" value="=">
+</span>
+		<span id="el_aspmaker_dept_student_graduation_requirements_M_view_deptid" class="ew-search-field">
+<div class="input-group">
+	<select class="custom-select ew-custom-select" data-table="aspmaker_dept_student_graduation_requirements_M_view" data-field="x_deptid" data-value-separator=", " id="x_deptid" name="x_deptid" class="form-control">
+			<option value="">請選取</option>		</select>
+</div>
+</span>
+	</div>
+	</div>
+		<div id="xsr_2" class="ew-row d-sm-flex">
+		<div id="xsc_class_desc" class="ew-cell form-group">
+		<label for="x_class_desc" class="ew-search-caption ew-label">部別</label>
+		<span class="ew-search-operator">
+&nbsp;<input type="hidden" name="z_class_desc" id="z_class_desc" value="=">
+</span>
+		<span id="el_aspmaker_dept_student_graduation_requirements_M_view_class_desc" class="ew-search-field">
+<div class="input-group">
+	<select class="custom-select ew-custom-select" data-table="aspmaker_dept_student_graduation_requirements_M_view" data-field="x_class_desc" data-value-separator=", " id="x_class_desc" name="x_class_desc" class="form-control">
+			<option value="">請選取</option>		</select>
+</div>
+</span>
+	</div>
+	</div>
+		<div id="xsr_3" class="ew-row d-sm-flex">
+		<div id="xsc_entry_year" class="ew-cell form-group">
+		<label class="ew-search-caption ew-label">入學年度</label>
+		<span class="ew-search-operator">
+&nbsp;<input type="hidden" name="z_entry_year" id="z_entry_year" value="=">
+</span>
+		<span id="el_aspmaker_dept_student_graduation_requirements_M_view_entry_year" class="ew-search-field">
+<span id="as_x_entry_year">
+	<input type="text" class="form-control" name="sv_x_entry_year" id="sv_x_entry_year" value="112" size="30" maxlength="6" class="form-control">
+</span>
+<input type="hidden" data-table="aspmaker_dept_student_graduation_requirements_M_view" data-field="x_entry_year" data-value-separator=", " name="x_entry_year" id="x_entry_year" value="112">
+<script>
+loadjs.ready(["faspmaker_dept_student_graduation_requirements_M_viewlistsrch"], function() {
+	faspmaker_dept_student_graduation_requirements_M_viewlistsrch.createAutoSuggest({"id":"x_entry_year","forceSelect":false});
+});
+</script>
+</span>
+	</div>
+	</div>
+		<div id="xsr_4" class="ew-row d-sm-flex">
+	<button class="btn btn-primary" name="btn-submit" id="btn-submit" type="submit">搜尋</button>
+</div>
+	</div><!-- /.ew-extended-search -->
+</div><!-- /.ew-search-panel -->
+</form>
+<div class="ew-message-dialog"></div><div class="card ew-card ew-grid aspmaker_dept_student_graduation_requirements_M_view">
+<div class="card-header ew-grid-upper-panel">
+<form name="ew-pager-form" class="form-inline ew-form ew-pager-form" action="aspmaker_dept_student_graduation_requirements_M_viewlist.php">
+<div class="ew-pager">
+	<span>頁次:&nbsp;</span>
+	<div class="ew-prev-next">
+		<div class="input-group input-group-sm">
+			<div class="input-group-prepend">
+				<!-- first page button -->
+				<a class="btn btn-default disabled" title="第一頁"><i class="icon-first ew-icon"></i></a>
+				<!-- previous page button -->
+				<a class="btn btn-default disabled" title="前一頁"><i class="icon-prev ew-icon"></i></a>
+			</div>
+			<!-- current page number --><input class="form-control" type="text" data-pagesize="50" data-pagecount="2" name="pageno" value="1">
+			<div class="input-group-append">
+				<!-- next page button -->
+				<a class="btn btn-default" title="下一頁" href="aspmaker_dept_student_graduation_requirements_M_viewlist.php?start=51"><i class="icon-next ew-icon"></i></a>
+				<!-- last page button -->
+				<a class="btn btn-default" title="最後頁" href="aspmaker_dept_student_graduation_requirements_M_viewlist.php?start=51"><i class="icon-last ew-icon"></i></a>
+			</div>
+		</div>
+	</div>
+	<span>&nbsp;／&nbsp;2</span>
+	<div class="clearfix"></div>
+</div><div class="ew-pager ew-rec">
+	<span>資料項次: 1 ～ 50 ／ 75</span>
+</div><div class="ew-pager">
+<select name="recperpage" class="custom-select custom-select-sm ew-tooltip" title="每頁資料筆數:" onchange="this.form.submit();">
+<option value="50" selected>50</option><option value="ALL">全部資料</option>
+</select>
+</div></form>
+<div class="ew-list-other-options">
+</div>
+<div class="clearfix"></div>
+</div>
+<form name="faspmaker_dept_student_graduation_requirements_M_viewlist" id="faspmaker_dept_student_graduation_requirements_M_viewlist" class="form-inline ew-form ew-list-form" action="aspmaker_dept_student_graduation_requirements_M_viewlist.php" method="post">
+<input type="hidden" name="token" value="-eye1VZeqLyDOzdZm4dgxg..">
+<input type="hidden" name="t" value="aspmaker_dept_student_graduation_requirements_M_view">
+<div id="gmp_aspmaker_dept_student_graduation_requirements_M_view" class="table-responsive card-body ew-grid-middle-panel">
+<table id="tbl_aspmaker_dept_student_graduation_requirements_M_viewlist" class="table ew-table"><!-- .ew-table -->
+<thead>
+	<tr class="ew-table-header">
+<th class="ew-list-option-header text-nowrap" data-name="button">&nbsp;</th>			<th data-name="deptid" class="ew-table-header-cell"><div class="ew-pointer" onclick="ew.sort(event, 'aspmaker_dept_student_graduation_requirements_M_viewlist.php?order=deptid&amp;ordertype=DESC', 2);"><div id="elh_aspmaker_dept_student_graduation_requirements_M_view_deptid" class="aspmaker_dept_student_graduation_requirements_M_view_deptid">
+			<div class="ew-table-header-btn"><span class="ew-table-header-caption">系所</span><span class="ew-table-header-sort"><i class="fas fa-sort-up"></i></span></div>
+		</div></div></th>
+				<th data-name="class_desc" class="ew-table-header-cell"><div class="ew-pointer" onclick="ew.sort(event, 'aspmaker_dept_student_graduation_requirements_M_viewlist.php?order=class_desc&amp;ordertype=ASC', 2);"><div id="elh_aspmaker_dept_student_graduation_requirements_M_view_class_desc" class="aspmaker_dept_student_graduation_requirements_M_view_class_desc">
+			<div class="ew-table-header-btn"><span class="ew-table-header-caption">部別</span><span class="ew-table-header-sort"></span></div>
+		</div></div></th>
+				<th data-name="entry_year" class="ew-table-header-cell"><div class="ew-pointer" onclick="ew.sort(event, 'aspmaker_dept_student_graduation_requirements_M_viewlist.php?order=entry_year&amp;ordertype=ASC', 2);"><div id="elh_aspmaker_dept_student_graduation_requirements_M_view_entry_year" class="aspmaker_dept_student_graduation_requirements_M_view_entry_year">
+			<div class="ew-table-header-btn"><span class="ew-table-header-caption">入學年度</span><span class="ew-table-header-sort"><i class="fas fa-sort-down"></i></span></div>
+		</div></div></th>
+		</tr>
+</thead>
+<tbody>
+	<tr  data-rowindex="1" id="r1_aspmaker_dept_student_graduation_requirements_M_view" data-rowtype="1">
+<td class="ew-list-option-body text-nowrap" data-name="button"><div class="btn-group btn-group-sm ew-btn-group"><a class="btn btn-default ew-row-link ew-view"  title="檢視" data-caption="檢視" href="aspmaker_dept_student_graduation_requirements_M_viewview.php?showdetail=&amp;deptid=00&amp;class_code=B&amp;entry_year=112">檢視</a></div></td>			<td data-name="deptid" >
+<span id="el1_aspmaker_dept_student_graduation_requirements_M_view_deptid">
+<span>00, 諮商心理與人力資源發展學系</span>
+</span>
+</td>
+				<td data-name="class_desc" >
+<span id="el1_aspmaker_dept_student_graduation_requirements_M_view_class_desc">
+<span>學士班</span>
+</span>
+</td>
+				<td data-name="entry_year" >
+<span id="el1_aspmaker_dept_student_graduation_requirements_M_view_entry_year">
+<span>112</span>
+</span>
+</td>
+		</tr>
+	<tr  data-rowindex="2" id="r2_aspmaker_dept_student_graduation_requirements_M_view" data-rowtype="1">
+<td class="ew-list-option-body text-nowrap" data-name="button"><div class="btn-group btn-group-sm ew-btn-group"><a class="btn btn-default ew-row-link ew-view"  title="檢視" data-caption="檢視" href="aspmaker_dept_student_graduation_requirements_M_viewview.php?showdetail=&amp;deptid=00&amp;class_code=G&amp;entry_year=112">檢視</a></div></td>			<td data-name="deptid" >
+<span id="el2_aspmaker_dept_student_graduation_requirements_M_view_deptid">
+<span>00, 諮商心理與人力資源發展學系</span>
+</span>
+</td>
+				<td data-name="class_desc" >
+<span id="el2_aspmaker_dept_student_graduation_requirements_M_view_class_desc">
+<span>碩士班</span>
+</span>
+</td>
+				<td data-name="entry_year" >
+<span id="el2_aspmaker_dept_student_graduation_requirements_M_view_entry_year">
+<span>112</span>
+</span>
+</td>
+		</tr>
+	<tr  data-rowindex="3" id="r3_aspmaker_dept_student_graduation_requirements_M_view" data-rowtype="1">
+<td class="ew-list-option-body text-nowrap" data-name="button"><div class="btn-group btn-group-sm ew-btn-group"><a class="btn btn-default ew-row-link ew-view"  title="檢視" data-caption="檢視" href="aspmaker_dept_student_graduation_requirements_M_viewview.php?showdetail=&amp;deptid=00&amp;class_code=P&amp;entry_year=112">檢視</a></div></td>			<td data-name="deptid" >
+<span id="el3_aspmaker_dept_student_graduation_requirements_M_view_deptid">
+<span>00, 諮商心理與人力資源發展學系</span>
+</span>
+</td>
+				<td data-name="class_desc" >
+<span id="el3_aspmaker_dept_student_graduation_requirements_M_view_class_desc">
+<span>博士班</span>
+</span>
+</td>
+				<td data-name="entry_year" >
+<span id="el3_aspmaker_dept_student_graduation_requirements_M_view_entry_year">
+<span>112</span>
+</span>
+</td>
+		</tr>
+	<tr  data-rowindex="4" id="r4_aspmaker_dept_student_graduation_requirements_M_view" data-rowtype="1">
+<td class="ew-list-option-body text-nowrap" data-name="button"><div class="btn-group btn-group-sm ew-btn-group"><a class="btn btn-default ew-row-link ew-view"  title="檢視" data-caption="檢視" href="aspmaker_dept_student_graduation_requirements_M_viewview.php?showdetail=&amp;deptid=01&amp;class_code=B&amp;entry_year=112">檢視</a></div></td>			<td data-name="deptid" >
+<span id="el4_aspmaker_dept_student_graduation_requirements_M_view_deptid">
+<span>01, 中國語文學系</span>
+</span>
+</td>
+				<td data-name="class_desc" >
+<span id="el4_aspmaker_dept_student_graduation_requirements_M_view_class_desc">
+<span>學士班</span>
+</span>
+</td>
+				<td data-name="entry_year" >
+<span id="el4_aspmaker_dept_student_graduation_requirements_M_view_entry_year">
+<span>112</span>
+</span>
+</td>
+		</tr>
+	<tr  data-rowindex="5" id="r5_aspmaker_dept_student_graduation_requirements_M_view" data-rowtype="1">
+<td class="ew-list-option-body text-nowrap" data-name="button"><div class="btn-group btn-group-sm ew-btn-group"><a class="btn btn-default ew-row-link ew-view"  title="檢視" data-caption="檢視" href="aspmaker_dept_student_graduation_requirements_M_viewview.php?showdetail=&amp;deptid=01&amp;class_code=G&amp;entry_year=112">檢視</a></div></td>			<td data-name="deptid" >
+<span id="el5_aspmaker_dept_student_graduation_requirements_M_view_deptid">
+<span>01, 中國語文學系</span>
+</span>
+</td>
+				<td data-name="class_desc" >
+<span id="el5_aspmaker_dept_student_graduation_requirements_M_view_class_desc">
+<span>碩士班</span>
+</span>
+</td>
+				<td data-name="entry_year" >
+<span id="el5_aspmaker_dept_student_graduation_requirements_M_view_entry_year">
+<span>112</span>
+</span>
+</td>
+		</tr>
+	<tr  data-rowindex="6" id="r6_aspmaker_dept_student_graduation_requirements_M_view" data-rowtype="1">
+<td class="ew-list-option-body text-nowrap" data-name="button"><div class="btn-group btn-group-sm ew-btn-group"><a class="btn btn-default ew-row-link ew-view"  title="檢視" data-caption="檢視" href="aspmaker_dept_student_graduation_requirements_M_viewview.php?showdetail=&amp;deptid=01&amp;class_code=P&amp;entry_year=112">檢視</a></div></td>			<td data-name="deptid" >
+<span id="el6_aspmaker_dept_student_graduation_requirements_M_view_deptid">
+<span>01, 中國語文學系</span>
+</span>
+</td>
+				<td data-name="class_desc" >
+<span id="el6_aspmaker_dept_student_graduation_requirements_M_view_class_desc">
+<span>博士班</span>
+</span>
+</td>
+				<td data-name="entry_year" >
+<span id="el6_aspmaker_dept_student_graduation_requirements_M_view_entry_year">
+<span>112</span>
+</span>
+</td>
+		</tr>
+	<tr  data-rowindex="7" id="r7_aspmaker_dept_student_graduation_requirements_M_view" data-rowtype="1">
+<td class="ew-list-option-body text-nowrap" data-name="button"><div class="btn-group btn-group-sm ew-btn-group"><a class="btn btn-default ew-row-link ew-view"  title="檢視" data-caption="檢視" href="aspmaker_dept_student_graduation_requirements_M_viewview.php?showdetail=&amp;deptid=02&amp;class_code=B&amp;entry_year=112">檢視</a></div></td>			<td data-name="deptid" >
+<span id="el7_aspmaker_dept_student_graduation_requirements_M_view_deptid">
+<span>02, 國際文教與比較教育學系</span>
+</span>
+</td>
+				<td data-name="class_desc" >
+<span id="el7_aspmaker_dept_student_graduation_requirements_M_view_class_desc">
+<span>學士班</span>
+</span>
+</td>
+				<td data-name="entry_year" >
+<span id="el7_aspmaker_dept_student_graduation_requirements_M_view_entry_year">
+<span>112</span>
+</span>
+</td>
+		</tr>
+	<tr  data-rowindex="8" id="r8_aspmaker_dept_student_graduation_requirements_M_view" data-rowtype="1">
+<td class="ew-list-option-body text-nowrap" data-name="button"><div class="btn-group btn-group-sm ew-btn-group"><a class="btn btn-default ew-row-link ew-view"  title="檢視" data-caption="檢視" href="aspmaker_dept_student_graduation_requirements_M_viewview.php?showdetail=&amp;deptid=02&amp;class_code=G&amp;entry_year=112">檢視</a></div></td>			<td data-name="deptid" >
+<span id="el8_aspmaker_dept_student_graduation_requirements_M_view_deptid">
+<span>02, 國際文教與比較教育學系</span>
+</span>
+</td>
+				<td data-name="class_desc" >
+<span id="el8_aspmaker_dept_student_graduation_requirements_M_view_class_desc">
+<span>碩士班</span>
+</span>
+</td>
+				<td data-name="entry_year" >
+<span id="el8_aspmaker_dept_student_graduation_requirements_M_view_entry_year">
+<span>112</span>
+</span>
+</td>
+		</tr>
+	<tr  data-rowindex="9" id="r9_aspmaker_dept_student_graduation_requirements_M_view" data-rowtype="1">
+<td class="ew-list-option-body text-nowrap" data-name="button"><div class="btn-group btn-group-sm ew-btn-group"><a class="btn btn-default ew-row-link ew-view"  title="檢視" data-caption="檢視" href="aspmaker_dept_student_graduation_requirements_M_viewview.php?showdetail=&amp;deptid=02&amp;class_code=P&amp;entry_year=112">檢視</a></div></td>			<td data-name="deptid" >
+<span id="el9_aspmaker_dept_student_graduation_requirements_M_view_deptid">
+<span>02, 國際文教與比較教育學系</span>
+</span>
+</td>
+				<td data-name="class_desc" >
+<span id="el9_aspmaker_dept_student_graduation_requirements_M_view_class_desc">
+<span>博士班</span>
+</span>
+</td>
+				<td data-name="entry_year" >
+<span id="el9_aspmaker_dept_student_graduation_requirements_M_view_entry_year">
+<span>112</span>
+</span>
+</td>
+		</tr>
+	<tr  data-rowindex="10" id="r10_aspmaker_dept_student_graduation_requirements_M_view" data-rowtype="1">
+<td class="ew-list-option-body text-nowrap" data-name="button"><div class="btn-group btn-group-sm ew-btn-group"><a class="btn btn-default ew-row-link ew-view"  title="檢視" data-caption="檢視" href="aspmaker_dept_student_graduation_requirements_M_viewview.php?showdetail=&amp;deptid=03&amp;class_code=B&amp;entry_year=112">檢視</a></div></td>			<td data-name="deptid" >
+<span id="el10_aspmaker_dept_student_graduation_requirements_M_view_deptid">
+<span>03, 社會政策與社會工作學系</span>
+</span>
+</td>
+				<td data-name="class_desc" >
+<span id="el10_aspmaker_dept_student_graduation_requirements_M_view_class_desc">
+<span>學士班</span>
+</span>
+</td>
+				<td data-name="entry_year" >
+<span id="el10_aspmaker_dept_student_graduation_requirements_M_view_entry_year">
+<span>112</span>
+</span>
+</td>
+		</tr>
+	<tr  data-rowindex="11" id="r11_aspmaker_dept_student_graduation_requirements_M_view" data-rowtype="1">
+<td class="ew-list-option-body text-nowrap" data-name="button"><div class="btn-group btn-group-sm ew-btn-group"><a class="btn btn-default ew-row-link ew-view"  title="檢視" data-caption="檢視" href="aspmaker_dept_student_graduation_requirements_M_viewview.php?showdetail=&amp;deptid=03&amp;class_code=G&amp;entry_year=112">檢視</a></div></td>			<td data-name="deptid" >
+<span id="el11_aspmaker_dept_student_graduation_requirements_M_view_deptid">
+<span>03, 社會政策與社會工作學系</span>
+</span>
+</td>
+				<td data-name="class_desc" >
+<span id="el11_aspmaker_dept_student_graduation_requirements_M_view_class_desc">
+<span>碩士班</span>
+</span>
+</td>
+				<td data-name="entry_year" >
+<span id="el11_aspmaker_dept_student_graduation_requirements_M_view_entry_year">
+<span>112</span>
+</span>
+</td>
+		</tr>
+	<tr  data-rowindex="12" id="r12_aspmaker_dept_student_graduation_requirements_M_view" data-rowtype="1">
+<td class="ew-list-option-body text-nowrap" data-name="button"><div class="btn-group btn-group-sm ew-btn-group"><a class="btn btn-default ew-row-link ew-view"  title="檢視" data-caption="檢視" href="aspmaker_dept_student_graduation_requirements_M_viewview.php?showdetail=&amp;deptid=03&amp;class_code=P&amp;entry_year=112">檢視</a></div></td>			<td data-name="deptid" >
+<span id="el12_aspmaker_dept_student_graduation_requirements_M_view_deptid">
+<span>03, 社會政策與社會工作學系</span>
+</span>
+</td>
+				<td data-name="class_desc" >
+<span id="el12_aspmaker_dept_student_graduation_requirements_M_view_class_desc">
+<span>博士班</span>
+</span>
+</td>
+				<td data-name="entry_year" >
+<span id="el12_aspmaker_dept_student_graduation_requirements_M_view_entry_year">
+<span>112</span>
+</span>
+</td>
+		</tr>
+	<tr  data-rowindex="13" id="r13_aspmaker_dept_student_graduation_requirements_M_view" data-rowtype="1">
+<td class="ew-list-option-body text-nowrap" data-name="button"><div class="btn-group btn-group-sm ew-btn-group"><a class="btn btn-default ew-row-link ew-view"  title="檢視" data-caption="檢視" href="aspmaker_dept_student_graduation_requirements_M_viewview.php?showdetail=&amp;deptid=04&amp;class_code=B&amp;entry_year=112">檢視</a></div></td>			<td data-name="deptid" >
+<span id="el13_aspmaker_dept_student_graduation_requirements_M_view_deptid">
+<span>04, 外國語文學系</span>
+</span>
+</td>
+				<td data-name="class_desc" >
+<span id="el13_aspmaker_dept_student_graduation_requirements_M_view_class_desc">
+<span>學士班</span>
+</span>
+</td>
+				<td data-name="entry_year" >
+<span id="el13_aspmaker_dept_student_graduation_requirements_M_view_entry_year">
+<span>112</span>
+</span>
+</td>
+		</tr>
+	<tr  data-rowindex="14" id="r14_aspmaker_dept_student_graduation_requirements_M_view" data-rowtype="1">
+<td class="ew-list-option-body text-nowrap" data-name="button"><div class="btn-group btn-group-sm ew-btn-group"><a class="btn btn-default ew-row-link ew-view"  title="檢視" data-caption="檢視" href="aspmaker_dept_student_graduation_requirements_M_viewview.php?showdetail=&amp;deptid=04&amp;class_code=G&amp;entry_year=112">檢視</a></div></td>			<td data-name="deptid" >
+<span id="el14_aspmaker_dept_student_graduation_requirements_M_view_deptid">
+<span>04, 外國語文學系</span>
+</span>
+</td>
+				<td data-name="class_desc" >
+<span id="el14_aspmaker_dept_student_graduation_requirements_M_view_class_desc">
+<span>碩士班</span>
+</span>
+</td>
+				<td data-name="entry_year" >
+<span id="el14_aspmaker_dept_student_graduation_requirements_M_view_entry_year">
+<span>112</span>
+</span>
+</td>
+		</tr>
+	<tr  data-rowindex="15" id="r15_aspmaker_dept_student_graduation_requirements_M_view" data-rowtype="1">
+<td class="ew-list-option-body text-nowrap" data-name="button"><div class="btn-group btn-group-sm ew-btn-group"><a class="btn btn-default ew-row-link ew-view"  title="檢視" data-caption="檢視" href="aspmaker_dept_student_graduation_requirements_M_viewview.php?showdetail=&amp;deptid=05&amp;class_code=B&amp;entry_year=112">檢視</a></div></td>			<td data-name="deptid" >
+<span id="el15_aspmaker_dept_student_graduation_requirements_M_view_deptid">
+<span>05, 歷史學系</span>
+</span>
+</td>
+				<td data-name="class_desc" >
+<span id="el15_aspmaker_dept_student_graduation_requirements_M_view_class_desc">
+<span>學士班</span>
+</span>
+</td>
+				<td data-name="entry_year" >
+<span id="el15_aspmaker_dept_student_graduation_requirements_M_view_entry_year">
+<span>112</span>
+</span>
+</td>
+		</tr>
+	<tr  data-rowindex="16" id="r16_aspmaker_dept_student_graduation_requirements_M_view" data-rowtype="1">
+<td class="ew-list-option-body text-nowrap" data-name="button"><div class="btn-group btn-group-sm ew-btn-group"><a class="btn btn-default ew-row-link ew-view"  title="檢視" data-caption="檢視" href="aspmaker_dept_student_graduation_requirements_M_viewview.php?showdetail=&amp;deptid=05&amp;class_code=G&amp;entry_year=112">檢視</a></div></td>			<td data-name="deptid" >
+<span id="el16_aspmaker_dept_student_graduation_requirements_M_view_deptid">
+<span>05, 歷史學系</span>
+</span>
+</td>
+				<td data-name="class_desc" >
+<span id="el16_aspmaker_dept_student_graduation_requirements_M_view_class_desc">
+<span>碩士班</span>
+</span>
+</td>
+				<td data-name="entry_year" >
+<span id="el16_aspmaker_dept_student_graduation_requirements_M_view_entry_year">
+<span>112</span>
+</span>
+</td>
+		</tr>
+	<tr  data-rowindex="17" id="r17_aspmaker_dept_student_graduation_requirements_M_view" data-rowtype="1">
+<td class="ew-list-option-body text-nowrap" data-name="button"><div class="btn-group btn-group-sm ew-btn-group"><a class="btn btn-default ew-row-link ew-view"  title="檢視" data-caption="檢視" href="aspmaker_dept_student_graduation_requirements_M_viewview.php?showdetail=&amp;deptid=05&amp;class_code=P&amp;entry_year=112">檢視</a></div></td>			<td data-name="deptid" >
+<span id="el17_aspmaker_dept_student_graduation_requirements_M_view_deptid">
+<span>05, 歷史學系</span>
+</span>
+</td>
+				<td data-name="class_desc" >
+<span id="el17_aspmaker_dept_student_graduation_requirements_M_view_class_desc">
+<span>博士班</span>
+</span>
+</td>
+				<td data-name="entry_year" >
+<span id="el17_aspmaker_dept_student_graduation_requirements_M_view_entry_year">
+<span>112</span>
+</span>
+</td>
+		</tr>
+	<tr  data-rowindex="18" id="r18_aspmaker_dept_student_graduation_requirements_M_view" data-rowtype="1">
+<td class="ew-list-option-body text-nowrap" data-name="button"><div class="btn-group btn-group-sm ew-btn-group"><a class="btn btn-default ew-row-link ew-view"  title="檢視" data-caption="檢視" href="aspmaker_dept_student_graduation_requirements_M_viewview.php?showdetail=&amp;deptid=06&amp;class_code=B&amp;entry_year=112">檢視</a></div></td>			<td data-name="deptid" >
+<span id="el18_aspmaker_dept_student_graduation_requirements_M_view_deptid">
+<span>06, 公共行政與政策學系</span>
+</span>
+</td>
+				<td data-name="class_desc" >
+<span id="el18_aspmaker_dept_student_graduation_requirements_M_view_class_desc">
+<span>學士班</span>
+</span>
+</td>
+				<td data-name="entry_year" >
+<span id="el18_aspmaker_dept_student_graduation_requirements_M_view_entry_year">
+<span>112</span>
+</span>
+</td>
+		</tr>
+	<tr  data-rowindex="19" id="r19_aspmaker_dept_student_graduation_requirements_M_view" data-rowtype="1">
+<td class="ew-list-option-body text-nowrap" data-name="button"><div class="btn-group btn-group-sm ew-btn-group"><a class="btn btn-default ew-row-link ew-view"  title="檢視" data-caption="檢視" href="aspmaker_dept_student_graduation_requirements_M_viewview.php?showdetail=&amp;deptid=06&amp;class_code=G&amp;entry_year=112">檢視</a></div></td>			<td data-name="deptid" >
+<span id="el19_aspmaker_dept_student_graduation_requirements_M_view_deptid">
+<span>06, 公共行政與政策學系</span>
+</span>
+</td>
+				<td data-name="class_desc" >
+<span id="el19_aspmaker_dept_student_graduation_requirements_M_view_class_desc">
+<span>碩士班</span>
+</span>
+</td>
+				<td data-name="entry_year" >
+<span id="el19_aspmaker_dept_student_graduation_requirements_M_view_entry_year">
+<span>112</span>
+</span>
+</td>
+		</tr>
+	<tr  data-rowindex="20" id="r20_aspmaker_dept_student_graduation_requirements_M_view" data-rowtype="1">
+<td class="ew-list-option-body text-nowrap" data-name="button"><div class="btn-group btn-group-sm ew-btn-group"><a class="btn btn-default ew-row-link ew-view"  title="檢視" data-caption="檢視" href="aspmaker_dept_student_graduation_requirements_M_viewview.php?showdetail=&amp;deptid=06&amp;class_code=P&amp;entry_year=112">檢視</a></div></td>			<td data-name="deptid" >
+<span id="el20_aspmaker_dept_student_graduation_requirements_M_view_deptid">
+<span>06, 公共行政與政策學系</span>
+</span>
+</td>
+				<td data-name="class_desc" >
+<span id="el20_aspmaker_dept_student_graduation_requirements_M_view_class_desc">
+<span>博士班</span>
+</span>
+</td>
+				<td data-name="entry_year" >
+<span id="el20_aspmaker_dept_student_graduation_requirements_M_view_entry_year">
+<span>112</span>
+</span>
+</td>
+		</tr>
+	<tr  data-rowindex="21" id="r21_aspmaker_dept_student_graduation_requirements_M_view" data-rowtype="1">
+<td class="ew-list-option-body text-nowrap" data-name="button"><div class="btn-group btn-group-sm ew-btn-group"><a class="btn btn-default ew-row-link ew-view"  title="檢視" data-caption="檢視" href="aspmaker_dept_student_graduation_requirements_M_viewview.php?showdetail=&amp;deptid=07&amp;class_code=B&amp;entry_year=112">檢視</a></div></td>			<td data-name="deptid" >
+<span id="el21_aspmaker_dept_student_graduation_requirements_M_view_deptid">
+<span>07, 教育政策與行政學系</span>
+</span>
+</td>
+				<td data-name="class_desc" >
+<span id="el21_aspmaker_dept_student_graduation_requirements_M_view_class_desc">
+<span>學士班</span>
+</span>
+</td>
+				<td data-name="entry_year" >
+<span id="el21_aspmaker_dept_student_graduation_requirements_M_view_entry_year">
+<span>112</span>
+</span>
+</td>
+		</tr>
+	<tr  data-rowindex="22" id="r22_aspmaker_dept_student_graduation_requirements_M_view" data-rowtype="1">
+<td class="ew-list-option-body text-nowrap" data-name="button"><div class="btn-group btn-group-sm ew-btn-group"><a class="btn btn-default ew-row-link ew-view"  title="檢視" data-caption="檢視" href="aspmaker_dept_student_graduation_requirements_M_viewview.php?showdetail=&amp;deptid=07&amp;class_code=G&amp;entry_year=112">檢視</a></div></td>			<td data-name="deptid" >
+<span id="el22_aspmaker_dept_student_graduation_requirements_M_view_deptid">
+<span>07, 教育政策與行政學系</span>
+</span>
+</td>
+				<td data-name="class_desc" >
+<span id="el22_aspmaker_dept_student_graduation_requirements_M_view_class_desc">
+<span>碩士班</span>
+</span>
+</td>
+				<td data-name="entry_year" >
+<span id="el22_aspmaker_dept_student_graduation_requirements_M_view_entry_year">
+<span>112</span>
+</span>
+</td>
+		</tr>
+	<tr  data-rowindex="23" id="r23_aspmaker_dept_student_graduation_requirements_M_view" data-rowtype="1">
+<td class="ew-list-option-body text-nowrap" data-name="button"><div class="btn-group btn-group-sm ew-btn-group"><a class="btn btn-default ew-row-link ew-view"  title="檢視" data-caption="檢視" href="aspmaker_dept_student_graduation_requirements_M_viewview.php?showdetail=&amp;deptid=07&amp;class_code=P&amp;entry_year=112">檢視</a></div></td>			<td data-name="deptid" >
+<span id="el23_aspmaker_dept_student_graduation_requirements_M_view_deptid">
+<span>07, 教育政策與行政學系</span>
+</span>
+</td>
+				<td data-name="class_desc" >
+<span id="el23_aspmaker_dept_student_graduation_requirements_M_view_class_desc">
+<span>博士班</span>
+</span>
+</td>
+				<td data-name="entry_year" >
+<span id="el23_aspmaker_dept_student_graduation_requirements_M_view_entry_year">
+<span>112</span>
+</span>
+</td>
+		</tr>
+	<tr  data-rowindex="24" id="r24_aspmaker_dept_student_graduation_requirements_M_view" data-rowtype="1">
+<td class="ew-list-option-body text-nowrap" data-name="button"><div class="btn-group btn-group-sm ew-btn-group"><a class="btn btn-default ew-row-link ew-view"  title="檢視" data-caption="檢視" href="aspmaker_dept_student_graduation_requirements_M_viewview.php?showdetail=&amp;deptid=08&amp;class_code=B&amp;entry_year=112">檢視</a></div></td>			<td data-name="deptid" >
+<span id="el24_aspmaker_dept_student_graduation_requirements_M_view_deptid">
+<span>08, 東南亞學系</span>
+</span>
+</td>
+				<td data-name="class_desc" >
+<span id="el24_aspmaker_dept_student_graduation_requirements_M_view_class_desc">
+<span>學士班</span>
+</span>
+</td>
+				<td data-name="entry_year" >
+<span id="el24_aspmaker_dept_student_graduation_requirements_M_view_entry_year">
+<span>112</span>
+</span>
+</td>
+		</tr>
+	<tr  data-rowindex="25" id="r25_aspmaker_dept_student_graduation_requirements_M_view" data-rowtype="1">
+<td class="ew-list-option-body text-nowrap" data-name="button"><div class="btn-group btn-group-sm ew-btn-group"><a class="btn btn-default ew-row-link ew-view"  title="檢視" data-caption="檢視" href="aspmaker_dept_student_graduation_requirements_M_viewview.php?showdetail=&amp;deptid=08&amp;class_code=G&amp;entry_year=112">檢視</a></div></td>			<td data-name="deptid" >
+<span id="el25_aspmaker_dept_student_graduation_requirements_M_view_deptid">
+<span>08, 東南亞學系</span>
+</span>
+</td>
+				<td data-name="class_desc" >
+<span id="el25_aspmaker_dept_student_graduation_requirements_M_view_class_desc">
+<span>碩士班</span>
+</span>
+</td>
+				<td data-name="entry_year" >
+<span id="el25_aspmaker_dept_student_graduation_requirements_M_view_entry_year">
+<span>112</span>
+</span>
+</td>
+		</tr>
+	<tr  data-rowindex="26" id="r26_aspmaker_dept_student_graduation_requirements_M_view" data-rowtype="1">
+<td class="ew-list-option-body text-nowrap" data-name="button"><div class="btn-group btn-group-sm ew-btn-group"><a class="btn btn-default ew-row-link ew-view"  title="檢視" data-caption="檢視" href="aspmaker_dept_student_graduation_requirements_M_viewview.php?showdetail=&amp;deptid=08&amp;class_code=P&amp;entry_year=112">檢視</a></div></td>			<td data-name="deptid" >
+<span id="el26_aspmaker_dept_student_graduation_requirements_M_view_deptid">
+<span>08, 東南亞學系</span>
+</span>
+</td>
+				<td data-name="class_desc" >
+<span id="el26_aspmaker_dept_student_graduation_requirements_M_view_class_desc">
+<span>博士班</span>
+</span>
+</td>
+				<td data-name="entry_year" >
+<span id="el26_aspmaker_dept_student_graduation_requirements_M_view_entry_year">
+<span>112</span>
+</span>
+</td>
+		</tr>
+	<tr  data-rowindex="27" id="r27_aspmaker_dept_student_graduation_requirements_M_view" data-rowtype="1">
+<td class="ew-list-option-body text-nowrap" data-name="button"><div class="btn-group btn-group-sm ew-btn-group"><a class="btn btn-default ew-row-link ew-view"  title="檢視" data-caption="檢視" href="aspmaker_dept_student_graduation_requirements_M_viewview.php?showdetail=&amp;deptid=09&amp;class_code=B&amp;entry_year=112">檢視</a></div></td>			<td data-name="deptid" >
+<span id="el27_aspmaker_dept_student_graduation_requirements_M_view_deptid">
+<span>09, 諮商心理與人力資源發展學系終身學習與人力資源發展</span>
+</span>
+</td>
+				<td data-name="class_desc" >
+<span id="el27_aspmaker_dept_student_graduation_requirements_M_view_class_desc">
+<span>學士班</span>
+</span>
+</td>
+				<td data-name="entry_year" >
+<span id="el27_aspmaker_dept_student_graduation_requirements_M_view_entry_year">
+<span>112</span>
+</span>
+</td>
+		</tr>
+	<tr  data-rowindex="28" id="r28_aspmaker_dept_student_graduation_requirements_M_view" data-rowtype="1">
+<td class="ew-list-option-body text-nowrap" data-name="button"><div class="btn-group btn-group-sm ew-btn-group"><a class="btn btn-default ew-row-link ew-view"  title="檢視" data-caption="檢視" href="aspmaker_dept_student_graduation_requirements_M_viewview.php?showdetail=&amp;deptid=09&amp;class_code=G&amp;entry_year=112">檢視</a></div></td>			<td data-name="deptid" >
+<span id="el28_aspmaker_dept_student_graduation_requirements_M_view_deptid">
+<span>09, 諮商心理與人力資源發展學系終身學習與人力資源發展</span>
+</span>
+</td>
+				<td data-name="class_desc" >
+<span id="el28_aspmaker_dept_student_graduation_requirements_M_view_class_desc">
+<span>碩士班</span>
+</span>
+</td>
+				<td data-name="entry_year" >
+<span id="el28_aspmaker_dept_student_graduation_requirements_M_view_entry_year">
+<span>112</span>
+</span>
+</td>
+		</tr>
+	<tr  data-rowindex="29" id="r29_aspmaker_dept_student_graduation_requirements_M_view" data-rowtype="1">
+<td class="ew-list-option-body text-nowrap" data-name="button"><div class="btn-group btn-group-sm ew-btn-group"><a class="btn btn-default ew-row-link ew-view"  title="檢視" data-caption="檢視" href="aspmaker_dept_student_graduation_requirements_M_viewview.php?showdetail=&amp;deptid=11&amp;class_code=B&amp;entry_year=112">檢視</a></div></td>			<td data-name="deptid" >
+<span id="el29_aspmaker_dept_student_graduation_requirements_M_view_deptid">
+<span>11, 經濟學系</span>
+</span>
+</td>
+				<td data-name="class_desc" >
+<span id="el29_aspmaker_dept_student_graduation_requirements_M_view_class_desc">
+<span>學士班</span>
+</span>
+</td>
+				<td data-name="entry_year" >
+<span id="el29_aspmaker_dept_student_graduation_requirements_M_view_entry_year">
+<span>112</span>
+</span>
+</td>
+		</tr>
+	<tr  data-rowindex="30" id="r30_aspmaker_dept_student_graduation_requirements_M_view" data-rowtype="1">
+<td class="ew-list-option-body text-nowrap" data-name="button"><div class="btn-group btn-group-sm ew-btn-group"><a class="btn btn-default ew-row-link ew-view"  title="檢視" data-caption="檢視" href="aspmaker_dept_student_graduation_requirements_M_viewview.php?showdetail=&amp;deptid=11&amp;class_code=G&amp;entry_year=112">檢視</a></div></td>			<td data-name="deptid" >
+<span id="el30_aspmaker_dept_student_graduation_requirements_M_view_deptid">
+<span>11, 經濟學系</span>
+</span>
+</td>
+				<td data-name="class_desc" >
+<span id="el30_aspmaker_dept_student_graduation_requirements_M_view_class_desc">
+<span>碩士班</span>
+</span>
+</td>
+				<td data-name="entry_year" >
+<span id="el30_aspmaker_dept_student_graduation_requirements_M_view_entry_year">
+<span>112</span>
+</span>
+</td>
+		</tr>
+	<tr  data-rowindex="31" id="r31_aspmaker_dept_student_graduation_requirements_M_view" data-rowtype="1">
+<td class="ew-list-option-body text-nowrap" data-name="button"><div class="btn-group btn-group-sm ew-btn-group"><a class="btn btn-default ew-row-link ew-view"  title="檢視" data-caption="檢視" href="aspmaker_dept_student_graduation_requirements_M_viewview.php?showdetail=&amp;deptid=12&amp;class_code=B&amp;entry_year=112">檢視</a></div></td>			<td data-name="deptid" >
+<span id="el31_aspmaker_dept_student_graduation_requirements_M_view_deptid">
+<span>12, 國際企業學系</span>
+</span>
+</td>
+				<td data-name="class_desc" >
+<span id="el31_aspmaker_dept_student_graduation_requirements_M_view_class_desc">
+<span>學士班</span>
+</span>
+</td>
+				<td data-name="entry_year" >
+<span id="el31_aspmaker_dept_student_graduation_requirements_M_view_entry_year">
+<span>112</span>
+</span>
+</td>
+		</tr>
+	<tr  data-rowindex="32" id="r32_aspmaker_dept_student_graduation_requirements_M_view" data-rowtype="1">
+<td class="ew-list-option-body text-nowrap" data-name="button"><div class="btn-group btn-group-sm ew-btn-group"><a class="btn btn-default ew-row-link ew-view"  title="檢視" data-caption="檢視" href="aspmaker_dept_student_graduation_requirements_M_viewview.php?showdetail=&amp;deptid=12&amp;class_code=G&amp;entry_year=112">檢視</a></div></td>			<td data-name="deptid" >
+<span id="el32_aspmaker_dept_student_graduation_requirements_M_view_deptid">
+<span>12, 國際企業學系</span>
+</span>
+</td>
+				<td data-name="class_desc" >
+<span id="el32_aspmaker_dept_student_graduation_requirements_M_view_class_desc">
+<span>碩士班</span>
+</span>
+</td>
+				<td data-name="entry_year" >
+<span id="el32_aspmaker_dept_student_graduation_requirements_M_view_entry_year">
+<span>112</span>
+</span>
+</td>
+		</tr>
+	<tr  data-rowindex="33" id="r33_aspmaker_dept_student_graduation_requirements_M_view" data-rowtype="1">
+<td class="ew-list-option-body text-nowrap" data-name="button"><div class="btn-group btn-group-sm ew-btn-group"><a class="btn btn-default ew-row-link ew-view"  title="檢視" data-caption="檢視" href="aspmaker_dept_student_graduation_requirements_M_viewview.php?showdetail=&amp;deptid=13&amp;class_code=B&amp;entry_year=112">檢視</a></div></td>			<td data-name="deptid" >
+<span id="el33_aspmaker_dept_student_graduation_requirements_M_view_deptid">
+<span>13, 資訊管理學系</span>
+</span>
+</td>
+				<td data-name="class_desc" >
+<span id="el33_aspmaker_dept_student_graduation_requirements_M_view_class_desc">
+<span>學士班</span>
+</span>
+</td>
+				<td data-name="entry_year" >
+<span id="el33_aspmaker_dept_student_graduation_requirements_M_view_entry_year">
+<span>112</span>
+</span>
+</td>
+		</tr>
+	<tr  data-rowindex="34" id="r34_aspmaker_dept_student_graduation_requirements_M_view" data-rowtype="1">
+<td class="ew-list-option-body text-nowrap" data-name="button"><div class="btn-group btn-group-sm ew-btn-group"><a class="btn btn-default ew-row-link ew-view"  title="檢視" data-caption="檢視" href="aspmaker_dept_student_graduation_requirements_M_viewview.php?showdetail=&amp;deptid=13&amp;class_code=G&amp;entry_year=112">檢視</a></div></td>			<td data-name="deptid" >
+<span id="el34_aspmaker_dept_student_graduation_requirements_M_view_deptid">
+<span>13, 資訊管理學系</span>
+</span>
+</td>
+				<td data-name="class_desc" >
+<span id="el34_aspmaker_dept_student_graduation_requirements_M_view_class_desc">
+<span>碩士班</span>
+</span>
+</td>
+				<td data-name="entry_year" >
+<span id="el34_aspmaker_dept_student_graduation_requirements_M_view_entry_year">
+<span>112</span>
+</span>
+</td>
+		</tr>
+	<tr  data-rowindex="35" id="r35_aspmaker_dept_student_graduation_requirements_M_view" data-rowtype="1">
+<td class="ew-list-option-body text-nowrap" data-name="button"><div class="btn-group btn-group-sm ew-btn-group"><a class="btn btn-default ew-row-link ew-view"  title="檢視" data-caption="檢視" href="aspmaker_dept_student_graduation_requirements_M_viewview.php?showdetail=&amp;deptid=14&amp;class_code=B&amp;entry_year=112">檢視</a></div></td>			<td data-name="deptid" >
+<span id="el35_aspmaker_dept_student_graduation_requirements_M_view_deptid">
+<span>14, 財務金融學系</span>
+</span>
+</td>
+				<td data-name="class_desc" >
+<span id="el35_aspmaker_dept_student_graduation_requirements_M_view_class_desc">
+<span>學士班</span>
+</span>
+</td>
+				<td data-name="entry_year" >
+<span id="el35_aspmaker_dept_student_graduation_requirements_M_view_entry_year">
+<span>112</span>
+</span>
+</td>
+		</tr>
+	<tr  data-rowindex="36" id="r36_aspmaker_dept_student_graduation_requirements_M_view" data-rowtype="1">
+<td class="ew-list-option-body text-nowrap" data-name="button"><div class="btn-group btn-group-sm ew-btn-group"><a class="btn btn-default ew-row-link ew-view"  title="檢視" data-caption="檢視" href="aspmaker_dept_student_graduation_requirements_M_viewview.php?showdetail=&amp;deptid=14&amp;class_code=G&amp;entry_year=112">檢視</a></div></td>			<td data-name="deptid" >
+<span id="el36_aspmaker_dept_student_graduation_requirements_M_view_deptid">
+<span>14, 財務金融學系</span>
+</span>
+</td>
+				<td data-name="class_desc" >
+<span id="el36_aspmaker_dept_student_graduation_requirements_M_view_class_desc">
+<span>碩士班</span>
+</span>
+</td>
+				<td data-name="entry_year" >
+<span id="el36_aspmaker_dept_student_graduation_requirements_M_view_entry_year">
+<span>112</span>
+</span>
+</td>
+		</tr>
+	<tr  data-rowindex="37" id="r37_aspmaker_dept_student_graduation_requirements_M_view" data-rowtype="1">
+<td class="ew-list-option-body text-nowrap" data-name="button"><div class="btn-group btn-group-sm ew-btn-group"><a class="btn btn-default ew-row-link ew-view"  title="檢視" data-caption="檢視" href="aspmaker_dept_student_graduation_requirements_M_viewview.php?showdetail=&amp;deptid=18&amp;class_code=G&amp;entry_year=112">檢視</a></div></td>			<td data-name="deptid" >
+<span id="el37_aspmaker_dept_student_graduation_requirements_M_view_deptid">
+<span>18, 高階經營管理碩士學位學程</span>
+</span>
+</td>
+				<td data-name="class_desc" >
+<span id="el37_aspmaker_dept_student_graduation_requirements_M_view_class_desc">
+<span>碩士班</span>
+</span>
+</td>
+				<td data-name="entry_year" >
+<span id="el37_aspmaker_dept_student_graduation_requirements_M_view_entry_year">
+<span>112</span>
+</span>
+</td>
+		</tr>
+	<tr  data-rowindex="38" id="r38_aspmaker_dept_student_graduation_requirements_M_view" data-rowtype="1">
+<td class="ew-list-option-body text-nowrap" data-name="button"><div class="btn-group btn-group-sm ew-btn-group"><a class="btn btn-default ew-row-link ew-view"  title="檢視" data-caption="檢視" href="aspmaker_dept_student_graduation_requirements_M_viewview.php?showdetail=&amp;deptid=21&amp;class_code=B&amp;entry_year=112">檢視</a></div></td>			<td data-name="deptid" >
+<span id="el38_aspmaker_dept_student_graduation_requirements_M_view_deptid">
+<span>21, 資訊工程學系</span>
+</span>
+</td>
+				<td data-name="class_desc" >
+<span id="el38_aspmaker_dept_student_graduation_requirements_M_view_class_desc">
+<span>學士班</span>
+</span>
+</td>
+				<td data-name="entry_year" >
+<span id="el38_aspmaker_dept_student_graduation_requirements_M_view_entry_year">
+<span>112</span>
+</span>
+</td>
+		</tr>
+	<tr  data-rowindex="39" id="r39_aspmaker_dept_student_graduation_requirements_M_view" data-rowtype="1">
+<td class="ew-list-option-body text-nowrap" data-name="button"><div class="btn-group btn-group-sm ew-btn-group"><a class="btn btn-default ew-row-link ew-view"  title="檢視" data-caption="檢視" href="aspmaker_dept_student_graduation_requirements_M_viewview.php?showdetail=&amp;deptid=21&amp;class_code=G&amp;entry_year=112">檢視</a></div></td>			<td data-name="deptid" >
+<span id="el39_aspmaker_dept_student_graduation_requirements_M_view_deptid">
+<span>21, 資訊工程學系</span>
+</span>
+</td>
+				<td data-name="class_desc" >
+<span id="el39_aspmaker_dept_student_graduation_requirements_M_view_class_desc">
+<span>碩士班</span>
+</span>
+</td>
+				<td data-name="entry_year" >
+<span id="el39_aspmaker_dept_student_graduation_requirements_M_view_entry_year">
+<span>112</span>
+</span>
+</td>
+		</tr>
+	<tr  data-rowindex="40" id="r40_aspmaker_dept_student_graduation_requirements_M_view" data-rowtype="1">
+<td class="ew-list-option-body text-nowrap" data-name="button"><div class="btn-group btn-group-sm ew-btn-group"><a class="btn btn-default ew-row-link ew-view"  title="檢視" data-caption="檢視" href="aspmaker_dept_student_graduation_requirements_M_viewview.php?showdetail=&amp;deptid=21&amp;class_code=P&amp;entry_year=112">檢視</a></div></td>			<td data-name="deptid" >
+<span id="el40_aspmaker_dept_student_graduation_requirements_M_view_deptid">
+<span>21, 資訊工程學系</span>
+</span>
+</td>
+				<td data-name="class_desc" >
+<span id="el40_aspmaker_dept_student_graduation_requirements_M_view_class_desc">
+<span>博士班</span>
+</span>
+</td>
+				<td data-name="entry_year" >
+<span id="el40_aspmaker_dept_student_graduation_requirements_M_view_entry_year">
+<span>112</span>
+</span>
+</td>
+		</tr>
+	<tr  data-rowindex="41" id="r41_aspmaker_dept_student_graduation_requirements_M_view" data-rowtype="1">
+<td class="ew-list-option-body text-nowrap" data-name="button"><div class="btn-group btn-group-sm ew-btn-group"><a class="btn btn-default ew-row-link ew-view"  title="檢視" data-caption="檢視" href="aspmaker_dept_student_graduation_requirements_M_viewview.php?showdetail=&amp;deptid=22&amp;class_code=B&amp;entry_year=112">檢視</a></div></td>			<td data-name="deptid" >
+<span id="el41_aspmaker_dept_student_graduation_requirements_M_view_deptid">
+<span>22, 土木工程學系</span>
+</span>
+</td>
+				<td data-name="class_desc" >
+<span id="el41_aspmaker_dept_student_graduation_requirements_M_view_class_desc">
+<span>學士班</span>
+</span>
+</td>
+				<td data-name="entry_year" >
+<span id="el41_aspmaker_dept_student_graduation_requirements_M_view_entry_year">
+<span>112</span>
+</span>
+</td>
+		</tr>
+	<tr  data-rowindex="42" id="r42_aspmaker_dept_student_graduation_requirements_M_view" data-rowtype="1">
+<td class="ew-list-option-body text-nowrap" data-name="button"><div class="btn-group btn-group-sm ew-btn-group"><a class="btn btn-default ew-row-link ew-view"  title="檢視" data-caption="檢視" href="aspmaker_dept_student_graduation_requirements_M_viewview.php?showdetail=&amp;deptid=22&amp;class_code=G&amp;entry_year=112">檢視</a></div></td>			<td data-name="deptid" >
+<span id="el42_aspmaker_dept_student_graduation_requirements_M_view_deptid">
+<span>22, 土木工程學系</span>
+</span>
+</td>
+				<td data-name="class_desc" >
+<span id="el42_aspmaker_dept_student_graduation_requirements_M_view_class_desc">
+<span>碩士班</span>
+</span>
+</td>
+				<td data-name="entry_year" >
+<span id="el42_aspmaker_dept_student_graduation_requirements_M_view_entry_year">
+<span>112</span>
+</span>
+</td>
+		</tr>
+	<tr  data-rowindex="43" id="r43_aspmaker_dept_student_graduation_requirements_M_view" data-rowtype="1">
+<td class="ew-list-option-body text-nowrap" data-name="button"><div class="btn-group btn-group-sm ew-btn-group"><a class="btn btn-default ew-row-link ew-view"  title="檢視" data-caption="檢視" href="aspmaker_dept_student_graduation_requirements_M_viewview.php?showdetail=&amp;deptid=22&amp;class_code=P&amp;entry_year=112">檢視</a></div></td>			<td data-name="deptid" >
+<span id="el43_aspmaker_dept_student_graduation_requirements_M_view_deptid">
+<span>22, 土木工程學系</span>
+</span>
+</td>
+				<td data-name="class_desc" >
+<span id="el43_aspmaker_dept_student_graduation_requirements_M_view_class_desc">
+<span>博士班</span>
+</span>
+</td>
+				<td data-name="entry_year" >
+<span id="el43_aspmaker_dept_student_graduation_requirements_M_view_entry_year">
+<span>112</span>
+</span>
+</td>
+		</tr>
+	<tr  data-rowindex="44" id="r44_aspmaker_dept_student_graduation_requirements_M_view" data-rowtype="1">
+<td class="ew-list-option-body text-nowrap" data-name="button"><div class="btn-group btn-group-sm ew-btn-group"><a class="btn btn-default ew-row-link ew-view"  title="檢視" data-caption="檢視" href="aspmaker_dept_student_graduation_requirements_M_viewview.php?showdetail=&amp;deptid=23&amp;class_code=B&amp;entry_year=112">檢視</a></div></td>			<td data-name="deptid" >
+<span id="el44_aspmaker_dept_student_graduation_requirements_M_view_deptid">
+<span>23, 電機工程學系</span>
+</span>
+</td>
+				<td data-name="class_desc" >
+<span id="el44_aspmaker_dept_student_graduation_requirements_M_view_class_desc">
+<span>學士班</span>
+</span>
+</td>
+				<td data-name="entry_year" >
+<span id="el44_aspmaker_dept_student_graduation_requirements_M_view_entry_year">
+<span>112</span>
+</span>
+</td>
+		</tr>
+	<tr  data-rowindex="45" id="r45_aspmaker_dept_student_graduation_requirements_M_view" data-rowtype="1">
+<td class="ew-list-option-body text-nowrap" data-name="button"><div class="btn-group btn-group-sm ew-btn-group"><a class="btn btn-default ew-row-link ew-view"  title="檢視" data-caption="檢視" href="aspmaker_dept_student_graduation_requirements_M_viewview.php?showdetail=&amp;deptid=23&amp;class_code=G&amp;entry_year=112">檢視</a></div></td>			<td data-name="deptid" >
+<span id="el45_aspmaker_dept_student_graduation_requirements_M_view_deptid">
+<span>23, 電機工程學系</span>
+</span>
+</td>
+				<td data-name="class_desc" >
+<span id="el45_aspmaker_dept_student_graduation_requirements_M_view_class_desc">
+<span>碩士班</span>
+</span>
+</td>
+				<td data-name="entry_year" >
+<span id="el45_aspmaker_dept_student_graduation_requirements_M_view_entry_year">
+<span>112</span>
+</span>
+</td>
+		</tr>
+	<tr  data-rowindex="46" id="r46_aspmaker_dept_student_graduation_requirements_M_view" data-rowtype="1">
+<td class="ew-list-option-body text-nowrap" data-name="button"><div class="btn-group btn-group-sm ew-btn-group"><a class="btn btn-default ew-row-link ew-view"  title="檢視" data-caption="檢視" href="aspmaker_dept_student_graduation_requirements_M_viewview.php?showdetail=&amp;deptid=24&amp;class_code=B&amp;entry_year=112">檢視</a></div></td>			<td data-name="deptid" >
+<span id="el46_aspmaker_dept_student_graduation_requirements_M_view_deptid">
+<span>24, 應用化學系</span>
+</span>
+</td>
+				<td data-name="class_desc" >
+<span id="el46_aspmaker_dept_student_graduation_requirements_M_view_class_desc">
+<span>學士班</span>
+</span>
+</td>
+				<td data-name="entry_year" >
+<span id="el46_aspmaker_dept_student_graduation_requirements_M_view_entry_year">
+<span>112</span>
+</span>
+</td>
+		</tr>
+	<tr  data-rowindex="47" id="r47_aspmaker_dept_student_graduation_requirements_M_view" data-rowtype="1">
+<td class="ew-list-option-body text-nowrap" data-name="button"><div class="btn-group btn-group-sm ew-btn-group"><a class="btn btn-default ew-row-link ew-view"  title="檢視" data-caption="檢視" href="aspmaker_dept_student_graduation_requirements_M_viewview.php?showdetail=&amp;deptid=24&amp;class_code=G&amp;entry_year=112">檢視</a></div></td>			<td data-name="deptid" >
+<span id="el47_aspmaker_dept_student_graduation_requirements_M_view_deptid">
+<span>24, 應用化學系</span>
+</span>
+</td>
+				<td data-name="class_desc" >
+<span id="el47_aspmaker_dept_student_graduation_requirements_M_view_class_desc">
+<span>碩士班</span>
+</span>
+</td>
+				<td data-name="entry_year" >
+<span id="el47_aspmaker_dept_student_graduation_requirements_M_view_entry_year">
+<span>112</span>
+</span>
+</td>
+		</tr>
+	<tr  data-rowindex="48" id="r48_aspmaker_dept_student_graduation_requirements_M_view" data-rowtype="1">
+<td class="ew-list-option-body text-nowrap" data-name="button"><div class="btn-group btn-group-sm ew-btn-group"><a class="btn btn-default ew-row-link ew-view"  title="檢視" data-caption="檢視" href="aspmaker_dept_student_graduation_requirements_M_viewview.php?showdetail=&amp;deptid=24&amp;class_code=P&amp;entry_year=112">檢視</a></div></td>			<td data-name="deptid" >
+<span id="el48_aspmaker_dept_student_graduation_requirements_M_view_deptid">
+<span>24, 應用化學系</span>
+</span>
+</td>
+				<td data-name="class_desc" >
+<span id="el48_aspmaker_dept_student_graduation_requirements_M_view_class_desc">
+<span>博士班</span>
+</span>
+</td>
+				<td data-name="entry_year" >
+<span id="el48_aspmaker_dept_student_graduation_requirements_M_view_entry_year">
+<span>112</span>
+</span>
+</td>
+		</tr>
+	<tr  data-rowindex="49" id="r49_aspmaker_dept_student_graduation_requirements_M_view" data-rowtype="1">
+<td class="ew-list-option-body text-nowrap" data-name="button"><div class="btn-group btn-group-sm ew-btn-group"><a class="btn btn-default ew-row-link ew-view"  title="檢視" data-caption="檢視" href="aspmaker_dept_student_graduation_requirements_M_viewview.php?showdetail=&amp;deptid=28&amp;class_code=B&amp;entry_year=112">檢視</a></div></td>			<td data-name="deptid" >
+<span id="el49_aspmaker_dept_student_graduation_requirements_M_view_deptid">
+<span>28, 應用材料及光電工程學系</span>
+</span>
+</td>
+				<td data-name="class_desc" >
+<span id="el49_aspmaker_dept_student_graduation_requirements_M_view_class_desc">
+<span>學士班</span>
+</span>
+</td>
+				<td data-name="entry_year" >
+<span id="el49_aspmaker_dept_student_graduation_requirements_M_view_entry_year">
+<span>112</span>
+</span>
+</td>
+		</tr>
+	<tr  data-rowindex="50" id="r50_aspmaker_dept_student_graduation_requirements_M_view" data-rowtype="1">
+<td class="ew-list-option-body text-nowrap" data-name="button"><div class="btn-group btn-group-sm ew-btn-group"><a class="btn btn-default ew-row-link ew-view"  title="檢視" data-caption="檢視" href="aspmaker_dept_student_graduation_requirements_M_viewview.php?showdetail=&amp;deptid=28&amp;class_code=G&amp;entry_year=112">檢視</a></div></td>			<td data-name="deptid" >
+<span id="el50_aspmaker_dept_student_graduation_requirements_M_view_deptid">
+<span>28, 應用材料及光電工程學系</span>
+</span>
+</td>
+				<td data-name="class_desc" >
+<span id="el50_aspmaker_dept_student_graduation_requirements_M_view_class_desc">
+<span>碩士班</span>
+</span>
+</td>
+				<td data-name="entry_year" >
+<span id="el50_aspmaker_dept_student_graduation_requirements_M_view_entry_year">
+<span>112</span>
+</span>
+</td>
+		</tr>
+</tbody>
+</table><!-- /.ew-table -->
+</div><!-- /.ew-grid-middle-panel -->
+<input type="hidden" name="action" id="action" value="">
+</form><!-- /.ew-list-form -->
+</div><!-- /.ew-grid -->
+<script>
+loadjs.ready("load", function() {
+
+	// Startup script
+	// Write your table-specific startup script here
+	// console.log("page loaded");
+
+});
+</script>
+				</div><!-- /.container-fluid -->
+		</section>
+		<!-- /.content -->
+	</div>
+	<!-- /.content-wrapper -->
+	<!-- Main Footer -->
+	<footer class="main-footer">
+		<!-- ** Note: Only licensed users are allowed to change the copyright statement. ** -->
+		<div class="ew-footer-text">系統開發：計網中心系統組 wcchien@ncnu.edu.tw</div>
+		<div class="float-right d-none d-sm-inline-block"></div>
+	</footer>
+</div>
+<!-- ./wrapper -->
+<!-- template upload (for file upload) -->
+<script id="template-upload" type="text/html">
+{{for files}}
+	<tr class="template-upload">
+		<td>
+			<span class="preview"></span>
+		</td>
+		<td>
+			<p class="name">{{:name}}</p>
+			<p class="error text-danger"></p>
+		</td>
+		<td>
+			<div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-bar bg-success" style="width: 0%;"></div></div>
+		</td>
+		<td>
+			{{if !#index && !~root.options.autoUpload}}
+			<button class="btn btn-default btn-sm start" disabled>開始上傳</button>
+			{{/if}}
+			{{if !#index}}
+			<button class="btn btn-default btn-sm cancel">取消上傳</button>
+			{{/if}}
+		</td>
+	</tr>
+{{/for}}
+</script>
+<!-- template download (for file upload) -->
+<script id="template-download" type="text/html">
+{{for files}}
+	<tr class="template-download">
+		<td>
+			<span class="preview">
+				{{if !exists}}
+				<span class="text-danger">找不到檔案 !</span>
+				{{else url && extension == "pdf"}}
+				<div class="ew-pdfobject" data-url="{{>url}}" style="width: 200px;"></div>
+				{{else url && extension == "mp3"}}
+				<audio controls><source type="audio/mpeg" src="{{>url}}"></audio>
+				{{else url && extension == "mp4"}}
+				<video controls><source type="video/mp4" src="{{>url}}"></video>
+				{{else thumbnailUrl}}
+				<a href="{{>url}}" title="{{>name}}" download="{{>name}}" class="ew-lightbox"><img src="{{>thumbnailUrl}}"></a>
+				{{/if}}
+			</span>
+		</td>
+		<td>
+			<p class="name">
+				{{if !exists}}
+				<span class="text-muted">{{:name}}</span>
+				{{else url && thumbnailUrl && extension != "pdf" && extension != "mp3" && extension != "mp4"}}
+				<a href="{{>url}}" title="{{>name}}" download="{{>name}}" class="ew-lightbox">{{:name}}</a>
+				{{else url}}
+				<a href="{{>url}}" title="{{>name}}" download="{{>name}}">{{:name}}</a>
+				{{else}}
+				<span>{{:name}}</span>
+				{{/if}}
+			</p>
+			{{if error}}
+			<div><span class="error text-danger">{{:error}}</span></div>
+			{{/if}}
+		</td>
+		<td>
+			<span class="size">{{:~root.formatFileSize(size)}}</span>
+		</td>
+		<td>
+			{{if !~root.options.readOnly && deleteUrl}}
+			<button class="btn btn-default btn-sm delete" data-type="{{>deleteType}}" data-url="{{>deleteUrl}}">刪除上傳</button>
+			{{else !~root.options.readOnly}}
+			<button class="btn btn-default btn-sm cancel">取消上傳</button>
+			{{/if}}
+		</td>
+	</tr>
+{{/for}}
+</script>
+<!-- modal dialog -->
+<div id="ew-modal-dialog" class="modal" role="dialog" aria-hidden="true"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h4 class="modal-title"></h4></div><div class="modal-body"></div><div class="modal-footer"></div></div></div></div>
+<!-- import dialog -->
+<div id="ew-import-dialog" class="modal" role="dialog" aria-hidden="true"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h4 class="modal-title"></h4></div>
+<div class="modal-body">
+<div class="custom-file">
+	<input type="file" class="custom-file-input" id="importfiles" title=" " name="importfiles[]" multiple lang="zh-tw">
+	<label class="custom-file-label ew-file-label" for="importfiles">選取檔案</label>
+</div>
+<div class="message d-none mt-3"></div>
+<div class="progress d-none mt-3"><div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">0%</div></div>
+</div>
+<div class="modal-footer"><button type="button" class="btn btn-default ew-close-btn" data-dismiss="modal">關閉</button></div></div></div></div>
+<!-- message box -->
+<div id="ew-message-box" class="modal" role="dialog" aria-hidden="true"><div class="modal-dialog"><div class="modal-content"><div class="modal-body"></div><div class="modal-footer"><button type="button" class="btn btn-primary ew-btn" data-dismiss="modal">OK</button></div></div></div></div>
+<!-- prompt -->
+<div id="ew-prompt" class="modal" role="dialog" aria-hidden="true"><div class="modal-dialog"><div class="modal-content"><div class="modal-body"></div><div class="modal-footer"><button type="button" class="btn btn-primary ew-btn">OK</button><button type="button" class="btn btn-default ew-btn" data-dismiss="modal">取消</button></div></div></div></div>
+<!-- session timer -->
+<div id="ew-timer" class="modal" role="dialog" aria-hidden="true"><div class="modal-dialog"><div class="modal-content"><div class="modal-body"></div><div class="modal-footer"><button type="button" class="btn btn-primary ew-btn" data-dismiss="modal">OK</button></div></div></div></div>
+<!-- tooltip -->
+<div id="ew-tooltip"></div>
+<!-- drill down -->
+<div id="ew-drilldown-panel"></div>
+<script>
+
+// User event handlers
+ew.ready(ew.bundleIds, "js/userevt.js", "load", function() {
+
+	// Global startup script
+	$("body").data("lte.layout",{}),$("body, .wrapper").css("overflow-x","auto");
+});
+</script>
+</body>
+</html>
