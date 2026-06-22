@@ -4,7 +4,3 @@ __pycache__/
 *.pyc
 .pytest_cache/
 .DS_Store
-data/raw/*
-!data/raw/.gitkeep
-data/reports/*
-!data/reports/.gitkeep
