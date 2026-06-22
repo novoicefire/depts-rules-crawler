@@ -6,11 +6,11 @@
 此專案僅做資料抓取與解析驗證，不整合至既有專案，也不建立 CI/CD。
 
 ## 系統特色
-- **突破 WAF 防火牆**：模擬真實瀏覽器 `User-Agent`，完美避開學校伺服器的防爬蟲阻擋。
-- **高併發多執行緒**：採用 `ThreadPoolExecutor` 平行抓取，極大化下載速度。
-- **無敵重試迴圈**：針對學校伺服器頻繁的 `500` 錯誤或 `Timeout`，設計了高達 20 次的列表獲取重試與 10 回合的自動失敗重入列機制，確保檔案 100% 完整抓取。
-- **高級語意解析器 (Semantic Parser)**：自動逆向爬疏 DOM 樹找尋標題，精準區分 `必修`、`擋修`、`通識核心`、`輔系` 等特殊規定，支援多維度（4 欄 / 5 欄）的複雜表格提取。
-- **統一 CLI 介面與進度視覺化**：整合所有腳本至 `cli.py`，搭配 `rich` 提供專業的進度條與色彩終端機輸出。
+- 模擬一般瀏覽器請求標頭，提高公開頁面抓取穩定性。
+- 支援失敗項目重新入列、重試回合、錯誤報告與續跑。
+- 支援全量抓取與單筆 probe 測試。
+- 表格解析採 heuristic 方法，會保留無法解析的原始列資料，方便後續人工檢查。
+- 不保證所有年度、系所、部別皆可成功抓取或完整語意解析。
 
 ## 資料來源
 1. **開課單位代碼 API** (用來取得所有 `deptid`)
@@ -60,10 +60,17 @@ python cli.py fetch --years 112 --deptids 12 --class-codes B
 
 抓取所有系所（背景執行建議）：
 ```bash
-python cli.py fetch --years 112 --all-depts --class-codes B G P --workers 5 --max-rounds 20
+python cli.py fetch --years 112 --all-depts --class-codes B G P --workers 5 --max-rounds 20 --delay 0.5
 ```
+
+本機測試可使用 workers=5。
+若學校站點回應不穩，請降低 workers 或增加 delay。
+未來若放入 GitHub Action，建議 workers=2 或 3，delay=1.0。
+不要短時間重複 force 全量抓取。
+
 - `--workers`: 多執行緒的數量，預設為 5。
-- `--max-rounds`: 失敗項目的自動重試回合數，預設為 10 圈。
+- `--max-rounds`: 失敗項目的自動重試回合數，預設為 20 圈。
+- `--delay`: 每次請求前的延遲秒數，預設為 0.5 秒。
 
 ### 2. 解析 JSON (Parse)
 將已下載在 `data/raw/` 的 HTML 解析成具備語意標記的結構化 JSON 並建立索引檔：
@@ -80,7 +87,7 @@ python cli.py validate
 ### 4. 一鍵執行 (All)
 依序自動執行 Fetch -> Parse -> Validate 完整流程：
 ```bash
-python cli.py all --years 112 --deptids 12 --class-codes B
+python cli.py all --years 112 --deptids 12 --class-codes B --delay 0.5
 ```
 
 ## 輸出資料夾說明

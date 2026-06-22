@@ -11,27 +11,9 @@
   "groups": [
     {
       "groupId": "group_001",
-      "name": "資料項次: 923 ～ 923 ／ 1706",
+      "name": "系所 14, 財務金融學系 部別 碩士班 入學年度 112",
       "type": "course_list",
-      "requiredCredits": null,
-      "courses": [],
-      "description": "",
-      "originalRows": [
-        [
-          "部別",
-          "碩士班"
-        ],
-        [
-          "入學年度",
-          "112"
-        ]
-      ]
-    },
-    {
-      "groupId": "group_002",
-      "name": "112 學年度入學財務金融學系碩士班必修課程清單",
-      "type": "required_courses",
-      "requiredCredits": null,
+      "requiredCredits": 6,
       "courses": [
         {
           "courseId": "145003",
@@ -64,34 +46,37 @@
           "credits": 3
         }
       ],
+      "rules": [],
       "description": "",
       "originalRows": [
-        [
-          "合計",
-          "共　6　門課程　18　學分",
-          ""
-        ]
+        {
+          "cells": [
+            "合計",
+            "共　6　門課程　18　學分",
+            ""
+          ],
+          "rawText": "合計 共　6　門課程　18　學分 "
+        }
       ]
     },
     {
-      "groupId": "group_003",
-      "name": "112 學年度入學財務金融學系課程先修(擋修)清單",
-      "type": "prerequisite_rules",
+      "groupId": "group_002",
+      "name": "系所 14, 財務金融學系 部別 碩士班 入學年度 112",
+      "type": "course_list",
       "requiredCredits": null,
       "courses": [
         {
           "courseId": "140070",
           "courseName": "財務管理(二)\tFinancial Management(Ⅱ)",
-          "targetCourseId": "140071",
-          "targetCourseName": "財務管理(一)\tFinancial Management(I)"
+          "credits": null
         },
         {
           "courseId": "140129",
           "courseName": "會計學及實習(二)\tAccounting and Practice (2)",
-          "targetCourseId": "C20005",
-          "targetCourseName": "會計學及實習(一)\tFinancial Accounting(1)"
+          "credits": null
         }
       ],
+      "rules": [],
       "description": "",
       "originalRows": []
     }

@@ -7,7 +7,7 @@ from .config import BASE_DIR, INDEXES_DIR
 
 logger = logging.getLogger(__name__)
 
-def validate_all() -> Dict[str, Any]:
+def validate_all(probe: bool = False, strict: bool = False) -> Dict[str, Any]:
     """執行完整驗證並回傳報告"""
     report = {
         "index_exists": False,
@@ -37,6 +37,12 @@ def validate_all() -> Dict[str, Any]:
         
     items = index_data.get("items", [])
     report["total_items"] = len(items)
+    
+    if not items:
+        report["invalid_schema"].append({
+            "id": "index",
+            "error": "Index contains no items"
+        })
     
     seen_ids = set()
     
@@ -70,9 +76,68 @@ def validate_all() -> Dict[str, Any]:
                     "missing": missing_keys
                 })
                 
+            # Check consistency between index and parsed JSON
+            checks = ["requirementSetId", "entryYear", "departmentId", "classCode"]
+            for c in checks:
+                if parsed_json.get(c) != item.get(c):
+                    report["invalid_schema"].append({
+                        "id": req_id,
+                        "error": f"Inconsistent {c}: index={item.get(c)}, json={parsed_json.get(c)}"
+                    })
+                    
+            # Check groups schema
+            groups = parsed_json.get("groups")
+            if not isinstance(groups, list):
+                report["invalid_schema"].append({
+                    "id": req_id,
+                    "error": "groups must be a list"
+                })
+            else:
+                for idx, g in enumerate(groups):
+                    missing = []
+                    for k in ["groupId", "name", "type", "courses", "originalRows"]:
+                        if k not in g:
+                            missing.append(k)
+                            
+                    if missing:
+                        report["invalid_schema"].append({
+                            "id": req_id,
+                            "error": f"group {idx} missing keys: {missing}"
+                        })
+                        continue
+                        
+                    if not isinstance(g.get("courses"), list):
+                        report["invalid_schema"].append({
+                            "id": req_id,
+                            "error": f"group {idx} courses must be a list"
+                        })
+                        
+                    if not isinstance(g.get("originalRows"), list):
+                        report["invalid_schema"].append({
+                            "id": req_id,
+                            "error": f"group {idx} originalRows must be a list"
+                        })
+                        
+                    if "requiredCredits" in g and g["requiredCredits"] is not None and not isinstance(g["requiredCredits"], (int, float)):
+                        report["invalid_schema"].append({
+                            "id": req_id,
+                            "error": f"group {idx} requiredCredits must be number or null"
+                        })
+                        
+                    if strict:
+                        has_courses = len(g.get("courses", [])) > 0
+                        has_rules = len(g.get("rules", [])) > 0
+                        has_orig = len(g.get("originalRows", [])) > 0
+                        
+                        if not (has_courses or has_rules or has_orig):
+                            report["invalid_schema"].append({
+                                "id": req_id,
+                                "error": f"group {idx} is completely empty (strict mode)"
+                            })
+                
             # Specific check for 112-12-B
             if req_id == "112-12-B":
-                if len(parsed_json.get("groups", [])) > 0:
+                if isinstance(groups, list) and len(groups) > 0:
                     report["specific_check_112_12_B"] = "Passed"
                 else:
                     report["specific_check_112_12_B"] = "Failed (No groups found)"
@@ -90,8 +155,9 @@ def validate_all() -> Dict[str, Any]:
         len(report["missing_files"]) == 0 and 
         len(report["invalid_schema"]) == 0):
         
-        # If 112-12-B was found, it must pass
-        if report["specific_check_112_12_B"] in ["Passed", "Not Found"]:
+        if probe and report["specific_check_112_12_B"] != "Passed":
+            report["passed"] = False
+        else:
             report["passed"] = True
             
     return report

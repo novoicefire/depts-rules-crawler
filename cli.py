@@ -30,18 +30,22 @@ def main():
     fetch_parser.add_argument("--all-depts", action="store_true", help="是否抓取所有系所")
     fetch_parser.add_argument("--class-codes", nargs="+", default=["B"], help="部別代碼列表 (B/G/P)")
     fetch_parser.add_argument("--workers", type=int, default=5, help="同時執行的執行緒數量")
-    fetch_parser.add_argument("--max-rounds", type=int, default=10, help="最多重試的回合數")
+    fetch_parser.add_argument("--max-rounds", type=int, default=20, help="最多重試的回合數")
     fetch_parser.add_argument("--timeout", type=int, default=20, help="請求逾時時間(秒)")
     fetch_parser.add_argument("--force", action="store_true", help="強制重新抓取已存在的檔案")
+    fetch_parser.add_argument("--delay", type=float, default=0.5, help="每次請求前的延遲秒數")
     
     # --- Parse Command ---
     parse_parser = subparsers.add_parser("parse", help="將 HTML 解析為 JSON")
     
     # --- Validate Command ---
     validate_parser = subparsers.add_parser("validate", help="驗證解析後的 JSON 格式")
+    validate_parser.add_argument("--probe", action="store_true", help="以 probe 模式驗證，要求 112-12-B 存在")
+    validate_parser.add_argument("--strict", action="store_true", help="嚴格驗證 group 與課程資料結構")
     
     # --- Clean Command ---
     clean_parser = subparsers.add_parser("clean", help="清除所有已抓取與解析的舊資料")
+    clean_parser.add_argument("--yes", action="store_true", help="不詢問確認，直接清除 data 目錄")
     
     # --- All Command ---
     all_parser = subparsers.add_parser("all", help="執行抓取、解析、驗證一條龍流程")
@@ -50,9 +54,10 @@ def main():
     all_parser.add_argument("--all-depts", action="store_true", help="是否抓取所有系所")
     all_parser.add_argument("--class-codes", nargs="+", default=["B"], help="部別代碼列表 (B/G/P)")
     all_parser.add_argument("--workers", type=int, default=5, help="同時執行的執行緒數量")
-    all_parser.add_argument("--max-rounds", type=int, default=10, help="最多重試的回合數")
+    all_parser.add_argument("--max-rounds", type=int, default=20, help="最多重試的回合數")
     all_parser.add_argument("--timeout", type=int, default=20, help="請求逾時時間(秒)")
     all_parser.add_argument("--force", action="store_true", help="強制重新抓取已存在的檔案")
+    all_parser.add_argument("--delay", type=float, default=0.5, help="每次請求前的延遲秒數")
 
     args = parser.parse_args()
     
@@ -107,9 +112,10 @@ def main():
             all_depts=all_depts,
             class_codes=class_codes,
             workers=5,
-            max_rounds=10,
+            max_rounds=20,
             timeout=20,
-            force=False
+            force=False,
+            delay=0.5
         )
         
         if choice == 1:
@@ -155,10 +161,10 @@ def main():
         success = run_validate(args)
         if not success:
             sys.exit(1)
-        console.print("\n[bold green]所有階段執行完畢！🎉[/bold green]")
+        console.print("\n[bold green]所有階段執行完畢！[/bold green]")
     elif args.command == "clean":
         from ncnu_graduation.config import DATA_DIR
-        if Confirm.ask(f"[bold red]確定要刪除 {DATA_DIR} 底下所有資料嗎？這將無法復原！[/bold red]"):
+        if getattr(args, "yes", False) or Confirm.ask(f"[bold red]確定要刪除 {DATA_DIR} 底下所有資料嗎？這將無法復原！[/bold red]"):
             if DATA_DIR.exists():
                 shutil.rmtree(DATA_DIR)
                 console.print(f"[bold green]已成功清除 {DATA_DIR}[/bold green]")

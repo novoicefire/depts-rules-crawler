@@ -4,3 +4,24 @@ __pycache__/
 *.pyc
 .pytest_cache/
 .DS_Store
+
+data/raw/**
+data/parsed/**
+data/indexes/**
+data/reports/**
+
+!data/raw/.gitkeep
+!data/parsed/.gitkeep
+!data/indexes/.gitkeep
+!data/reports/.gitkeep
+
+# 若要提交 probe sample，取消以下檔案忽略
+!data/raw/112/
+!data/raw/112/12/
+!data/raw/112/12/B.html
+!data/parsed/112/
+!data/parsed/112/112-12-B.json
+!data/indexes/curriculum_rules_index.json
+!data/reports/fetch_summary.json
+!data/reports/parse_summary.json
+!data/reports/validation_summary.json

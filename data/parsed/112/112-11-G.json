@@ -11,27 +11,9 @@
   "groups": [
     {
       "groupId": "group_001",
-      "name": "資料項次: 730 ～ 730 ／ 1706",
+      "name": "系所 11, 經濟學系 部別 碩士班 入學年度 112",
       "type": "course_list",
-      "requiredCredits": null,
-      "courses": [],
-      "description": "",
-      "originalRows": [
-        [
-          "部別",
-          "碩士班"
-        ],
-        [
-          "入學年度",
-          "112"
-        ]
-      ]
-    },
-    {
-      "groupId": "group_002",
-      "name": "112 學年度入學經濟學系碩士班必修課程清單",
-      "type": "required_courses",
-      "requiredCredits": null,
+      "requiredCredits": 10,
       "courses": [
         {
           "courseId": "115000",
@@ -84,118 +66,107 @@
           "credits": 1
         }
       ],
+      "rules": [],
       "description": "",
       "originalRows": [
-        [
-          "合計",
-          "共　10　門課程　22　學分",
-          ""
-        ]
+        {
+          "cells": [
+            "合計",
+            "共　10　門課程　22　學分",
+            ""
+          ],
+          "rawText": "合計 共　10　門課程　22　學分 "
+        }
       ]
     },
     {
-      "groupId": "group_003",
-      "name": "112 學年度入學經濟學系課程先修(擋修)清單",
-      "type": "prerequisite_rules",
+      "groupId": "group_002",
+      "name": "系所 11, 經濟學系 部別 碩士班 入學年度 112",
+      "type": "course_list",
       "requiredCredits": null,
       "courses": [
         {
           "courseId": "110005",
           "courseName": "賽局決策\tGame Decision",
-          "targetCourseId": "110001",
-          "targetCourseName": "微積分及實習(上)\tCalculus and Discussion Section (1)"
+          "credits": null
         },
         {
           "courseId": "110005",
           "courseName": "賽局決策\tGame Decision",
-          "targetCourseId": "110012",
-          "targetCourseName": "微積分及實習(下)\tCalculus and Discussion Section (2)"
+          "credits": null
         },
         {
           "courseId": "110019",
           "courseName": "總體經濟學(上)\tMacroeconomics (1)",
-          "targetCourseId": "110002",
-          "targetCourseName": "經濟學及實習(上)\tEconomics and Discussion Section (1)"
+          "credits": null
         },
         {
           "courseId": "110019",
           "courseName": "總體經濟學(上)\tMacroeconomics (1)",
-          "targetCourseId": "110011",
-          "targetCourseName": "經濟學及實習(下)\tEconomics and Discussion Section (2)"
+          "credits": null
         },
         {
           "courseId": "110021",
           "courseName": "個體經濟學(上)\tMicroeconomics (1)",
-          "targetCourseId": "110002",
-          "targetCourseName": "經濟學及實習(上)\tEconomics and Discussion Section (1)"
+          "credits": null
         },
         {
           "courseId": "110021",
           "courseName": "個體經濟學(上)\tMicroeconomics (1)",
-          "targetCourseId": "110011",
-          "targetCourseName": "經濟學及實習(下)\tEconomics and Discussion Section (2)"
+          "credits": null
         },
         {
           "courseId": "110022",
           "courseName": "英語聽講二(上)\tListening Comprehension in English Ⅱ (1)",
-          "targetCourseId": "110010",
-          "targetCourseName": "英語聽講一(上)\tListening Comprehension in English Ⅰ(1)"
+          "credits": null
         },
         {
           "courseId": "110026",
           "courseName": "總體經濟學(下)\tMacroeconomics (2)",
-          "targetCourseId": "110002",
-          "targetCourseName": "經濟學及實習(上)\tEconomics and Discussion Section (1)"
+          "credits": null
         },
         {
           "courseId": "110026",
           "courseName": "總體經濟學(下)\tMacroeconomics (2)",
-          "targetCourseId": "110011",
-          "targetCourseName": "經濟學及實習(下)\tEconomics and Discussion Section (2)"
+          "credits": null
         },
         {
           "courseId": "110029",
           "courseName": "賽局理論\tGame Theory",
-          "targetCourseId": "110001",
-          "targetCourseName": "微積分及實習(上)\tCalculus and Discussion Section (1)"
+          "credits": null
         },
         {
           "courseId": "110029",
           "courseName": "賽局理論\tGame Theory",
-          "targetCourseId": "110002",
-          "targetCourseName": "經濟學及實習(上)\tEconomics and Discussion Section (1)"
+          "credits": null
         },
         {
           "courseId": "110029",
           "courseName": "賽局理論\tGame Theory",
-          "targetCourseId": "110011",
-          "targetCourseName": "經濟學及實習(下)\tEconomics and Discussion Section (2)"
+          "credits": null
         },
         {
           "courseId": "110029",
           "courseName": "賽局理論\tGame Theory",
-          "targetCourseId": "110012",
-          "targetCourseName": "微積分及實習(下)\tCalculus and Discussion Section (2)"
+          "credits": null
         },
         {
           "courseId": "110081",
           "courseName": "個體經濟專題(二)\tTopics in Microeconomics",
-          "targetCourseId": "110093",
-          "targetCourseName": "個體經濟學(下)\tMicroeconomics (2)"
+          "credits": null
         },
         {
           "courseId": "110107",
           "courseName": "統計推論\tStatistical Inference",
-          "targetCourseId": "110024",
-          "targetCourseName": "統計學及實習(下)\tStatistics and Discussion Section (2)"
+          "credits": null
         },
         {
           "courseId": "115004",
           "courseName": "論文研討會(三)\tSeminar Ⅲ",
-          "targetCourseId": "115003",
-          "targetCourseName": "論文研討會(一)\tSeminar I"
+          "credits": null
         }
       ],
+      "rules": [],
       "description": "",
       "originalRows": []
     }

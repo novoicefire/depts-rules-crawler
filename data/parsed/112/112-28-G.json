@@ -11,27 +11,9 @@
   "groups": [
     {
       "groupId": "group_001",
-      "name": "資料項次: 1355 ～ 1355 ／ 1706",
+      "name": "系所 28, 應用材料及光電工程學系 部別 碩士班 入學年度 112",
       "type": "course_list",
-      "requiredCredits": null,
-      "courses": [],
-      "description": "",
-      "originalRows": [
-        [
-          "部別",
-          "碩士班"
-        ],
-        [
-          "入學年度",
-          "112"
-        ]
-      ]
-    },
-    {
-      "groupId": "group_002",
-      "name": "112 學年度入學應用材料及光電工程學系碩士班必修課程清單",
-      "type": "required_courses",
-      "requiredCredits": null,
+      "requiredCredits": 4,
       "courses": [
         {
           "courseId": "285001",
@@ -54,142 +36,127 @@
           "credits": 1
         }
       ],
+      "rules": [],
       "description": "",
       "originalRows": [
-        [
-          "合計",
-          "共　4　門課程　4　學分",
-          ""
-        ]
+        {
+          "cells": [
+            "合計",
+            "共　4　門課程　4　學分",
+            ""
+          ],
+          "rawText": "合計 共　4　門課程　4　學分 "
+        }
       ]
     },
     {
-      "groupId": "group_003",
-      "name": "112 學年度入學應用材料及光電工程學系課程先修(擋修)清單",
-      "type": "prerequisite_rules",
+      "groupId": "group_002",
+      "name": "系所 28, 應用材料及光電工程學系 部別 碩士班 入學年度 112",
+      "type": "course_list",
       "requiredCredits": null,
       "courses": [
         {
           "courseId": "280016",
           "courseName": "工程數學(一)\tEngineeing Mathematics(I)",
-          "targetCourseId": "280002",
-          "targetCourseName": "微積分(一)\tCalculus  ( I )"
+          "credits": null
         },
         {
           "courseId": "280023",
           "courseName": "工程數學(二)\tEngineeing Mathematics(Ⅱ)",
-          "targetCourseId": "280016",
-          "targetCourseName": "工程數學(一)\tEngineeing Mathematics(I)"
+          "credits": null
         },
         {
           "courseId": "280141",
           "courseName": "自動化光電量測\tAutomatic optoelectronic measurement",
-          "targetCourseId": "280113",
-          "targetCourseName": "基礎LabVIEW程式設計\tFundamental LabVIEW Programming Design"
+          "credits": null
         },
         {
           "courseId": "280142",
           "courseName": "固態電子學(一)\tSolid State Electronics(I)",
-          "targetCourseId": "280113",
-          "targetCourseName": "基礎LabVIEW程式設計\tFundamental LabVIEW Programming Design"
+          "credits": null
         },
         {
           "courseId": "280143",
           "courseName": "機器學習(一)\tMachine learning (Ⅰ)",
-          "targetCourseId": "280113",
-          "targetCourseName": "基礎LabVIEW程式設計\tFundamental LabVIEW Programming Design"
+          "credits": null
         },
         {
           "courseId": "280144",
           "courseName": "儀器控制\tInstrument Control",
-          "targetCourseId": "280145",
-          "targetCourseName": "虛擬儀控程式設計\tProgramming of Virtual Instruments"
+          "credits": null
         },
         {
           "courseId": "280147",
           "courseName": "資料擷取與感測電路\tData acquisition and sensing circuits",
-          "targetCourseId": "280145",
-          "targetCourseName": "虛擬儀控程式設計\tProgramming of Virtual Instruments"
+          "credits": null
         },
         {
           "courseId": "280148",
           "courseName": "進階LabVIEW程式設計\tAdvanced LabVIEW Programming Design",
-          "targetCourseId": "280145",
-          "targetCourseName": "虛擬儀控程式設計\tProgramming of Virtual Instruments"
+          "credits": null
         },
         {
           "courseId": "280153",
           "courseName": "固態電子實驗(二)\tSolid State Electronics Lab (Ⅱ)",
-          "targetCourseId": "280113",
-          "targetCourseName": "基礎LabVIEW程式設計\tFundamental LabVIEW Programming Design"
+          "credits": null
         },
         {
           "courseId": "280153",
           "courseName": "固態電子實驗(二)\tSolid State Electronics Lab (Ⅱ)",
-          "targetCourseId": "280142",
-          "targetCourseName": "固態電子學(一)\tSolid State Electronics(I)"
+          "credits": null
         },
         {
           "courseId": "280154",
           "courseName": "機器學習(二)\tMachine learning (Ⅱ)",
-          "targetCourseId": "280106",
-          "targetCourseName": "線性代數\tLinear Algebra"
+          "credits": null
         },
         {
           "courseId": "280154",
           "courseName": "機器學習(二)\tMachine learning (Ⅱ)",
-          "targetCourseId": "280113",
-          "targetCourseName": "基礎LabVIEW程式設計\tFundamental LabVIEW Programming Design"
+          "credits": null
         },
         {
           "courseId": "280154",
           "courseName": "機器學習(二)\tMachine learning (Ⅱ)",
-          "targetCourseId": "280143",
-          "targetCourseName": "機器學習(一)\tMachine learning (Ⅰ)"
+          "credits": null
         },
         {
           "courseId": "285035",
           "courseName": "資料擷取與感測電路\tData acquisition and sense circuit",
-          "targetCourseId": "285032",
-          "targetCourseName": "虛擬儀控程式設計\tProgramming of Virtual Instruments"
+          "credits": null
         },
         {
           "courseId": "285036",
           "courseName": "進階LabVIEW程式設計\tAdvanced LabVIEW Programming Design",
-          "targetCourseId": "285032",
-          "targetCourseName": "虛擬儀控程式設計\tProgramming of Virtual Instruments"
+          "credits": null
         },
         {
           "courseId": "285038",
           "courseName": "儀器控制\tInstrument Control",
-          "targetCourseId": "285032",
-          "targetCourseName": "虛擬儀控程式設計\tProgramming of Virtual Instruments"
+          "credits": null
         },
         {
           "courseId": "285039",
           "courseName": "固態電子學（二）\tSolid State Electronics Ⅱ",
-          "targetCourseId": "285040",
-          "targetCourseName": "固態電子學（一）\tSolid State Electronics （Ⅰ）"
+          "credits": null
         },
         {
           "courseId": "285055",
           "courseName": "機器學習(二)\tMachine learning (Ⅱ)",
-          "targetCourseId": "280106",
-          "targetCourseName": "線性代數\tLinear Algebra"
+          "credits": null
         },
         {
           "courseId": "285055",
           "courseName": "機器學習(二)\tMachine learning (Ⅱ)",
-          "targetCourseId": "280113",
-          "targetCourseName": "基礎LabVIEW程式設計\tFundamental LabVIEW Programming Design"
+          "credits": null
         },
         {
           "courseId": "285055",
           "courseName": "機器學習(二)\tMachine learning (Ⅱ)",
-          "targetCourseId": "280143",
-          "targetCourseName": "機器學習(一)\tMachine learning (Ⅰ)"
+          "credits": null
         }
       ],
+      "rules": [],
       "description": "",
       "originalRows": []
     }

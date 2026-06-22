@@ -1,7 +1,33 @@
 {
-  "generatedAt": "2026-06-22T04:26:44.941996",
+  "generatedAt": "2026-06-22T12:29:02.930852",
+  "startedAt": "2026-06-22T12:29:02.930852",
+  "finishedAt": "2026-06-22T12:29:04.079781",
+  "durationSeconds": 1.148929,
+  "years": [
+    "112"
+  ],
+  "classCodes": [
+    "B",
+    "G",
+    "P"
+  ],
+  "allDepts": true,
+  "deptids": null,
+  "workers": 5,
+  "maxRounds": 20,
+  "delay": 0.5,
   "total": 75,
-  "success": 75,
+  "success": 0,
   "failed": 0,
-  "skipped": 0
+  "skipped": 75,
+  "successRate": 0.0,
+  "rounds": [
+    {
+      "round": 1,
+      "input": 75,
+      "success": 0,
+      "failed": 0,
+      "skipped": 75
+    }
+  ]
 }

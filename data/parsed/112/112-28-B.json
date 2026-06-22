@@ -11,27 +11,9 @@
   "groups": [
     {
       "groupId": "group_001",
-      "name": "資料項次: 1335 ～ 1335 ／ 1706",
+      "name": "系所 28, 應用材料及光電工程學系 部別 學士班 入學年度 112",
       "type": "course_list",
-      "requiredCredits": null,
-      "courses": [],
-      "description": "",
-      "originalRows": [
-        [
-          "部別",
-          "學士班"
-        ],
-        [
-          "入學年度",
-          "112"
-        ]
-      ]
-    },
-    {
-      "groupId": "group_002",
-      "name": "112 學年度入學應用材料及光電工程學系學士班必修課程清單",
-      "type": "required_courses",
-      "requiredCredits": null,
+      "requiredCredits": 19,
       "courses": [
         {
           "courseId": "280002",
@@ -129,216 +111,224 @@
           "credits": 1
         }
       ],
+      "rules": [],
       "description": "",
       "originalRows": [
-        [
-          "合計",
-          "共　19　門課程　51　學分",
-          ""
-        ]
+        {
+          "cells": [
+            "合計",
+            "共　19　門課程　51　學分",
+            ""
+          ],
+          "rawText": "合計 共　19　門課程　51　學分 "
+        }
       ]
     },
     {
-      "groupId": "group_003",
-      "name": "112 學年度入學應用材料及光電工程學系課程先修(擋修)清單",
-      "type": "prerequisite_rules",
+      "groupId": "group_002",
+      "name": "系所 28, 應用材料及光電工程學系 部別 學士班 入學年度 112",
+      "type": "course_list",
       "requiredCredits": null,
       "courses": [
         {
           "courseId": "280016",
           "courseName": "工程數學(一)\tEngineeing Mathematics(I)",
-          "targetCourseId": "280002",
-          "targetCourseName": "微積分(一)\tCalculus  ( I )"
+          "credits": null
         },
         {
           "courseId": "280023",
           "courseName": "工程數學(二)\tEngineeing Mathematics(Ⅱ)",
-          "targetCourseId": "280016",
-          "targetCourseName": "工程數學(一)\tEngineeing Mathematics(I)"
+          "credits": null
         },
         {
           "courseId": "280141",
           "courseName": "自動化光電量測\tAutomatic optoelectronic measurement",
-          "targetCourseId": "280113",
-          "targetCourseName": "基礎LabVIEW程式設計\tFundamental LabVIEW Programming Design"
+          "credits": null
         },
         {
           "courseId": "280142",
           "courseName": "固態電子學(一)\tSolid State Electronics(I)",
-          "targetCourseId": "280113",
-          "targetCourseName": "基礎LabVIEW程式設計\tFundamental LabVIEW Programming Design"
+          "credits": null
         },
         {
           "courseId": "280143",
           "courseName": "機器學習(一)\tMachine learning (Ⅰ)",
-          "targetCourseId": "280113",
-          "targetCourseName": "基礎LabVIEW程式設計\tFundamental LabVIEW Programming Design"
+          "credits": null
         },
         {
           "courseId": "280144",
           "courseName": "儀器控制\tInstrument Control",
-          "targetCourseId": "280145",
-          "targetCourseName": "虛擬儀控程式設計\tProgramming of Virtual Instruments"
+          "credits": null
         },
         {
           "courseId": "280147",
           "courseName": "資料擷取與感測電路\tData acquisition and sensing circuits",
-          "targetCourseId": "280145",
-          "targetCourseName": "虛擬儀控程式設計\tProgramming of Virtual Instruments"
+          "credits": null
         },
         {
           "courseId": "280148",
           "courseName": "進階LabVIEW程式設計\tAdvanced LabVIEW Programming Design",
-          "targetCourseId": "280145",
-          "targetCourseName": "虛擬儀控程式設計\tProgramming of Virtual Instruments"
+          "credits": null
         },
         {
           "courseId": "280153",
           "courseName": "固態電子實驗(二)\tSolid State Electronics Lab (Ⅱ)",
-          "targetCourseId": "280113",
-          "targetCourseName": "基礎LabVIEW程式設計\tFundamental LabVIEW Programming Design"
+          "credits": null
         },
         {
           "courseId": "280153",
           "courseName": "固態電子實驗(二)\tSolid State Electronics Lab (Ⅱ)",
-          "targetCourseId": "280142",
-          "targetCourseName": "固態電子學(一)\tSolid State Electronics(I)"
+          "credits": null
         },
         {
           "courseId": "280154",
           "courseName": "機器學習(二)\tMachine learning (Ⅱ)",
-          "targetCourseId": "280106",
-          "targetCourseName": "線性代數\tLinear Algebra"
+          "credits": null
         },
         {
           "courseId": "280154",
           "courseName": "機器學習(二)\tMachine learning (Ⅱ)",
-          "targetCourseId": "280113",
-          "targetCourseName": "基礎LabVIEW程式設計\tFundamental LabVIEW Programming Design"
+          "credits": null
         },
         {
           "courseId": "280154",
           "courseName": "機器學習(二)\tMachine learning (Ⅱ)",
-          "targetCourseId": "280143",
-          "targetCourseName": "機器學習(一)\tMachine learning (Ⅰ)"
+          "credits": null
         },
         {
           "courseId": "285035",
           "courseName": "資料擷取與感測電路\tData acquisition and sense circuit",
-          "targetCourseId": "285032",
-          "targetCourseName": "虛擬儀控程式設計\tProgramming of Virtual Instruments"
+          "credits": null
         },
         {
           "courseId": "285036",
           "courseName": "進階LabVIEW程式設計\tAdvanced LabVIEW Programming Design",
-          "targetCourseId": "285032",
-          "targetCourseName": "虛擬儀控程式設計\tProgramming of Virtual Instruments"
+          "credits": null
         },
         {
           "courseId": "285038",
           "courseName": "儀器控制\tInstrument Control",
-          "targetCourseId": "285032",
-          "targetCourseName": "虛擬儀控程式設計\tProgramming of Virtual Instruments"
+          "credits": null
         },
         {
           "courseId": "285039",
           "courseName": "固態電子學（二）\tSolid State Electronics Ⅱ",
-          "targetCourseId": "285040",
-          "targetCourseName": "固態電子學（一）\tSolid State Electronics （Ⅰ）"
+          "credits": null
         },
         {
           "courseId": "285055",
           "courseName": "機器學習(二)\tMachine learning (Ⅱ)",
-          "targetCourseId": "280106",
-          "targetCourseName": "線性代數\tLinear Algebra"
+          "credits": null
         },
         {
           "courseId": "285055",
           "courseName": "機器學習(二)\tMachine learning (Ⅱ)",
-          "targetCourseId": "280113",
-          "targetCourseName": "基礎LabVIEW程式設計\tFundamental LabVIEW Programming Design"
+          "credits": null
         },
         {
           "courseId": "285055",
           "courseName": "機器學習(二)\tMachine learning (Ⅱ)",
-          "targetCourseId": "280143",
-          "targetCourseName": "機器學習(一)\tMachine learning (Ⅰ)"
+          "credits": null
         }
       ],
+      "rules": [],
       "description": "",
       "originalRows": []
     },
     {
-      "groupId": "group_004",
-      "name": "112 學年度入學學士班校核心(共同及通識教育)課程最低學分數一覽表",
-      "type": "core_requirements",
-      "requiredCredits": null,
+      "groupId": "group_003",
+      "name": "系所 28, 應用材料及光電工程學系 部別 學士班 入學年度 112",
+      "type": "course_list",
+      "requiredCredits": 105,
       "courses": [],
+      "rules": [],
       "description": "",
       "originalRows": [
-        [
-          "人文(105始)",
-          "G 人文-文學與藝術(105始)H 人文-歷史哲學與文化(105始)",
-          "2",
-          "4",
-          "最少選修 2 種次領域課程最少選修合計 4 學分"
-        ],
-        [
-          "共同必修(99始)",
-          "A 共同必修(99始)",
-          "0",
-          "15",
-          "最少選修合計 15 學分"
-        ],
-        [
-          "自然(105始)",
-          "K 自然-工程與科技(105始)L 自然-生命與科學(105始)",
-          "2",
-          "4",
-          "最少選修 2 種次領域課程最少選修合計 4 學分"
-        ],
-        [
-          "社會(105始)",
-          "I 社會-法政與教育(105始)J 社會-社經與管理(105始)",
-          "2",
-          "4",
-          "最少選修 2 種次領域課程最少選修合計 4 學分"
-        ],
-        [
-          "特色通識(105始)",
-          "M 特色通識-國際連結(東南亞)105始N 特色通識-淨零永續(綠概念)105始O 特色通識-社會創新(在地實踐)105始",
-          "2",
-          "4",
-          "最少選修 2 種次領域課程最少選修合計 4 學分"
-        ],
-        [
-          "合計",
-          "共　5　 類課程　31　學分",
-          "",
-          "",
-          ""
-        ]
+        {
+          "cells": [
+            "人文(105始)",
+            "G 人文-文學與藝術(105始)H 人文-歷史哲學與文化(105始)",
+            "2",
+            "4",
+            "最少選修 2 種次領域課程最少選修合計 4 學分"
+          ],
+          "rawText": "人文(105始) G 人文-文學與藝術(105始)H 人文-歷史哲學與文化(105始) 2 4 最少選修 2 種次領域課程最少選修合計 4 學分"
+        },
+        {
+          "cells": [
+            "共同必修(99始)",
+            "A 共同必修(99始)",
+            "0",
+            "15",
+            "最少選修合計 15 學分"
+          ],
+          "rawText": "共同必修(99始) A 共同必修(99始) 0 15 最少選修合計 15 學分"
+        },
+        {
+          "cells": [
+            "自然(105始)",
+            "K 自然-工程與科技(105始)L 自然-生命與科學(105始)",
+            "2",
+            "4",
+            "最少選修 2 種次領域課程最少選修合計 4 學分"
+          ],
+          "rawText": "自然(105始) K 自然-工程與科技(105始)L 自然-生命與科學(105始) 2 4 最少選修 2 種次領域課程最少選修合計 4 學分"
+        },
+        {
+          "cells": [
+            "社會(105始)",
+            "I 社會-法政與教育(105始)J 社會-社經與管理(105始)",
+            "2",
+            "4",
+            "最少選修 2 種次領域課程最少選修合計 4 學分"
+          ],
+          "rawText": "社會(105始) I 社會-法政與教育(105始)J 社會-社經與管理(105始) 2 4 最少選修 2 種次領域課程最少選修合計 4 學分"
+        },
+        {
+          "cells": [
+            "特色通識(105始)",
+            "M 特色通識-國際連結(東南亞)105始N 特色通識-淨零永續(綠概念)105始O 特色通識-社會創新(在地實踐)105始",
+            "2",
+            "4",
+            "最少選修 2 種次領域課程最少選修合計 4 學分"
+          ],
+          "rawText": "特色通識(105始) M 特色通識-國際連結(東南亞)105始N 特色通識-淨零永續(綠概念)105始O 特色通識-社會創新(在地實踐)105始 2 4 最少選修 2 種次領域課程最少選修合計 4 學分"
+        },
+        {
+          "cells": [
+            "合計",
+            "共　5　 類課程　31　學分",
+            "",
+            "",
+            ""
+          ],
+          "rawText": "合計 共　5　 類課程　31　學分   "
+        }
+      ]
+    },
+    {
+      "groupId": "group_004",
+      "name": "系所 28, 應用材料及光電工程學系 部別 學士班 入學年度 112",
+      "type": "course_list",
+      "requiredCredits": 902055,
+      "courses": [],
+      "rules": [],
+      "description": "",
+      "originalRows": [
+        {
+          "cells": [
+            "902055 體育:運動舞蹈(1.0學分)902056 體育:高爾夫球(1.0學分)902057 體育:射箭(1.0學分)902058 體育:游泳(1.0學分)902059 體育:網球(1.0學分)902060 體育:船艇(1.0學分)902069 體育:戶外探索教育(1.0學分)",
+            "至少選修 2 門課程至少選修合計2 學分"
+          ],
+          "rawText": "902055 體育:運動舞蹈(1.0學分)902056 體育:高爾夫球(1.0學分)902057 體育:射箭(1.0學分)902058 體育:游泳(1.0學分)902059 體育:網球(1.0學分)902060 體育:船艇(1.0學分)902069 體育:戶外探索教育(1.0學分) 至少選修 2 門課程至少選修合計2 學分"
+        }
       ]
     },
     {
       "groupId": "group_005",
-      "name": "112 學年度入學應用材料及光電工程學系學士班校核心必修(選)課程清單",
-      "type": "core_requirements",
-      "requiredCredits": null,
-      "courses": [],
-      "description": "",
-      "originalRows": [
-        [
-          "902055 體育:運動舞蹈(1.0學分)902056 體育:高爾夫球(1.0學分)902057 體育:射箭(1.0學分)902058 體育:游泳(1.0學分)902059 體育:網球(1.0學分)902060 體育:船艇(1.0學分)902069 體育:戶外探索教育(1.0學分)",
-          "至少選修 2 門課程至少選修合計2 學分"
-        ]
-      ]
-    },
-    {
-      "groupId": "group_006",
-      "name": "112 學年度入學應用材料及光電工程學系學士班輔系必修課目清單",
-      "type": "minor_courses",
-      "requiredCredits": null,
+      "name": "系所 28, 應用材料及光電工程學系 部別 學士班 入學年度 112",
+      "type": "course_list",
+      "requiredCredits": 17,
       "courses": [
         {
           "courseId": "280015",
@@ -426,20 +416,24 @@
           "credits": 3
         }
       ],
+      "rules": [],
       "description": "",
       "originalRows": [
-        [
-          "合計",
-          "共　17　 門課程　49　學分",
-          ""
-        ]
+        {
+          "cells": [
+            "合計",
+            "共　17　 門課程　49　學分",
+            ""
+          ],
+          "rawText": "合計 共　17　 門課程　49　學分 "
+        }
       ]
     },
     {
-      "groupId": "group_007",
-      "name": "112 學年度入學應用材料及光電工程學系學士班雙主修必修課目清單",
-      "type": "double_major_courses",
-      "requiredCredits": null,
+      "groupId": "group_006",
+      "name": "系所 28, 應用材料及光電工程學系 部別 學士班 入學年度 112",
+      "type": "course_list",
+      "requiredCredits": 19,
       "courses": [
         {
           "courseId": "280002",
@@ -537,13 +531,17 @@
           "credits": 1
         }
       ],
+      "rules": [],
       "description": "",
       "originalRows": [
-        [
-          "合計",
-          "共　19　 門課程　51　學分",
-          ""
-        ]
+        {
+          "cells": [
+            "合計",
+            "共　19　 門課程　51　學分",
+            ""
+          ],
+          "rawText": "合計 共　19　 門課程　51　學分 "
+        }
       ]
     }
   ],

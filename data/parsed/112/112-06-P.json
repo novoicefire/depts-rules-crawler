@@ -11,27 +11,9 @@
   "groups": [
     {
       "groupId": "group_001",
-      "name": "資料項次: 506 ～ 506 ／ 1706",
+      "name": "系所 06, 公共行政與政策學系 部別 博士班 入學年度 112",
       "type": "course_list",
-      "requiredCredits": null,
-      "courses": [],
-      "description": "",
-      "originalRows": [
-        [
-          "部別",
-          "博士班"
-        ],
-        [
-          "入學年度",
-          "112"
-        ]
-      ]
-    },
-    {
-      "groupId": "group_002",
-      "name": "112 學年度入學公共行政與政策學系博士班必修課程清單",
-      "type": "required_courses",
-      "requiredCredits": null,
+      "requiredCredits": 3,
       "courses": [
         {
           "courseId": "069008",
@@ -49,27 +31,35 @@
           "credits": 3
         }
       ],
+      "rules": [],
       "description": "",
       "originalRows": [
-        [
-          "合計",
-          "共　3　門課程　9　學分",
-          ""
-        ]
+        {
+          "cells": [
+            "合計",
+            "共　3　門課程　9　學分",
+            ""
+          ],
+          "rawText": "合計 共　3　門課程　9　學分 "
+        }
       ]
     },
     {
-      "groupId": "group_003",
-      "name": "112 學年度入學公共行政與政策學系博士班系必修(選)課程清單",
-      "type": "required_courses",
+      "groupId": "group_002",
+      "name": "系所 06, 公共行政與政策學系 部別 博士班 入學年度 112",
+      "type": "course_list",
       "requiredCredits": null,
       "courses": [],
+      "rules": [],
       "description": "",
       "originalRows": [
-        [
-          "069001 全球化與國際關係專題研究(3.0學分)069002 地方治理與府際關係專題研究(3.0學分)069016 社會科學方法論專題研究(3.0學分)",
-          ""
-        ]
+        {
+          "cells": [
+            "069001 全球化與國際關係專題研究(3.0學分)069002 地方治理與府際關係專題研究(3.0學分)069016 社會科學方法論專題研究(3.0學分)",
+            ""
+          ],
+          "rawText": "069001 全球化與國際關係專題研究(3.0學分)069002 地方治理與府際關係專題研究(3.0學分)069016 社會科學方法論專題研究(3.0學分) "
+        }
       ]
     }
   ],

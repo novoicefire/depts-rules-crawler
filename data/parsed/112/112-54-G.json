@@ -11,27 +11,9 @@
   "groups": [
     {
       "groupId": "group_001",
-      "name": "資料項次: 1670 ～ 1670 ／ 1706",
+      "name": "系所 54, 文化創意與社會行銷碩士學位學程 部別 碩士班 入學年度 112",
       "type": "course_list",
-      "requiredCredits": null,
-      "courses": [],
-      "description": "",
-      "originalRows": [
-        [
-          "部別",
-          "碩士班"
-        ],
-        [
-          "入學年度",
-          "112"
-        ]
-      ]
-    },
-    {
-      "groupId": "group_002",
-      "name": "112 學年度入學文化創意與社會行銷碩士學位學程碩士班必修課程清單",
-      "type": "required_courses",
-      "requiredCredits": null,
+      "requiredCredits": 3,
       "courses": [
         {
           "courseId": "545005",
@@ -49,27 +31,35 @@
           "credits": 3
         }
       ],
+      "rules": [],
       "description": "",
       "originalRows": [
-        [
-          "合計",
-          "共　3　門課程　9　學分",
-          ""
-        ]
+        {
+          "cells": [
+            "合計",
+            "共　3　門課程　9　學分",
+            ""
+          ],
+          "rawText": "合計 共　3　門課程　9　學分 "
+        }
       ]
     },
     {
-      "groupId": "group_003",
-      "name": "112 學年度入學文化創意與社會行銷碩士學位學程碩士班系必修(選)課程清單",
-      "type": "required_courses",
+      "groupId": "group_002",
+      "name": "系所 54, 文化創意與社會行銷碩士學位學程 部別 碩士班 入學年度 112",
+      "type": "course_list",
       "requiredCredits": null,
       "courses": [],
+      "rules": [],
       "description": "",
       "originalRows": [
-        [
-          "540003 社會科學方法論及研究方法專題(3.0學分)540017 研究方法(3.0學分)",
-          "二選一次領域至少選修 1 門課程"
-        ]
+        {
+          "cells": [
+            "540003 社會科學方法論及研究方法專題(3.0學分)540017 研究方法(3.0學分)",
+            "二選一次領域至少選修 1 門課程"
+          ],
+          "rawText": "540003 社會科學方法論及研究方法專題(3.0學分)540017 研究方法(3.0學分) 二選一次領域至少選修 1 門課程"
+        }
       ]
     }
   ],

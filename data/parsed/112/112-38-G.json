@@ -11,27 +11,9 @@
   "groups": [
     {
       "groupId": "group_001",
-      "name": "資料項次: 1493 ～ 1493 ／ 1706",
+      "name": "系所 38, 華語文教學碩士學位學程 部別 碩士班 入學年度 112",
       "type": "course_list",
-      "requiredCredits": null,
-      "courses": [],
-      "description": "",
-      "originalRows": [
-        [
-          "部別",
-          "碩士班"
-        ],
-        [
-          "入學年度",
-          "112"
-        ]
-      ]
-    },
-    {
-      "groupId": "group_002",
-      "name": "112 學年度入學華語文教學碩士學位學程碩士班必修課程清單",
-      "type": "required_courses",
-      "requiredCredits": null,
+      "requiredCredits": 6,
       "courses": [
         {
           "courseId": "385001",
@@ -64,13 +46,17 @@
           "credits": 1
         }
       ],
+      "rules": [],
       "description": "",
       "originalRows": [
-        [
-          "合計",
-          "共　6　門課程　12　學分",
-          ""
-        ]
+        {
+          "cells": [
+            "合計",
+            "共　6　門課程　12　學分",
+            ""
+          ],
+          "rawText": "合計 共　6　門課程　12　學分 "
+        }
       ]
     }
   ],

@@ -11,27 +11,9 @@
   "groups": [
     {
       "groupId": "group_001",
-      "name": "資料項次: 89 ～ 89 ／ 1706",
+      "name": "系所 01, 中國語文學系 部別 碩士班 入學年度 112",
       "type": "course_list",
-      "requiredCredits": null,
-      "courses": [],
-      "description": "",
-      "originalRows": [
-        [
-          "部別",
-          "碩士班"
-        ],
-        [
-          "入學年度",
-          "112"
-        ]
-      ]
-    },
-    {
-      "groupId": "group_002",
-      "name": "112 學年度入學中國語文學系碩士班必修課程清單",
-      "type": "required_courses",
-      "requiredCredits": null,
+      "requiredCredits": 1,
       "courses": [
         {
           "courseId": "015199",
@@ -39,28 +21,32 @@
           "credits": 3
         }
       ],
+      "rules": [],
       "description": "",
       "originalRows": [
-        [
-          "合計",
-          "共　1　門課程　3　學分",
-          ""
-        ]
+        {
+          "cells": [
+            "合計",
+            "共　1　門課程　3　學分",
+            ""
+          ],
+          "rawText": "合計 共　1　門課程　3　學分 "
+        }
       ]
     },
     {
-      "groupId": "group_003",
-      "name": "112 學年度入學中國語文學系課程先修(擋修)清單",
-      "type": "prerequisite_rules",
+      "groupId": "group_002",
+      "name": "課號 課名 學分 015199 研究方法\tResearch Methods 3 合計 共　1　門課程　3　學分",
+      "type": "course_list",
       "requiredCredits": null,
       "courses": [
         {
           "courseId": "010478",
           "courseName": "畢業製作(下)\tPerformance Practice(II)",
-          "targetCourseId": "010476",
-          "targetCourseName": "畢業製作(上)\tPerformance Practice(Ⅰ)"
+          "credits": null
         }
       ],
+      "rules": [],
       "description": "",
       "originalRows": []
     }

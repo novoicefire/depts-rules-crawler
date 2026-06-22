@@ -3,6 +3,82 @@ import re
 from bs4 import BeautifulSoup, NavigableString
 from typing import Dict, Any, List
 
+def is_requirement_table(table) -> bool:
+    rows = table.find_all("tr")
+    if len(rows) < 2:
+        return False
+
+    text = table.get_text(" ", strip=True)
+
+    negative_keywords = ["檢視", "修改", "刪除", "搜尋", "查詢", "返回", "上一頁", "下一頁"]
+    if any(keyword in text for keyword in negative_keywords) and not any(k in text for k in ["課號", "課名", "學分", "必修", "輔系", "雙主修"]):
+        return False
+
+    positive_keywords = ["課號", "課名", "科目", "課程", "學分", "必修", "選修", "輔系", "雙主修", "通識", "先修", "擋修"]
+    return any(keyword in text for keyword in positive_keywords)
+
+def is_reasonable_title(text: str) -> bool:
+    if not text:
+        return False
+    if len(text) < 2 or len(text) > 80:
+        return False
+    noise = ["登入", "查詢", "搜尋", "返回", "上一頁", "下一頁"]
+    if any(n in text for n in noise):
+        return False
+    return True
+
+def find_group_name(table, fallback: str) -> str:
+    heading_tags = ["h1", "h2", "h3", "h4", "h5", "strong", "b"]
+
+    # 1. 找同層 previous siblings
+    for sibling in table.find_previous_siblings():
+        if getattr(sibling, "name", None) in heading_tags:
+            text = sibling.get_text(" ", strip=True)
+            if is_reasonable_title(text):
+                return text
+
+        text = sibling.get_text(" ", strip=True) if hasattr(sibling, "get_text") else str(sibling).strip()
+        if is_reasonable_title(text):
+            return text
+
+    # 2. 找 parent 內最近 heading
+    parent = table.parent
+    if parent:
+        headings = parent.find_all(heading_tags)
+        if headings:
+            text = headings[-1].get_text(" ", strip=True)
+            if is_reasonable_title(text):
+                return text
+
+    # 3. fallback
+    return fallback
+
+def infer_required_credits(group: dict) -> int | float | None:
+    # 1. 從 originalRows 找合計
+    for row in group.get("originalRows", []):
+        row_text = " ".join(row.get("cells", row) if isinstance(row, dict) else row)
+        if "合計" in row_text or "小計" in row_text:
+            m = re.search(r"\d+(?:\.\d+)?", row_text)
+            if m:
+                value = float(m.group())
+                return int(value) if value.is_integer() else value
+
+    # 2. 從 courses 加總
+    credits = []
+    for course in group.get("courses", []):
+        c = course.get("credits")
+        if isinstance(c, (int, float)):
+            credits.append(c)
+
+    if credits:
+        total = sum(credits)
+        t_float = float(total)
+        if t_float.is_integer():
+            return int(t_float)
+        return total
+
+    return None
+
 def parse_html_to_json(html_content: str, entry_year: str, deptid: str, class_code: str, dept_info: Dict[str, str], raw_html_path: str) -> Dict[str, Any]:
     """解析 HTML 並產生結構化 JSON"""
     soup = BeautifulSoup(html_content, "lxml")
@@ -10,39 +86,32 @@ def parse_html_to_json(html_content: str, entry_year: str, deptid: str, class_co
     result = {
         "requirementSetId": f"{entry_year}-{deptid}-{class_code}",
         "source": "ccweb6_graduation_requirements",
-        "entryYear": str(entry_year),
-        "departmentId": str(deptid),
+        "entryYear": entry_year,
+        "departmentId": deptid,
         "departmentName": dept_info.get("單位中文名稱", ""),
         "departmentShortName": dept_info.get("單位中文簡稱", ""),
-        "classCode": str(class_code),
+        "classCode": class_code,
         "className": dept_info.get("className", ""),
         "rawHtmlPath": raw_html_path,
         "groups": [],
         "notes": []
     }
     
-    tables = soup.find_all("table")
+    tables = [table for table in soup.find_all("table") if is_requirement_table(table)]
     
     for i, table in enumerate(tables):
-        group = {
+        group: Dict[str, Any] = {
             "groupId": f"group_{i+1:03d}",
             "name": f"group_{i+1:03d}",
             "type": "course_list",
             "requiredCredits": None,
             "courses": [],
+            "rules": [],
             "description": "",
             "originalRows": []
         }
         
-        # 尋找前方的文字標題
-        # 使用 previous_elements 尋找離這個 table 最近的有效純文字節點
-        for elem in table.previous_elements:
-            if isinstance(elem, NavigableString):
-                text = str(elem).strip()
-                # 排除過短或顯然不是標題的雜訊
-                if len(text) > 3 and len(text) < 100 and "{" not in text and "}" not in text:
-                    group["name"] = text
-                    break
+        group["name"] = find_group_name(table, f"group_{i+1:03d}")
         
         # 自動推斷 type
         group_name = group["name"]
@@ -110,11 +179,11 @@ def parse_html_to_json(html_content: str, entry_year: str, deptid: str, class_co
                     t_name = cells[target_course_name_idx].text.strip()
                     
                     if len(c_name) > 0 and len(c_id) > 2:
-                        group["courses"].append({
+                        group["rules"].append({
                             "courseId": c_id,
                             "courseName": c_name,
-                            "targetCourseId": t_id,
-                            "targetCourseName": t_name
+                            "requiredCourseId": t_id,
+                            "requiredCourseName": t_name
                         })
                         is_parsed = True
             
@@ -127,13 +196,12 @@ def parse_html_to_json(html_content: str, entry_year: str, deptid: str, class_co
                 if len(course_name) > 0 and len(course_id) > 2 and course_id.upper() != "合計":
                     course_credits = None
                     if credits_idx != -1 and len(cells) > credits_idx:
-                        try:
-                            credit_str = cells[credits_idx].text.strip()
-                            m = re.search(r'\d+', credit_str)
-                            if m:
-                                course_credits = int(m.group())
-                        except ValueError:
-                            pass
+                        credit_str = cells[credits_idx].text.strip()
+                        m = re.search(r"\d+(?:\.\d+)?", credit_str)
+                        if m:
+                            course_credits = float(m.group())
+                            if course_credits.is_integer():
+                                course_credits = int(course_credits)
                             
                     group["courses"].append({
                         "courseId": course_id,
@@ -144,8 +212,12 @@ def parse_html_to_json(html_content: str, entry_year: str, deptid: str, class_co
                     
             # 若為跨欄的總計或其他無法解析成單一課程的列，放進 originalRows
             if not is_parsed:
-                group["originalRows"].append(row_texts)
+                group["originalRows"].append({
+                    "cells": row_texts,
+                    "rawText": " ".join(row_texts)
+                })
             
+        group["requiredCredits"] = infer_required_credits(group)
         result["groups"].append(group)
         
     return result

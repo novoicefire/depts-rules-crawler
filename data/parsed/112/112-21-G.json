@@ -11,27 +11,9 @@
   "groups": [
     {
       "groupId": "group_001",
-      "name": "資料項次: 1006 ～ 1006 ／ 1706",
+      "name": "系所 21, 資訊工程學系 部別 碩士班 入學年度 112",
       "type": "course_list",
-      "requiredCredits": null,
-      "courses": [],
-      "description": "",
-      "originalRows": [
-        [
-          "部別",
-          "碩士班"
-        ],
-        [
-          "入學年度",
-          "112"
-        ]
-      ]
-    },
-    {
-      "groupId": "group_002",
-      "name": "112 學年度入學資訊工程學系碩士班必修課程清單",
-      "type": "required_courses",
-      "requiredCredits": null,
+      "requiredCredits": 6,
       "courses": [
         {
           "courseId": "215009",
@@ -64,148 +46,132 @@
           "credits": 1
         }
       ],
+      "rules": [],
       "description": "",
       "originalRows": [
-        [
-          "合計",
-          "共　6　門課程　4　學分",
-          ""
-        ]
+        {
+          "cells": [
+            "合計",
+            "共　6　門課程　4　學分",
+            ""
+          ],
+          "rawText": "合計 共　6　門課程　4　學分 "
+        }
       ]
     },
     {
-      "groupId": "group_003",
-      "name": "112 學年度入學資訊工程學系課程先修(擋修)清單",
-      "type": "prerequisite_rules",
+      "groupId": "group_002",
+      "name": "系所 21, 資訊工程學系 部別 碩士班 入學年度 112",
+      "type": "course_list",
       "requiredCredits": null,
       "courses": [
         {
           "courseId": "210082",
           "courseName": "虛擬實境\tVirtual Reality",
-          "targetCourseId": "210055",
-          "targetCourseName": "電腦圖學\tComputer Graphics"
+          "credits": null
         },
         {
           "courseId": "210082",
           "courseName": "虛擬實境\tVirtual Reality",
-          "targetCourseId": "210065",
-          "targetCourseName": "高等電腦圖學\tAdvanced Computer Graphics"
+          "credits": null
         },
         {
           "courseId": "210153",
           "courseName": "MFC視窗程式設計\tWindows MFC Programming",
-          "targetCourseId": "210099",
-          "targetCourseName": "程式設計\tComputer  Programming"
+          "credits": null
         },
         {
           "courseId": "210154",
           "courseName": "個人電腦概論\tInformation Technology Essentials",
-          "targetCourseId": "210036",
-          "targetCourseName": "計算機概論\tIntroduction to Computer Science"
+          "credits": null
         },
         {
           "courseId": "210156",
           "courseName": "JavaScript程式設計\tJavaScript Programming",
-          "targetCourseId": "210099",
-          "targetCourseName": "程式設計\tComputer  Programming"
+          "credits": null
         },
         {
           "courseId": "215052",
           "courseName": "VR/AR應用實作\tVR/AR– Implementation and Applications",
-          "targetCourseId": "210128",
-          "targetCourseName": "電腦圖學\tComputer Graphics"
+          "credits": null
         },
         {
           "courseId": "219068",
           "courseName": "非擬真成像技術\tNon Photo-realistic Rendering",
-          "targetCourseId": "210055",
-          "targetCourseName": "電腦圖學\tComputer Graphics"
+          "credits": null
         },
         {
           "courseId": "219068",
           "courseName": "非擬真成像技術\tNon Photo-realistic Rendering",
-          "targetCourseId": "210065",
-          "targetCourseName": "高等電腦圖學\tAdvanced Computer Graphics"
+          "credits": null
         },
         {
           "courseId": "219068",
           "courseName": "非擬真成像技術\tNon Photo-realistic Rendering",
-          "targetCourseId": "210128",
-          "targetCourseName": "電腦圖學\tComputer Graphics"
+          "credits": null
         },
         {
           "courseId": "219108",
           "courseName": "行動式3D電腦繪圖\tMobile 3D Computer Graphics",
-          "targetCourseId": "210065",
-          "targetCourseName": "高等電腦圖學\tAdvanced Computer Graphics"
+          "credits": null
         },
         {
           "courseId": "219108",
           "courseName": "行動式3D電腦繪圖\tMobile 3D Computer Graphics",
-          "targetCourseId": "210128",
-          "targetCourseName": "電腦圖學\tComputer Graphics"
+          "credits": null
         },
         {
           "courseId": "219140",
           "courseName": "PHP 網頁程式設計\tPHP Web Programming",
-          "targetCourseId": "210099",
-          "targetCourseName": "程式設計\tComputer  Programming"
+          "credits": null
         },
         {
           "courseId": "219145",
           "courseName": "高等計算智能\tAdvanced Computational Intelligence",
-          "targetCourseId": "219141",
-          "targetCourseName": "計算智能\tComputational Intelligence"
+          "credits": null
         },
         {
           "courseId": "219151",
           "courseName": "IT科技日文\tIT/Technical Japanese",
-          "targetCourseId": "952001",
-          "targetCourseName": "日文一(上)\tJapanese I(1)"
+          "credits": null
         },
         {
           "courseId": "219151",
           "courseName": "IT科技日文\tIT/Technical Japanese",
-          "targetCourseId": "952002",
-          "targetCourseName": "日文一(下)\tJapanese I(2)"
+          "credits": null
         },
         {
           "courseId": "219152",
           "courseName": "Python網頁擷取程式設計\tWeb Scraping with Python",
-          "targetCourseId": "210036",
-          "targetCourseName": "計算機概論\tIntroduction to Computer Science"
+          "credits": null
         },
         {
           "courseId": "219154",
           "courseName": "命名資料網路\tNamed Data Networking",
-          "targetCourseId": "210145",
-          "targetCourseName": "計算機網路\tComputer Networks"
+          "credits": null
         },
         {
           "courseId": "219158",
           "courseName": "Python 網路程式設計\tPython Network Programming",
-          "targetCourseId": "210145",
-          "targetCourseName": "計算機網路\tComputer Networks"
+          "credits": null
         },
         {
           "courseId": "219164",
           "courseName": "5G通訊架構之網路切片技術\tNetwork Slicing in 5G",
-          "targetCourseId": "210053",
-          "targetCourseName": "計算機網路\tComputer Network"
+          "credits": null
         },
         {
           "courseId": "219165",
           "courseName": "弗列斯科網頁程式設計\tFlask: Web Development with Python",
-          "targetCourseId": "215053",
-          "targetCourseName": "Python視窗程式設計\tPython GUI Programming with tkinter"
+          "credits": null
         },
         {
           "courseId": "219166",
           "courseName": "方程式最佳化\tFunction Optimization",
-          "targetCourseId": "219145",
-          "targetCourseName": "高等計算智能\tAdvanced Computational Intelligence"
+          "credits": null
         }
       ],
+      "rules": [],
       "description": "",
       "originalRows": []
     }

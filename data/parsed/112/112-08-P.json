@@ -11,27 +11,9 @@
   "groups": [
     {
       "groupId": "group_001",
-      "name": "資料項次: 643 ～ 643 ／ 1706",
+      "name": "系所 08, 東南亞學系 部別 博士班 入學年度 112",
       "type": "course_list",
-      "requiredCredits": null,
-      "courses": [],
-      "description": "",
-      "originalRows": [
-        [
-          "部別",
-          "博士班"
-        ],
-        [
-          "入學年度",
-          "112"
-        ]
-      ]
-    },
-    {
-      "groupId": "group_002",
-      "name": "112 學年度入學東南亞學系博士班必修課程清單",
-      "type": "required_courses",
-      "requiredCredits": null,
+      "requiredCredits": 5,
       "courses": [
         {
           "courseId": "089001",
@@ -59,46 +41,47 @@
           "credits": 1
         }
       ],
+      "rules": [],
       "description": "",
       "originalRows": [
-        [
-          "合計",
-          "共　5　門課程　7　學分",
-          ""
-        ]
+        {
+          "cells": [
+            "合計",
+            "共　5　門課程　7　學分",
+            ""
+          ],
+          "rawText": "合計 共　5　門課程　7　學分 "
+        }
       ]
     },
     {
-      "groupId": "group_003",
-      "name": "112 學年度入學東南亞學系課程先修(擋修)清單",
-      "type": "prerequisite_rules",
+      "groupId": "group_002",
+      "name": "系所 08, 東南亞學系 部別 博士班 入學年度 112",
+      "type": "course_list",
       "requiredCredits": null,
       "courses": [
         {
           "courseId": "080040",
           "courseName": "書報討論(三)\tcolloquium(3)",
-          "targetCourseId": "080015",
-          "targetCourseName": "書報討論(一)\tcolloquium"
+          "credits": null
         },
         {
           "courseId": "080065",
           "courseName": "書報討論(四)\tcolloquium(4)",
-          "targetCourseId": "080021",
-          "targetCourseName": "書報討論（二）\tColloquium(II)"
+          "credits": null
         },
         {
           "courseId": "080100",
           "courseName": "甘美朗(二)\tGamelan II",
-          "targetCourseId": "080075",
-          "targetCourseName": "甘美朗(一)\tGamelan I"
+          "credits": null
         },
         {
           "courseId": "080185",
           "courseName": "甘美朗進階與當代創作\tAdvanced course of Gamelan and Crossover Music Creation",
-          "targetCourseId": "080041",
-          "targetCourseName": "東南亞的音樂文化與實作：甘美朗\tSoutheast Asia Music Cultures and executing-Gamelan"
+          "credits": null
         }
       ],
+      "rules": [],
       "description": "",
       "originalRows": []
     }

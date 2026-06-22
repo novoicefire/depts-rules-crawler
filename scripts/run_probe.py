@@ -2,14 +2,16 @@ import subprocess
 import sys
 import os
 from pathlib import Path
+import json
 
 def run_command(cmd_list):
     print(f"\n> 執行: {' '.join(cmd_list)}")
-    # Use default encoding by not specifying encoding="utf-8"
-    result = subprocess.run(cmd_list, capture_output=True, text=True)
-    print(result.stdout)
+    result = subprocess.run(cmd_list, capture_output=True)
+    sys.stdout.buffer.write(result.stdout)
+    
     if result.stderr:
-        print(result.stderr, file=sys.stderr)
+        sys.stderr.buffer.write(result.stderr)
+            
     if result.returncode != 0:
         print(f"[FAIL] 命令執行失敗，回傳碼: {result.returncode}")
         sys.exit(result.returncode)
@@ -19,26 +21,25 @@ def main():
     
     fetch_cmd = [
         sys.executable,
-        str(base_dir / "scripts" / "fetch_requirements.py"),
+        str(base_dir / "cli.py"),
+        "all",
         "--years", "112",
         "--deptids", "12",
         "--class-codes", "B",
-        "--force"
-    ]
-    
-    parse_cmd = [
-        sys.executable,
-        str(base_dir / "scripts" / "parse_requirements.py")
+        "--force",
+        "--delay", "0.5",
+        "--max-rounds", "20"
     ]
     
     validate_cmd = [
         sys.executable,
-        str(base_dir / "scripts" / "validate_requirements.py")
+        str(base_dir / "cli.py"),
+        "validate",
+        "--probe"
     ]
     
     print("開始執行一鍵測試樣本 (112 入學年度 / 12 國企系 / B 學士班)...")
     run_command(fetch_cmd)
-    run_command(parse_cmd)
     run_command(validate_cmd)
     
     print("\n=== 測試完成 ===")
@@ -48,6 +49,7 @@ def main():
         "data/parsed/112/112-12-B.json",
         "data/indexes/curriculum_rules_index.json",
         "data/reports/fetch_summary.json",
+        "data/reports/parse_summary.json",
         "data/reports/validation_summary.json"
     ]
     
@@ -59,10 +61,67 @@ def main():
         if not f_path.exists():
             all_exist = False
             
-    if all_exist:
-        print("\n[SUCCESS] 第一階段驗收條件全部達成！")
-    else:
+    if not all_exist:
         print("\n[WARN] 部分檔案未成功產生。")
+        sys.exit(1)
+        
+    print("\n=== 深入檢查 JSON ===")
+    
+    # 檢查 parsed JSON
+    parsed_json_path = base_dir / "data/parsed/112/112-12-B.json"
+    try:
+        with open(parsed_json_path, "r", encoding="utf-8") as f:
+            parsed_data = json.load(f)
+            assert parsed_data.get("requirementSetId") == "112-12-B", "requirementSetId 錯誤"
+            groups = parsed_data.get("groups", [])
+            assert len(groups) > 0, "沒有產生任何 group"
+            
+            valid_group = False
+            for g in groups:
+                if len(g.get("courses", [])) > 0 or len(g.get("rules", [])) > 0 or len(g.get("originalRows", [])) > 0:
+                    valid_group = True
+                    break
+            assert valid_group, "至少一個 group 要有 courses, rules 或 originalRows"
+        print("[OK] parsed JSON 驗證通過")
+    except Exception as e:
+        print(f"[FAIL] parsed JSON 驗證失敗: {e}")
+        sys.exit(1)
+        
+    # 檢查 index
+    index_path = base_dir / "data/indexes/curriculum_rules_index.json"
+    try:
+        with open(index_path, "r", encoding="utf-8") as f:
+            index_data = json.load(f)
+            items = index_data.get("items", [])
+            assert any(i.get("requirementSetId") == "112-12-B" for i in items), "index 內未找到 112-12-B"
+        print("[OK] index 驗證通過")
+    except Exception as e:
+        print(f"[FAIL] index 驗證失敗: {e}")
+        sys.exit(1)
+        
+    # 檢查 fetch_summary
+    fetch_path = base_dir / "data/reports/fetch_summary.json"
+    try:
+        with open(fetch_path, "r", encoding="utf-8") as f:
+            fetch_data = json.load(f)
+            assert fetch_data.get("success", 0) >= 1, "fetch_summary 成功數小於 1"
+        print("[OK] fetch_summary 驗證通過")
+    except Exception as e:
+        print(f"[FAIL] fetch_summary 驗證失敗: {e}")
+        sys.exit(1)
+        
+    # 檢查 validation_summary
+    validate_path = base_dir / "data/reports/validation_summary.json"
+    try:
+        with open(validate_path, "r", encoding="utf-8") as f:
+            validate_data = json.load(f)
+            assert validate_data.get("passed") == True, "validation_summary passed != true"
+        print("[OK] validation_summary 驗證通過")
+    except Exception as e:
+        print(f"[FAIL] validation_summary 驗證失敗: {e}")
+        sys.exit(1)
+
+    print("\n[SUCCESS] 第一階段驗收條件全部達成！")
 
 if __name__ == "__main__":
     main()

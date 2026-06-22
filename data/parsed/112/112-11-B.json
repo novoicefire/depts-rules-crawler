@@ -11,27 +11,9 @@
   "groups": [
     {
       "groupId": "group_001",
-      "name": "資料項次: 700 ～ 700 ／ 1706",
+      "name": "系所 11, 經濟學系 部別 學士班 入學年度 112",
       "type": "course_list",
-      "requiredCredits": null,
-      "courses": [],
-      "description": "",
-      "originalRows": [
-        [
-          "部別",
-          "學士班"
-        ],
-        [
-          "入學年度",
-          "112"
-        ]
-      ]
-    },
-    {
-      "groupId": "group_002",
-      "name": "112 學年度入學經濟學系學士班必修課程清單",
-      "type": "required_courses",
-      "requiredCredits": null,
+      "requiredCredits": 22,
       "courses": [
         {
           "courseId": "110001",
@@ -144,192 +126,204 @@
           "credits": 3
         }
       ],
+      "rules": [],
       "description": "",
       "originalRows": [
-        [
-          "合計",
-          "共　22　門課程　62　學分",
-          ""
-        ]
+        {
+          "cells": [
+            "合計",
+            "共　22　門課程　62　學分",
+            ""
+          ],
+          "rawText": "合計 共　22　門課程　62　學分 "
+        }
       ]
     },
     {
-      "groupId": "group_003",
-      "name": "112 學年度入學經濟學系課程先修(擋修)清單",
-      "type": "prerequisite_rules",
+      "groupId": "group_002",
+      "name": "系所 11, 經濟學系 部別 學士班 入學年度 112",
+      "type": "course_list",
       "requiredCredits": null,
       "courses": [
         {
           "courseId": "110005",
           "courseName": "賽局決策\tGame Decision",
-          "targetCourseId": "110001",
-          "targetCourseName": "微積分及實習(上)\tCalculus and Discussion Section (1)"
+          "credits": null
         },
         {
           "courseId": "110005",
           "courseName": "賽局決策\tGame Decision",
-          "targetCourseId": "110012",
-          "targetCourseName": "微積分及實習(下)\tCalculus and Discussion Section (2)"
+          "credits": null
         },
         {
           "courseId": "110019",
           "courseName": "總體經濟學(上)\tMacroeconomics (1)",
-          "targetCourseId": "110002",
-          "targetCourseName": "經濟學及實習(上)\tEconomics and Discussion Section (1)"
+          "credits": null
         },
         {
           "courseId": "110019",
           "courseName": "總體經濟學(上)\tMacroeconomics (1)",
-          "targetCourseId": "110011",
-          "targetCourseName": "經濟學及實習(下)\tEconomics and Discussion Section (2)"
+          "credits": null
         },
         {
           "courseId": "110021",
           "courseName": "個體經濟學(上)\tMicroeconomics (1)",
-          "targetCourseId": "110002",
-          "targetCourseName": "經濟學及實習(上)\tEconomics and Discussion Section (1)"
+          "credits": null
         },
         {
           "courseId": "110021",
           "courseName": "個體經濟學(上)\tMicroeconomics (1)",
-          "targetCourseId": "110011",
-          "targetCourseName": "經濟學及實習(下)\tEconomics and Discussion Section (2)"
+          "credits": null
         },
         {
           "courseId": "110022",
           "courseName": "英語聽講二(上)\tListening Comprehension in English Ⅱ (1)",
-          "targetCourseId": "110010",
-          "targetCourseName": "英語聽講一(上)\tListening Comprehension in English Ⅰ(1)"
+          "credits": null
         },
         {
           "courseId": "110026",
           "courseName": "總體經濟學(下)\tMacroeconomics (2)",
-          "targetCourseId": "110002",
-          "targetCourseName": "經濟學及實習(上)\tEconomics and Discussion Section (1)"
+          "credits": null
         },
         {
           "courseId": "110026",
           "courseName": "總體經濟學(下)\tMacroeconomics (2)",
-          "targetCourseId": "110011",
-          "targetCourseName": "經濟學及實習(下)\tEconomics and Discussion Section (2)"
+          "credits": null
         },
         {
           "courseId": "110029",
           "courseName": "賽局理論\tGame Theory",
-          "targetCourseId": "110001",
-          "targetCourseName": "微積分及實習(上)\tCalculus and Discussion Section (1)"
+          "credits": null
         },
         {
           "courseId": "110029",
           "courseName": "賽局理論\tGame Theory",
-          "targetCourseId": "110002",
-          "targetCourseName": "經濟學及實習(上)\tEconomics and Discussion Section (1)"
+          "credits": null
         },
         {
           "courseId": "110029",
           "courseName": "賽局理論\tGame Theory",
-          "targetCourseId": "110011",
-          "targetCourseName": "經濟學及實習(下)\tEconomics and Discussion Section (2)"
+          "credits": null
         },
         {
           "courseId": "110029",
           "courseName": "賽局理論\tGame Theory",
-          "targetCourseId": "110012",
-          "targetCourseName": "微積分及實習(下)\tCalculus and Discussion Section (2)"
+          "credits": null
         },
         {
           "courseId": "110081",
           "courseName": "個體經濟專題(二)\tTopics in Microeconomics",
-          "targetCourseId": "110093",
-          "targetCourseName": "個體經濟學(下)\tMicroeconomics (2)"
+          "credits": null
         },
         {
           "courseId": "110107",
           "courseName": "統計推論\tStatistical Inference",
-          "targetCourseId": "110024",
-          "targetCourseName": "統計學及實習(下)\tStatistics and Discussion Section (2)"
+          "credits": null
         },
         {
           "courseId": "115004",
           "courseName": "論文研討會(三)\tSeminar Ⅲ",
-          "targetCourseId": "115003",
-          "targetCourseName": "論文研討會(一)\tSeminar I"
+          "credits": null
         }
       ],
+      "rules": [],
       "description": "",
       "originalRows": []
     },
     {
-      "groupId": "group_004",
-      "name": "112 學年度入學學士班校核心(共同及通識教育)課程最低學分數一覽表",
-      "type": "core_requirements",
-      "requiredCredits": null,
+      "groupId": "group_003",
+      "name": "系所 11, 經濟學系 部別 學士班 入學年度 112",
+      "type": "course_list",
+      "requiredCredits": 105,
       "courses": [],
+      "rules": [],
       "description": "",
       "originalRows": [
-        [
-          "人文(105始)",
-          "G 人文-文學與藝術(105始)H 人文-歷史哲學與文化(105始)",
-          "2",
-          "4",
-          "最少選修 2 種次領域課程最少選修合計 4 學分"
-        ],
-        [
-          "共同必修(99始)",
-          "A 共同必修(99始)",
-          "0",
-          "15",
-          "最少選修合計 15 學分"
-        ],
-        [
-          "自然(105始)",
-          "K 自然-工程與科技(105始)L 自然-生命與科學(105始)",
-          "2",
-          "4",
-          "最少選修 2 種次領域課程最少選修合計 4 學分"
-        ],
-        [
-          "社會(105始)",
-          "I 社會-法政與教育(105始)J 社會-社經與管理(105始)",
-          "2",
-          "4",
-          "最少選修 2 種次領域課程最少選修合計 4 學分"
-        ],
-        [
-          "特色通識(105始)",
-          "M 特色通識-國際連結(東南亞)105始N 特色通識-淨零永續(綠概念)105始O 特色通識-社會創新(在地實踐)105始",
-          "2",
-          "4",
-          "最少選修 2 種次領域課程最少選修合計 4 學分"
-        ],
-        [
-          "合計",
-          "共　5　 類課程　31　學分",
-          "",
-          "",
-          ""
-        ]
+        {
+          "cells": [
+            "人文(105始)",
+            "G 人文-文學與藝術(105始)H 人文-歷史哲學與文化(105始)",
+            "2",
+            "4",
+            "最少選修 2 種次領域課程最少選修合計 4 學分"
+          ],
+          "rawText": "人文(105始) G 人文-文學與藝術(105始)H 人文-歷史哲學與文化(105始) 2 4 最少選修 2 種次領域課程最少選修合計 4 學分"
+        },
+        {
+          "cells": [
+            "共同必修(99始)",
+            "A 共同必修(99始)",
+            "0",
+            "15",
+            "最少選修合計 15 學分"
+          ],
+          "rawText": "共同必修(99始) A 共同必修(99始) 0 15 最少選修合計 15 學分"
+        },
+        {
+          "cells": [
+            "自然(105始)",
+            "K 自然-工程與科技(105始)L 自然-生命與科學(105始)",
+            "2",
+            "4",
+            "最少選修 2 種次領域課程最少選修合計 4 學分"
+          ],
+          "rawText": "自然(105始) K 自然-工程與科技(105始)L 自然-生命與科學(105始) 2 4 最少選修 2 種次領域課程最少選修合計 4 學分"
+        },
+        {
+          "cells": [
+            "社會(105始)",
+            "I 社會-法政與教育(105始)J 社會-社經與管理(105始)",
+            "2",
+            "4",
+            "最少選修 2 種次領域課程最少選修合計 4 學分"
+          ],
+          "rawText": "社會(105始) I 社會-法政與教育(105始)J 社會-社經與管理(105始) 2 4 最少選修 2 種次領域課程最少選修合計 4 學分"
+        },
+        {
+          "cells": [
+            "特色通識(105始)",
+            "M 特色通識-國際連結(東南亞)105始N 特色通識-淨零永續(綠概念)105始O 特色通識-社會創新(在地實踐)105始",
+            "2",
+            "4",
+            "最少選修 2 種次領域課程最少選修合計 4 學分"
+          ],
+          "rawText": "特色通識(105始) M 特色通識-國際連結(東南亞)105始N 特色通識-淨零永續(綠概念)105始O 特色通識-社會創新(在地實踐)105始 2 4 最少選修 2 種次領域課程最少選修合計 4 學分"
+        },
+        {
+          "cells": [
+            "合計",
+            "共　5　 類課程　31　學分",
+            "",
+            "",
+            ""
+          ],
+          "rawText": "合計 共　5　 類課程　31　學分   "
+        }
+      ]
+    },
+    {
+      "groupId": "group_004",
+      "name": "系所 11, 經濟學系 部別 學士班 入學年度 112",
+      "type": "course_list",
+      "requiredCredits": 902055,
+      "courses": [],
+      "rules": [],
+      "description": "",
+      "originalRows": [
+        {
+          "cells": [
+            "902055 體育:運動舞蹈(1.0學分)902056 體育:高爾夫球(1.0學分)902057 體育:射箭(1.0學分)902058 體育:游泳(1.0學分)902059 體育:網球(1.0學分)902060 體育:船艇(1.0學分)902069 體育:戶外探索教育(1.0學分)",
+            "至少選修 2 門課程至少選修合計2 學分"
+          ],
+          "rawText": "902055 體育:運動舞蹈(1.0學分)902056 體育:高爾夫球(1.0學分)902057 體育:射箭(1.0學分)902058 體育:游泳(1.0學分)902059 體育:網球(1.0學分)902060 體育:船艇(1.0學分)902069 體育:戶外探索教育(1.0學分) 至少選修 2 門課程至少選修合計2 學分"
+        }
       ]
     },
     {
       "groupId": "group_005",
-      "name": "112 學年度入學經濟學系學士班校核心必修(選)課程清單",
-      "type": "core_requirements",
-      "requiredCredits": null,
-      "courses": [],
-      "description": "",
-      "originalRows": [
-        [
-          "902055 體育:運動舞蹈(1.0學分)902056 體育:高爾夫球(1.0學分)902057 體育:射箭(1.0學分)902058 體育:游泳(1.0學分)902059 體育:網球(1.0學分)902060 體育:船艇(1.0學分)902069 體育:戶外探索教育(1.0學分)",
-          "至少選修 2 門課程至少選修合計2 學分"
-        ]
-      ]
-    },
-    {
-      "groupId": "group_006",
-      "name": "112 學年度入學經濟學系學士班輔系必修課目清單",
-      "type": "minor_courses",
-      "requiredCredits": null,
+      "name": "系所 11, 經濟學系 部別 學士班 入學年度 112",
+      "type": "course_list",
+      "requiredCredits": 12,
       "courses": [
         {
           "courseId": "110017",
@@ -392,20 +386,24 @@
           "credits": 3
         }
       ],
+      "rules": [],
       "description": "",
       "originalRows": [
-        [
-          "合計",
-          "共　12　 門課程　36　學分",
-          ""
-        ]
+        {
+          "cells": [
+            "合計",
+            "共　12　 門課程　36　學分",
+            ""
+          ],
+          "rawText": "合計 共　12　 門課程　36　學分 "
+        }
       ]
     },
     {
-      "groupId": "group_007",
-      "name": "112 學年度入學經濟學系學士班雙主修必修課目清單",
-      "type": "double_major_courses",
-      "requiredCredits": null,
+      "groupId": "group_006",
+      "name": "系所 11, 經濟學系 部別 學士班 入學年度 112",
+      "type": "course_list",
+      "requiredCredits": 20,
       "courses": [
         {
           "courseId": "110001",
@@ -508,13 +506,17 @@
           "credits": 3
         }
       ],
+      "rules": [],
       "description": "",
       "originalRows": [
-        [
-          "合計",
-          "共　20　 門課程　60　學分",
-          ""
-        ]
+        {
+          "cells": [
+            "合計",
+            "共　20　 門課程　60　學分",
+            ""
+          ],
+          "rawText": "合計 共　20　 門課程　60　學分 "
+        }
       ]
     }
   ],

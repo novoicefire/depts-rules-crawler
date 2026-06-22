@@ -14,8 +14,11 @@ from rich.panel import Panel
 console = Console()
 
 def run_validate(args=None):
+    probe = getattr(args, "probe", False) if args else False
+    strict = getattr(args, "strict", False) if args else False
+    
     with console.status("[bold cyan]開始驗證解析結果...[/bold cyan]"):
-        report = validate_all()
+        report = validate_all(probe=probe, strict=strict)
     
     # 加上生成時間
     report["generatedAt"] = datetime.now().isoformat()
@@ -33,5 +36,11 @@ def run_validate(args=None):
         return False
 
 if __name__ == "__main__":
-    if not run_validate():
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--probe", action="store_true")
+    parser.add_argument("--strict", action="store_true")
+    args = parser.parse_args()
+    
+    if not run_validate(args):
         sys.exit(1)

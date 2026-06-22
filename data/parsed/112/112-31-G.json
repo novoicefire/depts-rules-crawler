@@ -11,27 +11,9 @@
   "groups": [
     {
       "groupId": "group_001",
-      "name": "資料項次: 1382 ～ 1382 ／ 1706",
+      "name": "系所 31, 公共行政與政策學系碩士在職專班 部別 碩士班 入學年度 112",
       "type": "course_list",
-      "requiredCredits": null,
-      "courses": [],
-      "description": "",
-      "originalRows": [
-        [
-          "部別",
-          "碩士班"
-        ],
-        [
-          "入學年度",
-          "112"
-        ]
-      ]
-    },
-    {
-      "groupId": "group_002",
-      "name": "112 學年度入學公共行政與政策學系碩士在職專班碩士班必修課程清單",
-      "type": "required_courses",
-      "requiredCredits": null,
+      "requiredCredits": 3,
       "courses": [
         {
           "courseId": "315078",
@@ -49,27 +31,35 @@
           "credits": 3
         }
       ],
+      "rules": [],
       "description": "",
       "originalRows": [
-        [
-          "合計",
-          "共　3　門課程　9　學分",
-          ""
-        ]
+        {
+          "cells": [
+            "合計",
+            "共　3　門課程　9　學分",
+            ""
+          ],
+          "rawText": "合計 共　3　門課程　9　學分 "
+        }
       ]
     },
     {
-      "groupId": "group_003",
-      "name": "112 學年度入學公共行政與政策學系碩士在職專班碩士班系必修(選)課程清單",
-      "type": "required_courses",
+      "groupId": "group_002",
+      "name": "系所 31, 公共行政與政策學系碩士在職專班 部別 碩士班 入學年度 112",
+      "type": "course_list",
       "requiredCredits": null,
       "courses": [],
+      "rules": [],
       "description": "",
       "originalRows": [
-        [
-          "315003 政治經濟學專題(3.0學分)315027 行政法專題(3.0學分)315079 國際關係專題(3.0學分)",
-          "至少選修 1 門課程"
-        ]
+        {
+          "cells": [
+            "315003 政治經濟學專題(3.0學分)315027 行政法專題(3.0學分)315079 國際關係專題(3.0學分)",
+            "至少選修 1 門課程"
+          ],
+          "rawText": "315003 政治經濟學專題(3.0學分)315027 行政法專題(3.0學分)315079 國際關係專題(3.0學分) 至少選修 1 門課程"
+        }
       ]
     }
   ],

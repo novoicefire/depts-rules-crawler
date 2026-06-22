@@ -11,27 +11,9 @@
   "groups": [
     {
       "groupId": "group_001",
-      "name": "資料項次: 1641 ～ 1641 ／ 1706",
+      "name": "系所 50, 心理健康與諮詢碩士學位學程在職專班 部別 碩士班 入學年度 112",
       "type": "course_list",
-      "requiredCredits": null,
-      "courses": [],
-      "description": "",
-      "originalRows": [
-        [
-          "部別",
-          "碩士班"
-        ],
-        [
-          "入學年度",
-          "112"
-        ]
-      ]
-    },
-    {
-      "groupId": "group_002",
-      "name": "112 學年度入學心理健康與諮詢碩士學位學程在職專班碩士班必修課程清單",
-      "type": "required_courses",
-      "requiredCredits": null,
+      "requiredCredits": 7,
       "courses": [
         {
           "courseId": "505003",
@@ -69,13 +51,17 @@
           "credits": 3
         }
       ],
+      "rules": [],
       "description": "",
       "originalRows": [
-        [
-          "合計",
-          "共　7　門課程　17　學分",
-          ""
-        ]
+        {
+          "cells": [
+            "合計",
+            "共　7　門課程　17　學分",
+            ""
+          ],
+          "rawText": "合計 共　7　門課程　17　學分 "
+        }
       ]
     }
   ],

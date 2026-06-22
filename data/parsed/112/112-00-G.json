@@ -11,27 +11,9 @@
   "groups": [
     {
       "groupId": "group_001",
-      "name": "資料項次: 14 ～ 14 ／ 1706",
+      "name": "系所 00, 諮商心理與人力資源發展學系 部別 碩士班 入學年度 112",
       "type": "course_list",
-      "requiredCredits": null,
-      "courses": [],
-      "description": "",
-      "originalRows": [
-        [
-          "部別",
-          "碩士班"
-        ],
-        [
-          "入學年度",
-          "112"
-        ]
-      ]
-    },
-    {
-      "groupId": "group_002",
-      "name": "112 學年度入學諮商心理與人力資源發展學系碩士班必修課程清單",
-      "type": "required_courses",
-      "requiredCredits": null,
+      "requiredCredits": 7,
       "courses": [
         {
           "courseId": "005081",
@@ -69,58 +51,57 @@
           "credits": 3
         }
       ],
+      "rules": [],
       "description": "",
       "originalRows": [
-        [
-          "合計",
-          "共　7　門課程　21　學分",
-          ""
-        ]
+        {
+          "cells": [
+            "合計",
+            "共　7　門課程　21　學分",
+            ""
+          ],
+          "rawText": "合計 共　7　門課程　21　學分 "
+        }
       ]
     },
     {
-      "groupId": "group_003",
-      "name": "112 學年度入學諮商心理與人力資源發展學系課程先修(擋修)清單",
-      "type": "prerequisite_rules",
+      "groupId": "group_002",
+      "name": "系所 00, 諮商心理與人力資源發展學系 部別 碩士班 入學年度 112",
+      "type": "course_list",
       "requiredCredits": null,
       "courses": [
         {
           "courseId": "005105",
           "courseName": "社區特殊問題與網絡合作\tSpecial Issues in Community and Collaboration",
-          "targetCourseId": "005082",
-          "targetCourseName": "社區諮商理論與實務\tTheories and Practices of Community Counseling"
+          "credits": null
         },
         {
           "courseId": "009043",
           "courseName": "社區特殊議題與網絡合作專題研究\tSeminar on Special Issues in Community and Collaboration",
-          "targetCourseId": "009010",
-          "targetCourseName": "社區諮商理論與實務專題研究\tSeminar on Theories and Practices of Community Counseling"
+          "credits": null
         },
         {
           "courseId": "009059",
           "courseName": "進階諮商實習\tAdvanced Internship in Counseling",
-          "targetCourseId": "009043",
-          "targetCourseName": "社區特殊議題與網絡合作專題研究\tSeminar on Special Issues in Community and Collaboration"
+          "credits": null
         },
         {
           "courseId": "009059",
           "courseName": "進階諮商實習\tAdvanced Internship in Counseling",
-          "targetCourseId": "009045",
-          "targetCourseName": "進階諮商實務\tAdvanced Practicum in Counseling"
+          "credits": null
         },
         {
           "courseId": "009060",
           "courseName": "進階社區諮商實習\tAdvanced Internship in Community Counseling",
-          "targetCourseId": "009043",
-          "targetCourseName": "社區特殊議題與網絡合作專題研究\tSeminar on Special Issues in Community and Collaboration"
+          "credits": null
         },
         {
           "courseId": "009060",
           "courseName": "進階社區諮商實習\tAdvanced Internship in Community Counseling",
-          "targetCourseId": "009045",
-          "targetCourseName": "進階諮商實務\tAdvanced Practicum in Counseling"
+          "credits": null
         }
       ],
+      "rules": [],
       "description": "",
       "originalRows": []
     }

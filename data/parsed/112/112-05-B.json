@@ -11,27 +11,9 @@
   "groups": [
     {
       "groupId": "group_001",
-      "name": "資料項次: 368 ～ 368 ／ 1706",
+      "name": "系所 05, 歷史學系 部別 學士班 入學年度 112",
       "type": "course_list",
-      "requiredCredits": null,
-      "courses": [],
-      "description": "",
-      "originalRows": [
-        [
-          "部別",
-          "學士班"
-        ],
-        [
-          "入學年度",
-          "112"
-        ]
-      ]
-    },
-    {
-      "groupId": "group_002",
-      "name": "112 學年度入學歷史學系學士班必修課程清單",
-      "type": "required_courses",
-      "requiredCredits": null,
+      "requiredCredits": 21,
       "courses": [
         {
           "courseId": "050014",
@@ -139,150 +121,169 @@
           "credits": 3
         }
       ],
+      "rules": [],
       "description": "",
       "originalRows": [
-        [
-          "合計",
-          "共　21　門課程　45　學分",
-          ""
-        ]
+        {
+          "cells": [
+            "合計",
+            "共　21　門課程　45　學分",
+            ""
+          ],
+          "rawText": "合計 共　21　門課程　45　學分 "
+        }
       ]
     },
     {
-      "groupId": "group_003",
-      "name": "112 學年度入學歷史學系課程先修(擋修)清單",
-      "type": "prerequisite_rules",
+      "groupId": "group_002",
+      "name": "系所 05, 歷史學系 部別 學士班 入學年度 112",
+      "type": "course_list",
       "requiredCredits": null,
       "courses": [
         {
           "courseId": "050055",
           "courseName": "納粹德國專題\tNazi Germany",
-          "targetCourseId": "050047",
-          "targetCourseName": "二十世紀德國史\tGerman History in 20th Century"
+          "credits": null
         },
         {
           "courseId": "050093",
           "courseName": "荷蘭東印度公司\tA History of VOC( United Netherlands Chartered East India Company)",
-          "targetCourseId": "050015",
-          "targetCourseName": "世界史(一)\tWorld History (Ⅰ)"
+          "credits": null
         },
         {
           "courseId": "050093",
           "courseName": "荷蘭東印度公司\tA History of VOC( United Netherlands Chartered East India Company)",
-          "targetCourseId": "050024",
-          "targetCourseName": "世界史(二)\tWorld History (Ⅱ)"
+          "credits": null
         },
         {
           "courseId": "050098",
           "courseName": "明代的制度與制度變遷專題(二)\tTopics in Ming Institutional History 2",
-          "targetCourseId": "050086",
-          "targetCourseName": "明代的制度與制度變遷專題\tTopics in Ming Institutional History"
+          "credits": null
         },
         {
           "courseId": "050119",
           "courseName": "中國歷史地理(二)\tChinese Historical Geography (2)",
-          "targetCourseId": "050116",
-          "targetCourseName": "中國歷史地理(一)\tChinese Historical Geography (1)"
+          "credits": null
         },
         {
           "courseId": "050121",
           "courseName": "西方近代生命科學發展史\tDevelopment of life sciences in modern Europe",
-          "targetCourseId": "050032",
-          "targetCourseName": "世界史(三)\tWorld History (Ⅲ)"
+          "credits": null
         },
         {
           "courseId": "050121",
           "courseName": "西方近代生命科學發展史\tDevelopment of life sciences in modern Europe",
-          "targetCourseId": "050043",
-          "targetCourseName": "世界史參考資料選讀(四)\tSelected Readings of World History (Ⅳ)"
+          "credits": null
         },
         {
           "courseId": "050127",
           "courseName": "西方思想傳統(二)\tWestern Intellectual Traditions （2）",
-          "targetCourseId": "050125",
-          "targetCourseName": "西方思想傳統(一)\tWestern Intellectual Traditions （1）"
+          "credits": null
         },
         {
           "courseId": "050174",
           "courseName": "愛爾蘭現代史(二)\tModern Irish History II",
-          "targetCourseId": "050173",
-          "targetCourseName": "愛爾蘭現代史(一)\tModern Irish History I"
+          "credits": null
         }
       ],
+      "rules": [],
       "description": "",
       "originalRows": []
     },
     {
-      "groupId": "group_004",
-      "name": "112 學年度入學學士班校核心(共同及通識教育)課程最低學分數一覽表",
-      "type": "core_requirements",
-      "requiredCredits": null,
+      "groupId": "group_003",
+      "name": "系所 05, 歷史學系 部別 學士班 入學年度 112",
+      "type": "course_list",
+      "requiredCredits": 105,
       "courses": [],
+      "rules": [],
       "description": "",
       "originalRows": [
-        [
-          "人文(105始)",
-          "G 人文-文學與藝術(105始)H 人文-歷史哲學與文化(105始)",
-          "2",
-          "4",
-          "最少選修 2 種次領域課程最少選修合計 4 學分"
-        ],
-        [
-          "共同必修(99始)",
-          "A 共同必修(99始)",
-          "0",
-          "15",
-          "最少選修合計 15 學分"
-        ],
-        [
-          "自然(105始)",
-          "K 自然-工程與科技(105始)L 自然-生命與科學(105始)",
-          "2",
-          "4",
-          "最少選修 2 種次領域課程最少選修合計 4 學分"
-        ],
-        [
-          "社會(105始)",
-          "I 社會-法政與教育(105始)J 社會-社經與管理(105始)",
-          "2",
-          "4",
-          "最少選修 2 種次領域課程最少選修合計 4 學分"
-        ],
-        [
-          "特色通識(105始)",
-          "M 特色通識-國際連結(東南亞)105始N 特色通識-淨零永續(綠概念)105始O 特色通識-社會創新(在地實踐)105始",
-          "2",
-          "4",
-          "最少選修 2 種次領域課程最少選修合計 4 學分"
-        ],
-        [
-          "合計",
-          "共　5　 類課程　31　學分",
-          "",
-          "",
-          ""
-        ]
+        {
+          "cells": [
+            "人文(105始)",
+            "G 人文-文學與藝術(105始)H 人文-歷史哲學與文化(105始)",
+            "2",
+            "4",
+            "最少選修 2 種次領域課程最少選修合計 4 學分"
+          ],
+          "rawText": "人文(105始) G 人文-文學與藝術(105始)H 人文-歷史哲學與文化(105始) 2 4 最少選修 2 種次領域課程最少選修合計 4 學分"
+        },
+        {
+          "cells": [
+            "共同必修(99始)",
+            "A 共同必修(99始)",
+            "0",
+            "15",
+            "最少選修合計 15 學分"
+          ],
+          "rawText": "共同必修(99始) A 共同必修(99始) 0 15 最少選修合計 15 學分"
+        },
+        {
+          "cells": [
+            "自然(105始)",
+            "K 自然-工程與科技(105始)L 自然-生命與科學(105始)",
+            "2",
+            "4",
+            "最少選修 2 種次領域課程最少選修合計 4 學分"
+          ],
+          "rawText": "自然(105始) K 自然-工程與科技(105始)L 自然-生命與科學(105始) 2 4 最少選修 2 種次領域課程最少選修合計 4 學分"
+        },
+        {
+          "cells": [
+            "社會(105始)",
+            "I 社會-法政與教育(105始)J 社會-社經與管理(105始)",
+            "2",
+            "4",
+            "最少選修 2 種次領域課程最少選修合計 4 學分"
+          ],
+          "rawText": "社會(105始) I 社會-法政與教育(105始)J 社會-社經與管理(105始) 2 4 最少選修 2 種次領域課程最少選修合計 4 學分"
+        },
+        {
+          "cells": [
+            "特色通識(105始)",
+            "M 特色通識-國際連結(東南亞)105始N 特色通識-淨零永續(綠概念)105始O 特色通識-社會創新(在地實踐)105始",
+            "2",
+            "4",
+            "最少選修 2 種次領域課程最少選修合計 4 學分"
+          ],
+          "rawText": "特色通識(105始) M 特色通識-國際連結(東南亞)105始N 特色通識-淨零永續(綠概念)105始O 特色通識-社會創新(在地實踐)105始 2 4 最少選修 2 種次領域課程最少選修合計 4 學分"
+        },
+        {
+          "cells": [
+            "合計",
+            "共　5　 類課程　31　學分",
+            "",
+            "",
+            ""
+          ],
+          "rawText": "合計 共　5　 類課程　31　學分   "
+        }
+      ]
+    },
+    {
+      "groupId": "group_004",
+      "name": "系所 05, 歷史學系 部別 學士班 入學年度 112",
+      "type": "course_list",
+      "requiredCredits": 902055,
+      "courses": [],
+      "rules": [],
+      "description": "",
+      "originalRows": [
+        {
+          "cells": [
+            "902055 體育:運動舞蹈(1.0學分)902056 體育:高爾夫球(1.0學分)902057 體育:射箭(1.0學分)902058 體育:游泳(1.0學分)902059 體育:網球(1.0學分)902060 體育:船艇(1.0學分)902069 體育:戶外探索教育(1.0學分)",
+            "至少選修 2 門課程至少選修合計2 學分"
+          ],
+          "rawText": "902055 體育:運動舞蹈(1.0學分)902056 體育:高爾夫球(1.0學分)902057 體育:射箭(1.0學分)902058 體育:游泳(1.0學分)902059 體育:網球(1.0學分)902060 體育:船艇(1.0學分)902069 體育:戶外探索教育(1.0學分) 至少選修 2 門課程至少選修合計2 學分"
+        }
       ]
     },
     {
       "groupId": "group_005",
-      "name": "112 學年度入學歷史學系學士班校核心必修(選)課程清單",
-      "type": "core_requirements",
-      "requiredCredits": null,
-      "courses": [],
-      "description": "",
-      "originalRows": [
-        [
-          "902055 體育:運動舞蹈(1.0學分)902056 體育:高爾夫球(1.0學分)902057 體育:射箭(1.0學分)902058 體育:游泳(1.0學分)902059 體育:網球(1.0學分)902060 體育:船艇(1.0學分)902069 體育:戶外探索教育(1.0學分)",
-          "至少選修 2 門課程至少選修合計2 學分"
-        ]
-      ]
-    },
-    {
-      "groupId": "group_006",
-      "name": "112 學年度入學歷史學系學士班輔系必修課目清單",
-      "type": "minor_courses",
-      "requiredCredits": null,
+      "name": "系所 05, 歷史學系 部別 學士班 入學年度 112",
+      "type": "course_list",
+      "requiredCredits": 2,
       "courses": [
         {
           "courseId": "050016",
@@ -295,20 +296,24 @@
           "credits": 2
         }
       ],
+      "rules": [],
       "description": "",
       "originalRows": [
-        [
-          "合計",
-          "共　2　 門課程　4　學分",
-          ""
-        ]
+        {
+          "cells": [
+            "合計",
+            "共　2　 門課程　4　學分",
+            ""
+          ],
+          "rawText": "合計 共　2　 門課程　4　學分 "
+        }
       ]
     },
     {
-      "groupId": "group_007",
-      "name": "112 學年度入學歷史學系學士班雙主修必修課目清單",
-      "type": "double_major_courses",
-      "requiredCredits": null,
+      "groupId": "group_006",
+      "name": "系所 05, 歷史學系 部別 學士班 入學年度 112",
+      "type": "course_list",
+      "requiredCredits": 20,
       "courses": [
         {
           "courseId": "050014",
@@ -411,13 +416,17 @@
           "credits": 3
         }
       ],
+      "rules": [],
       "description": "",
       "originalRows": [
-        [
-          "合計",
-          "共　20　 門課程　42　學分",
-          ""
-        ]
+        {
+          "cells": [
+            "合計",
+            "共　20　 門課程　42　學分",
+            ""
+          ],
+          "rawText": "合計 共　20　 門課程　42　學分 "
+        }
       ]
     }
   ],

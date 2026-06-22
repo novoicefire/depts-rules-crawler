@@ -11,27 +11,9 @@
   "groups": [
     {
       "groupId": "group_001",
-      "name": "資料項次: 866 ～ 866 ／ 1706",
+      "name": "系所 13, 資訊管理學系 部別 碩士班 入學年度 112",
       "type": "course_list",
-      "requiredCredits": null,
-      "courses": [],
-      "description": "",
-      "originalRows": [
-        [
-          "部別",
-          "碩士班"
-        ],
-        [
-          "入學年度",
-          "112"
-        ]
-      ]
-    },
-    {
-      "groupId": "group_002",
-      "name": "112 學年度入學資訊管理學系碩士班必修課程清單",
-      "type": "required_courses",
-      "requiredCredits": null,
+      "requiredCredits": 3,
       "courses": [
         {
           "courseId": "135006",
@@ -49,43 +31,51 @@
           "credits": 1
         }
       ],
+      "rules": [],
       "description": "",
       "originalRows": [
-        [
-          "合計",
-          "共　3　門課程　7　學分",
-          ""
-        ]
+        {
+          "cells": [
+            "合計",
+            "共　3　門課程　7　學分",
+            ""
+          ],
+          "rawText": "合計 共　3　門課程　7　學分 "
+        }
       ]
     },
     {
-      "groupId": "group_003",
-      "name": "112 學年度入學資訊管理學系課程先修(擋修)清單",
-      "type": "prerequisite_rules",
+      "groupId": "group_002",
+      "name": "系所 13, 資訊管理學系 部別 碩士班 入學年度 112",
+      "type": "course_list",
       "requiredCredits": null,
       "courses": [
         {
           "courseId": "135038",
           "courseName": "高等群組軟體\tAdvanced Groupware",
-          "targetCourseId": "130036",
-          "targetCourseName": "群組軟體實作\tGroupware Programming"
+          "credits": null
         }
       ],
+      "rules": [],
       "description": "",
       "originalRows": []
     },
     {
-      "groupId": "group_004",
-      "name": "112 學年度入學資訊管理學系碩士班系必修(選)課程清單",
-      "type": "required_courses",
-      "requiredCredits": null,
+      "groupId": "group_003",
+      "name": "系所 13, 資訊管理學系 部別 碩士班 入學年度 112",
+      "type": "course_list",
+      "requiredCredits": 135082,
       "courses": [],
+      "rules": [],
       "description": "",
       "originalRows": [
-        [
-          "135082 高等生產管理(3.0學分)135083 高等財務管理(3.0學分)135087 高等行銷管理(3.0學分)",
-          "管理課程次領域至少選修合計3 學分"
-        ]
+        {
+          "cells": [
+            "135082 高等生產管理(3.0學分)135083 高等財務管理(3.0學分)135087 高等行銷管理(3.0學分)",
+            "管理課程次領域至少選修合計3 學分"
+          ],
+          "rawText": "135082 高等生產管理(3.0學分)135083 高等財務管理(3.0學分)135087 高等行銷管理(3.0學分) 管理課程次領域至少選修合計3 學分"
+        }
       ]
     }
   ],

@@ -11,27 +11,9 @@
   "groups": [
     {
       "groupId": "group_001",
-      "name": "資料項次: 1623 ～ 1623 ／ 1706",
+      "name": "系所 48, 新興產業策略與發展碩士學位學程 部別 碩士班 入學年度 112",
       "type": "course_list",
-      "requiredCredits": null,
-      "courses": [],
-      "description": "",
-      "originalRows": [
-        [
-          "部別",
-          "碩士班"
-        ],
-        [
-          "入學年度",
-          "112"
-        ]
-      ]
-    },
-    {
-      "groupId": "group_002",
-      "name": "112 學年度入學新興產業策略與發展碩士學位學程碩士班必修課程清單",
-      "type": "required_courses",
-      "requiredCredits": null,
+      "requiredCredits": 1,
       "courses": [
         {
           "courseId": "485032",
@@ -39,13 +21,17 @@
           "credits": 3
         }
       ],
+      "rules": [],
       "description": "",
       "originalRows": [
-        [
-          "合計",
-          "共　1　門課程　3　學分",
-          ""
-        ]
+        {
+          "cells": [
+            "合計",
+            "共　1　門課程　3　學分",
+            ""
+          ],
+          "rawText": "合計 共　1　門課程　3　學分 "
+        }
       ]
     }
   ],

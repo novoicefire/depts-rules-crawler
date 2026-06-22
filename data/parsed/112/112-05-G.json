@@ -11,27 +11,9 @@
   "groups": [
     {
       "groupId": "group_001",
-      "name": "資料項次: 395 ～ 395 ／ 1706",
+      "name": "系所 05, 歷史學系 部別 碩士班 入學年度 112",
       "type": "course_list",
-      "requiredCredits": null,
-      "courses": [],
-      "description": "",
-      "originalRows": [
-        [
-          "部別",
-          "碩士班"
-        ],
-        [
-          "入學年度",
-          "112"
-        ]
-      ]
-    },
-    {
-      "groupId": "group_002",
-      "name": "112 學年度入學歷史學系碩士班必修課程清單",
-      "type": "required_courses",
-      "requiredCredits": null,
+      "requiredCredits": 6,
       "courses": [
         {
           "courseId": "055000",
@@ -64,76 +46,72 @@
           "credits": 3
         }
       ],
+      "rules": [],
       "description": "",
       "originalRows": [
-        [
-          "合計",
-          "共　6　門課程　10　學分",
-          ""
-        ]
+        {
+          "cells": [
+            "合計",
+            "共　6　門課程　10　學分",
+            ""
+          ],
+          "rawText": "合計 共　6　門課程　10　學分 "
+        }
       ]
     },
     {
-      "groupId": "group_003",
-      "name": "112 學年度入學歷史學系課程先修(擋修)清單",
-      "type": "prerequisite_rules",
+      "groupId": "group_002",
+      "name": "系所 05, 歷史學系 部別 碩士班 入學年度 112",
+      "type": "course_list",
       "requiredCredits": null,
       "courses": [
         {
           "courseId": "050055",
           "courseName": "納粹德國專題\tNazi Germany",
-          "targetCourseId": "050047",
-          "targetCourseName": "二十世紀德國史\tGerman History in 20th Century"
+          "credits": null
         },
         {
           "courseId": "050093",
           "courseName": "荷蘭東印度公司\tA History of VOC( United Netherlands Chartered East India Company)",
-          "targetCourseId": "050015",
-          "targetCourseName": "世界史(一)\tWorld History (Ⅰ)"
+          "credits": null
         },
         {
           "courseId": "050093",
           "courseName": "荷蘭東印度公司\tA History of VOC( United Netherlands Chartered East India Company)",
-          "targetCourseId": "050024",
-          "targetCourseName": "世界史(二)\tWorld History (Ⅱ)"
+          "credits": null
         },
         {
           "courseId": "050098",
           "courseName": "明代的制度與制度變遷專題(二)\tTopics in Ming Institutional History 2",
-          "targetCourseId": "050086",
-          "targetCourseName": "明代的制度與制度變遷專題\tTopics in Ming Institutional History"
+          "credits": null
         },
         {
           "courseId": "050119",
           "courseName": "中國歷史地理(二)\tChinese Historical Geography (2)",
-          "targetCourseId": "050116",
-          "targetCourseName": "中國歷史地理(一)\tChinese Historical Geography (1)"
+          "credits": null
         },
         {
           "courseId": "050121",
           "courseName": "西方近代生命科學發展史\tDevelopment of life sciences in modern Europe",
-          "targetCourseId": "050032",
-          "targetCourseName": "世界史(三)\tWorld History (Ⅲ)"
+          "credits": null
         },
         {
           "courseId": "050121",
           "courseName": "西方近代生命科學發展史\tDevelopment of life sciences in modern Europe",
-          "targetCourseId": "050043",
-          "targetCourseName": "世界史參考資料選讀(四)\tSelected Readings of World History (Ⅳ)"
+          "credits": null
         },
         {
           "courseId": "050127",
           "courseName": "西方思想傳統(二)\tWestern Intellectual Traditions （2）",
-          "targetCourseId": "050125",
-          "targetCourseName": "西方思想傳統(一)\tWestern Intellectual Traditions （1）"
+          "credits": null
         },
         {
           "courseId": "050174",
           "courseName": "愛爾蘭現代史(二)\tModern Irish History II",
-          "targetCourseId": "050173",
-          "targetCourseName": "愛爾蘭現代史(一)\tModern Irish History I"
+          "credits": null
         }
       ],
+      "rules": [],
       "description": "",
       "originalRows": []
     }

@@ -11,27 +11,9 @@
   "groups": [
     {
       "groupId": "group_001",
-      "name": "資料項次: 1471 ～ 1471 ／ 1706",
+      "name": "系所 36, 終身學習與人力資源發展碩士學位學程碩士在職專班 部別 碩士班 入學年度 112",
       "type": "course_list",
-      "requiredCredits": null,
-      "courses": [],
-      "description": "",
-      "originalRows": [
-        [
-          "部別",
-          "碩士班"
-        ],
-        [
-          "入學年度",
-          "112"
-        ]
-      ]
-    },
-    {
-      "groupId": "group_002",
-      "name": "112 學年度入學終身學習與人力資源發展碩士學位學程碩士在職專班碩士班必修課程清單",
-      "type": "required_courses",
-      "requiredCredits": null,
+      "requiredCredits": 4,
       "courses": [
         {
           "courseId": "365001",
@@ -54,13 +36,17 @@
           "credits": 4
         }
       ],
+      "rules": [],
       "description": "",
       "originalRows": [
-        [
-          "合計",
-          "共　4　門課程　13　學分",
-          ""
-        ]
+        {
+          "cells": [
+            "合計",
+            "共　4　門課程　13　學分",
+            ""
+          ],
+          "rawText": "合計 共　4　門課程　13　學分 "
+        }
       ]
     }
   ],

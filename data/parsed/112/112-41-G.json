@@ -11,27 +11,9 @@
   "groups": [
     {
       "groupId": "group_001",
-      "name": "資料項次: 1545 ～ 1545 ／ 1706",
+      "name": "系所 41, 觀光休閒與餐旅管理學系 部別 碩士班 入學年度 112",
       "type": "course_list",
-      "requiredCredits": null,
-      "courses": [],
-      "description": "",
-      "originalRows": [
-        [
-          "部別",
-          "碩士班"
-        ],
-        [
-          "入學年度",
-          "112"
-        ]
-      ]
-    },
-    {
-      "groupId": "group_002",
-      "name": "112 學年度入學觀光休閒與餐旅管理學系碩士班必修課程清單",
-      "type": "required_courses",
-      "requiredCredits": null,
+      "requiredCredits": 7,
       "courses": [
         {
           "courseId": "415004",
@@ -69,27 +51,35 @@
           "credits": 3
         }
       ],
+      "rules": [],
       "description": "",
       "originalRows": [
-        [
-          "合計",
-          "共　7　門課程　17　學分",
-          ""
-        ]
+        {
+          "cells": [
+            "合計",
+            "共　7　門課程　17　學分",
+            ""
+          ],
+          "rawText": "合計 共　7　門課程　17　學分 "
+        }
       ]
     },
     {
-      "groupId": "group_003",
-      "name": "112 學年度入學觀光休閒與餐旅管理學系碩士班系必修(選)課程清單",
-      "type": "required_courses",
-      "requiredCredits": null,
+      "groupId": "group_002",
+      "name": "系所 41, 觀光休閒與餐旅管理學系 部別 碩士班 入學年度 112",
+      "type": "course_list",
+      "requiredCredits": 415004,
       "courses": [],
+      "rules": [],
       "description": "",
       "originalRows": [
-        [
-          "415004 多變量分析(3.0學分)415024 質性與個案研究(3.0學分)",
-          "至少選修 1 門課程至少選修合計3 學分"
-        ]
+        {
+          "cells": [
+            "415004 多變量分析(3.0學分)415024 質性與個案研究(3.0學分)",
+            "至少選修 1 門課程至少選修合計3 學分"
+          ],
+          "rawText": "415004 多變量分析(3.0學分)415024 質性與個案研究(3.0學分) 至少選修 1 門課程至少選修合計3 學分"
+        }
       ]
     }
   ],
