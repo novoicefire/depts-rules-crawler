@@ -38,6 +38,9 @@ def extract_title_from_text(text: str) -> str | None:
 
     return None
 
+def has_rule_title(text: str) -> bool:
+    return bool(TITLE_PATTERN.search(normalize_text(text)))
+
 def find_group_name(table, fallback: str) -> str:
     chunks = []
     cursor = table.previous_sibling
@@ -122,6 +125,10 @@ def parse_html_to_json(html_content: str, entry_year: str, deptid: str, class_co
     }
     
     page_text = soup.get_text(" ", strip=True)
+    tables = soup.select("table.ncnu_table1")
+    has_ncnu_rule_tables = len(tables) > 0
+    has_title = has_rule_title(page_text)
+
     empty_messages = []
     for phrase in [
         "查無必修課程資料",
@@ -132,13 +139,14 @@ def parse_html_to_json(html_content: str, entry_year: str, deptid: str, class_co
         if phrase in page_text:
             empty_messages.append(phrase)
             
-    if empty_messages:
+    has_empty_message = len(empty_messages) > 0
+
+    if has_empty_message and not has_ncnu_rule_tables and not has_title:
         result["notes"].append({
             "type": "no_requirement_data",
             "message": " / ".join(empty_messages)
         })
     
-    tables = soup.select("table.ncnu_table1")
     if not tables:
         tables = [table for table in soup.find_all("table") if is_requirement_table(table)]
     

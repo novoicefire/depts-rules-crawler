@@ -19,7 +19,8 @@ def is_valid_html(html: str, entry_year: str, deptid: str, class_code: str = "")
     if not html:
         return False, "missing_html"
 
-    text = BeautifulSoup(html, "html.parser").get_text(" ", strip=True)
+    soup = BeautifulSoup(html, "html.parser")
+    text = soup.get_text(" ", strip=True)
 
     if len(text) < 200:
         return False, "too_short"
@@ -50,26 +51,33 @@ def is_valid_html(html: str, entry_year: str, deptid: str, class_code: str = "")
         if class_name and class_name not in text:
             return False, "missing_class_name"
 
-    # 檢查是否為合法的空規則頁面 (Empty Requirement Set)
+    rule_tables = soup.select("table.ncnu_table1")
+    has_rule_table = len(rule_tables) > 0
+
+    import re
+    title_pattern = re.compile(
+        r"\d{2,3}\s*學年度入學(?:(?!\d{2,3}\s*學年度入學).){0,160}?(?:清單|一覽表)"
+    )
+    has_rule_title = bool(title_pattern.search(text))
+
     empty_phrases = [
         "查無必修課程資料",
         "查無系必修(選)課程資料",
         "查無系必修課程資料",
         "查無必修(選)課程資料"
     ]
-    if str(entry_year) in text and (not class_name or class_name in text):
-        if any(phrase in text for phrase in empty_phrases):
-            return True, "valid_empty_requirements"
+    has_empty_phrase = any(phrase in text for phrase in empty_phrases)
 
-    soup = BeautifulSoup(html, "html.parser")
-    tables = soup.find_all("table")
-    if not tables:
-        return False, "no_table"
+    if has_rule_table or has_rule_title:
+        return True, "ok"
 
-    positive_keywords = ["查詢修業規則", "必修課程", "學分", "課號", "課名", "輔系", "雙主修", "通識", "先修", "擋修"]
+    if has_empty_phrase:
+        return True, "valid_empty_requirements"
+
+    positive_keywords = ["課號", "課名", "科目", "課程", "學分", "必修", "選修", "輔系", "雙主修", "通識"]
     if any(keyword in text for keyword in positive_keywords):
         return True, "ok"
-    
+
     return False, "no_positive_keyword"
 
 def fetch_requirements_html(entry_year: str, deptid: str, class_code: str, timeout: int = 20, session: Optional[requests.Session] = None) -> Tuple[int, Optional[str], bool, str]:

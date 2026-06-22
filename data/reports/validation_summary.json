@@ -1,12 +1,12 @@
 {
-  "index_exists": true,
-  "index_readable": true,
-  "total_items": 75,
+  "index_exists": false,
+  "index_readable": false,
+  "total_items": 0,
   "duplicate_ids": [],
   "missing_files": [],
   "invalid_schema": [],
   "quality_warnings": [],
-  "specific_check_112_12_B": "Passed",
-  "passed": true,
-  "generatedAt": "2026-06-22T17:03:43.055608"
+  "specific_check_112_12_B": "Not Found",
+  "passed": false,
+  "generatedAt": "2026-06-22T17:21:17.662912"
 }

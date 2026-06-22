@@ -112,6 +112,12 @@ def validate_all(probe: bool = False, strict: bool = False) -> Dict[str, Any]:
                     "error": "groups must be a list"
                 })
             else:
+                if strict and empty_requirement_set and len(groups) > 0:
+                    report["invalid_schema"].append({
+                        "id": req_id,
+                        "error": "no_requirement_data note conflicts with non-empty groups"
+                    })
+                    
                 group_names = [g.get("name", "") for g in groups]
                 
                 if strict and len(groups) > 1 and len(set(group_names)) == 1:

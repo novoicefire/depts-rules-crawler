@@ -69,9 +69,13 @@ def main():
     try:
         with open(parsed_json_path, "r", encoding="utf-8") as f:
             parsed_data = json.load(f)
+            
+            notes = parsed_data.get("notes", [])
+            assert not any(note.get("type") == "no_requirement_data" for note in notes), "112-12-B 被誤判為空規則頁"
+            
             assert parsed_data.get("requirementSetId") == "112-12-B", "requirementSetId 錯誤"
             groups = parsed_data.get("groups", [])
-            assert len(groups) > 0, "沒有產生任何 group"
+            assert len(groups) >= 6, f"沒有產生足夠的 group，預期至少 6 個，實際 {len(groups)} 個"
             
             group_names = [g["name"] for g in groups]
             assert len(set(group_names)) > 1, "所有 group name 都相同，標題解析失敗"
