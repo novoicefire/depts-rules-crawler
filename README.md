@@ -100,3 +100,26 @@ python cli.py all --years 112 --deptids 12 --class-codes B --delay 0.5
 - 這是測試版本，旨在證明爬蟲與基礎解析邏輯可行，未進行複雜的前端 UI 或資料庫對接。
 - 表格解析採用 heuristic 方法，若遇到格式不標準的表格（如跨領域合併的通識表格）會將欄位放進 `originalRows` 陣列中保留以確保資料零遺漏。
 - 完整的抵免邏輯、通識規則推論等功能不在本專案實作範圍內。
+
+## 固定驗收指令
+您可以使用內建腳本 `python scripts/acceptance_test.py [probe|year_112|all_years|all]` 進行驗收，或是手動執行以下三組指令：
+
+### 1. Probe 測試 (針對 112-12-B 進行單一測試與斷言)
+```bash
+python cli.py clean --yes
+python scripts/run_probe.py
+```
+
+### 2. 單年度全系所測試 (112 年度)
+```bash
+python cli.py clean --yes
+python cli.py all --years 112 --all-depts --class-codes B G P --workers 5 --max-rounds 20 --delay 0.5
+python cli.py validate --strict
+```
+
+### 3. 多年度全系所測試 (111 ~ 114 年度)
+```bash
+python cli.py clean --yes
+python cli.py all --years 111 112 113 114 --all-depts --class-codes B G P --workers 5 --max-rounds 20 --delay 0.5
+python cli.py validate --strict
+```
