@@ -6,11 +6,7 @@ import json
 
 def run_command(cmd_list):
     print(f"\n> 執行: {' '.join(cmd_list)}")
-    result = subprocess.run(cmd_list, capture_output=True)
-    sys.stdout.buffer.write(result.stdout)
-    
-    if result.stderr:
-        sys.stderr.buffer.write(result.stderr)
+    result = subprocess.run(cmd_list)
             
     if result.returncode != 0:
         print(f"[FAIL] 命令執行失敗，回傳碼: {result.returncode}")
